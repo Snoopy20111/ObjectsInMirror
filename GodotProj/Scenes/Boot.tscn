@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv5suuvd8jle5"]
+
+[ext_resource type="Script" path="res://Scripts/Boot.gd" id="1_qfepg"]
+
+[node name="Boot" type="Node2D"]
+script = ExtResource("1_qfepg")
+LogoParade = false
+LoadDebugLevel = true
+DebugWindowSize = true

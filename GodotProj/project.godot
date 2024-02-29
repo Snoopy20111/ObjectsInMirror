@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="ObjectsInMirror"
-run/main_scene="res://Scenes/Test_2D.tscn"
+run/main_scene="res://Scenes/Boot.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
+GameManager="*res://Scripts/GameManager.gd"
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Wwise/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [input]
 
