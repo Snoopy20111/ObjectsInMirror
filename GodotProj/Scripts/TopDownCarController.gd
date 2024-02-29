@@ -1,15 +1,16 @@
 extends CharacterBody2D
 
-var wheel_base:float = 70
-var steering_angle:float = 16
-var engine_power = 800
-var friction = -0.9
-var drag = -0.001
-var braking = -450
-var max_speed_reverse = 250
-var slip_speed = 400
-var traction_fast = 0.1
-var traction_slow = 0.5
+@export var wheel_base:float = 50
+@export var steering_angle:float = 16
+@export var engine_power = 800
+@export var braking = -450
+@export var max_speed_reverse = 250
+@export var slip_speed = 400
+
+
+@export var friction = -0.9
+@export var drag = -0.001
+@export var traction_curve:Curve = preload("res://Curves/Car_XSpeedYTraction_Default.tres")
 
 var acceleration = Vector2.ZERO
 var steer_direction:float
@@ -49,12 +50,10 @@ func calculate_steering(delta):
 	rear_wheel += velocity * delta
 	front_wheel += velocity.rotated(steer_direction) * delta
 	var new_heading = (front_wheel - rear_wheel).normalized()
-	var traction
-	if velocity.length() > slip_speed:
-		traction = traction_fast
-	else:
-		traction = traction_slow
+	
+	var traction = traction_curve.sample(velocity.x / engine_power)
 	var dot_product = new_heading.dot(velocity.normalized())
+	
 	if dot_product > 0:
 		velocity = velocity.lerp(new_heading * velocity.length(), traction)
 	if dot_product < 0:

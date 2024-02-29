@@ -17,6 +17,9 @@ texture = ExtResource("2_0fihp")
 shape = SubResource("RectangleShape2D_6gpun")
 one_way_collision_margin = 2.2
 
+[node name="CameraTarget" type="Node2D" parent="."]
+
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_speed = 30.0
 
 [node name="AkListener2D" type="AkListener2D" parent="Camera2D"]
