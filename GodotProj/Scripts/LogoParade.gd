@@ -7,6 +7,7 @@ const LogoFade_Curve = preload("res://Curves/LogoFade_Curve.tres")
 @onready var StartTimer: Timer = $StartTimer as Timer
 @onready var FreezeTimer: Timer = $FreezeTimer as Timer
 @onready var LogoAnim: AnimatedSprite2D = $CenterContainer/LogoAnim as AnimatedSprite2D
+@onready var AudioObject: Node = $LogoParadeEmitter as Node
 
 var FadeCounter = 0
 @export var fade_value = Enums.FADE_STATE.PAUSE
@@ -19,6 +20,7 @@ var transitioning : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	StartTimer.start()
+	Wwise.register_game_obj(AudioObject, "LogoParade")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -52,7 +54,8 @@ func _on_LogoAnim_finished():
 func _on_StartTimer_timeout():
 	fade_value = Enums.FADE_STATE.IN
 	LogoAnim.play()
-	Wwise.post_event()
+	Wwise.post_event("Play_UI_LogoParade", AudioObject)
+	Wwise.unregister_game_obj(AudioObject) #can do because it's a oneshot
 
 func _on_FreezeTimer_timeout():
 	fade_value = Enums.FADE_STATE.OUT

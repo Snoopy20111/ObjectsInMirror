@@ -22,6 +22,7 @@ func _ready():
 	Wwise.load_bank("Init")
 	Wwise.load_bank("Master")
 	
+	#Seeds RNG, may be useful later
 	randomize()
 	
 	if (LogoParade):

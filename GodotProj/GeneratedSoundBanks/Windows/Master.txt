@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1333548413	Play_UI_LogoParade			\Default Work Unit\Play_UI_LogoParade	
+	3187507146	Play_Test			\Default Work Unit\Play_Test	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	364672542	Nav_Select	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\PLP-SF2_Click_26_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Nav_Select		26292
+	909693388	LogoParade- LH	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Portfolio_LogoBumper01_2023-10-23_001_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\LogoParade- LH		1152096
+

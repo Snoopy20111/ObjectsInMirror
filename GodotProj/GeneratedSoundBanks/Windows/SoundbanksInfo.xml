@@ -150,10 +150,32 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{849A421E-F0F5-1742-214F-A29594C203C1}">
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{A69EAD53-6C2A-F6BC-BEED-95468C37BC7B}">
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
+			<Media>
+				<File Id="364672542" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PLP-SF2_Click_26.wav</ShortName>
+					<CachePath>SFX/PLP-SF2_Click_26_818F3B66.wem</CachePath>
+				</File>
+				<File Id="909693388" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Portfolio_LogoBumper01_2023-10-23_001.wav</ShortName>
+					<CachePath>SFX/Portfolio_LogoBumper01_2023-10-23_001_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3187507146" Name="Play_Test">
+					<MediaRefs>
+						<MediaRef Id="364672542"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1333548413" Name="Play_UI_LogoParade">
+					<MediaRefs>
+						<MediaRef Id="909693388"/>
+					</MediaRefs>
+				</Event>
+			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{91AA4368-6300-21DB-ACB8-33782E35317D}</FileHash>
+	<FileHash>{81608F6B-4A27-9E32-89DD-5D072FD2BD32}</FileHash>
 </SoundBanksInfo>

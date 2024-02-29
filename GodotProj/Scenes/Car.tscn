@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://ql1cyou4rqxn"]
+[gd_scene load_steps=6 format=3 uid="uid://ql1cyou4rqxn"]
 
 [ext_resource type="Script" path="res://Scripts/TopDownCarController.gd" id="1_2p5ql"]
 [ext_resource type="Texture2D" uid="uid://ihu5sr2wwr7w" path="res://Sprites/Car/car_red_4.png" id="2_0fihp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6gpun"]
 size = Vector2(128, 70)
+
+[sub_resource type="Gradient" id="Gradient_eslrk"]
+offsets = PackedFloat32Array(0, 0.714715)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bfo1p"]
+gradient = SubResource("Gradient_eslrk")
+fill_from = Vector2(0.423077, 1)
+fill_to = Vector2(0, 0)
 
 [node name="Car" type="CharacterBody2D"]
 script = ExtResource("1_2p5ql")
@@ -23,3 +32,9 @@ one_way_collision_margin = 2.2
 position_smoothing_speed = 30.0
 
 [node name="AkListener2D" type="AkListener2D" parent="Camera2D"]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(132.5, 0)
+scale = Vector2(3.64062, 4.71875)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_bfo1p")

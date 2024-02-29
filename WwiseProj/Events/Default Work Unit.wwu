@@ -14,6 +14,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_UI_LogoParade" ID="{9270240D-2F04-4623-82E4-318C98C3C1CC}">
+					<ChildrenList>
+						<Action Name="" ID="{D4CD2D0C-C29D-4A57-90E3-57295D649AD2}" ShortID="703174972">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="LogoParade- LH" ID="{C67C13C9-8B0F-4B60-91B3-17AF52DE0DDD}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
