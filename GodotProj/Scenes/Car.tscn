@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ql1cyou4rqxn"]
+
+[ext_resource type="Script" path="res://Scripts/TopDownCarController.gd" id="1_2p5ql"]
+[ext_resource type="Texture2D" uid="uid://ihu5sr2wwr7w" path="res://Sprites/Car/car_red_4.png" id="2_0fihp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gpun"]
+size = Vector2(128, 70)
+
+[node name="Car" type="CharacterBody2D"]
+script = ExtResource("1_2p5ql")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_0fihp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6gpun")
+one_way_collision_margin = 2.2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AkListener2D" type="AkListener2D" parent="Camera2D"]
