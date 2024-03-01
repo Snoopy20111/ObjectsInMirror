@@ -1,3 +1,36 @@
-[gd_scene format=3 uid="uid://dpi6jw3u8u8tp"]
+[gd_scene load_steps=4 format=3 uid="uid://dpi6jw3u8u8tp"]
+
+[ext_resource type="Script" path="res://Scripts/AutoResize_ColorRect.gd" id="1_2i5ej"]
+
+[sub_resource type="Gradient" id="Gradient_xbv1x"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yvno7"]
+gradient = SubResource("Gradient_xbv1x")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [node name="MainMenu" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_right = 59.0
+offset_bottom = 12.0
+action_mode = 0
+text = "Start"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(284, 264)
+scale = Vector2(7.20313, 7.20313)
+texture = SubResource("GradientTexture2D_yvno7")
+
+[node name="TempBackground" type="ColorRect" parent="."]
+show_behind_parent = true
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+auto_translate = false
+localize_numeral_system = false
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_2i5ej")
