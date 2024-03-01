@@ -7,7 +7,7 @@ func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	Wwise.init()
 
-	
+
 func _process(_delta: float) -> void:
 	if Wwise.is_initialized():
 		Wwise.render_audio()

@@ -14,6 +14,10 @@ extends CharacterBody2D
 
 var acceleration = Vector2.ZERO
 var steer_direction:float
+var steer_amount:float
+
+func _process(delta):
+	pass
 
 func _physics_process(delta):
 	acceleration = Vector2.ZERO
@@ -36,13 +40,13 @@ func get_input():
 		turn += 1
 	if Input.is_action_pressed("ui_left"):
 		turn -= 1
+	if sign(turn) != sign(steer_direction):
+		turn *= 1.5
 	steer_direction = turn * deg_to_rad(steering_angle)
 	if Input.is_action_pressed("ui_up"):
 		acceleration = transform.x * engine_power
 	if Input.is_action_pressed("ui_down"):
 		acceleration = transform.x * braking
-	#if Input.is_action_pressed("ui_down"):
-		
 
 func calculate_steering(delta):
 	var rear_wheel = position - transform.x * wheel_base/2.0
