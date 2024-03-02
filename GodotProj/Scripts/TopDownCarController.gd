@@ -34,16 +34,16 @@ func apply_friction():
 
 func get_input():
 	var turn = 0
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("drive_right"):
 		turn += 1
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("drive_left"):
 		turn -= 1
 	if sign(turn) != sign(steer_direction):
 		turn *= 1.5
 	steer_direction = turn * deg_to_rad(steering_angle)
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("drive_forward"):
 		acceleration = transform.x * engine_power
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("drive_back"):
 		acceleration = transform.x * braking_power
 
 func calculate_steering(delta):
@@ -63,9 +63,9 @@ func calculate_steering(delta):
 	
 	#this is the source of the sudden turns, but I don't know exactly how to smooth it out
 	#rotation = new_heading.angle()
-	var new_angle: Vector2
-	new_angle.x = lerp(new_heading.x, last_heading.x, traction)
-	new_angle.y = lerp(new_heading.y, last_heading.y, traction)
+	var new_angle: Vector2 = Vector2(lerp(new_heading.x, last_heading.x, traction),
+	lerp(new_heading.y, last_heading.y, traction))
+
 	rotation = new_angle.angle()
 	last_heading = new_heading
 	
