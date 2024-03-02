@@ -13,10 +13,8 @@ func _process(delta):
 		progress_ratio += progress_curve.sample(counter_value)
 		if (counter_value >= 1):
 			is_running = false
-	pass
 
 #fired from signal to start motion
 func _on_wordstimer_timeout():
-	print("fired")
 	is_running = true
 	counter_value = 0
