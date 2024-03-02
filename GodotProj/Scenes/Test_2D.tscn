@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjyu8ql4g3gto"]
 
-[ext_resource type="PackedScene" uid="uid://ql1cyou4rqxn" path="res://Scenes/Car.tscn" id="1_8744l"]
 [ext_resource type="TileSet" uid="uid://dv6shtncjold" path="res://Tilesets/test_tileset.tres" id="2_6p6tj"]
 [ext_resource type="Texture2D" uid="uid://dduc4rdakx6yt" path="res://icon.svg" id="3_lbkah"]
+[ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Car_Rigidbody.tscn" id="4_vm3fk"]
 
 [sub_resource type="Gradient" id="Gradient_ac555"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -18,8 +18,9 @@ size = Vector2(100, 100)
 
 [node name="TestMap" type="Node2D"]
 
-[node name="Car" parent="." instance=ExtResource("1_8744l")]
-z_index = 100
+[node name="Car_Rigid" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("4_vm3fk")]
+position = Vector2(235.654, -452.728)
+metadata/entity_name = "PlayerCar"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_6p6tj")

@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://seuyyo3omuoe"]
+
+[ext_resource type="Script" path="res://Scripts/CarController_Rigidbody.gd" id="1_qdag7"]
+[ext_resource type="Texture2D" uid="uid://ihu5sr2wwr7w" path="res://Sprites/Car/car_red_4.png" id="2_26rgh"]
+[ext_resource type="Texture2D" uid="uid://c6jh4ev4rrmx1" path="res://Sprites/Lights/Headlight_Texture.png" id="3_85h8a"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_m5lv2"]
+diffuse_texture = ExtResource("2_26rgh")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gpun"]
+size = Vector2(128, 70)
+
+[sub_resource type="Gradient" id="Gradient_cvvr2"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xiydi"]
+gradient = SubResource("Gradient_cvvr2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Car" type="RigidBody2D"]
+mass = 10.0
+gravity_scale = 0.0
+script = ExtResource("1_qdag7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
+rotation = 1.5708
+texture = SubResource("CanvasTexture_m5lv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6gpun")
+one_way_collision_margin = 2.2
+
+[node name="CameraTarget" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_speed = 30.0
+
+[node name="AkListener2D" type="AkListener2D" parent="Camera2D"]
+
+[node name="CarGlowLight" type="PointLight2D" parent="."]
+position = Vector2(19, -1)
+scale = Vector2(2.75, 1.625)
+color = Color(0.988235, 0.917647, 0.772549, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_xiydi")
+height = 100.0
+
+[node name="Headlights" type="PointLight2D" parent="."]
+position = Vector2(289, 5)
+scale = Vector2(1.04009, 0.881597)
+shadow_enabled = true
+texture = ExtResource("3_85h8a")
+height = 100.0
