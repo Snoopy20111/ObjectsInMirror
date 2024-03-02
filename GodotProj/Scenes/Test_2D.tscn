@@ -46,6 +46,8 @@ height = 100.0
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(0, -275)
 gravity_scale = 0.0
+linear_damp = 2.0
+angular_damp = 6.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_jgh7m")
