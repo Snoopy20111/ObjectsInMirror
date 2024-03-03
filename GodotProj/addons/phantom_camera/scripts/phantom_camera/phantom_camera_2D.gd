@@ -454,8 +454,10 @@ func _exit_tree() -> void:
 
 	Properties.pcam_exit_tree(self)
 
-
-func _process(delta: float) -> void:
+# Should be _process, changed to stop Damping jitter
+# The actual fix should be to use Engine.get_physics_interpolation_fraction()
+# but I don't have time to figure that out right now
+func _physics_process(delta: float) -> void:
 	if not Properties.is_active:
 		match Properties.inactive_update_mode:
 			Constants.InactiveUpdateMode.NEVER:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjyu8ql4g3gto"]
+[gd_scene load_steps=9 format=3 uid="uid://bjyu8ql4g3gto"]
 
 [ext_resource type="TileSet" uid="uid://dv6shtncjold" path="res://Environments/Tilesets/test_tileset.tres" id="2_6p6tj"]
 [ext_resource type="Texture2D" uid="uid://dduc4rdakx6yt" path="res://icon.svg" id="3_lbkah"]
@@ -16,6 +16,9 @@ fill_to = Vector2(0, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgh7m"]
 size = Vector2(100, 100)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y7kk1"]
+light_mode = 1
 
 [node name="TestMap" type="Node2D"]
 
@@ -57,6 +60,7 @@ shape = SubResource("RectangleShape2D_jgh7m")
 texture = ExtResource("3_lbkah")
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
+material = SubResource("CanvasItemMaterial_y7kk1")
 position = Vector2(285.654, -452.728)
 script = ExtResource("4_jqi28")
 priority_override = false
@@ -66,8 +70,8 @@ follow_mode = 2
 follow_target = NodePath("../Car_Rigid")
 follow_parameters/target_offset = Vector2(50, 0)
 follow_parameters/damping = true
-follow_parameters/damping_value = 10.0
-frame_preview = false
+follow_parameters/damping_value = 2.692
+frame_preview = true
 pixel_perfect = false
 limit/draw_limits = false
 limit/left = -10000000

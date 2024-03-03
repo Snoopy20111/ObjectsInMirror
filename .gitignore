@@ -1,2 +1,3 @@
 #To ignore the Temp Files folder
 TempFiles/
+GodotProj/addons/Wwise/native/lib/win64/debug/~libwwise.windows.template_debug.dll
