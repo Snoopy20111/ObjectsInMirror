@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://f40g3bwmbq57"
-path="res://.godot/imported/couri.ttf-52ff8cd033a843b1274426749ad1c175.fontdata"
+uid="uid://cisfjyebjvt1s"
+path="res://.godot/imported/FE-FONT.TTF-7f8e1967cb1486f63511f1bb2d4208dc.fontdata"
 
 [deps]
 
-source_file="res://UI/Fonts/Bin/couri.ttf"
-dest_files=["res://.godot/imported/couri.ttf-52ff8cd033a843b1274426749ad1c175.fontdata"]
+source_file="res://UI/Fonts/Bin/FE-FONT.TTF"
+dest_files=["res://.godot/imported/FE-FONT.TTF-7f8e1967cb1486f63511f1bb2d4208dc.fontdata"]
 
 [params]
 

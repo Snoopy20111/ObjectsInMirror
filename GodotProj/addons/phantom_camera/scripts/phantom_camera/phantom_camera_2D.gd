@@ -549,6 +549,7 @@ func _set_pcam_global_position(_global_position: Vector2, delta: float) -> void:
 				delta * Properties.follow_damping_value
 			)
 		)
+		#Engine.get_physics_interpolation_fraction()
 	else:
 		set_global_position(_global_position)
 

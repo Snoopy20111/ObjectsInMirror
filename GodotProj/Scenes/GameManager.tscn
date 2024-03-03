@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_rdusj"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_xd5lt"]
 
-[node name="GameManager" type="Node2D" groups=["scene_manager_entity_nodes"]]
+[node name="GameManager" type="Node" groups=["scene_manager_entity_nodes"]]
 script = ExtResource("1_rdusj")
 metadata/entity_name = "GameManager"
 
@@ -11,3 +11,5 @@ metadata/entity_name = "GameManager"
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("2_xd5lt")
+
+[node name="AkListener2D" type="AkListener2D" parent="Camera2D"]

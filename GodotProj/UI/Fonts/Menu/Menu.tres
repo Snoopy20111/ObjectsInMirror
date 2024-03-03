@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bmcupqqh0hnkt"]
+
+[ext_resource type="FontFile" path="res://UI/Fonts/Menu/Menu_Regular.tres" id="1"]
+[ext_resource type="FontFile" path="res://UI/Fonts/Menu/Menu_Light.tres" id="2"]
+
+[resource]
+default_font = ExtResource("1")
+LineEdit/fonts/font = ExtResource("2")
+TextEdit/fonts/font = ExtResource("2")
+VBoxContainer/constants/separation = 20

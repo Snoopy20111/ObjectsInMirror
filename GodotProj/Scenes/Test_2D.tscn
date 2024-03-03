@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bjyu8ql4g3gto"]
 
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_3kige"]
-[ext_resource type="TileSet" uid="uid://dv6shtncjold" path="res://Tilesets/test_tileset.tres" id="2_6p6tj"]
+[ext_resource type="TileSet" uid="uid://dv6shtncjold" path="res://Environments/Tilesets/test_tileset.tres" id="2_6p6tj"]
 [ext_resource type="Texture2D" uid="uid://dduc4rdakx6yt" path="res://icon.svg" id="3_lbkah"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="4_jqi28"]
 [ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Car_Rigidbody.tscn" id="4_vm3fk"]
 
 [sub_resource type="Gradient" id="Gradient_ac555"]
@@ -22,28 +22,6 @@ size = Vector2(100, 100)
 [node name="Car_Rigid" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("4_vm3fk")]
 position = Vector2(235.654, -452.728)
 metadata/entity_name = "PlayerCar"
-
-[node name="PhantomCamera2D" type="Node2D" parent="Car_Rigid"]
-position = Vector2(-235.654, 452.728)
-script = ExtResource("2_3kige")
-priority_override = false
-priority = 100
-zoom = Vector2(0.21, 0.21)
-follow_mode = 1
-follow_target = NodePath("")
-follow_parameters/damping = false
-frame_preview = true
-pixel_perfect = false
-limit/draw_limits = false
-limit/left = -10000000
-limit/top = -10000000
-limit/right = 10000000
-limit/bottom = 10000000
-limit/limit_node_target = NodePath("")
-limit/smoothed = false
-tween_parameters = null
-tween_on_load = true
-inactive_update_mode = 0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_6p6tj")
@@ -77,3 +55,27 @@ shape = SubResource("RectangleShape2D_jgh7m")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture = ExtResource("3_lbkah")
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+position = Vector2(285.654, -452.728)
+script = ExtResource("4_jqi28")
+priority_override = false
+priority = 0
+zoom = Vector2(0.9, 0.9)
+follow_mode = 2
+follow_target = NodePath("../Car_Rigid")
+follow_parameters/target_offset = Vector2(50, 0)
+follow_parameters/damping = true
+follow_parameters/damping_value = 10.0
+frame_preview = false
+pixel_perfect = false
+limit/draw_limits = false
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+limit/limit_node_target = NodePath("")
+limit/smoothed = false
+tween_parameters = null
+tween_on_load = false
+inactive_update_mode = 0

@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://seuyyo3omuoe"]
+[gd_scene load_steps=9 format=3 uid="uid://seuyyo3omuoe"]
 
 [ext_resource type="Script" path="res://Scripts/CarController_Rigidbody.gd" id="1_qdag7"]
 [ext_resource type="Texture2D" uid="uid://ihu5sr2wwr7w" path="res://Sprites/Car/car_red_4.png" id="2_26rgh"]
 [ext_resource type="Texture2D" uid="uid://c6jh4ev4rrmx1" path="res://Sprites/Lights/Headlight_Texture.png" id="3_85h8a"]
 [ext_resource type="PackedScene" uid="uid://b53rom87xh58x" path="res://Scenes/Car_SkidMarker.tscn" id="4_nrhht"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="5_hxkqc"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_m5lv2"]
 diffuse_texture = ExtResource("2_26rgh")
@@ -13,11 +12,12 @@ diffuse_texture = ExtResource("2_26rgh")
 size = Vector2(128, 70)
 
 [sub_resource type="Gradient" id="Gradient_cvvr2"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.75976, 1)
+colors = PackedColorArray(0.568973, 0.568973, 0.568973, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xiydi"]
 gradient = SubResource("Gradient_cvvr2")
-fill = 1
+fill = 2
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
@@ -40,8 +40,8 @@ one_way_collision_margin = 2.2
 [node name="CameraTarget" type="Node2D" parent="."]
 
 [node name="CarGlowLight" type="PointLight2D" parent="."]
-position = Vector2(19, -1)
-scale = Vector2(2.75, 1.625)
+position = Vector2(-0.499996, 0.499999)
+scale = Vector2(2.01563, 1.10938)
 color = Color(0.988235, 0.917647, 0.772549, 1)
 energy = 0.5
 shadow_enabled = true
@@ -60,24 +60,3 @@ position = Vector2(-55, -28)
 
 [node name="SkidMaker_R" parent="." instance=ExtResource("4_nrhht")]
 position = Vector2(-55, 28)
-
-[node name="PhantomCamera2D" type="Node2D" parent="."]
-script = ExtResource("5_hxkqc")
-priority_override = false
-priority = 0
-zoom = Vector2(1, 1)
-follow_mode = 0
-frame_preview = true
-pixel_perfect = false
-limit/draw_limits = false
-limit/left = -10000000
-limit/top = -10000000
-limit/right = 10000000
-limit/bottom = 10000000
-limit/limit_node_target = NodePath("")
-limit/smoothed = false
-tween_parameters = null
-tween_on_load = true
-inactive_update_mode = 0
-
-[node name="AkListener2D" type="AkListener2D" parent="PhantomCamera2D"]

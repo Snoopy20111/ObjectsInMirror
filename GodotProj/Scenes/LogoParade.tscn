@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://Scripts/AutoResize_ColorRect.gd" id="2"]
 [ext_resource type="SpriteFrames" uid="uid://bmsjguqbqk6jy" path="res://Sprites/Logos/LH_LogoSequence/LH_LogoSequence.tres" id="3"]
 [ext_resource type="Script" path="res://Scripts/LogoParade_PathFollow2D.gd" id="3_5rfj5"]
-[ext_resource type="FontFile" path="res://UI/Fonts/Quando_Regular.tres" id="4"]
-[ext_resource type="FontFile" path="res://UI/Fonts/Menu_Regular.tres" id="5_7r4q3"]
+[ext_resource type="FontFile" uid="uid://cscovwes3mpuf" path="res://UI/Fonts/Quando_Regular.tres" id="4"]
+[ext_resource type="FontFile" path="res://UI/Fonts/Menu/Menu_Regular.tres" id="5_7r4q3"]
 
 [sub_resource type="Curve2D" id="Curve2D_pvioc"]
 _data = {
@@ -29,7 +29,6 @@ font = ExtResource("5_7r4q3")
 font_size = 54
 
 [node name="CanvasLayer" type="CanvasLayer"]
-follow_viewport_enabled = true
 
 [node name="LogoParade" type="Control" parent="."]
 layout_mode = 3
@@ -136,6 +135,7 @@ label_settings = SubResource("LabelSettings_byern")
 [node name="LogoParadeEmitter" type="Node" parent="LogoParade"]
 
 [node name="AkListener2D" type="AkListener2D" parent="."]
+visible = false
 
 [connection signal="timeout" from="LogoParade/StartTimer" to="LogoParade" method="_on_StartTimer_timeout"]
 [connection signal="timeout" from="LogoParade/WordsTimer" to="LogoParade/CenterContainer/Path2D/PathFollow2D" method="_on_wordstimer_timeout"]

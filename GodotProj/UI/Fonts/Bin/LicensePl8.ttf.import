@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c77q1hibat48a"
-path="res://.godot/imported/courbd.ttf-bfd5c75fc3d33ea92e46bd01cf3464ef.fontdata"
+uid="uid://d28f4xfgfasnd"
+path="res://.godot/imported/LicensePl8.ttf-26a1c8c51351bcd028e7d5f79cb1557a.fontdata"
 
 [deps]
 
-source_file="res://UI/Fonts/Bin/courbd.ttf"
-dest_files=["res://.godot/imported/courbd.ttf-bfd5c75fc3d33ea92e46bd01cf3464ef.fontdata"]
+source_file="res://UI/Fonts/Bin/LicensePl8.ttf"
+dest_files=["res://.godot/imported/LicensePl8.ttf-26a1c8c51351bcd028e7d5f79cb1557a.fontdata"]
 
 [params]
 
