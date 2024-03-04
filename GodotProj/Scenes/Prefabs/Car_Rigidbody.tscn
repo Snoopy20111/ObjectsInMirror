@@ -34,21 +34,27 @@ contact_monitor = true
 script = ExtResource("1_qdag7")
 
 [node name="Sprite2D_new" type="Sprite2D" parent="."]
+visible = false
 z_index = 10
 texture_filter = 2
 scale = Vector2(0.15, 0.15)
 texture = SubResource("CanvasTexture_aan2x")
 
 [node name="Sprite2D_old" type="Sprite2D" parent="."]
-visible = false
 z_index = 10
 rotation = 1.5708
 texture = SubResource("CanvasTexture_m5lv2")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D_new" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(-0.5, -0.499998)
 scale = Vector2(7.25, 3.15)
 polygon = PackedVector2Array(10, 0, 9.5, -5.5, 7.75, -9.5, -6.295, -10, -9.5, -8.5, -10, 0, -9.5, 8.5, -6, 10, 7.75, 9.5, 9.5, 5.5)
+
+[node name="CollisionPolygon2D_old" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.5, -0.499998)
+scale = Vector2(7.25, 3.15)
+polygon = PackedVector2Array(9, 5.5, 9, -5.5, 8.5, -9.5, 7, -11, -8.75, -11, -8.75, 11, 7, 11, 8.5, 9.5)
 
 [node name="CarGlowLight" type="PointLight2D" parent="."]
 position = Vector2(-0.499996, 0.499999)
@@ -78,7 +84,7 @@ texture = ExtResource("3_85h8a")
 height = 100.0
 
 [node name="SkidMaker_L" parent="." instance=ExtResource("4_nrhht")]
-position = Vector2(-55, -28)
+position = Vector2(-55, -27)
 
 [node name="SkidMaker_R" parent="." instance=ExtResource("4_nrhht")]
-position = Vector2(-55, 28)
+position = Vector2(-55, 27)
