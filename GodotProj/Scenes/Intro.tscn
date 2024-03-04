@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://dokdcjet05i02"]
+
+[ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Prefabs/Car_Rigidbody.tscn" id="1_mw4xl"]
+[ext_resource type="Texture2D" uid="uid://dduc4rdakx6yt" path="res://icon.svg" id="3_tk8ji"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="4_1v2jy"]
+
+[sub_resource type="Gradient" id="Gradient_ac555"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ktswb"]
+gradient = SubResource("Gradient_ac555")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgh7m"]
+size = Vector2(100, 100)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y7kk1"]
+light_mode = 1
+
+[node name="Intro" type="Node2D"]
+
+[node name="Car_Rigid" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("1_mw4xl")]
+rotation = -1.5708
+metadata/entity_name = "PlayerCar"
+
+[node name="Lights" type="Node2D" parent="."]
+visible = false
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lights"]
+position = Vector2(-1002, -470)
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+blend_mode = 2
+shadow_enabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+position = Vector2(-9.53674e-07, 0)
+scale = Vector2(15.3594, 13.3125)
+color = Color(0.945098, 0.917647, 0.929412, 1)
+energy = 0.75
+texture = SubResource("GradientTexture2D_ktswb")
+height = 100.0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(230, -289)
+gravity_scale = 0.0
+linear_damp = 2.0
+angular_damp = 6.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_jgh7m")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("3_tk8ji")
+metadata/_edit_lock_ = true
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+material = SubResource("CanvasItemMaterial_y7kk1")
+position = Vector2(50, 1.54143e-44)
+script = ExtResource("4_1v2jy")
+priority_override = false
+priority = 0
+zoom = Vector2(0.9, 0.9)
+follow_mode = 2
+follow_target = NodePath("../Car_Rigid")
+follow_parameters/target_offset = Vector2(50, 0)
+follow_parameters/damping = true
+follow_parameters/damping_value = 2.692
+frame_preview = true
+pixel_perfect = false
+limit/draw_limits = false
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+limit/limit_node_target = NodePath("")
+limit/smoothed = false
+tween_parameters = null
+tween_on_load = false
+inactive_update_mode = 0
+
+[node name="LoopingEnv" type="Node2D" parent="."]
+
+[node name="GasStation" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="GasStation"]
+format = 2

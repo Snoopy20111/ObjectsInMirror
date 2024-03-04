@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/CarController_Rigidbody.gd" id="1_qdag7"]
 [ext_resource type="Texture2D" uid="uid://ihu5sr2wwr7w" path="res://Sprites/Car/car_red_4.png" id="2_26rgh"]
 [ext_resource type="Texture2D" uid="uid://c6jh4ev4rrmx1" path="res://Sprites/Lights/Headlight_Texture.png" id="3_85h8a"]
-[ext_resource type="PackedScene" uid="uid://b53rom87xh58x" path="res://Scenes/Car_SkidMarker.tscn" id="4_nrhht"]
+[ext_resource type="PackedScene" uid="uid://b53rom87xh58x" path="res://Scenes/Prefabs/Car_SkidMarker.tscn" id="4_nrhht"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_m5lv2"]
 diffuse_texture = ExtResource("2_26rgh")

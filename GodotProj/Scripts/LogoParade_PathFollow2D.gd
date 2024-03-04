@@ -1,7 +1,7 @@
 extends PathFollow2D
 
 @export var speed_mult:float = 0.08
-const progress_curve = preload("res://Curves/LogoParade_wordFadeCurve.tres")
+const progress_curve = preload("res://Customs/Curves/LogoParade_wordFadeCurve.tres")
 
 var is_running:bool = false
 var counter_value:float = 0

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b53rom87xh58x"]
+
+[ext_resource type="Script" path="res://Scripts/TireTrail.gd" id="1_6bums"]
+[ext_resource type="Curve" uid="uid://ctriqgr3u4ywo" path="res://Customs/Curves/TireTrackWidth_Curve.tres" id="1_qusas"]
+[ext_resource type="Gradient" uid="uid://di41x4u2d46ju" path="res://Customs/Gradients/TireTrackColor_Gradient.tres" id="2_xukvd"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Skid" type="Line2D" parent="."]
+top_level = true
+z_index = 5
+width_curve = ExtResource("1_qusas")
+default_color = Color(0, 0, 0, 0.156863)
+gradient = ExtResource("2_xukvd")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+script = ExtResource("1_6bums")
+pointDistanceThreshold = 15.0
+maxPoints = 400

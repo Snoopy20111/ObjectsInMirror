@@ -1,6 +1,6 @@
 extends Control
 
-const LogoFade_Curve = preload("res://Curves/LogoFade_Curve.tres")
+const LogoFade_Curve = preload("res://Customs/Curves/LogoFade_Curve.tres")
 
 # Declare member variables here. Examples:
 
