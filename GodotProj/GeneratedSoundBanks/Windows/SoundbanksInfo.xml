@@ -150,7 +150,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{5544E905-F404-82D6-FA1E-3E44E663F313}">
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{B7756C9B-F485-1C5A-FA8C-10321CE8AA70}">
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<Media>
@@ -164,6 +164,8 @@
 				</File>
 			</Media>
 			<Events>
+				<Event Id="1989837964" Name="Play_AMB_Menu"/>
+				<Event Id="4249884003" Name="Play_MUS_Menu"/>
 				<Event Id="3187507146" Name="Play_Test">
 					<MediaRefs>
 						<MediaRef Id="364672542"/>
@@ -197,5 +199,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{21443F68-DCC0-8DDC-53D5-58CDCAC1456A}</FileHash>
+	<FileHash>{6B69EDBB-E525-F5D6-A828-A6CECA422D03}</FileHash>
 </SoundBanksInfo>

@@ -19,8 +19,9 @@ func _ready():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	
 	#init audio
-	Wwise.load_bank("Init")
-	Wwise.load_bank("Master")
+	Wwise.load_bank("Init") 		#Metadata bank
+	Wwise.load_bank("Master")		#Master bank, holds most audio
+	Wwise.register_game_obj(AmbientAudio, "AmbientAudio")	#GameObj for non-spatialized audio
 	
 	#Seeds RNG, may be useful later
 	randomize()

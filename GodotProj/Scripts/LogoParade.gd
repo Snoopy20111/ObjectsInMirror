@@ -19,7 +19,9 @@ var transitioning : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	StartTimer.start()
-	Wwise.register_game_obj(self, "LogoParade")
+	Wwise.register_game_obj(self, "LogoParade")		#Uses its own GameObj
+	Wwise.post_event("Play_MUS_Menu", AmbientAudio)
+	Wwise.post_event("Play_AMB_Menu", AmbientAudio)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

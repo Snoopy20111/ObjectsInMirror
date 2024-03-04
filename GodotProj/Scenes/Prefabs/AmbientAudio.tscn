@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://1sgarehalyes"]
+
+[node name="AmbientAudio" type="Node" groups=["scene_manager_entity_nodes"]]
+metadata/entity_name = "AmbientAudio"

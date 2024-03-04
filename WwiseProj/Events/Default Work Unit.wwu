@@ -69,6 +69,8 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_MUS_Menu" ID="{C0E8A400-AE58-4AA3-8E42-174657AFCAE2}"/>
+				<Event Name="Play_AMB_Menu" ID="{8F5193F0-D8CD-491C-BB90-9585531F28C2}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
