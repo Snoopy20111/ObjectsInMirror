@@ -81,6 +81,7 @@ layout_mode = 2
 theme = ExtResource("3_lhjo4")
 text = "Start"
 script = ExtResource("3_wwc5o")
+sceneToLoad = "res://Scenes/Cinematic_Intro.tscn"
 
 [node name="HSeparator" type="HSeparator" parent="MainMenu/MarginContainer/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
