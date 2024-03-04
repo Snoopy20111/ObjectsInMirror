@@ -5,8 +5,12 @@
 			<ChildrenList>
 				<SoundBank Name="Master" ID="{B96D485B-D37B-48E8-9E24-634095C8EE81}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_UI_StartGame" ID="{37568B77-8D8F-45C7-85E1-7E2D0E773A17}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UI_LogoParade" ID="{9270240D-2F04-4623-82E4-318C98C3C1CC}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Test" ID="{6376D036-9CFD-4753-8070-73859A374F6F}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_UI_Nav_Hover" ID="{5146E2AF-A6AF-4972-A5C1-66DAE8790FF9}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_UI_Nav_Accept" ID="{48B50F6C-80F6-4A4C-AF7A-94488AE32ABE}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_UI_Nav_Unhover" ID="{9D0778E8-96EB-4CE4-B99F-D626EF2ED347}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

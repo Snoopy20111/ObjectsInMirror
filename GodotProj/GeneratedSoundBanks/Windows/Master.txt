@@ -1,6 +1,10 @@
 Event	ID	Name			Wwise Object Path	Notes
 	1333548413	Play_UI_LogoParade			\Default Work Unit\Play_UI_LogoParade	
+	1473547871	Play_UI_StartGame			\Default Work Unit\Play_UI_StartGame	
+	1526199398	Play_UI_Nav_Unhover			\Default Work Unit\Play_UI_Nav_Unhover	
 	3187507146	Play_Test			\Default Work Unit\Play_Test	
+	3362419093	Play_UI_Nav_Hover			\Default Work Unit\Play_UI_Nav_Hover	
+	3476659009	Play_UI_Nav_Accept			\Default Work Unit\Play_UI_Nav_Accept	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	364672542	Nav_Select	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\PLP-SF2_Click_26_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Nav_Select		26292

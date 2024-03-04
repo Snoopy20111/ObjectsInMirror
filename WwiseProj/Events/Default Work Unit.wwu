@@ -25,9 +25,42 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_GAME_MainMenu" ID="{37568B77-8D8F-45C7-85E1-7E2D0E773A17}">
+				<Event Name="Play_UI_StartGame" ID="{37568B77-8D8F-45C7-85E1-7E2D0E773A17}">
 					<ChildrenList>
 						<Action Name="" ID="{5A1B76CC-E4E0-4C0B-BE5B-EF092BE844A4}" ShortID="318594272">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nav_Select" ID="{A42A85E1-AF96-491C-A18C-DC3CEF02831B}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_Nav_Hover" ID="{5146E2AF-A6AF-4972-A5C1-66DAE8790FF9}">
+					<ChildrenList>
+						<Action Name="" ID="{931FD8CE-EBC0-4003-AEC6-207B4DBF910A}" ShortID="667894823">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nav_Select" ID="{A42A85E1-AF96-491C-A18C-DC3CEF02831B}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_Nav_Unhover" ID="{9D0778E8-96EB-4CE4-B99F-D626EF2ED347}">
+					<ChildrenList>
+						<Action Name="" ID="{082CD404-5786-4745-8E12-C78E73473EB9}" ShortID="444571829">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nav_Select" ID="{A42A85E1-AF96-491C-A18C-DC3CEF02831B}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_Nav_Accept" ID="{48B50F6C-80F6-4A4C-AF7A-94488AE32ABE}">
+					<ChildrenList>
+						<Action Name="" ID="{B0F108C7-6DC2-4690-B864-7AB80269E80E}" ShortID="702153235">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Nav_Select" ID="{A42A85E1-AF96-491C-A18C-DC3CEF02831B}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>

@@ -150,7 +150,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{A69EAD53-6C2A-F6BC-BEED-95468C37BC7B}">
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{5544E905-F404-82D6-FA1E-3E44E663F313}">
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<Media>
@@ -174,8 +174,28 @@
 						<MediaRef Id="909693388"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3476659009" Name="Play_UI_Nav_Accept">
+					<MediaRefs>
+						<MediaRef Id="364672542"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3362419093" Name="Play_UI_Nav_Hover">
+					<MediaRefs>
+						<MediaRef Id="364672542"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1526199398" Name="Play_UI_Nav_Unhover">
+					<MediaRefs>
+						<MediaRef Id="364672542"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1473547871" Name="Play_UI_StartGame">
+					<MediaRefs>
+						<MediaRef Id="364672542"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{81608F6B-4A27-9E32-89DD-5D072FD2BD32}</FileHash>
+	<FileHash>{21443F68-DCC0-8DDC-53D5-58CDCAC1456A}</FileHash>
 </SoundBanksInfo>
