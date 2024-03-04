@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqx6vc23q8te7"]
+
+[ext_resource type="Texture2D" uid="uid://bw7i03m4bb7ha" path="res://Sprites/1x1white.png" id="1_5p0p4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frxay"]
+size = Vector2(1, 1)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ww6y1"]
+polygon = PackedVector2Array(0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5)
+
+[node name="Pump" type="StaticBody2D"]
+position = Vector2(0, -80)
+scale = Vector2(50, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_frxay")
+
+[node name="PumpSprite" type="Sprite2D" parent="."]
+scale = Vector2(1, 1)
+texture = ExtResource("1_5p0p4")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="PumpSprite"]
+occluder = SubResource("OccluderPolygon2D_ww6y1")

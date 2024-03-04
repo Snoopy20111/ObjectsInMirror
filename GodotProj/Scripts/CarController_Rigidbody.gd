@@ -15,6 +15,8 @@ var steeringInput:float = 0
 var rotationAngle:float = 0
 var velocityVsUp = 0
 
+func _ready():
+	rotationAngle = rotation_degrees
 
  #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

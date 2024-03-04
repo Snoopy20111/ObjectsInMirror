@@ -18,12 +18,11 @@ texture_filter = 2
 diffuse_texture = ExtResource("2_26rgh")
 
 [sub_resource type="Gradient" id="Gradient_cvvr2"]
-offsets = PackedFloat32Array(0.75976, 1)
-colors = PackedColorArray(0.568973, 0.568973, 0.568973, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0.310617, 0.310617, 0.310617, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xiydi"]
 gradient = SubResource("Gradient_cvvr2")
-fill = 2
+fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
@@ -47,18 +46,13 @@ rotation = 1.5708
 texture = SubResource("CanvasTexture_m5lv2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
 position = Vector2(-0.5, -0.499998)
 scale = Vector2(7.25, 3.15)
 polygon = PackedVector2Array(10, 0, 9.5, -5.5, 7.75, -9.5, -6.295, -10, -9.5, -8.5, -10, 0, -9.5, 8.5, -6, 10, 7.75, 9.5, 9.5, 5.5)
 
-[node name="CameraTarget" type="Node2D" parent="."]
-visible = false
-
 [node name="CarGlowLight" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(-0.499996, 0.499999)
-scale = Vector2(2.01563, 1.10938)
+scale = Vector2(12.9219, 10.7618)
 color = Color(0.988235, 0.917647, 0.772549, 1)
 energy = 0.5
 shadow_enabled = true
@@ -68,6 +62,15 @@ height = 100.0
 [node name="Headlights" type="PointLight2D" parent="."]
 position = Vector2(289, 7)
 scale = Vector2(1.04009, 0.881597)
+texture = ExtResource("3_85h8a")
+height = 100.0
+
+[node name="Headlights2" type="PointLight2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(75, 7)
+scale = Vector2(1.04009, 0.881597)
+enabled = false
 shadow_enabled = true
 texture = ExtResource("3_85h8a")
 height = 100.0

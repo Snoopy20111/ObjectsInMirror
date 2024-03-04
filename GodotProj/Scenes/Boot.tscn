@@ -7,3 +7,4 @@ script = ExtResource("1_qfepg")
 LogoParade = false
 LoadDebugLevel = true
 DebugWindowSize = true
+DebugLevelPath = "res://Scenes/Cinematic_Intro.tscn"
