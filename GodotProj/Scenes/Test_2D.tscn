@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjyu8ql4g3gto"]
+[gd_scene load_steps=11 format=3 uid="uid://bjyu8ql4g3gto"]
 
-[ext_resource type="TileSet" uid="uid://dv6shtncjold" path="res://Environments/Tilesets/test_tileset.tres" id="2_6p6tj"]
+[ext_resource type="TileSet" uid="uid://dv6shtncjold" path="res://Sprites/Environment/test_tileset.tres" id="2_6p6tj"]
 [ext_resource type="Texture2D" uid="uid://dduc4rdakx6yt" path="res://icon.svg" id="3_lbkah"]
+[ext_resource type="Texture2D" uid="uid://fo4xmxkkapws" path="res://Sprites/Characters/Car/car_red_4_normalmap.png" id="4_4kun2"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="4_jqi28"]
 [ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Prefabs/Car_Rigidbody.tscn" id="4_vm3fk"]
 
@@ -16,6 +17,10 @@ fill_to = Vector2(0, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgh7m"]
 size = Vector2(100, 100)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_46g58"]
+diffuse_texture = ExtResource("3_lbkah")
+normal_texture = ExtResource("4_4kun2")
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y7kk1"]
 light_mode = 1
@@ -57,7 +62,7 @@ angular_damp = 6.0
 shape = SubResource("RectangleShape2D_jgh7m")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("3_lbkah")
+texture = SubResource("CanvasTexture_46g58")
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 material = SubResource("CanvasItemMaterial_y7kk1")

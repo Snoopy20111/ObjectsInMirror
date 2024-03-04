@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ql1cyou4rqxn"]
 
 [ext_resource type="Script" path="res://Scripts/Old/TopDownCarController.gd" id="1_2p5ql"]
-[ext_resource type="Texture2D" uid="uid://ihu5sr2wwr7w" path="res://Sprites/Car/car_red_4.png" id="2_0fihp"]
+[ext_resource type="Texture2D" uid="uid://ihu5sr2wwr7w" path="res://Sprites/Characters/Car/car_red_4.png" id="2_0fihp"]
 [ext_resource type="Texture2D" uid="uid://c6jh4ev4rrmx1" path="res://Sprites/Lights/Headlight_Texture.png" id="3_cccis"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_m5lv2"]

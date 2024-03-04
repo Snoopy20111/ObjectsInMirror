@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://leietdtcs2co"
-path="res://.godot/imported/land_dirt08.png-c491aa87b0da09c45043e9bf4ec88fa6.ctex"
+uid="uid://bp1g8m3nxkgbw"
+path="res://.godot/imported/car_red_3.png-38fa1b13aca3c6ef95b843ba327d7977.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/DirtTiles/land_dirt08.png"
-dest_files=["res://.godot/imported/land_dirt08.png-c491aa87b0da09c45043e9bf4ec88fa6.ctex"]
+source_file="res://Sprites/Characters/Car/car_red_3.png"
+dest_files=["res://.godot/imported/car_red_3.png-38fa1b13aca3c6ef95b843ba327d7977.ctex"]
 
 [params]
 
