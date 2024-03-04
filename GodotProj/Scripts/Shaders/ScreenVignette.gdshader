@@ -10,8 +10,3 @@ void fragment() {
 	float q = 1.0-(1.0-sqrt(x*x+y*y)/outer_radius)/(1.0-inner_radius);
 	COLOR = vec4(0, 0, 0, q*alpha);
 }
-
-//void light() {
-	// Called for every pixel for every light affecting the CanvasItem.
-	// Uncomment to replace the default light processing function with this one.
-//}

@@ -7,8 +7,7 @@ class_name AutoResizeColorRect
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().get_root().size_changed.connect(viewport_resized)
-	viewport_resized()
 
 func viewport_resized():
 	var viewport_size = get_viewport_rect().size
-	size = viewport_size + Vector2(bleed_size,bleed_size)
+	set_deferred("size", viewport_size + Vector2(bleed_size,bleed_size))

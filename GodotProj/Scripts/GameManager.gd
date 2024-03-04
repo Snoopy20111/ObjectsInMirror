@@ -1,6 +1,5 @@
 extends Node
 
-var is_paused: bool = false
 @export var fullscreen_effects: Array
 
 ### Specific Utilities ###
@@ -18,8 +17,8 @@ func setFullscreenShaderParam(effect: int, param_name: String, new_value):
 		
 	# Don't know of any way to error-check names and types of shader params,
 	# So we just have to hope Godot will throw meaningful errors
-	var my_material = fullscreen_effects[effect].get_material(0)
-	my_material.set_shader_param(param_name, new_value)
+	var my_material = get_node(fullscreen_effects[effect]).get_material()
+	my_material.set_shader_parameter(param_name, new_value)
 
 ### Utilities ###
 func reparent_other(child:Node, new_parent:Node) -> void:

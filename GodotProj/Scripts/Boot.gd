@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 class_name Boot
 
 # Debug and starting Options

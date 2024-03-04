@@ -1,9 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv5suuvd8jle5"]
+[gd_scene load_steps=3 format=3 uid="uid://dv5suuvd8jle5"]
 
 [ext_resource type="Script" path="res://Scripts/Boot.gd" id="1_qfepg"]
+[ext_resource type="Script" path="res://Scripts/AutoResize_ColorRect.gd" id="2_hk1jj"]
 
-[node name="Boot" type="Node2D"]
+[node name="Boot" type="CanvasLayer"]
 script = ExtResource("1_qfepg")
 LoadDebugLevel = true
 DebugWindowSize = true
 DebugLevelPath = "res://Scenes/Cinematic_Intro.tscn"
+
+[node name="TempBackground" type="ColorRect" parent="."]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+auto_translate = false
+localize_numeral_system = false
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_hk1jj")

@@ -56,7 +56,10 @@ one_shot = true
 
 [node name="ColorRect" type="ColorRect" parent="LogoParade"]
 show_behind_parent = true
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -131,8 +134,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "loganhardin.xyz"
 label_settings = SubResource("LabelSettings_byern")
-
-[node name="LogoParadeEmitter" type="Node" parent="LogoParade"]
 
 [node name="AkListener2D" type="AkListener2D" parent="."]
 visible = false

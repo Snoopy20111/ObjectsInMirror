@@ -21,7 +21,7 @@ extends LH_ButtonBase
 	"animation_name_leave": null
 }
 
-@onready var TrimmedLoadOptions = SceneLoadOptions
+@onready var TrimmedLoadOptions: Dictionary = SceneLoadOptions
 
 #At some point we'll need these to show a popup about overwriting saves.
 #Not a problem if we don't have saves, though.

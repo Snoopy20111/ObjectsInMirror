@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://chijlaqxstsr3"]
+[gd_scene load_steps=20 format=3 uid="uid://chijlaqxstsr3"]
 
 [ext_resource type="Texture2D" uid="uid://ba7oa1h07tpxj" path="res://Sprites/Environment/spritesheet_tiles.png" id="1_e4dcy"]
 [ext_resource type="PackedScene" uid="uid://dqx6vc23q8te7" path="res://Scenes/Prefabs/GasPump.tscn" id="2_0tn75"]
@@ -354,6 +354,9 @@ fill_to = Vector2(0, 0.5)
 [sub_resource type="Gradient" id="Gradient_pmkrv"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpvxt"]
+size = Vector2(138, 132)
+
 [node name="GasStation" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -416,32 +419,32 @@ texture = ExtResource("7_5x21w")
 position = Vector2(-510, -502)
 texture = ExtResource("8_ksy6i")
 
-[node name="OldTimerPoseOneArm" type="Sprite2D" parent="."]
+[node name="OldTimer" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(474, 135)
 rotation = -3.08924
 texture = ExtResource("9_qc3dw")
 
-[node name="OldTimerOneArm" type="Sprite2D" parent="OldTimerPoseOneArm"]
+[node name="OldTimerOneArm" type="Sprite2D" parent="OldTimer"]
 z_index = -1
 position = Vector2(0.36595, -10.3249)
 rotation = 10.5243
 texture = ExtResource("10_iilbj")
 
-[node name="OldTimerOneArm2" type="Sprite2D" parent="OldTimerPoseOneArm"]
+[node name="OldTimerOneArm2" type="Sprite2D" parent="OldTimer"]
 z_index = -1
 position = Vector2(1.94027, 0.607643)
 rotation = 5.20108
 texture = ExtResource("10_iilbj")
 flip_h = true
 
-[node name="Cigar" type="Sprite2D" parent="OldTimerPoseOneArm"]
+[node name="Cigar" type="Sprite2D" parent="OldTimer"]
 position = Vector2(14.9228, 17.2427)
 rotation = 1.7366
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("11_cqdxd")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="OldTimerPoseOneArm/Cigar"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="OldTimer/Cigar"]
 position = Vector2(21.805, -21.305)
 rotation = -2.03156
 amount = 1
@@ -464,3 +467,8 @@ color_ramp = SubResource("Gradient_pmkrv")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.1
+
+[node name="Trigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
+shape = SubResource("RectangleShape2D_tpvxt")
