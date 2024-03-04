@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 20 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-78.5714,-167.543)">
+        <g transform="matrix(1,0,0,1,-27.4286,-16.4571)">
+            <path d="M106,188L106,186C106,185.433 106.2,184.967 106.6,184.6C106.967,184.2 107.433,184 108,184L124,184C124.533,184 125,184.2 125.4,184.6C125.767,184.967 125.967,185.433 126,186L126,188L124,188L124,186L108,186L108,188L106,188" style="fill:rgb(63,61,56);fill-rule:nonzero;"/>
+            <path d="M110,190L110,188L122,188L122,194L110,194L110,192L114,192L114,190L110,190M110,210L110,206L122,206L122,210L110,210M122,202L122,204L110,204L110,196L122,196L122,198L118,198L118,202L122,202" style="fill:rgb(231,76,60);fill-rule:nonzero;"/>
+            <path d="M122,202L122,196L110,196L110,204L122,204L122,202M110,188L110,194L122,194L122,188L124,188L124,194L125,195L124,196L124,204L125,205L124,206L124,210L122,210L122,206L110,206L110,210L108,210L108,206L107,205L108,204L108,196L107,195L108,194L108,188L110,188" style="fill:rgb(212,69,54);fill-rule:nonzero;"/>
+            <path d="M110,186L122,186L122,188L110,188L110,186M110,190L114,190L114,192L110,192L110,190" style="fill:rgb(95,93,85);fill-rule:nonzero;"/>
+            <path d="M108,188L108,186L110,186L110,188L108,188M122,186L124,186L124,188L122,188L122,186" style="fill:rgb(88,87,79);fill-rule:nonzero;"/>
+            <path d="M126,188L126,210C126,210.533 125.817,211 125.45,211.4C125.05,211.8 124.567,212 124,212L108,212C107.433,212 106.967,211.817 106.6,211.45C106.2,211.05 106,210.567 106,210L106,188L108,188L108,194L107,195L108,196L108,204L107,205L108,206L108,210L124,210L124,206L125,205L124,204L124,196L125,195L124,194L124,188L126,188" style="fill:rgb(154,49,39);fill-rule:nonzero;"/>
+            <path d="M122,202L118,202L118,198L122,198L122,202" style="fill:rgb(255,204,0);fill-rule:nonzero;"/>
+        </g>
+    </g>
+</svg>

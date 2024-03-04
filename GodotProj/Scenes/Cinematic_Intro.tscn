@@ -40,7 +40,7 @@ height = 100.0
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 material = SubResource("CanvasItemMaterial_y7kk1")
-position = Vector2(-4.07135e-29, 3.14948e-30)
+position = Vector2(-1.54143e-44, 1.54143e-44)
 script = ExtResource("4_1v2jy")
 priority_override = false
 priority = 0
