@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dokdcjet05i02"]
+[gd_scene load_steps=22 format=3 uid="uid://dokdcjet05i02"]
 
 [ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Prefabs/Car_Rigidbody.tscn" id="1_mw4xl"]
 [ext_resource type="Texture2D" uid="uid://ba7oa1h07tpxj" path="res://Sprites/Environment/spritesheet_tiles.png" id="3_jkg7y"]
@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://k5r2jow6kll0" path="res://Sprites/SetDressing/Chairs/Chair_Wood_01.svg" id="7_h3qbw"]
 [ext_resource type="Texture2D" uid="uid://cbrkj3y05pej1" path="res://Sprites/SetDressing/Crates/CrateBrown_01.svg" id="8_ir2c2"]
 [ext_resource type="Texture2D" uid="uid://b0wuqep5251rh" path="res://Sprites/SetDressing/Rocks/Rock_02.svg" id="9_a5fw5"]
+[ext_resource type="Texture2D" uid="uid://c4g8hro1kpf32" path="res://Sprites/Characters/OldTimer/OldTimer_PoseOneArm.svg" id="11_mi44j"]
+[ext_resource type="Texture2D" uid="uid://dqsgvnrumq6tu" path="res://Sprites/Characters/OldTimer/OldTimer_OneArm.svg" id="12_o6514"]
+[ext_resource type="Texture2D" uid="uid://su7v10rnypko" path="res://Sprites/SetDressing/Bits/Bits_08.svg" id="13_0nnh2"]
+[ext_resource type="Texture2D" uid="uid://ct3ylb4ou2rgu" path="res://Sprites/Particles_FX/Smoke/smoke1.png" id="14_wery1"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y7kk1"]
 light_mode = 1
@@ -337,6 +341,9 @@ texture_region_size = Vector2i(128, 128)
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_3qp77")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lmdj"]
+size = Vector2(1, 1)
+
 [sub_resource type="Gradient" id="Gradient_ac555"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.429553, 1)
@@ -348,6 +355,9 @@ use_hdr = true
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_pmkrv"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Cinematic_Intro" type="Node2D"]
 
@@ -411,9 +421,15 @@ position = Vector2(190, 0)
 [node name="Pump2" parent="GasStation/Pumps" instance=ExtResource("4_01w27")]
 position = Vector2(0, 80)
 
-[node name="Station" type="Sprite2D" parent="GasStation"]
+[node name="Station" type="StaticBody2D" parent="GasStation"]
 position = Vector2(732, 0)
 scale = Vector2(400, 650)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GasStation/Station"]
+shape = SubResource("RectangleShape2D_6lmdj")
+
+[node name="StationSprite" type="Sprite2D" parent="GasStation/Station"]
+scale = Vector2(1, 1)
 texture = ExtResource("4_o7yv3")
 
 [node name="PointLight2D" type="PointLight2D" parent="GasStation"]
@@ -449,3 +465,49 @@ texture = ExtResource("8_ir2c2")
 [node name="Rock02" type="Sprite2D" parent="GasStation/SetDressing"]
 position = Vector2(-510, -502)
 texture = ExtResource("9_a5fw5")
+
+[node name="OldTimerPoseOneArm" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(474, 135)
+rotation = 3.19395
+texture = ExtResource("11_mi44j")
+
+[node name="OldTimerOneArm" type="Sprite2D" parent="OldTimerPoseOneArm"]
+z_index = -1
+position = Vector2(0.36595, -10.3249)
+rotation = 10.5243
+texture = ExtResource("12_o6514")
+
+[node name="OldTimerOneArm2" type="Sprite2D" parent="OldTimerPoseOneArm"]
+z_index = -1
+position = Vector2(1.94027, 0.607643)
+rotation = 5.20108
+texture = ExtResource("12_o6514")
+flip_h = true
+
+[node name="Cigar" type="Sprite2D" parent="OldTimerPoseOneArm"]
+position = Vector2(14.9228, 17.2427)
+rotation = 1.7366
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_0nnh2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="OldTimerPoseOneArm/Cigar"]
+position = Vector2(21.805, -21.305)
+rotation = -2.03156
+amount = 1
+lifetime = 1.35
+preprocess = 5.0
+explosiveness = 0.15
+randomness = 0.27
+lifetime_randomness = 0.16
+texture = ExtResource("14_wery1")
+direction = Vector2(1, 6.25)
+spread = 30.99
+gravity = Vector2(0, -5)
+initial_velocity_min = 11.05
+initial_velocity_max = 29.02
+angular_velocity_max = 51.99
+linear_accel_max = 3.73
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color_ramp = SubResource("Gradient_pmkrv")

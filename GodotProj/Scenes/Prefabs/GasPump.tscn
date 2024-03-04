@@ -13,11 +13,9 @@ position = Vector2(0, -80)
 scale = Vector2(50, 50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_frxay")
 
 [node name="PumpSprite" type="Sprite2D" parent="."]
-scale = Vector2(1, 1)
 texture = ExtResource("1_5p0p4")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="PumpSprite"]
