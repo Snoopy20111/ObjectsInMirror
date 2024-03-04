@@ -1,0 +1,466 @@
+[gd_scene load_steps=19 format=3 uid="uid://chijlaqxstsr3"]
+
+[ext_resource type="Texture2D" uid="uid://ba7oa1h07tpxj" path="res://Sprites/Environment/spritesheet_tiles.png" id="1_e4dcy"]
+[ext_resource type="PackedScene" uid="uid://dqx6vc23q8te7" path="res://Scenes/Prefabs/GasPump.tscn" id="2_0tn75"]
+[ext_resource type="Texture2D" uid="uid://bw7i03m4bb7ha" path="res://Sprites/1x1white.png" id="3_w2g3f"]
+[ext_resource type="Texture2D" uid="uid://daoj1y77qpauh" path="res://Sprites/SetDressing/Barrels/BarrelUpright_04.svg" id="4_5k4vv"]
+[ext_resource type="Texture2D" uid="uid://c3d7xbp2kevfd" path="res://Sprites/SetDressing/dumpster.png" id="5_7w2u6"]
+[ext_resource type="Texture2D" uid="uid://k5r2jow6kll0" path="res://Sprites/SetDressing/Chairs/Chair_Wood_01.svg" id="6_ydv5o"]
+[ext_resource type="Texture2D" uid="uid://cbrkj3y05pej1" path="res://Sprites/SetDressing/Crates/CrateBrown_01.svg" id="7_5x21w"]
+[ext_resource type="Texture2D" uid="uid://b0wuqep5251rh" path="res://Sprites/SetDressing/Rocks/Rock_02.svg" id="8_ksy6i"]
+[ext_resource type="Texture2D" uid="uid://c4g8hro1kpf32" path="res://Sprites/Characters/OldTimer/OldTimer_PoseOneArm.svg" id="9_qc3dw"]
+[ext_resource type="Texture2D" uid="uid://dqsgvnrumq6tu" path="res://Sprites/Characters/OldTimer/OldTimer_OneArm.svg" id="10_iilbj"]
+[ext_resource type="Texture2D" uid="uid://su7v10rnypko" path="res://Sprites/SetDressing/Bits/Bits_08.svg" id="11_cqdxd"]
+[ext_resource type="Texture2D" uid="uid://ct3ylb4ou2rgu" path="res://Sprites/Particles_FX/Smoke/smoke1.png" id="12_uadhi"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qp77"]
+resource_name = "RacingPackTerrain"
+texture = ExtResource("1_e4dcy")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+0:2/next_alternative_id = 4
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+0:9/next_alternative_id = 2
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+16:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+16:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+13:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+16:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+3:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+10:17/0 = 0
+11:17/0 = 0
+12:17/0 = 0
+13:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+16:17/0 = 0
+16:4/0 = 0
+16:2/0 = 0
+16:1/0 = 0
+16:0/0 = 0
+17:2/0 = 0
+17:1/0 = 0
+17:0/0 = 0
+17:3/0 = 0
+17:4/0 = 0
+17:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p07g5"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_3qp77")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lmdj"]
+size = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_ac555"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.429553, 1)
+colors = PackedColorArray(0.94902, 0.988235, 1, 1, 0.267421, 0.278472, 0.281787, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ktswb"]
+gradient = SubResource("Gradient_ac555")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_pmkrv"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="GasStation" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(64, 0)
+tile_set = SubResource("TileSet_p07g5")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131077, 786432, 2, -65540, 720896, 13, -4, 786432, 2, 65532, 720896, 13, 131068, 786432, 2, 196605, 786432, 2, 131069, 786432, 2, 65533, 786432, 2, -3, 786432, 2, 131067, 786432, 2, 196603, 786432, 2, 262139, 786432, 2, 196604, 720896, 13, 65531, 786432, 2, -5, 786432, 2, -65541, 786432, 2, -131076, 786432, 2, -131075, 786432, 2, -131074, 786432, 1, -131073, 0, 9, -65539, 786432, 2, -2, 786432, 1, -65538, 786432, 1, -65537, 0, 9, -1, 0, 9, 262143, 0, 2, 262142, 786432, 1, 262141, 786432, 2, 262140, 786432, 2, 196606, 786432, 1, 196607, 0, 9, 131071, 0, 2, 131070, 786432, 1, 65534, 786432, 1, 65535, 0, 9, -196608, 0, 9, -131072, 0, 2, -65536, 0, 2, 0, 0, 2, 65536, 0, 2, 131072, 0, 9, 196608, 0, 9, -196607, 0, 9, -196606, 0, 2, -196605, 0, 9, -131069, 0, 2, -131070, 0, 2, -131071, 0, 2, -65535, 0, 2, 1, 0, 2, 65537, 0, 2, 131073, 0, 2, 196609, 0, 9, -65534, 0, 2, 2, 0, 2, 65538, 0, 2, 131074, 0, 2, 196610, 0, 9, -65533, 0, 2, 3, 0, 2, 65539, 0, 2, 131075, 0, 2, 196611, 0, 9, -196613, 720896, 13, -196611, 786432, 2, -262143, 0, 9, -262141, 0, 9, -196612, 786432, 2, -262142, 0, 9, -262144, 0, 9, -196610, 786432, 1, -196609, 0, 9, 131076, 0, 2, 131077, 0, 2, -196603, 0, 2, -131067, 0, 9, -65531, 0, 9, 5, 0, 9, 65541, 0, 2, 65540, 0, 2, 4, 0, 2, -65532, 0, 2, -131068, 0, 2, -196604, 0, 9, 262152, 720896, 17, 196616, 786432, 3, 131080, 786432, 3, 65544, 786432, 3, 8, 786432, 3, -65528, 786432, 3, -131064, 786432, 3, -196600, 786432, 3, -262136, 786432, 3, -327672, 786432, 4, -327673, 720896, 15, -327674, 720896, 15, -327675, 720896, 15, -327676, 720896, 15, -327677, 720896, 15, -327678, 720896, 15, -327679, 720896, 15, 262151, 720896, 11, 262150, 720896, 11, 262149, 720896, 11, 262148, 720896, 11, 262147, 720896, 11, 262146, 720896, 11, 262145, 720896, 11, 262144, 720896, 12, 196612, 0, 9, 196613, 0, 9, 196614, 0, 9, 131078, 0, 2, 131079, 0, 9, 196615, 0, 9, 65542, 0, 9, 65543, 0, 9, 6, 0, 2, 7, 0, 9, -65530, 0, 9, -65529, 0, 9, -131065, 0, 9, -131066, 0, 2, -196602, 0, 9, -196601, 0, 9, -262137, 0, 9, -262138, 0, 9, -262139, 0, 9, -262140, 0, 9, -327680, 720896, 16, -458754, 786432, 1, -393218, 786432, 1, -327682, 786432, 1, -262146, 786432, 1, 327678, 786432, 1, 393214, 786432, 1, 458750, 786432, 1, 524286, 786432, 1, 327679, 0, 9, 393215, 0, 2, 458751, 0, 2, 524287, 0, 9, -262145, 0, 2, -327681, 0, 9, -393217, 0, 2, 327680, 786432, 3, 393216, 786432, 3, 458752, 786432, 3, 327677, 786432, 2, 327676, 786432, 2, 327675, 786432, 2, 393213, 786432, 2, 393212, 786432, 2, 393211, 786432, 2, 458747, 786432, 2, 458748, 786432, 2, 458749, 786432, 2, 524284, 786432, 2, 524283, 786432, 2, 524285, 786432, 2, -262147, 786432, 2, -458755, 786432, 2, -458756, 786432, 2, -458757, 786432, 2, -393221, 786432, 2, -327685, 786432, 2, -262149, 786432, 2, -262148, 786432, 2, -327684, 786432, 2, -393220, 786432, 2, -393219, 786432, 2, -327683, 786432, 2, 327681, 786432, 2, 393217, 786432, 2, 458753, 786432, 2, 458754, 786432, 2, 458755, 786432, 2, 458756, 786432, 2, 458757, 786432, 2, 458758, 786432, 2, 458759, 786432, 2, 458760, 786432, 2, 393224, 786432, 2, 327688, 786432, 2, 327687, 786432, 2, 327686, 786432, 2, 327685, 786432, 2, 327684, 786432, 2, 327683, 786432, 2, 327682, 786432, 2, 393218, 786432, 2, 393219, 786432, 2, 393220, 786432, 2, 393221, 786432, 2, 393222, 786432, 2, 393223, 786432, 2, -393215, 786432, 2, -393214, 786432, 2, -393213, 786432, 2, -393212, 786432, 2, -393211, 786432, 2, -393210, 786432, 2, -393209, 786432, 2, -393208, 786432, 2, -393216, 786432, 3, -458752, 786432, 3, -524288, 786432, 3, -524287, 720896, 13, -458751, 720896, 13, -458750, 720896, 13, -524286, 720896, 13, -524285, 720896, 13, -524284, 720896, 13, -524283, 720896, 13, -524282, 720896, 13, -524281, 720896, 13, -524280, 720896, 13, -458744, 720896, 13, -458745, 720896, 13, -458746, 720896, 13, -458747, 720896, 13, -458748, 720896, 13, -458749, 720896, 13, -458759, 720896, 13, -393223, 720896, 13, -327687, 720896, 13, -262151, 720896, 13, -196615, 720896, 13, -131079, 720896, 13, -65543, 720896, 13, -7, 720896, 13, 65529, 720896, 13, 131065, 720896, 13, 196601, 720896, 13, 262137, 720896, 13, 327673, 720896, 13, 393209, 720896, 13, 458745, 720896, 13, 524281, 720896, 13, 524282, 720896, 13, 458746, 720896, 13, 393210, 720896, 13, 327674, 720896, 13, 262138, 720896, 13, 196602, 720896, 13, 131066, 720896, 13, 65530, 720896, 13, -6, 720896, 13, -65542, 720896, 13, -131078, 720896, 13, -196614, 720896, 13, -262150, 720896, 13, -327686, 720896, 13, -393222, 720896, 13, -458758, 720896, 13, -458753, 0, 9)
+
+[node name="Pumps" type="Node2D" parent="."]
+position = Vector2(190, 0)
+
+[node name="Pump1" parent="Pumps" instance=ExtResource("2_0tn75")]
+
+[node name="Pump2" parent="Pumps" instance=ExtResource("2_0tn75")]
+position = Vector2(0, 80)
+
+[node name="Station" type="StaticBody2D" parent="."]
+position = Vector2(732, 0)
+scale = Vector2(400, 650)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Station"]
+shape = SubResource("RectangleShape2D_6lmdj")
+
+[node name="StationSprite" type="Sprite2D" parent="Station"]
+texture = ExtResource("3_w2g3f")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(515, -2)
+scale = Vector2(24.1562, 24.1562)
+color = Color(1, 0.839216, 0.666667, 1)
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+texture = SubResource("GradientTexture2D_ktswb")
+height = 100.0
+
+[node name="SetDressing" type="Node2D" parent="."]
+position = Vector2(732, 0)
+
+[node name="BarrelUpright04" type="Sprite2D" parent="SetDressing"]
+position = Vector2(-227, 336)
+scale = Vector2(2, 2)
+texture = ExtResource("4_5k4vv")
+
+[node name="Dumpster" type="Sprite2D" parent="SetDressing"]
+position = Vector2(238, -190)
+rotation = -1.5708
+texture = ExtResource("5_7w2u6")
+
+[node name="ChairWood01" type="Sprite2D" parent="SetDressing"]
+position = Vector2(-248, 136)
+rotation = -1.5708
+texture = ExtResource("6_ydv5o")
+
+[node name="CrateBrown01" type="Sprite2D" parent="SetDressing"]
+position = Vector2(-497, -48)
+texture = ExtResource("7_5x21w")
+
+[node name="Rock02" type="Sprite2D" parent="SetDressing"]
+position = Vector2(-510, -502)
+texture = ExtResource("8_ksy6i")
+
+[node name="OldTimerPoseOneArm" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(474, 135)
+rotation = -3.08924
+texture = ExtResource("9_qc3dw")
+
+[node name="OldTimerOneArm" type="Sprite2D" parent="OldTimerPoseOneArm"]
+z_index = -1
+position = Vector2(0.36595, -10.3249)
+rotation = 10.5243
+texture = ExtResource("10_iilbj")
+
+[node name="OldTimerOneArm2" type="Sprite2D" parent="OldTimerPoseOneArm"]
+z_index = -1
+position = Vector2(1.94027, 0.607643)
+rotation = 5.20108
+texture = ExtResource("10_iilbj")
+flip_h = true
+
+[node name="Cigar" type="Sprite2D" parent="OldTimerPoseOneArm"]
+position = Vector2(14.9228, 17.2427)
+rotation = 1.7366
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_cqdxd")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="OldTimerPoseOneArm/Cigar"]
+position = Vector2(21.805, -21.305)
+rotation = -2.03156
+amount = 1
+lifetime = 1.35
+preprocess = 5.0
+explosiveness = 0.15
+randomness = 0.27
+lifetime_randomness = 0.16
+texture = ExtResource("12_uadhi")
+direction = Vector2(1, 6.25)
+spread = 30.99
+gravity = Vector2(0, -5)
+initial_velocity_min = 11.05
+initial_velocity_max = 29.02
+angular_velocity_max = 51.99
+linear_accel_max = 3.73
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color_ramp = SubResource("Gradient_pmkrv")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.1

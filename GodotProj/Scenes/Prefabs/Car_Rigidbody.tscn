@@ -65,13 +65,15 @@ scale = Vector2(1.04009, 0.881597)
 texture = ExtResource("3_85h8a")
 height = 100.0
 
-[node name="Headlights2" type="PointLight2D" parent="."]
+[node name="Headlight_Shadows" type="PointLight2D" parent="."]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(75, 7)
 scale = Vector2(1.04009, 0.881597)
 enabled = false
 shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
 texture = ExtResource("3_85h8a")
 height = 100.0
 
