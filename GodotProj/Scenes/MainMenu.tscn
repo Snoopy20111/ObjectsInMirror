@@ -65,6 +65,7 @@ text = "Start"
 script = ExtResource("3_wwc5o")
 
 [node name="Quit Button" type="Button" parent="MainMenu"]
+layout_mode = 0
 offset_left = 278.0
 offset_top = 472.0
 offset_right = 401.0

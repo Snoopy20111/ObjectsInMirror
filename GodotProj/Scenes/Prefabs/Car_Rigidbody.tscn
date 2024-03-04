@@ -1,15 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://seuyyo3omuoe"]
+[gd_scene load_steps=12 format=3 uid="uid://seuyyo3omuoe"]
 
 [ext_resource type="Script" path="res://Scripts/CarController_Rigidbody.gd" id="1_qdag7"]
 [ext_resource type="Texture2D" uid="uid://ihu5sr2wwr7w" path="res://Sprites/Characters/Car/car_red_4.png" id="2_26rgh"]
 [ext_resource type="Texture2D" uid="uid://c6jh4ev4rrmx1" path="res://Sprites/Lights/Headlight_Texture.png" id="3_85h8a"]
+[ext_resource type="Texture2D" uid="uid://ytd8y8ed1hmu" path="res://Sprites/Characters/Car/RedCar_Diffuse.svg" id="3_uqc3t"]
+[ext_resource type="Texture2D" uid="uid://ccq227r75x4j" path="res://Sprites/Characters/Car/RedCar_Normal.png" id="4_0oifm"]
 [ext_resource type="PackedScene" uid="uid://b53rom87xh58x" path="res://Scenes/Prefabs/Car_SkidMarker.tscn" id="4_nrhht"]
+[ext_resource type="Texture2D" uid="uid://bbo7uon841hom" path="res://Sprites/Characters/Car/RedCar_Specular.png" id="5_agus4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_aan2x"]
+diffuse_texture = ExtResource("3_uqc3t")
+normal_texture = ExtResource("4_0oifm")
+specular_texture = ExtResource("5_agus4")
+texture_filter = 2
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_m5lv2"]
 diffuse_texture = ExtResource("2_26rgh")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gpun"]
-size = Vector2(128, 70)
 
 [sub_resource type="Gradient" id="Gradient_cvvr2"]
 offsets = PackedFloat32Array(0.75976, 1)
@@ -28,16 +34,25 @@ max_contacts_reported = 4
 contact_monitor = true
 script = ExtResource("1_qdag7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D_new" type="Sprite2D" parent="."]
+z_index = 10
+texture_filter = 2
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_aan2x")
+
+[node name="Sprite2D_old" type="Sprite2D" parent="."]
+visible = false
 z_index = 10
 rotation = 1.5708
 texture = SubResource("CanvasTexture_m5lv2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_6gpun")
-one_way_collision_margin = 2.2
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.5, -0.499998)
+scale = Vector2(7.25, 3.15)
+polygon = PackedVector2Array(10, 0, 9.5, -5.5, 7.75, -9.5, -6.295, -10, -9.5, -8.5, -10, 0, -9.5, 8.5, -6, 10, 7.75, 9.5, 9.5, 5.5)
 
 [node name="CameraTarget" type="Node2D" parent="."]
+visible = false
 
 [node name="CarGlowLight" type="PointLight2D" parent="."]
 visible = false
