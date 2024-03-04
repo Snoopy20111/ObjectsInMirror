@@ -1,0 +1,40 @@
+~ Intro_01
+
+Player: It's too late now. That barbecue place from the magazine has to have closed.
+Player: Just my luck that there's no cell service out here either.
+Player: I'll have to try going another time, if I don't get stuck in the rain and mud first.
+
+=> END
+####################################
+~ Intro_02
+
+Player: Oh man, a gas station! Maybe they know the way back to the Interstate.
+
+=> END
+####################################
+~ Intro_03
+
+Player: Hello sir, do you know the way back to the highway?
+Old Timer: What are you doing all the way out here this late? It's not safe.
+Player: I got lost looking for Miller's Barbecue. I've heard their pork shoulders are unlike anywhere else.
+Old Timer: ...
+Player: ...so, anyway, I'm just trying to get to the Interstate now.
+Old Timer: Just keep following the road. Don't take any turns.
+Player: Great, thank you! Have a good night, stay dry.
+Old Timer: Watch the road.
+#He turns the lights out at the station and slams the door shut.
+#The player receives control.
+
+#~ this_is_a_node_title
+#
+#Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+#Nathan: Here are some choices.
+#- First one
+#	Nathan: You picked the first one.
+#- Second one
+#	Nathan: You picked the second one.
+#- Start again => this_is_a_node_title
+#- End the conversation => END
+#Nathan: For more information see the online documentation.
+#
+#=> END
