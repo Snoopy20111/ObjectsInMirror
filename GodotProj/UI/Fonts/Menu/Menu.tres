@@ -1,10 +1,22 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://bmcupqqh0hnkt"]
 
 [ext_resource type="FontFile" path="res://UI/Fonts/Menu/Menu_Regular.tres" id="1"]
-[ext_resource type="FontFile" path="res://UI/Fonts/Menu/Menu_Light.tres" id="2"]
+[ext_resource type="FontFile" uid="uid://d28f4xfgfasnd" path="res://UI/Fonts/Bin/LicensePl8.ttf" id="1_0secw"]
 
 [resource]
 default_font = ExtResource("1")
-LineEdit/fonts/font = ExtResource("2")
-TextEdit/fonts/font = ExtResource("2")
+Button/font_sizes/font_size = 42
+Button/fonts/font = ExtResource("1_0secw")
+CheckBox/font_sizes/font_size = 42
+CheckBox/fonts/font = ExtResource("1_0secw")
+CheckButton/font_sizes/font_size = 42
+CheckButton/fonts/font = ExtResource("1_0secw")
+LineEdit/font_sizes/font_size = 42
+LineEdit/fonts/font = ExtResource("1_0secw")
+MenuButton/font_sizes/font_size = 42
+MenuButton/fonts/font = ExtResource("1_0secw")
+OptionButton/font_sizes/font_size = 42
+OptionButton/fonts/font = ExtResource("1_0secw")
+TextEdit/font_sizes/font_size = 42
+TextEdit/fonts/font = ExtResource("1_0secw")
 VBoxContainer/constants/separation = 20

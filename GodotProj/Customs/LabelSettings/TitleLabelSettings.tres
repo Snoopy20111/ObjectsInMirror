@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dn6qusqs2irw3"]
+
+[ext_resource type="FontFile" uid="uid://cisfjyebjvt1s" path="res://UI/Fonts/Bin/FE-FONT.TTF" id="1_qwm2i"]
+
+[resource]
+font = ExtResource("1_qwm2i")
+font_size = 56

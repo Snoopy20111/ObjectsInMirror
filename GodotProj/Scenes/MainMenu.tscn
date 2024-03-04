@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpi6jw3u8u8tp"]
+[gd_scene load_steps=8 format=3 uid="uid://dpi6jw3u8u8tp"]
 
 [ext_resource type="Script" path="res://Scripts/AutoResize_ColorRect.gd" id="1_2i5ej"]
-[ext_resource type="Script" path="res://Scripts/Button_Base.gd" id="2_4owxe"]
+[ext_resource type="LabelSettings" uid="uid://dn6qusqs2irw3" path="res://Customs/LabelSettings/TitleLabelSettings.tres" id="2_lfh0d"]
+[ext_resource type="Theme" uid="uid://bmcupqqh0hnkt" path="res://UI/Fonts/Menu/Menu.tres" id="3_lhjo4"]
 [ext_resource type="Script" path="res://Scripts/Button_LoadScene.gd" id="3_wwc5o"]
 [ext_resource type="Script" path="res://Scripts/Button_QuitGame.gd" id="4_ihyh8"]
 
@@ -45,31 +46,48 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="MainMenu"]
+[node name="Label" type="Label" parent="MainMenu"]
 layout_mode = 2
-offset_left = 93.0
-offset_top = 242.0
-offset_right = 229.0
-offset_bottom = 312.0
-action_mode = 0
-text = "Start"
-script = ExtResource("2_4owxe")
+offset_left = 288.0
+offset_top = 119.0
+offset_right = 864.0
+offset_bottom = 164.0
+text = "Objects In Mirror"
+label_settings = ExtResource("2_lfh0d")
 
-[node name="Start Button" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 278.0
-offset_top = 399.0
-offset_right = 401.0
-offset_bottom = 455.0
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -50.0
+offset_right = 150.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MainMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="Start Button" type="Button" parent="MainMenu/MarginContainer/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lhjo4")
 text = "Start"
 script = ExtResource("3_wwc5o")
 
-[node name="Quit Button" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 278.0
-offset_top = 472.0
-offset_right = 401.0
-offset_bottom = 528.0
+[node name="HSeparator" type="HSeparator" parent="MainMenu/MarginContainer/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Quit Button" type="Button" parent="MainMenu/MarginContainer/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lhjo4")
 text = "Quit
 "
 script = ExtResource("4_ihyh8")

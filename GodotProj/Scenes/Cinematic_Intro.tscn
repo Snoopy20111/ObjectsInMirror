@@ -18,6 +18,7 @@ light_mode = 1
 [node name="Cinematic_Intro" type="Node2D"]
 
 [node name="Car_Rigid" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("1_mw4xl")]
+rotation = -1.5708
 metadata/entity_name = "PlayerCar"
 
 [node name="Lights" type="Node2D" parent="."]
@@ -39,7 +40,7 @@ height = 100.0
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 material = SubResource("CanvasItemMaterial_y7kk1")
-position = Vector2(1.54143e-44, 0)
+position = Vector2(-4.07135e-29, 3.14948e-30)
 script = ExtResource("4_1v2jy")
 priority_override = false
 priority = 0
