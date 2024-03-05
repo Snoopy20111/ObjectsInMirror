@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dnyq5b3u8uqwy"
+path="res://.godot/imported/Cine_Intro_01.dialogue-304cb4349b659ccf75a8000e152a671a.tres"
+
+[deps]
+
+source_file="res://Dialogue/Cine_Intro_01.dialogue"
+dest_files=["res://.godot/imported/Cine_Intro_01.dialogue-304cb4349b659ccf75a8000e152a671a.tres"]
+
+[params]
+
+defaults=true

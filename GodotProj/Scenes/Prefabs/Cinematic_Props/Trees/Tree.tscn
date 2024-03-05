@@ -1,19 +1,19 @@
 [gd_scene load_steps=13 format=3 uid="uid://bhyko8joax145"]
 
-[ext_resource type="Texture2D" uid="uid://k165hp2dnrbr" path="res://Sprites/Environment/Trees/Tree01/Layer02_Diffuse_half.png" id="1_lsnfu"]
-[ext_resource type="Texture2D" uid="uid://dxekakeifaylr" path="res://Sprites/Environment/Trees/Tree01/Layer02_Normal_half.png" id="2_h1t7t"]
-[ext_resource type="Texture2D" uid="uid://be1c3je4y8h1g" path="res://Sprites/Environment/Trees/Tree01/Layer01_Diffuse_half.png" id="3_a4j1s"]
-[ext_resource type="Texture2D" uid="uid://bqcr4e1ybjxlc" path="res://Sprites/Environment/Trees/Tree01/Layer01_Normal_half.png" id="4_41ydr"]
+[ext_resource type="Texture2D" uid="uid://k165hp2dnrbr" path="res://Sprites/Environment/Trees/Tree01/Layer02_Diffuse_half.png" id="1_qihnu"]
+[ext_resource type="Texture2D" uid="uid://dxekakeifaylr" path="res://Sprites/Environment/Trees/Tree01/Layer02_Normal_half.png" id="2_g2tvt"]
+[ext_resource type="Texture2D" uid="uid://be1c3je4y8h1g" path="res://Sprites/Environment/Trees/Tree01/Layer01_Diffuse_half.png" id="3_6nrj3"]
+[ext_resource type="Texture2D" uid="uid://bqcr4e1ybjxlc" path="res://Sprites/Environment/Trees/Tree01/Layer01_Normal_half.png" id="4_ubn21"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_t028b"]
-diffuse_texture = ExtResource("1_lsnfu")
-normal_texture = ExtResource("2_h1t7t")
+diffuse_texture = ExtResource("1_qihnu")
+normal_texture = ExtResource("2_g2tvt")
 specular_color = Color(0.498039, 0.498039, 0.498039, 1)
 specular_shininess = 0.3
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_15i8e"]
-diffuse_texture = ExtResource("3_a4j1s")
-normal_texture = ExtResource("4_41ydr")
+diffuse_texture = ExtResource("3_6nrj3")
+normal_texture = ExtResource("4_ubn21")
 specular_color = Color(0.498039, 0.498039, 0.498039, 1)
 specular_shininess = 0.3
 
@@ -41,12 +41,12 @@ polygon = PackedVector2Array(0, -24.2424, -6.06055, 12.1212, 18.1819, 27.2727, 1
 light_mask = 2
 z_index = 20
 z_as_relative = false
-scale = Vector2(0.26, 0.26)
+scale = Vector2(0.305, 0.305)
 texture = SubResource("CanvasTexture_t028b")
 
 [node name="Sprite_Layer01" type="Sprite2D" parent="."]
 rotation = 0.966912
-scale = Vector2(0.285, 0.285)
+scale = Vector2(0.335, 0.335)
 texture = SubResource("CanvasTexture_15i8e")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

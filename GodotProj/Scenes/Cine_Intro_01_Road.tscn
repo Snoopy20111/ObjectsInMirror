@@ -7,13 +7,13 @@
 [ext_resource type="Curve" uid="uid://ctriqgr3u4ywo" path="res://Customs/Curves/TireTrackWidth_Curve.tres" id="7_c15jf"]
 [ext_resource type="Gradient" uid="uid://di41x4u2d46ju" path="res://Customs/Gradients/TireTrackColor_Gradient.tres" id="8_3f0bx"]
 
-[sub_resource type="Gradient" id="Gradient_ac555"]
+[sub_resource type="Gradient" id="Gradient_7ho15"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.290323, 1)
 colors = PackedColorArray(0.75, 0.75, 0.75, 1, 0.267421, 0.278472, 0.281787, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_41bhm"]
-gradient = SubResource("Gradient_ac555")
+gradient = SubResource("Gradient_7ho15")
 use_hdr = true
 fill = 1
 fill_from = Vector2(0.5, 0.5)
@@ -28,6 +28,16 @@ script = ExtResource("1_ukclh")
 [node name="Timers" type="Node" parent="."]
 
 [node name="Timer_ToFirstDialogue" type="Timer" parent="Timers"]
+wait_time = 2.25
+one_shot = true
+autostart = true
+
+[node name="Timer_ToSecondDialogue" type="Timer" parent="Timers"]
+wait_time = 2.25
+one_shot = true
+
+[node name="Timer_ToExit" type="Timer" parent="Timers"]
+one_shot = true
 
 [node name="Lighting" type="Node" parent="."]
 
@@ -36,6 +46,7 @@ color = Color(0.0313726, 0.0862745, 0.2, 1)
 metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Lighting"]
+position = Vector2(0, -36)
 rotation = -1.5708
 scale = Vector2(11.1647, 11.1647)
 color = Color(1, 0.839216, 0.666667, 1)
@@ -49,6 +60,7 @@ height = 100.0
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("1_0wopp")]
 rotation = -1.5708
 metadata/entity_name = "PlayerCar"
+metadata/_edit_lock_ = true
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 material = SubResource("CanvasItemMaterial_y7kk1")
@@ -82,6 +94,7 @@ metadata/_edit_lock_ = true
 
 [node name="LoopingEnv2" parent="." instance=ExtResource("4_s0wlv")]
 position = Vector2(0, -2048)
+metadata/_edit_lock_ = true
 
 [node name="Skids" type="Node2D" parent="."]
 position = Vector2(0, 57)
@@ -110,3 +123,7 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
+
+[connection signal="timeout" from="Timers/Timer_ToFirstDialogue" to="." method="_on_timer_to_first_dialogue_timeout"]
+[connection signal="timeout" from="Timers/Timer_ToSecondDialogue" to="." method="_on_timer_to_second_dialogue_timeout"]
+[connection signal="timeout" from="Timers/Timer_ToExit" to="." method="_on_timer_to_exit_timeout"]

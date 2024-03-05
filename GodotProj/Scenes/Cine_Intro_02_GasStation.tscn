@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://chijlaqxstsr3"]
+[gd_scene load_steps=27 format=3 uid="uid://chijlaqxstsr3"]
 
 [ext_resource type="Texture2D" uid="uid://ba7oa1h07tpxj" path="res://Sprites/Environment/spritesheet_tiles.png" id="1_e4dcy"]
 [ext_resource type="PackedScene" uid="uid://dqx6vc23q8te7" path="res://Scenes/Prefabs/GasPump.tscn" id="2_0tn75"]
@@ -13,6 +13,32 @@
 [ext_resource type="Texture2D" uid="uid://su7v10rnypko" path="res://Sprites/SetDressing/Bits/Bits_08.svg" id="11_cqdxd"]
 [ext_resource type="Texture2D" uid="uid://ct3ylb4ou2rgu" path="res://Sprites/Particles_FX/Smoke/smoke1.png" id="12_uadhi"]
 [ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Prefabs/PlayerCar.tscn" id="13_onc42"]
+[ext_resource type="PackedScene" uid="uid://bhyko8joax145" path="res://Scenes/Prefabs/Cinematic_Props/Trees/Tree.tscn" id="14_6ynf6"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="15_f7nxw"]
+
+[sub_resource type="Gradient" id="Gradient_ac555"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.290323, 1)
+colors = PackedColorArray(0.75, 0.75, 0.75, 1, 0.267421, 0.278472, 0.281787, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e06pa"]
+gradient = SubResource("Gradient_ac555")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_7ehd4"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.429553, 1)
+colors = PackedColorArray(0.94902, 0.988235, 1, 1, 0.267421, 0.278472, 0.281787, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ktswb"]
+gradient = SubResource("Gradient_7ehd4")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qp77"]
 resource_name = "RacingPackTerrain"
@@ -337,51 +363,48 @@ texture_region_size = Vector2i(128, 128)
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_3qp77")
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7n45d"]
+polygon = PackedVector2Array(10.85, 0, 0, -10.85, -10.85, 0, 0, 10.85)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lmdj"]
 size = Vector2(1, 1)
-
-[sub_resource type="Gradient" id="Gradient_7ehd4"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.429553, 1)
-colors = PackedColorArray(0.94902, 0.988235, 1, 1, 0.267421, 0.278472, 0.281787, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ktswb"]
-gradient = SubResource("Gradient_7ehd4")
-use_hdr = true
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0, 0.5)
 
 [sub_resource type="Gradient" id="Gradient_pmkrv"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qsfrs"]
+polygon = PackedVector2Array(-0.62796, -11.9836, 7.41342, -11.4036, 4.89288, -21.2852, -7.35236, -25.6504, -27.1156, -20.6093, -9.08795, -20.5526, -12.4545, -8.35973)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jat4e"]
+light_mode = 1
+
 [node name="Cine_Intro_01_GasStation" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2(64, 0)
-tile_set = SubResource("TileSet_p07g5")
-format = 2
-layer_0/tile_data = PackedInt32Array(-131077, 786432, 2, -65540, 720896, 13, -4, 786432, 2, 65532, 720896, 13, 131068, 786432, 2, 196605, 786432, 2, 131069, 786432, 2, 65533, 786432, 2, -3, 786432, 2, 131067, 786432, 2, 196603, 786432, 2, 262139, 786432, 2, 196604, 720896, 13, 65531, 786432, 2, -5, 786432, 2, -65541, 786432, 2, -131076, 786432, 2, -131075, 786432, 2, -131074, 786432, 1, -131073, 0, 9, -65539, 786432, 2, -2, 786432, 1, -65538, 786432, 1, -65537, 0, 9, -1, 0, 9, 262143, 0, 2, 262142, 786432, 1, 262141, 786432, 2, 262140, 786432, 2, 196606, 786432, 1, 196607, 0, 9, 131071, 0, 2, 131070, 786432, 1, 65534, 786432, 1, 65535, 0, 9, -196608, 0, 9, -131072, 0, 2, -65536, 0, 2, 0, 0, 2, 65536, 0, 2, 131072, 0, 9, 196608, 0, 9, -196607, 0, 9, -196606, 0, 2, -196605, 0, 9, -131069, 0, 2, -131070, 0, 2, -131071, 0, 2, -65535, 0, 2, 1, 0, 2, 65537, 0, 2, 131073, 0, 2, 196609, 0, 9, -65534, 0, 2, 2, 0, 2, 65538, 0, 2, 131074, 0, 2, 196610, 0, 9, -65533, 0, 2, 3, 0, 2, 65539, 0, 2, 131075, 0, 2, 196611, 0, 9, -196613, 720896, 13, -196611, 786432, 2, -262143, 0, 9, -262141, 0, 9, -196612, 786432, 2, -262142, 0, 9, -262144, 0, 9, -196610, 786432, 1, -196609, 0, 9, 131076, 0, 2, 131077, 0, 2, -196603, 0, 2, -131067, 0, 9, -65531, 0, 9, 5, 0, 9, 65541, 0, 2, 65540, 0, 2, 4, 0, 2, -65532, 0, 2, -131068, 0, 2, -196604, 0, 9, 262152, 720896, 17, 196616, 786432, 3, 131080, 786432, 3, 65544, 786432, 3, 8, 786432, 3, -65528, 786432, 3, -131064, 786432, 3, -196600, 786432, 3, -262136, 786432, 3, -327672, 786432, 4, -327673, 720896, 15, -327674, 720896, 15, -327675, 720896, 15, -327676, 720896, 15, -327677, 720896, 15, -327678, 720896, 15, -327679, 720896, 15, 262151, 720896, 11, 262150, 720896, 11, 262149, 720896, 11, 262148, 720896, 11, 262147, 720896, 11, 262146, 720896, 11, 262145, 720896, 11, 262144, 720896, 12, 196612, 0, 9, 196613, 0, 9, 196614, 0, 9, 131078, 0, 2, 131079, 0, 9, 196615, 0, 9, 65542, 0, 9, 65543, 0, 9, 6, 0, 2, 7, 0, 9, -65530, 0, 9, -65529, 0, 9, -131065, 0, 9, -131066, 0, 2, -196602, 0, 9, -196601, 0, 9, -262137, 0, 9, -262138, 0, 9, -262139, 0, 9, -262140, 0, 9, -327680, 720896, 16, -458754, 786432, 1, -393218, 786432, 1, -327682, 786432, 1, -262146, 786432, 1, 327678, 786432, 1, 393214, 786432, 1, 458750, 786432, 1, 524286, 786432, 1, 327679, 0, 9, 393215, 0, 2, 458751, 0, 2, 524287, 0, 9, -262145, 0, 2, -327681, 0, 9, -393217, 0, 2, 327680, 786432, 3, 393216, 786432, 3, 458752, 786432, 3, 327677, 786432, 2, 327676, 786432, 2, 327675, 786432, 2, 393213, 786432, 2, 393212, 786432, 2, 393211, 786432, 2, 458747, 786432, 2, 458748, 786432, 2, 458749, 786432, 2, 524284, 786432, 2, 524283, 786432, 2, 524285, 786432, 2, -262147, 786432, 2, -458755, 786432, 2, -458756, 786432, 2, -458757, 786432, 2, -393221, 786432, 2, -327685, 786432, 2, -262149, 786432, 2, -262148, 786432, 2, -327684, 786432, 2, -393220, 786432, 2, -393219, 786432, 2, -327683, 786432, 2, 327681, 786432, 2, 393217, 786432, 2, 458753, 786432, 2, 458754, 786432, 2, 458755, 786432, 2, 458756, 786432, 2, 458757, 786432, 2, 458758, 786432, 2, 458759, 786432, 2, 458760, 786432, 2, 393224, 786432, 2, 327688, 786432, 2, 327687, 786432, 2, 327686, 786432, 2, 327685, 786432, 2, 327684, 786432, 2, 327683, 786432, 2, 327682, 786432, 2, 393218, 786432, 2, 393219, 786432, 2, 393220, 786432, 2, 393221, 786432, 2, 393222, 786432, 2, 393223, 786432, 2, -393215, 786432, 2, -393214, 786432, 2, -393213, 786432, 2, -393212, 786432, 2, -393211, 786432, 2, -393210, 786432, 2, -393209, 786432, 2, -393208, 786432, 2, -393216, 786432, 3, -458752, 786432, 3, -524288, 786432, 3, -524287, 720896, 13, -458751, 720896, 13, -458750, 720896, 13, -524286, 720896, 13, -524285, 720896, 13, -524284, 720896, 13, -524283, 720896, 13, -524282, 720896, 13, -524281, 720896, 13, -524280, 720896, 13, -458744, 720896, 13, -458745, 720896, 13, -458746, 720896, 13, -458747, 720896, 13, -458748, 720896, 13, -458749, 720896, 13, -458759, 720896, 13, -393223, 720896, 13, -327687, 720896, 13, -262151, 720896, 13, -196615, 720896, 13, -131079, 720896, 13, -65543, 720896, 13, -7, 720896, 13, 65529, 720896, 13, 131065, 720896, 13, 196601, 720896, 13, 262137, 720896, 13, 327673, 720896, 13, 393209, 720896, 13, 458745, 720896, 13, 524281, 720896, 13, 524282, 720896, 13, 458746, 720896, 13, 393210, 720896, 13, 327674, 720896, 13, 262138, 720896, 13, 196602, 720896, 13, 131066, 720896, 13, 65530, 720896, 13, -6, 720896, 13, -65542, 720896, 13, -131078, 720896, 13, -196614, 720896, 13, -262150, 720896, 13, -327686, 720896, 13, -393222, 720896, 13, -458758, 720896, 13, -458753, 0, 9)
+[node name="Timers" type="Node" parent="."]
 
-[node name="Pumps" type="Node2D" parent="."]
-position = Vector2(190, 0)
+[node name="Timer" type="Timer" parent="Timers"]
+one_shot = true
 
-[node name="Pump1" parent="Pumps" instance=ExtResource("2_0tn75")]
+[node name="Lighting" type="Node" parent="."]
 
-[node name="Pump2" parent="Pumps" instance=ExtResource("2_0tn75")]
-position = Vector2(0, 80)
+[node name="CanvasModulate" type="CanvasModulate" parent="Lighting"]
+color = Color(0.0313726, 0.0862745, 0.2, 1)
+metadata/_edit_lock_ = true
 
-[node name="Station" type="StaticBody2D" parent="."]
-position = Vector2(732, 0)
-scale = Vector2(400, 650)
+[node name="PointLight2D" type="PointLight2D" parent="Lighting"]
+position = Vector2(0, -36)
+rotation = -1.5708
+scale = Vector2(11.1647, 11.1647)
+color = Color(1, 0.839216, 0.666667, 1)
+energy = 0.6
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+texture = SubResource("GradientTexture2D_e06pa")
+height = 100.0
+metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Station"]
-shape = SubResource("RectangleShape2D_6lmdj")
-
-[node name="StationSprite" type="Sprite2D" parent="Station"]
-texture = ExtResource("3_w2g3f")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="GasStationLight" type="PointLight2D" parent="Lighting"]
 position = Vector2(515, -2)
 scale = Vector2(24.1562, 24.1562)
 color = Color(1, 0.839216, 0.666667, 1)
@@ -390,14 +413,26 @@ shadow_filter = 1
 shadow_filter_smooth = 1.0
 texture = SubResource("GradientTexture2D_ktswb")
 height = 100.0
+metadata/_edit_lock_ = true
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(64, 0)
+tile_set = SubResource("TileSet_p07g5")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131077, 786432, 2, -65540, 720896, 13, -4, 786432, 2, 65532, 720896, 13, 131068, 786432, 2, 196605, 786432, 2, 131069, 786432, 2, 65533, 786432, 2, -3, 786432, 2, 131067, 786432, 2, 196603, 786432, 2, 262139, 786432, 2, 196604, 720896, 13, 65531, 786432, 2, -5, 786432, 2, -65541, 786432, 2, -131076, 786432, 2, -131075, 786432, 2, -131074, 786432, 1, -131073, 0, 9, -65539, 786432, 2, -2, 786432, 1, -65538, 786432, 1, -65537, 0, 9, -1, 0, 9, 262143, 0, 2, 262142, 786432, 1, 262141, 786432, 2, 262140, 786432, 2, 196606, 786432, 1, 196607, 0, 9, 131071, 0, 2, 131070, 786432, 1, 65534, 786432, 1, 65535, 0, 9, -196608, 0, 9, -131072, 0, 2, -65536, 0, 2, 0, 0, 2, 65536, 0, 2, 131072, 0, 9, 196608, 0, 9, -196607, 0, 9, -196606, 0, 2, -196605, 0, 9, -131069, 0, 2, -131070, 0, 2, -131071, 0, 2, -65535, 0, 2, 1, 0, 2, 65537, 0, 2, 131073, 0, 2, 196609, 0, 9, -65534, 0, 2, 2, 0, 2, 65538, 0, 2, 131074, 0, 2, 196610, 0, 9, -65533, 0, 2, 3, 0, 2, 65539, 0, 2, 131075, 0, 2, 196611, 0, 9, -196613, 720896, 13, -196611, 786432, 2, -262143, 0, 9, -262141, 0, 9, -196612, 786432, 2, -262142, 0, 9, -262144, 0, 9, -196610, 786432, 1, -196609, 0, 9, 131076, 0, 2, 131077, 0, 2, -196603, 0, 2, -131067, 0, 9, -65531, 0, 9, 5, 0, 9, 65541, 0, 2, 65540, 0, 2, 4, 0, 2, -65532, 0, 2, -131068, 0, 2, -196604, 0, 9, 262152, 720896, 17, 196616, 786432, 3, 131080, 786432, 3, 65544, 786432, 3, 8, 786432, 3, -65528, 786432, 3, -131064, 786432, 3, -196600, 786432, 3, -262136, 786432, 3, -327672, 786432, 4, -327673, 720896, 15, -327674, 720896, 15, -327675, 720896, 15, -327676, 720896, 15, -327677, 720896, 15, -327678, 720896, 15, -327679, 720896, 15, 262151, 720896, 11, 262150, 720896, 11, 262149, 720896, 11, 262148, 720896, 11, 262147, 720896, 11, 262146, 720896, 11, 262145, 720896, 11, 262144, 720896, 12, 196612, 0, 9, 196613, 0, 9, 196614, 0, 9, 131078, 0, 2, 131079, 0, 9, 196615, 0, 9, 65542, 0, 9, 65543, 0, 9, 6, 0, 2, 7, 0, 9, -65530, 0, 9, -65529, 0, 9, -131065, 0, 9, -131066, 0, 2, -196602, 0, 9, -196601, 0, 9, -262137, 0, 9, -262138, 0, 9, -262139, 0, 9, -262140, 0, 9, -327680, 720896, 16, -458754, 786432, 1, -393218, 786432, 1, -327682, 786432, 1, -262146, 786432, 1, 327678, 786432, 1, 393214, 786432, 1, 458750, 786432, 1, 524286, 786432, 1, 327679, 0, 9, 393215, 0, 2, 458751, 0, 2, 524287, 0, 9, -262145, 0, 2, -327681, 0, 9, -393217, 0, 2, 327680, 786432, 3, 393216, 786432, 3, 458752, 786432, 3, 327677, 786432, 2, 327676, 786432, 2, 327675, 786432, 2, 393213, 786432, 2, 393212, 786432, 2, 393211, 786432, 2, 458747, 786432, 2, 458748, 786432, 2, 458749, 786432, 2, 524284, 786432, 2, 524283, 786432, 2, 524285, 786432, 2, -262147, 786432, 2, -458755, 786432, 2, -458756, 786432, 2, -458757, 786432, 2, -393221, 786432, 2, -327685, 786432, 2, -262149, 786432, 2, -262148, 786432, 2, -327684, 786432, 2, -393220, 786432, 2, -393219, 786432, 2, -327683, 786432, 2, 327681, 786432, 2, 393217, 786432, 2, 458753, 786432, 2, 458754, 786432, 2, 458755, 786432, 2, 458756, 786432, 2, 458757, 786432, 2, 458758, 786432, 2, 458759, 786432, 2, 458760, 786432, 2, 393224, 786432, 2, 327688, 786432, 2, 327687, 786432, 2, 327686, 786432, 2, 327685, 786432, 2, 327684, 786432, 2, 327683, 786432, 2, 327682, 786432, 2, 393218, 786432, 2, 393219, 786432, 2, 393220, 786432, 2, 393221, 786432, 2, 393222, 786432, 2, 393223, 786432, 2, -393215, 786432, 2, -393214, 786432, 2, -393213, 786432, 2, -393212, 786432, 2, -393211, 786432, 2, -393210, 786432, 2, -393209, 786432, 2, -393208, 786432, 2, -393216, 786432, 3, -458752, 786432, 3, -524288, 786432, 3, -524287, 720896, 13, -458751, 720896, 13, -458750, 720896, 13, -524286, 720896, 13, -524285, 720896, 13, -524284, 720896, 13, -524283, 720896, 13, -524282, 720896, 13, -524281, 720896, 13, -524280, 720896, 13, -458744, 720896, 13, -458745, 720896, 13, -458746, 720896, 13, -458747, 720896, 13, -458748, 720896, 13, -458749, 720896, 13, -458759, 720896, 13, -393223, 720896, 13, -327687, 720896, 13, -262151, 720896, 13, -196615, 720896, 13, -131079, 720896, 13, -65543, 720896, 13, -7, 720896, 13, 65529, 720896, 13, 131065, 720896, 13, 196601, 720896, 13, 262137, 720896, 13, 327673, 720896, 13, 393209, 720896, 13, 458745, 720896, 13, 524281, 720896, 13, 524282, 720896, 13, 458746, 720896, 13, 393210, 720896, 13, 327674, 720896, 13, 262138, 720896, 13, 196602, 720896, 13, 131066, 720896, 13, 65530, 720896, 13, -6, 720896, 13, -65542, 720896, 13, -131078, 720896, 13, -196614, 720896, 13, -262150, 720896, 13, -327686, 720896, 13, -393222, 720896, 13, -458758, 720896, 13, -458753, 0, 9)
+metadata/_edit_lock_ = true
 
 [node name="SetDressing" type="Node2D" parent="."]
 position = Vector2(732, 0)
+metadata/_edit_lock_ = true
 
 [node name="BarrelUpright04" type="Sprite2D" parent="SetDressing"]
 position = Vector2(-227, 336)
 scale = Vector2(2, 2)
 texture = ExtResource("4_5k4vv")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SetDressing/BarrelUpright04"]
+occluder = SubResource("OccluderPolygon2D_7n45d")
 
 [node name="Dumpster" type="Sprite2D" parent="SetDressing"]
 position = Vector2(238, -190)
@@ -417,11 +452,67 @@ texture = ExtResource("7_5x21w")
 position = Vector2(-510, -502)
 texture = ExtResource("8_ksy6i")
 
+[node name="Pumps" type="Node2D" parent="SetDressing"]
+position = Vector2(-542, 0)
+
+[node name="Pump1" parent="SetDressing/Pumps" instance=ExtResource("2_0tn75")]
+
+[node name="Pump2" parent="SetDressing/Pumps" instance=ExtResource("2_0tn75")]
+position = Vector2(0, 80)
+
+[node name="Station" type="StaticBody2D" parent="SetDressing"]
+scale = Vector2(400, 650)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetDressing/Station"]
+shape = SubResource("RectangleShape2D_6lmdj")
+
+[node name="StationSprite" type="Sprite2D" parent="SetDressing/Station"]
+texture = ExtResource("3_w2g3f")
+
+[node name="Trees" type="Node2D" parent="SetDressing"]
+
+[node name="Tree" parent="SetDressing/Trees" instance=ExtResource("14_6ynf6")]
+position = Vector2(-1045, -219)
+
+[node name="Tree2" parent="SetDressing/Trees" instance=ExtResource("14_6ynf6")]
+position = Vector2(-954, -27)
+
+[node name="Tree3" parent="SetDressing/Trees" instance=ExtResource("14_6ynf6")]
+position = Vector2(-943, -365)
+
+[node name="Tree4" parent="SetDressing/Trees" instance=ExtResource("14_6ynf6")]
+position = Vector2(-521, -662)
+
+[node name="Tree5" parent="SetDressing/Trees" instance=ExtResource("14_6ynf6")]
+position = Vector2(-142, -681)
+
+[node name="Tree6" parent="SetDressing/Trees" instance=ExtResource("14_6ynf6")]
+position = Vector2(-1019, -603)
+
+[node name="Tree7" parent="SetDressing/Trees" instance=ExtResource("14_6ynf6")]
+position = Vector2(-961, 150)
+
+[node name="Tree8" parent="SetDressing/Trees" instance=ExtResource("14_6ynf6")]
+position = Vector2(-942, 390)
+
+[node name="Tree9" parent="SetDressing/Trees" instance=ExtResource("14_6ynf6")]
+position = Vector2(-104, 724)
+
+[node name="Tree10" parent="SetDressing/Trees" instance=ExtResource("14_6ynf6")]
+position = Vector2(-1097, 243)
+
+[node name="Tree11" parent="SetDressing/Trees" instance=ExtResource("14_6ynf6")]
+position = Vector2(-504, 678)
+
+[node name="Tree12" parent="SetDressing/Trees" instance=ExtResource("14_6ynf6")]
+position = Vector2(-1108, -456)
+
 [node name="OldTimer" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(474, 135)
 rotation = -3.08924
 texture = ExtResource("9_qc3dw")
+metadata/_edit_lock_ = true
 
 [node name="OldTimerOneArm" type="Sprite2D" parent="OldTimer"]
 z_index = -1
@@ -463,9 +554,37 @@ scale_amount_min = 0.01
 scale_amount_max = 0.01
 color_ramp = SubResource("Gradient_pmkrv")
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-energy = 0.1
+[node name="LightOccluder2D" type="LightOccluder2D" parent="OldTimer"]
+occluder = SubResource("OccluderPolygon2D_qsfrs")
 
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("13_onc42")]
 rotation = -1.5708
+controlMode = 2
 metadata/entity_name = "PlayerCar"
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+material = SubResource("CanvasItemMaterial_jat4e")
+position = Vector2(151, 50)
+script = ExtResource("15_f7nxw")
+priority_override = false
+priority = 10
+zoom = Vector2(0.9, 0.9)
+follow_mode = 1
+follow_target = NodePath("../Camera_Target_01")
+follow_parameters/damping = false
+frame_preview = true
+pixel_perfect = false
+limit/draw_limits = false
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+limit/limit_node_target = NodePath("")
+limit/smoothed = false
+tween_parameters = null
+tween_on_load = false
+inactive_update_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Camera_Target_01" type="Node2D" parent="."]
+position = Vector2(151, 50)
