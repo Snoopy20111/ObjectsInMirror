@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://seuyyo3omuoe"]
+
+[ext_resource type="Script" path="res://Scripts/CarController_Rigidbody.gd" id="1_qdag7"]
+[ext_resource type="Texture2D" uid="uid://ihu5sr2wwr7w" path="res://Sprites/Characters/Car/car_red_4.png" id="2_26rgh"]
+[ext_resource type="PackedScene" uid="uid://b53rom87xh58x" path="res://Scenes/Prefabs/Car_SkidMarker.tscn" id="4_nrhht"]
+[ext_resource type="Texture2D" uid="uid://bmitfj2ebtvpd" path="res://Sprites/Lights/Headlight_Texture_02.png" id="7_lyicc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_m5lv2"]
+diffuse_texture = ExtResource("2_26rgh")
+
+[sub_resource type="Gradient" id="Gradient_cvvr2"]
+colors = PackedColorArray(0.310617, 0.310617, 0.310617, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xiydi"]
+gradient = SubResource("Gradient_cvvr2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkn56"]
+size = Vector2(132, 70)
+
+[node name="PlayerCar" type="RigidBody2D"]
+gravity_scale = 0.0
+center_of_mass_mode = 1
+max_contacts_reported = 4
+contact_monitor = true
+script = ExtResource("1_qdag7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
+rotation = 1.5708
+texture = SubResource("CanvasTexture_m5lv2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.5, -0.499998)
+scale = Vector2(7.25, 3.15)
+polygon = PackedVector2Array(9, 5.5, 9, -5.5, 8.5, -9.5, 7, -11, -8.75, -11, -8.75, 11, 7, 11, 8.5, 9.5)
+
+[node name="CarGlowLight" type="PointLight2D" parent="."]
+position = Vector2(-0.499996, 0.499999)
+scale = Vector2(12.9219, 10.7618)
+color = Color(0.988235, 0.917647, 0.772549, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_xiydi")
+height = 100.0
+
+[node name="Headlights_Full" type="PointLight2D" parent="."]
+position = Vector2(58, 7)
+scale = Vector2(1.04009, 0.881597)
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+texture = ExtResource("7_lyicc")
+height = 250.0
+
+[node name="SkidMaker_L" parent="." instance=ExtResource("4_nrhht")]
+position = Vector2(-55, -27)
+
+[node name="SkidMaker_R" parent="." instance=ExtResource("4_nrhht")]
+position = Vector2(-55, 27)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_jkn56")

@@ -1,4 +1,4 @@
-extends LH_ButtonBase
+extends Area2D
 
 @export var sceneToLoad:String = "res://Scenes/Test_2D.tscn"
 @export var SharedEasing: bool = true
@@ -23,16 +23,10 @@ extends LH_ButtonBase
 
 @onready var TrimmedLoadOptions: Dictionary = SceneLoadOptions
 
-#At some point we'll need these to show a popup about overwriting saves.
-#Not a problem if we don't have saves, though.
-#@export var showPopup:bool = false
-#@export var scenePopup:String
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	checkTransitionShared()
-
-
-func _pressed():
-	SceneManager.change_scene(sceneToLoad)
+	area_entered.connect(Callable(onAreaEntered))
 
 
 func checkTransitionShared():
@@ -47,3 +41,13 @@ func checkTransitionShared():
 		TrimmedLoadOptions.erase("animation_name_leave")
 	else:
 		TrimmedLoadOptions.erase("animation_name")
+
+
+func onAreaEntered(area: Area2D):
+	# If it's the player, change the scene
+	# Brittle as hell methods to see if this is the Player Car
+	if ((area.collision_layer == 2)
+	and (area.get_parent().name == "PlayerCar")):
+		SceneManager.change_scene(sceneToLoad)
+		var playerCar := area.get_parent() as CarController
+		playerCar.controlMode = Enums.CONTROL_TYPE.NONE

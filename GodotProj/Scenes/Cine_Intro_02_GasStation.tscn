@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dqsgvnrumq6tu" path="res://Sprites/Characters/OldTimer/OldTimer_OneArm.svg" id="10_iilbj"]
 [ext_resource type="Texture2D" uid="uid://su7v10rnypko" path="res://Sprites/SetDressing/Bits/Bits_08.svg" id="11_cqdxd"]
 [ext_resource type="Texture2D" uid="uid://ct3ylb4ou2rgu" path="res://Sprites/Particles_FX/Smoke/smoke1.png" id="12_uadhi"]
+[ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Prefabs/PlayerCar.tscn" id="13_onc42"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qp77"]
 resource_name = "RacingPackTerrain"
@@ -339,13 +340,13 @@ sources/0 = SubResource("TileSetAtlasSource_3qp77")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lmdj"]
 size = Vector2(1, 1)
 
-[sub_resource type="Gradient" id="Gradient_ac555"]
+[sub_resource type="Gradient" id="Gradient_7ehd4"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.429553, 1)
 colors = PackedColorArray(0.94902, 0.988235, 1, 1, 0.267421, 0.278472, 0.281787, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ktswb"]
-gradient = SubResource("Gradient_ac555")
+gradient = SubResource("Gradient_7ehd4")
 use_hdr = true
 fill = 1
 fill_from = Vector2(0.5, 0.5)
@@ -354,10 +355,7 @@ fill_to = Vector2(0, 0.5)
 [sub_resource type="Gradient" id="Gradient_pmkrv"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpvxt"]
-size = Vector2(138, 132)
-
-[node name="GasStation" type="Node2D"]
+[node name="Cine_Intro_01_GasStation" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(64, 0)
@@ -468,7 +466,6 @@ color_ramp = SubResource("Gradient_pmkrv")
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.1
 
-[node name="Trigger" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
-shape = SubResource("RectangleShape2D_tpvxt")
+[node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("13_onc42")]
+rotation = -1.5708
+metadata/entity_name = "PlayerCar"

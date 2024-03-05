@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dduc4rdakx6yt" path="res://icon.svg" id="3_lbkah"]
 [ext_resource type="Texture2D" uid="uid://fo4xmxkkapws" path="res://Sprites/Characters/Car/car_red_4_normalmap.png" id="4_4kun2"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="4_jqi28"]
-[ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Prefabs/Car_Rigidbody.tscn" id="4_vm3fk"]
+[ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Prefabs/PlayerCar.tscn" id="4_vm3fk"]
 
 [sub_resource type="Gradient" id="Gradient_ac555"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)

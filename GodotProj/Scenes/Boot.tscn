@@ -5,11 +5,12 @@
 
 [node name="Boot" type="CanvasLayer"]
 script = ExtResource("1_qfepg")
+LogoParade = false
 LoadDebugLevel = true
 DebugWindowSize = true
-DebugLevelPath = "res://Scenes/Cinematic_Intro.tscn"
+DebugLevelPath = "res://Scenes/Cine_Intro_01_Road.tscn"
 
-[node name="TempBackground" type="ColorRect" parent="."]
+[node name="Startup_Color" type="ColorRect" parent="."]
 show_behind_parent = true
 anchors_preset = 15
 anchor_right = 1.0

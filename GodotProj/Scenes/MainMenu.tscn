@@ -53,10 +53,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -288.0
+offset_left = -350.0
 offset_top = 139.0
-offset_right = 288.0
-offset_bottom = 184.0
+offset_right = 351.0
+offset_bottom = 222.0
 grow_horizontal = 2
 text = "Objects In Mirror"
 label_settings = ExtResource("2_lfh0d")
@@ -91,6 +91,17 @@ sceneToLoad = "res://Scenes/Cinematic_Intro.tscn"
 wwiseObjectName = "Start_Button"
 
 [node name="HSeparator" type="HSeparator" parent="MainMenu/MarginContainer/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Settings (Placeholder)" type="Button" parent="MainMenu/MarginContainer/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lhjo4")
+disabled = true
+text = "Settings"
+script = ExtResource("3_wwc5o")
+wwiseObjectName = "Settings_Button"
+
+[node name="HSeparator2" type="HSeparator" parent="MainMenu/MarginContainer/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Quit Button" type="Button" parent="MainMenu/MarginContainer/AspectRatioContainer/VBoxContainer"]

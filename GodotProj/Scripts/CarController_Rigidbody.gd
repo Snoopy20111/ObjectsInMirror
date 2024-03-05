@@ -1,28 +1,33 @@
 extends RigidBody2D
-
-
+class_name CarController
 #public variables
-@export_group("Basic Car properties")
+@export_group("Controller Properties")
+@export var controlMode:Enums.CONTROL_TYPE = Enums.CONTROL_TYPE.PLAYER
+
+@export_group("Shared Properties")
 @export var driftFactor:float = 0.95
 @export var accelerationFactor:float = 1000
 @export var turnFactor:float = 3.5
 @export var maxSpeed:float = 800
-@export var maxSpeedReverseFactor:float = 0.35
+@export var maxSpeedReverseFactor:float = 0.4
+
+#@export_group("No Control Properties")
+
 
 #local variables
 var accelerationInput:float = 0
 var steeringInput:float = 0
-var rotationAngle:float = 0
 var velocityVsUp = 0
+@onready var rotationAngle:float = rotation_degrees
+var engineAudioOutput:float = 0
 
-func _ready():
-	rotationAngle = rotation_degrees
 
- #Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame
 func _process(_delta):
 	SetInputVector()
 
 
+# Called when calculating physics (part of _physics_process() )
 func _integrate_forces(state):
 	ApplyEngineForce(state)
 	KillOrthoganalVelocity()
@@ -67,8 +72,14 @@ func ApplySteering(_state:PhysicsDirectBodyState2D) -> void:
 
 
 func SetInputVector() -> void:
-	steeringInput = Input.get_axis("drive_right","drive_left")
-	accelerationInput = Input.get_axis("drive_back","drive_forward")
+	match controlMode:
+		Enums.CONTROL_TYPE.PLAYER:
+			steeringInput = Input.get_axis("drive_right","drive_left")
+			accelerationInput = Input.get_axis("drive_back","drive_forward")
+		Enums.CONTROL_TYPE.NONE:
+			steeringInput = 0.0
+			accelerationInput = 0.0
+	#Todo: AI input mode
 
 
 func KillOrthoganalVelocity() -> void:
@@ -82,4 +93,4 @@ func GetLateralVelocity() -> float:
 	#Returns how fast the car is moving sideways
 	return linear_velocity.dot(transform.y)
 
-#@export var traction_curve:Curve = preload("res://Curves/Car_XSpeedYTraction_Default.tres")
+#@export var traction_curve:Curve = preload("res://Customs/Curves/Car_XSpeedYTraction_Default.tres")
