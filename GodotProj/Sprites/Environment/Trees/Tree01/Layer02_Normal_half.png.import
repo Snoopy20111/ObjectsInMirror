@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwqkdlvcwxyx"
-path="res://.godot/imported/Layer01_NormalWithAlpha.png-2e795694cf3608b62c108119e201a236.ctex"
+uid="uid://dxekakeifaylr"
+path="res://.godot/imported/Layer02_Normal_half.png-a265ecb762b8ea469df568b40bc61091.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Environment/Trees/Tree01/Layer01_NormalWithAlpha.png"
-dest_files=["res://.godot/imported/Layer01_NormalWithAlpha.png-2e795694cf3608b62c108119e201a236.ctex"]
+source_file="res://Sprites/Environment/Trees/Tree01/Layer02_Normal_half.png"
+dest_files=["res://.godot/imported/Layer02_Normal_half.png-a265ecb762b8ea469df568b40bc61091.ctex"]
 
 [params]
 

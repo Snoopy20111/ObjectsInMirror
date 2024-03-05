@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhyko8joax145"]
+
+[ext_resource type="Texture2D" uid="uid://k165hp2dnrbr" path="res://Sprites/Environment/Trees/Tree01/Layer02_Diffuse_half.png" id="1_lsnfu"]
+[ext_resource type="Texture2D" uid="uid://dxekakeifaylr" path="res://Sprites/Environment/Trees/Tree01/Layer02_Normal_half.png" id="2_h1t7t"]
+[ext_resource type="Texture2D" uid="uid://be1c3je4y8h1g" path="res://Sprites/Environment/Trees/Tree01/Layer01_Diffuse_half.png" id="3_a4j1s"]
+[ext_resource type="Texture2D" uid="uid://bqcr4e1ybjxlc" path="res://Sprites/Environment/Trees/Tree01/Layer01_Normal_half.png" id="4_41ydr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_t028b"]
+diffuse_texture = ExtResource("1_lsnfu")
+normal_texture = ExtResource("2_h1t7t")
+specular_color = Color(0.498039, 0.498039, 0.498039, 1)
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_15i8e"]
+diffuse_texture = ExtResource("3_a4j1s")
+normal_texture = ExtResource("4_41ydr")
+specular_color = Color(0.498039, 0.498039, 0.498039, 1)
+specular_shininess = 0.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lx8pt"]
+radius = 99.39
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4xi6m"]
+polygon = PackedVector2Array(0, -100, -95, -31, -59, 81, 59, 81, 95, -31)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xa53e"]
+polygon = PackedVector2Array(0, -24.2424, -24.2424, -6.06061, -9.09082, 12.1212, 15.1515, -3.0303)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sn2vr"]
+polygon = PackedVector2Array(0, -24.2424, -24.2424, -6.06061, 3.03027, 21.2121, 39.3939, -6.0606)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h5k4h"]
+polygon = PackedVector2Array(0, -24.2424, -24.2424, -6.06061, -3.03027, 39.3939, 39.3939, -6.0606)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_apirc"]
+polygon = PackedVector2Array(0, -24.2424, -6.06055, 12.1212, 18.1819, 27.2727, 18.1819, -6.0606)
+
+[node name="Tree" type="Node2D"]
+
+[node name="Sprite_Layer02" type="Sprite2D" parent="."]
+light_mask = 2
+z_index = 20
+z_as_relative = false
+scale = Vector2(0.26, 0.26)
+texture = SubResource("CanvasTexture_t028b")
+
+[node name="Sprite_Layer01" type="Sprite2D" parent="."]
+rotation = 0.966912
+scale = Vector2(0.285, 0.285)
+texture = SubResource("CanvasTexture_15i8e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(0.26, 0.26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_lx8pt")
+
+[node name="LightOccluders" type="Node2D" parent="."]
+scale = Vector2(0.18, 0.18)
+
+[node name="Trunk" type="LightOccluder2D" parent="LightOccluders"]
+occluder = SubResource("OccluderPolygon2D_4xi6m")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="LightOccluders"]
+position = Vector2(-133.333, -93.9394)
+occluder = SubResource("OccluderPolygon2D_xa53e")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="LightOccluders"]
+position = Vector2(136.364, 118.182)
+occluder = SubResource("OccluderPolygon2D_sn2vr")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="LightOccluders"]
+position = Vector2(130.303, -124.242)
+occluder = SubResource("OccluderPolygon2D_h5k4h")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="LightOccluders"]
+position = Vector2(-84.8485, 90.9091)
+occluder = SubResource("OccluderPolygon2D_apirc")
