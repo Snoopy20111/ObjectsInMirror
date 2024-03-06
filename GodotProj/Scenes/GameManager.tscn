@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7pdtxv88cwso"]
+[gd_scene load_steps=12 format=3 uid="uid://c7pdtxv88cwso"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_5l7ox"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_pjsjq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://Scripts/Shaders/ScreenVignette.gdshader" id="4_1vc3t"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/ScreenRain.gdshader" id="4_15mvm"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="6_i4lbt"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/Screenshake.gdshader" id="6_r8hfb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0jrbg"]
 shader = ExtResource("4_1vc3t")
@@ -27,9 +28,16 @@ shader = ExtResource("3_on2om")
 shader_parameter/wiggle_value = 1.0
 shader_parameter/offset = 0.5
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5h2e0"]
+shader = ExtResource("6_r8hfb")
+shader_parameter/ShakeStrength = 0.0
+shader_parameter/FactorA = Vector2(100, 100)
+shader_parameter/FactorB = Vector2(1, 1)
+shader_parameter/magnitude = Vector2(0.01, 0.01)
+
 [node name="GameManager" type="Node" groups=["scene_manager_entity_nodes"]]
 script = ExtResource("1_5l7ox")
-fullscreen_effects = [NodePath("Camera2D/FullscreenCanvas/Vignette"), NodePath("Camera2D/FullscreenCanvas/ChromaticAbberation"), NodePath("Camera2D/FullscreenCanvas/Rain")]
+fullscreen_effects = [NodePath("Camera2D/FullscreenCanvas/Vignette"), NodePath("Camera2D/FullscreenCanvas/ChromaticAbberation"), NodePath("Camera2D/FullscreenCanvas/Rain"), NodePath("Camera2D/FullscreenCanvas/ScreenShake")]
 metadata/entity_name = "GameManager"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -65,6 +73,16 @@ mouse_filter = 2
 [node name="ChromaticAbberation" type="ColorRect" parent="Camera2D/FullscreenCanvas"]
 visible = false
 material = SubResource("ShaderMaterial_ptbrq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ScreenShake" type="ColorRect" parent="Camera2D/FullscreenCanvas"]
+visible = false
+material = SubResource("ShaderMaterial_5h2e0")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
