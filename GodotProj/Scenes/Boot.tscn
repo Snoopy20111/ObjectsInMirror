@@ -5,7 +5,9 @@
 
 [node name="Boot" type="CanvasLayer"]
 script = ExtResource("1_qfepg")
-Fullscreen = true
+LogoParade = false
+LoadDebugLevel = true
+DebugWindowSize = true
 DebugLevelPath = "res://Scenes/Cine_Intro_02_GasStation.tscn"
 
 [node name="Startup_Color" type="ColorRect" parent="."]

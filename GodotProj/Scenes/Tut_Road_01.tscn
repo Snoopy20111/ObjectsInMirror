@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dokdcjet05i02"]
+[gd_scene load_steps=10 format=3 uid="uid://p3ph2008osek"]
 
-[ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Prefabs/PlayerCar.tscn" id="1_0wopp"]
-[ext_resource type="Script" path="res://Scripts/Cine_Intro_01_Road.gd" id="1_ukclh"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_8l3rd"]
-[ext_resource type="PackedScene" uid="uid://bufuw8jtm226x" path="res://Scenes/Prefabs/Cinematic_Props/CineIntro01Road_LoopingEnv.tscn" id="4_s0wlv"]
-[ext_resource type="Curve" uid="uid://bdfny0nh843ha" path="res://Customs/Curves/CineIntro02_StaticTireTrackWidth_Curve.tres" id="5_dmxjk"]
-[ext_resource type="Gradient" uid="uid://di41x4u2d46ju" path="res://Customs/Gradients/TireTrackColor_Gradient.tres" id="8_3f0bx"]
+[ext_resource type="Script" path="res://Scripts/Cine_Intro_01_Road.gd" id="1_ne7gi"]
+[ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Prefabs/PlayerCar.tscn" id="2_duq33"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="3_rf1i4"]
+[ext_resource type="PackedScene" uid="uid://bufuw8jtm226x" path="res://Scenes/Prefabs/Cinematic_Props/CineIntro01Road_LoopingEnv.tscn" id="4_m41dw"]
+[ext_resource type="Curve" uid="uid://ctriqgr3u4ywo" path="res://Customs/Curves/TireTrackWidth_Curve.tres" id="5_ddps2"]
+[ext_resource type="Gradient" uid="uid://di41x4u2d46ju" path="res://Customs/Gradients/TireTrackColor_Gradient.tres" id="6_8oxfk"]
 
 [sub_resource type="Gradient" id="Gradient_7ho15"]
 interpolation_mode = 2
@@ -23,7 +23,7 @@ fill_to = Vector2(0, 0.5)
 light_mode = 1
 
 [node name="Cine_Intro_01_Road" type="Node2D"]
-script = ExtResource("1_ukclh")
+script = ExtResource("1_ne7gi")
 
 [node name="Timers" type="Node" parent="."]
 
@@ -57,7 +57,7 @@ shadow_filter_smooth = 1.0
 texture = SubResource("GradientTexture2D_41bhm")
 height = 100.0
 
-[node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("1_0wopp")]
+[node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("2_duq33")]
 rotation = -1.5708
 metadata/entity_name = "PlayerCar"
 metadata/_edit_lock_ = true
@@ -65,7 +65,7 @@ metadata/_edit_lock_ = true
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 material = SubResource("CanvasItemMaterial_y7kk1")
 position = Vector2(0, -43)
-script = ExtResource("2_8l3rd")
+script = ExtResource("3_rf1i4")
 priority_override = false
 priority = 1
 zoom = Vector2(0.9, 0.9)
@@ -89,10 +89,10 @@ metadata/_edit_lock_ = true
 [node name="Camera_Target" type="Node2D" parent="."]
 position = Vector2(0, -43)
 
-[node name="LoopingEnv" parent="." instance=ExtResource("4_s0wlv")]
+[node name="LoopingEnv" parent="." instance=ExtResource("4_m41dw")]
 metadata/_edit_lock_ = true
 
-[node name="LoopingEnv2" parent="." instance=ExtResource("4_s0wlv")]
+[node name="LoopingEnv2" parent="." instance=ExtResource("4_m41dw")]
 position = Vector2(0, -2048)
 metadata/_edit_lock_ = true
 
@@ -104,9 +104,9 @@ metadata/_edit_lock_ = true
 z_index = 5
 position = Vector2(-27, 0)
 points = PackedVector2Array(0, 1000, 0, 0)
-width_curve = ExtResource("5_dmxjk")
+width_curve = ExtResource("5_ddps2")
 default_color = Color(0, 0, 0, 0.156863)
-gradient = ExtResource("8_3f0bx")
+gradient = ExtResource("6_8oxfk")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -116,9 +116,9 @@ antialiased = true
 z_index = 5
 position = Vector2(27, 0)
 points = PackedVector2Array(0, 1000, 0, 0)
-width_curve = ExtResource("5_dmxjk")
+width_curve = ExtResource("5_ddps2")
 default_color = Color(0, 0, 0, 0.156863)
-gradient = ExtResource("8_3f0bx")
+gradient = ExtResource("6_8oxfk")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2

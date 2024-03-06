@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7pdtxv88cwso"]
+[gd_scene load_steps=10 format=3 uid="uid://c7pdtxv88cwso"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_5l7ox"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_pjsjq"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/ChromaticAberration.gdshader" id="3_on2om"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/ScreenVignette.gdshader" id="4_1vc3t"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/ScreenRain.gdshader" id="4_15mvm"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="6_i4lbt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0jrbg"]
 shader = ExtResource("4_1vc3t")
@@ -32,7 +33,6 @@ fullscreen_effects = [NodePath("Camera2D/FullscreenCanvas/Vignette"), NodePath("
 metadata/entity_name = "GameManager"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.9, 0.9)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("2_pjsjq")
@@ -71,3 +71,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="BackupPhantomCamera2D" type="Node2D" parent="."]
+script = ExtResource("6_i4lbt")
+priority_override = false
+priority = 0
+zoom = Vector2(1, 1)
+follow_mode = 0
+frame_preview = true
+pixel_perfect = false
+limit/draw_limits = false
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+limit/limit_node_target = NodePath("")
+limit/smoothed = false
+tween_parameters = null
+tween_on_load = true
+inactive_update_mode = 0

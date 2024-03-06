@@ -79,7 +79,9 @@ func SetInputVector() -> void:
 		Enums.CONTROL_TYPE.NONE:
 			steeringInput = 0.0
 			accelerationInput = 0.0
-	#Todo: AI input mode
+		Enums.CONTROL_TYPE.SCRIPT:
+			# Do nothing here, deliberately
+			pass
 
 
 func KillOrthoganalVelocity() -> void:
@@ -93,4 +95,9 @@ func GetLateralVelocity() -> float:
 	#Returns how fast the car is moving sideways
 	return linear_velocity.dot(transform.y)
 
+
+func ScriptControl_GoForward():
+	controlMode = Enums.CONTROL_TYPE.SCRIPT
+	print("Arrived")
+	accelerationInput = 1
 #@export var traction_curve:Curve = preload("res://Customs/Curves/Car_XSpeedYTraction_Default.tres")
