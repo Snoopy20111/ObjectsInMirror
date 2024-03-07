@@ -403,6 +403,11 @@ shadow_filter_smooth = 1.0
 texture = SubResource("GradientTexture2D_41bhm")
 height = 100.0
 
+[node name="Trigger" parent="." instance=ExtResource("4_gl2ke")]
+z_index = 1220
+position = Vector2(-2122, -3403)
+sceneToLoad = "res://Scenes/Test_2D.tscn"
+
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 material = SubResource("CanvasItemMaterial_y7kk1")
 position = Vector2(-0.00114392, -289)
@@ -427,10 +432,6 @@ tween_parameters = null
 tween_on_load = true
 inactive_update_mode = 0
 metadata/_edit_lock_ = true
-
-[node name="Trigger" parent="." instance=ExtResource("4_gl2ke")]
-position = Vector2(0, -3192)
-sceneToLoad = "res://Scenes/Test_2D.tscn"
 
 [node name="TileMap_Ground" type="TileMap" parent="."]
 position = Vector2(-30, 0)

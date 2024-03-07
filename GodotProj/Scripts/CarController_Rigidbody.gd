@@ -10,6 +10,7 @@ class_name CarController
 @export var turnFactor:float = 3.5
 @export var maxSpeed:float = 800
 @export var maxSpeedReverseFactor:float = 0.4
+@export var tireScreechFactor:float = 4.0
 
 #@export_group("No Control Properties")
 
@@ -18,13 +19,25 @@ class_name CarController
 var accelerationInput:float = 0
 var steeringInput:float = 0
 var velocityVsUp = 0
-@onready var rotationAngle:float = rotation_degrees
 var engineAudioOutput:float = 0
+var lateralVelocity:float = 0
+var isBraking:bool = false
 
+@onready var rotationAngle:float = rotation_degrees
+@onready var skidMaker_L:Line2D = $SkidMaker_L/Skid
+@onready var skidMaker_R:Line2D = $SkidMaker_R/Skid
+@onready var skidParticles_L:CPUParticles2D = $SkidMaker_L/Particles
+@onready var skidParticles_R:CPUParticles2D = $SkidMaker_R/Particles
 
 # Called every frame
 func _process(_delta):
 	SetInputVector()
+	if (GetTireScreeching()):
+		skidParticles_L.emitting = true
+		skidParticles_R.emitting = true
+	else:
+		skidParticles_L.emitting = false
+		skidParticles_R.emitting = false
 
 
 # Called when calculating physics (part of _physics_process() )
@@ -95,6 +108,17 @@ func GetLateralVelocity() -> float:
 	#Returns how fast the car is moving sideways
 	return linear_velocity.dot(transform.y)
 
+func GetTireScreeching():
+	lateralVelocity = GetLateralVelocity()
+	isBraking = false
+	# Check if we're moving forward and the player is hitting the brakes
+	if (accelerationInput < 0) and (velocityVsUp > 0):
+		isBraking = true
+		return true
+	# Check if we're moving sideways over a threshold
+	if (absf(GetLateralVelocity()) > 4.0):
+		return true
+	return false
 
 func ScriptControl_GoForward():
 	controlMode = Enums.CONTROL_TYPE.SCRIPT

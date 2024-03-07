@@ -1,10 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://b53rom87xh58x"]
+[gd_scene load_steps=8 format=3 uid="uid://b53rom87xh58x"]
 
 [ext_resource type="Script" path="res://Scripts/TireTrail.gd" id="1_6bums"]
+[ext_resource type="Texture2D" uid="uid://ct3ylb4ou2rgu" path="res://Sprites/Particles_FX/Smoke/smoke1.png" id="1_c0urv"]
 [ext_resource type="Curve" uid="uid://ctriqgr3u4ywo" path="res://Customs/Curves/TireTrackWidth_Curve.tres" id="1_qusas"]
 [ext_resource type="Gradient" uid="uid://di41x4u2d46ju" path="res://Customs/Gradients/TireTrackColor_Gradient.tres" id="2_xukvd"]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_ea32s"]
+diffuse_texture = ExtResource("1_c0urv")
+
+[sub_resource type="Curve" id="Curve_qvu6d"]
+_data = [Vector2(0, 0.252747), 0.0, 0.418161, 0, 0, Vector2(1, 0.604396), 0.285207, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_3q7bd"]
+offsets = PackedFloat32Array(0, 0.399061, 0.633803, 1)
+colors = PackedColorArray(1, 1, 1, 0.0431373, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Node2D" type="Node2D"]
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+visible = false
+z_index = 4
+emitting = false
+amount = 3
+lifetime = 0.3
+texture = SubResource("CanvasTexture_ea32s")
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+radial_accel_min = -79.85
+radial_accel_max = 75.7
+tangential_accel_max = 38.46
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_qvu6d")
+color_ramp = SubResource("Gradient_3q7bd")
 
 [node name="Skid" type="Line2D" parent="."]
 top_level = true
