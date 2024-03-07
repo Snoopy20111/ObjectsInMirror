@@ -381,7 +381,6 @@ tile_size = Vector2i(32, 32)
 [node name="Lighting" type="Node" parent="."]
 
 [node name="CanvasModulate2" parent="Lighting" instance=ExtResource("1_jy686")]
-visible = false
 
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("2_duq33")]
 rotation = -1.5708

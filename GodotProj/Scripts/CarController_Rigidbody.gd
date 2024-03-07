@@ -10,7 +10,7 @@ class_name CarController
 @export var turnFactor:float = 3.5
 @export var maxSpeed:float = 800
 @export var maxSpeedReverseFactor:float = 0.4
-@export var tireScreechFactor:float = 4.0
+@export var tireScreechFactor:float = 150.0
 
 #@export_group("No Control Properties")
 
@@ -116,7 +116,7 @@ func GetTireScreeching():
 		isBraking = true
 		return true
 	# Check if we're moving sideways over a threshold
-	if (absf(GetLateralVelocity()) > 4.0):
+	if (absf(GetLateralVelocity()) > tireScreechFactor):
 		return true
 	return false
 
