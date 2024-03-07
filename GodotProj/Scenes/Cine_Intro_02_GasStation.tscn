@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=3 uid="uid://chijlaqxstsr3"]
+[gd_scene load_steps=38 format=3 uid="uid://chijlaqxstsr3"]
 
 [ext_resource type="Texture2D" uid="uid://ba7oa1h07tpxj" path="res://Sprites/Environment/spritesheet_tiles.png" id="1_e4dcy"]
 [ext_resource type="Script" path="res://Scripts/Cine_Intro_02_GasStation.gd" id="1_o43tp"]
 [ext_resource type="PackedScene" uid="uid://dqx6vc23q8te7" path="res://Scenes/Prefabs/GasPump.tscn" id="2_0tn75"]
+[ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="2_puwxe"]
 [ext_resource type="Texture2D" uid="uid://bw7i03m4bb7ha" path="res://Sprites/1x1white.png" id="3_w2g3f"]
 [ext_resource type="Texture2D" uid="uid://daoj1y77qpauh" path="res://Sprites/SetDressing/Barrels/BarrelUpright_04.svg" id="4_5k4vv"]
 [ext_resource type="Texture2D" uid="uid://c3d7xbp2kevfd" path="res://Sprites/SetDressing/dumpster.png" id="5_7w2u6"]
@@ -429,9 +430,8 @@ one_shot = true
 
 [node name="Lighting" type="Node" parent="."]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Lighting"]
-color = Color(0.0313726, 0.0862745, 0.2, 1)
-metadata/_edit_lock_ = true
+[node name="CanvasModulate" parent="Lighting" instance=ExtResource("2_puwxe")]
+visible = false
 
 [node name="PointLight2D" type="PointLight2D" parent="Lighting"]
 position = Vector2(0, -36)

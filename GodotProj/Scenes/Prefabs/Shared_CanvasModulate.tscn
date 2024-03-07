@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://1kusc5juq828"]
+
+[node name="CanvasModulate" type="CanvasModulate"]
+color = Color(0, 0.054902, 0.160784, 1)
+metadata/_edit_lock_ = true

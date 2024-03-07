@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dokdcjet05i02"]
+[gd_scene load_steps=11 format=3 uid="uid://dokdcjet05i02"]
 
 [ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Prefabs/PlayerCar.tscn" id="1_0wopp"]
 [ext_resource type="Script" path="res://Scripts/Cine_Intro_01_Road.gd" id="1_ukclh"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_8l3rd"]
+[ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="2_vx44v"]
 [ext_resource type="PackedScene" uid="uid://bufuw8jtm226x" path="res://Scenes/Prefabs/Cinematic_Props/CineIntro01Road_LoopingEnv.tscn" id="4_s0wlv"]
 [ext_resource type="Curve" uid="uid://bdfny0nh843ha" path="res://Customs/Curves/CineIntro02_StaticTireTrackWidth_Curve.tres" id="5_dmxjk"]
 [ext_resource type="Gradient" uid="uid://di41x4u2d46ju" path="res://Customs/Gradients/TireTrackColor_Gradient.tres" id="8_3f0bx"]
@@ -41,9 +42,8 @@ one_shot = true
 
 [node name="Lighting" type="Node" parent="."]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Lighting"]
-color = Color(0.0313726, 0.0862745, 0.2, 1)
-metadata/_edit_lock_ = true
+[node name="CanvasModulate" parent="Lighting" instance=ExtResource("2_vx44v")]
+visible = false
 
 [node name="PointLight2D" type="PointLight2D" parent="Lighting"]
 position = Vector2(0, -36)
