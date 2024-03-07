@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bufuw8jtm226x"]
 
 [ext_resource type="Texture2D" uid="uid://ba7oa1h07tpxj" path="res://Sprites/Environment/spritesheet_tiles.png" id="1_laqn2"]
-[ext_resource type="PackedScene" uid="uid://bhyko8joax145" path="res://Scenes/Prefabs/Cinematic_Props/Trees/Tree.tscn" id="2_3gnbv"]
-[ext_resource type="PackedScene" uid="uid://cup1w15t2fbhu" path="res://Scenes/Prefabs/Cinematic_Props/Trees/Tree_BasicShadows.tscn" id="3_pq125"]
+[ext_resource type="PackedScene" uid="uid://bhyko8joax145" path="res://Scenes/Prefabs/Trees/Tree.tscn" id="2_3gnbv"]
+[ext_resource type="PackedScene" uid="uid://cup1w15t2fbhu" path="res://Scenes/Prefabs/Trees/Tree_BasicShadows.tscn" id="3_pq125"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvejr"]
 texture = ExtResource("1_laqn2")

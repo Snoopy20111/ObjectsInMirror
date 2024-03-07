@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://su7v10rnypko" path="res://Sprites/SetDressing/Bits/Bits_08.svg" id="11_cqdxd"]
 [ext_resource type="Texture2D" uid="uid://ct3ylb4ou2rgu" path="res://Sprites/Particles_FX/Smoke/smoke1.png" id="12_uadhi"]
 [ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Prefabs/PlayerCar.tscn" id="13_onc42"]
-[ext_resource type="PackedScene" uid="uid://bhyko8joax145" path="res://Scenes/Prefabs/Cinematic_Props/Trees/Tree.tscn" id="14_6ynf6"]
+[ext_resource type="PackedScene" uid="uid://bhyko8joax145" path="res://Scenes/Prefabs/Trees/Tree.tscn" id="14_6ynf6"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="15_f7nxw"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="17_kbxvh"]
 [ext_resource type="Curve" uid="uid://bdfny0nh843ha" path="res://Customs/Curves/CineIntro02_StaticTireTrackWidth_Curve.tres" id="18_ewpk5"]
