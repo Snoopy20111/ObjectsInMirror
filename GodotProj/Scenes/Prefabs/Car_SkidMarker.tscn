@@ -19,7 +19,8 @@ colors = PackedColorArray(1, 1, 1, 0.0431373, 1, 1, 1, 0.9212, 1, 1, 1, 1, 1, 1,
 [node name="Node2D" type="Node2D"]
 
 [node name="Particles" type="CPUParticles2D" parent="."]
-z_index = 4
+z_index = 50
+z_as_relative = false
 emitting = false
 amount = 20
 lifetime = 1.5
