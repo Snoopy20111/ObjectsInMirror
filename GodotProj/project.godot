@@ -31,7 +31,7 @@ general/include_notes_in_translation_exports=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Wwise/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/Wwise/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/linepath2d/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [input]
 
