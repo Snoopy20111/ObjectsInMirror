@@ -10,7 +10,7 @@ uniform int count: hint_range(0, 2000) = 150;
 uniform float slant: hint_range(-0.1, 0.1) = -0.01;
 uniform float speed: hint_range(25.0, 100.0) = 50.0;
 uniform float blur: hint_range(0.0005, 0.1) = 0.002;
-uniform vec4 colour: source_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform vec4 color: source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform vec2 size = vec2(0.005, 0.2);
 
 float line_sdf(vec2 p, vec2 s) {
@@ -52,5 +52,5 @@ void fragment() {
         output += clamp(- sdf / blur, 0.0, 1.0);
     }
 
-    COLOR = vec4(colour.rgb, output);
+    COLOR = vec4(color.rgb, output);
 }

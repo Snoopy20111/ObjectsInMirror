@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dokdcjet05i02"]
 
-[ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Prefabs/PlayerCar.tscn" id="1_0wopp"]
+[ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Actors/PlayerCar.tscn" id="1_0wopp"]
 [ext_resource type="Script" path="res://Scripts/Cine_Intro_01_Road.gd" id="1_ukclh"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_8l3rd"]
 [ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="2_vx44v"]
@@ -43,6 +43,7 @@ one_shot = true
 [node name="Lighting" type="Node" parent="."]
 
 [node name="CanvasModulate" parent="Lighting" instance=ExtResource("2_vx44v")]
+visible = false
 
 [node name="PointLight2D" type="PointLight2D" parent="Lighting"]
 position = Vector2(0, -36)
@@ -73,7 +74,7 @@ follow_target = NodePath("../Camera_Target")
 follow_parameters/damping = false
 frame_preview = true
 pixel_perfect = false
-limit/draw_limits = false
+limit/draw_limits = true
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000

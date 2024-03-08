@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxym1lqfpdf3"
-path="res://.godot/imported/Road007_256-PNG_Color.png-da06043177224e8f7d253291317a6bce.ctex"
+uid="uid://cp3omrhthrecl"
+path="res://.godot/imported/Gravel039_256_Specular_square.png-3e1c8f413d7dc6a105bed58e876988c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Environment/Road007_256-PNG_Color.png"
-dest_files=["res://.godot/imported/Road007_256-PNG_Color.png-da06043177224e8f7d253291317a6bce.ctex"]
+source_file="res://Sprites/Environment/Road/Gravel039_256_Specular_square.png"
+dest_files=["res://.godot/imported/Gravel039_256_Specular_square.png-3e1c8f413d7dc6a105bed58e876988c7.ctex"]
 
 [params]
 

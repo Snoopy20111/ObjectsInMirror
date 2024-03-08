@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byxi35s8xcf8l"
-path="res://.godot/imported/Road007_256-PNG_Specular-Roughness.png-148dd9eb4f6f5201deecd4f2f0095aa0.ctex"
+uid="uid://dii42whr8jsn6"
+path="res://.godot/imported/Road007_256-PNG_Normal-DX.png-a1beb46add6b2d45bac8e85cde21d37b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Environment/Road007_256-PNG_Specular-Roughness.png"
-dest_files=["res://.godot/imported/Road007_256-PNG_Specular-Roughness.png-148dd9eb4f6f5201deecd4f2f0095aa0.ctex"]
+source_file="res://Sprites/Environment/Road/Road007_256-PNG_Normal-DX.png"
+dest_files=["res://.godot/imported/Road007_256-PNG_Normal-DX.png-a1beb46add6b2d45bac8e85cde21d37b.ctex"]
 
 [params]
 

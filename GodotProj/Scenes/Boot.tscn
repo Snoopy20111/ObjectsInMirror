@@ -5,8 +5,6 @@
 
 [node name="Boot" type="CanvasLayer"]
 script = ExtResource("1_qfepg")
-LogoParade = false
-LoadDebugLevel = true
 DebugWindowSize = true
 DebugLevelPath = "res://Scenes/Tut_Road_01.tscn"
 

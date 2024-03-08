@@ -20,19 +20,19 @@ shader_parameter/count = 150
 shader_parameter/slant = -0.01
 shader_parameter/speed = 50.0
 shader_parameter/blur = 0.002
-shader_parameter/colour = Color(1, 1, 1, 1)
+shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/size = Vector2(0.005, 0.2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ptbrq"]
 shader = ExtResource("3_on2om")
-shader_parameter/wiggle_value = 1.0
+shader_parameter/wiggle = 1.0
 shader_parameter/offset = 0.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5h2e0"]
 shader = ExtResource("6_r8hfb")
-shader_parameter/ShakeStrength = 0.0
-shader_parameter/FactorA = Vector2(100, 100)
-shader_parameter/FactorB = Vector2(1, 1)
+shader_parameter/shake_strength = 0.0
+shader_parameter/factor_a = Vector2(100, 100)
+shader_parameter/factor_b = Vector2(1, 1)
 shader_parameter/magnitude = Vector2(0.01, 0.01)
 
 [node name="GameManager" type="Node" groups=["scene_manager_entity_nodes"]]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dii42whr8jsn6"
-path="res://.godot/imported/Road007_256-PNG_Normal-DX.png-855bf1bc6cd15f5d984878b2a10dccf2.ctex"
+uid="uid://dxxeq7d27hma7"
+path="res://.godot/imported/Gravel039_256_NormalDX_square.png-d656291d5471acc5d90f0321bf6060fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Environment/Road007_256-PNG_Normal-DX.png"
-dest_files=["res://.godot/imported/Road007_256-PNG_Normal-DX.png-855bf1bc6cd15f5d984878b2a10dccf2.ctex"]
+source_file="res://Sprites/Environment/Road/Gravel039_256_NormalDX_square.png"
+dest_files=["res://.godot/imported/Gravel039_256_NormalDX_square.png-d656291d5471acc5d90f0321bf6060fe.ctex"]
 
 [params]
 

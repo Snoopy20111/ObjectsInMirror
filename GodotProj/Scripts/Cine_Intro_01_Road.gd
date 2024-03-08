@@ -39,8 +39,7 @@ func loop_environment(delta: float) -> void:
 		loopingEnv2.position.y -= loopingEnv_loopDistance
 	loopingEnv2.position.y += delta * loopingEnv_speed
 
-
-#Disgusting custom script, chain reaction of signals pinging back and forth
+#Disgusting custom scripts, chain reaction of signals pinging back and forth
 func _on_timer_to_first_dialogue_timeout():
 	DialogueManager.show_example_dialogue_balloon(dialogue_Intro_01, "start")
 	currentDialogue += 1
@@ -58,3 +57,6 @@ func dia_end(_resource: DialogueResource):
 			timerToSecondDialogue.start()
 		2:
 			timerToExit.start()
+
+func _exit_tree():
+	GameManager.resetFullScreenShaders()

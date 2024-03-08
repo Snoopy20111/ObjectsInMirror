@@ -36,3 +36,6 @@ func _on_timer_to_exit_timeout():
 func dia_end(_resource: DialogueResource):
 	playerCar.ScriptControl_GoForward()
 	timerToExit.start()
+
+func _exit_tree():
+	GameManager.resetFullScreenShaders()

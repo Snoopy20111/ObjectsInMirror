@@ -12,5 +12,5 @@ func _ready():
 #func _process(delta):
 	#pass
 #
-#func _exit_tree():
-	#pass
+func _exit_tree():
+	GameManager.resetFullScreenShaders()
