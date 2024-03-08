@@ -2,12 +2,8 @@ extends Node
 
 @export var fullscreen_effects: Array
 
-#should be Vector2, but we can't enforce that or else we can't set it to null
-var playerLocation:
-	get:
-		return playerLocation
-	set(location):
-		playerLocation = location
+#should be Vector2, but we can't enforce that or else we can never set it to null
+var playerLocation
 
 func _ready():
 	# Replaces the NodePaths with actual referenced nodes
@@ -17,8 +13,7 @@ func _ready():
 		fullscreen_effects[i] = get_node(fullscreen_effects[i]) as ColorRect
 
 ### Game Handling functions ###
-func setPlayerCarLocation_null():
-	playerLocation = null
+
 
 ### Specific Utilities ###
 ## Fullscreen Shader effects ##
