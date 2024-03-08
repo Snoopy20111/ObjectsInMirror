@@ -21,15 +21,15 @@ func _exit_tree():
 
 # Pressed
 func _pressed():
-	if (pressedAudioEvent != null):
+	if (pressedAudioEvent != null) and (disabled == false):
 		Wwise.post_event(pressedAudioEvent, self)
 
 # Hover
 func _mouse_entered():
-	if (hoveredAudioEvent != null):
+	if (hoveredAudioEvent != null) and (disabled == false):
 		Wwise.post_event(hoveredAudioEvent, self)
 
 # Unhover
 func _mouse_exited():
-	if (unhoveredAudioEvent != null):
+	if (unhoveredAudioEvent != null) and (disabled == false):
 		Wwise.post_event(unhoveredAudioEvent, self)

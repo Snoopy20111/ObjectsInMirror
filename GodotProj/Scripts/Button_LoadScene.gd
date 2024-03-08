@@ -28,14 +28,16 @@ extends LH_ButtonBase
 #@export var showPopup:bool = false
 #@export var scenePopup:String
 func _ready():
-	checkTransitionShared()
+	super._ready()
+	_checkTransitionShared()
 
 
 func _pressed():
+	super._pressed()
 	SceneManager.change_scene(sceneToLoad)
 
 
-func checkTransitionShared():
+func _checkTransitionShared():
 	if (SharedEasing == true):
 		TrimmedLoadOptions.erase("ease_leave")
 		TrimmedLoadOptions.erase("ease_enter")

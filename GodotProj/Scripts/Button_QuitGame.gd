@@ -15,6 +15,7 @@ var isListeningToQuit: bool = false
 #@export var scenePopup:String
 
 func _pressed():
+	super._pressed()
 	SceneManager.connect("fade_complete", quit_fade_completed)
 	SceneManager.fade_out(QuitOptions)
 	print("fadeout called")
