@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://corfont0ulc54"]
+
+[ext_resource type="Texture2D" uid="uid://2kuqfkc8xmej" path="res://Sprites/Characters/YoungMan/YoungMan_Body.svg" id="1_418g6"]
+[ext_resource type="Texture2D" uid="uid://dr8ekeeufldx6" path="res://Sprites/Lights/Headlight_Texture_Evil.png" id="2_r4du7"]
+
+[node name="Entity_Watcher" type="Node2D"]
+
+[node name="ActiveOnVisible" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-10, -22, 20, 44)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_418g6")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-9, 1.445)
+scale = Vector2(0.37037, 0.37037)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
+texture = ExtResource("2_r4du7")

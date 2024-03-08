@@ -39,6 +39,9 @@ func _process(_delta):
 		skidParticles_L.emitting = false
 		skidParticles_R.emitting = false
 
+#func _exit_tree():
+	#GameManager.setPlayerCarLocation_null()
+
 
 # Called when calculating physics (part of _physics_process() )
 func _integrate_forces(state):
@@ -87,10 +90,10 @@ func ApplySteering(_state:PhysicsDirectBodyState2D) -> void:
 func SetInputVector() -> void:
 	match controlMode:
 		Enums.CONTROL_TYPE.PLAYER:
-			steeringInput = Input.get_axis("drive_right","drive_left")
+			steeringInput = lerp(steeringInput, Input.get_axis("drive_right","drive_left"), .08)
 			accelerationInput = Input.get_axis("drive_back","drive_forward")
 		Enums.CONTROL_TYPE.NONE:
-			steeringInput = 0.0
+			steeringInput = lerp(steeringInput, 0, .1)
 			accelerationInput = 0.0
 		Enums.CONTROL_TYPE.SCRIPT:
 			# Do nothing here, deliberately

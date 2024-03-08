@@ -2,6 +2,13 @@ extends Node
 
 @export var fullscreen_effects: Array
 
+#should be Vector2, but we can't enforce that or else we can't set it to null
+var playerLocation:
+	get:
+		return playerLocation
+	set(location):
+		playerLocation = location
+
 func _ready():
 	# Replaces the NodePaths with actual referenced nodes
 	# Feels like a dangerous move, but saves some memory and
@@ -9,7 +16,12 @@ func _ready():
 	for i in fullscreen_effects.size():
 		fullscreen_effects[i] = get_node(fullscreen_effects[i]) as ColorRect
 
+### Game Handling functions ###
+func setPlayerCarLocation_null():
+	playerLocation = null
+
 ### Specific Utilities ###
+## Fullscreen Shader effects ##
 func setFullscreenShaderActive(effect: int, is_active: bool = true) -> void:
 	if (effect > fullscreen_effects.size()):
 		push_error("effect value outside array range")
@@ -43,7 +55,6 @@ func getFullscreenShaderParam(effect: int, param_name: String):
 #func retarget_camera2D(_new_target: Node2D):
 	##Set camera to target given object
 	#pass
-
 
 ### Utilities ###
 func reparent_other(child:Node, new_parent:Node) -> void:
