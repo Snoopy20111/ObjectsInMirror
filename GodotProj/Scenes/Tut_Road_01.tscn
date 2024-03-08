@@ -390,6 +390,7 @@ metadata/entity_name = "PlayerCar"
 [node name="Camera_Target_01" type="Node2D" parent="PlayerCar"]
 position = Vector2(289, -9.77397e-05)
 rotation = 1.5708
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="PlayerCar"]
 position = Vector2(36, 0.00013032)
@@ -401,6 +402,7 @@ shadow_filter = 1
 shadow_filter_smooth = 1.0
 texture = SubResource("GradientTexture2D_41bhm")
 height = 100.0
+metadata/_edit_lock_ = true
 
 [node name="Trigger" parent="." instance=ExtResource("4_gl2ke")]
 z_index = 1220
@@ -448,6 +450,7 @@ width_profile = SubResource("Curve_li8xw")
 fill_texture = SubResource("CanvasTexture_k6yoi")
 fill_texture_mode = 1
 cap_joint_mode = 2
+border_antialiased = true
 
 [node name="Tilemap_Trees" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_g8cd0")
@@ -455,4 +458,4 @@ format = 2
 metadata/_edit_lock_ = true
 
 [node name="Entity_Watcher" parent="." instance=ExtResource("13_p7l28")]
-position = Vector2(-353, -447)
+position = Vector2(484, -8488)

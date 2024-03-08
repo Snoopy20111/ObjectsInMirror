@@ -1,15 +1,33 @@
 extends Node2D
 
+const watcherLightFadeCurve = preload("res://Customs/Curves/Watcher_LightFade_Curve.tres")
+const watcherSpriteFadeCurve = preload("res://Customs/Curves/Watcher_SpriteFade_Curve.tres")
+const watcherChaosFadeCurve = preload("res://Customs/Curves/Watcher_ChaosFade_Curve.tres")
+const watcherChaosWithDistanceCurve = preload("res://Customs/Curves/Watcher_ChaosWithDistance_Curve.tres")
+const watcherChaosRadiusWithDistanceCurve = preload("res://Customs/Curves/Watcher_ChaosRadiusWithDistance_Curve.tres")
 
 @export var turningSpeed: float = 12.0
+@export var maxChaosDistance: float = 600
+@export var chaosFadeCounterDown: float = 2
+
 
 @onready var watcherLight: PointLight2D = $PointLight2D
+@onready var lightEnergyFactor:float = watcherLight.energy
 @onready var animBeginTimer: Timer = $AnimBeginTimer
+@onready var watcherSprite: Sprite2D = $Sprite
+@onready var chaosNode: ColorRect = $Chaos
+@onready var chaosFadeStartValue: float = chaosFadeCounterDown
+
+#Shader params
+@onready var chaosParam: float = chaosNode.material.get_shader_parameter("chaos")
+#@onready var radiusParam: float = chaosNode.material.get_shader_parameter("radius")
 
 var paused: bool = true
+var isFadingSelf: bool = false
+var isFadingChaos: bool = false
+var fadeCounter: float = 0
 
-#func _ready():
-	#pass # Replace with function body.
+var playerLocation: Vector2
 
 
 func _process(delta):
@@ -17,33 +35,50 @@ func _process(delta):
 	if (paused):
 		return
 	
-	# If the player's location is a valid position,
-	# look towards the player with smoothing
-	var new_playerLocation: Vector2
-	if (typeof(GameManager.playerLocation) == TYPE_VECTOR2):
-		new_playerLocation = GameManager.playerLocation
-		
-		#working approach
-		var new_transform = transform.looking_at(new_playerLocation)
-		rotation = transform.interpolate_with(new_transform, turningSpeed * delta).get_rotation()
-		
-		#uses less data but can't interpolate neg -> positive, does crazy spins
-		#rotation = lerp(rotation, transform.looking_at(new_playerLocation).get_rotation(),
-		#turningSpeed * delta)
-		
-		#alternate simple approach without smoothing
-		#look_at(new_playerLocation)
+	# Fade Chaos, if able, but if the counter is past 0, delete watcher
+	if(isFadingChaos):
+		if (chaosFadeCounterDown <= 0):
+			print("Bye bitches")
+			queue_free()
+		else:
+			chaosFadeCounterDown -= delta
 	
+	# If the light is totally off and watcher is invisible, begin fading chaos
+	if (watcherLight.energy <= 0) and (watcherSprite.self_modulate.a == 0) and (isFadingChaos == false):
+		isFadingChaos = true
+		isFadingSelf = false
+	
+	# Fade light, if able
+	if (isFadingSelf):
+		fadeCounter += delta
+		watcherLight.energy = watcherLightFadeCurve.sample(fadeCounter)
+		watcherSprite.self_modulate.a = watcherSpriteFadeCurve.sample(fadeCounter)
+	
+	# If the player's location is a valid position, look_at with smoothing
+	if (typeof(GameManager.playerLocation) == TYPE_VECTOR2):
+		playerLocation = GameManager.playerLocation
+		#working approach
+		var new_transform = transform.looking_at(playerLocation)
+		rotation = transform.interpolate_with(new_transform,
+			turningSpeed * delta).get_rotation()
+	
+	var distanceToPlayer: float = Vector2(global_position - playerLocation).length()
 
+	var chaosAdd = watcherChaosWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1)) 
+	var radiusAdd = watcherChaosRadiusWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1)) 
+	var chaosFadeMult = watcherChaosFadeCurve.sample(chaosFadeCounterDown/chaosFadeStartValue)
+	# Set chaos shader based roughly on the inverse distance to the player
+	chaosNode.material.set_shader_parameter("chaos", (chaosParam + chaosAdd) * chaosFadeMult)
+	chaosNode.material.set_shader_parameter("radius", radiusAdd * chaosFadeMult)
+	print("Chaos value: " + str((chaosParam+chaosAdd) * chaosFadeMult)
+	+ " || Radius value: " + str(radiusAdd * chaosFadeMult))
+	print(radiusAdd)
 
 func _on_visible_on_screen_entered():
 	#spring to life
-	print("watcher activated")
 	paused = false
 	animBeginTimer.start()
 	
 
 func _on_anim_begin_timer_timeout():
-	#basic version, just turn off the light
-	#later we'll want to lerp it down or something
-	watcherLight.visible = false
+	isFadingSelf = true

@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://corfont0ulc54"]
+[gd_scene load_steps=6 format=3 uid="uid://corfont0ulc54"]
 
 [ext_resource type="Texture2D" uid="uid://2kuqfkc8xmej" path="res://Sprites/Characters/YoungMan/YoungMan_Body.svg" id="1_418g6"]
 [ext_resource type="Script" path="res://Scenes/Prefabs/Entity_Watcher_Tutorial.gd" id="1_xyp0t"]
 [ext_resource type="Texture2D" uid="uid://dr8ekeeufldx6" path="res://Sprites/Lights/Headlight_Texture_Evil.png" id="2_r4du7"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/ChromaticChaosDistortion.gdshader" id="3_ibcqt"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ex7iu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vtacd"]
+shader = ExtResource("3_ibcqt")
+shader_parameter/chaos = 6.805
+shader_parameter/radius = 0.325
+shader_parameter/attenuation = 1.0
 
 [node name="Entity_Watcher" type="Node2D"]
 script = ExtResource("1_xyp0t")
@@ -13,10 +18,11 @@ script = ExtResource("1_xyp0t")
 process_mode = 1
 
 [node name="AnimBeginTimer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 5.0
 one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = 20
 position = Vector2(-9, 1.445)
 scale = Vector2(0.37037, 0.37037)
 shadow_enabled = true
@@ -24,8 +30,24 @@ shadow_filter = 2
 shadow_filter_smooth = 1.0
 texture = ExtResource("2_r4du7")
 
+[node name="Chaos" type="ColorRect" parent="."]
+light_mask = 0
+z_index = 10
+material = SubResource("ShaderMaterial_vtacd")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.0
+offset_top = -261.0
+offset_right = 267.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
 [node name="Sprite" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_ex7iu")
 texture = ExtResource("1_418g6")
 
 [connection signal="screen_entered" from="VisibleOn" to="." method="_on_visible_on_screen_entered"]
