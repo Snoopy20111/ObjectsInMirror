@@ -2,6 +2,9 @@ extends Node
 
 @export var fullscreen_effects: Array
 
+#var didCompleteTutorialArea: bool = false
+
+
 var _vignetteAlpha: float
 var _vignetteInnerRadius: float
 var _vignetteOuterRadius: float
