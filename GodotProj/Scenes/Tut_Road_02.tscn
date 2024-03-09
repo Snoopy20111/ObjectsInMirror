@@ -1,23 +1,23 @@
-[gd_scene load_steps=31 format=3 uid="uid://p3ph2008osek"]
+[gd_scene load_steps=31 format=3 uid="uid://b2b87i25aqeqp"]
 
-[ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="1_jy686"]
-[ext_resource type="Script" path="res://Scripts/SceneScripts/Tut_Road_01.gd" id="1_x3qua"]
-[ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Actors/PlayerCar.tscn" id="2_duq33"]
-[ext_resource type="Texture2D" uid="uid://ba7oa1h07tpxj" path="res://Sprites/Environment/spritesheet_tiles.png" id="3_kl8d3"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="3_rf1i4"]
-[ext_resource type="PackedScene" uid="uid://em0kg5ssleqa" path="res://Scenes/Prefabs/Trigger_LoadScene.tscn" id="4_gl2ke"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_kjx3t"]
-[ext_resource type="Script" path="res://addons/linepath2d/linepath2d.gd" id="6_83k3g"]
-[ext_resource type="PackedScene" uid="uid://bhyko8joax145" path="res://Scenes/Prefabs/Trees/Tree.tscn" id="6_uyd0x"]
-[ext_resource type="PackedScene" uid="uid://cup1w15t2fbhu" path="res://Scenes/Prefabs/Trees/Tree_BasicShadows.tscn" id="7_dab3f"]
-[ext_resource type="Texture2D" uid="uid://cxym1lqfpdf3" path="res://Sprites/Environment/Road/Road007_256-PNG_Color.png" id="8_akv8n"]
-[ext_resource type="Texture2D" uid="uid://dii42whr8jsn6" path="res://Sprites/Environment/Road/Road007_256-PNG_Normal-DX.png" id="9_fvu10"]
-[ext_resource type="Curve2D" uid="uid://bohtmdvm6l1xw" path="res://Customs/Curves/RoadPieces/Tut_Road_01.tres" id="9_qndbk"]
-[ext_resource type="Texture2D" uid="uid://byxi35s8xcf8l" path="res://Sprites/Environment/Road/Road007_256-PNG_Specular-Roughness.png" id="10_vwhho"]
-[ext_resource type="PackedScene" uid="uid://corfont0ulc54" path="res://Scenes/Actors/Entity_Watcher_Tutorial.tscn" id="13_p7l28"]
-[ext_resource type="Texture2D" uid="uid://dq6koupunqtky" path="res://Sprites/Environment/Road/Gravel039_256_Diffuse.png" id="13_t0qgo"]
-[ext_resource type="Texture2D" uid="uid://bfkehd00r68se" path="res://Sprites/Environment/Road/Gravel039_256_NormalDX.png" id="14_pd3p3"]
-[ext_resource type="Texture2D" uid="uid://dwe12ljcmuli2" path="res://Sprites/Environment/Road/Gravel039_256_Specular.png" id="15_2aegl"]
+[ext_resource type="Script" path="res://Scripts/SceneScripts/Tut_Road_01.gd" id="1_orpux"]
+[ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="2_7ui5h"]
+[ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Actors/PlayerCar.tscn" id="3_eo2bm"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="4_m4ktk"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_7xia7"]
+[ext_resource type="PackedScene" uid="uid://em0kg5ssleqa" path="res://Scenes/Prefabs/Trigger_LoadScene.tscn" id="6_gvavh"]
+[ext_resource type="Texture2D" uid="uid://ba7oa1h07tpxj" path="res://Sprites/Environment/spritesheet_tiles.png" id="7_ikvk6"]
+[ext_resource type="PackedScene" uid="uid://bhyko8joax145" path="res://Scenes/Prefabs/Trees/Tree.tscn" id="8_v18jb"]
+[ext_resource type="PackedScene" uid="uid://cup1w15t2fbhu" path="res://Scenes/Prefabs/Trees/Tree_BasicShadows.tscn" id="9_so4ef"]
+[ext_resource type="Curve2D" uid="uid://bohtmdvm6l1xw" path="res://Customs/Curves/RoadPieces/Tut_Road_01.tres" id="10_jb23d"]
+[ext_resource type="Script" path="res://addons/linepath2d/linepath2d.gd" id="11_c60be"]
+[ext_resource type="Texture2D" uid="uid://cxym1lqfpdf3" path="res://Sprites/Environment/Road/Road007_256-PNG_Color.png" id="12_f5jmw"]
+[ext_resource type="Texture2D" uid="uid://dii42whr8jsn6" path="res://Sprites/Environment/Road/Road007_256-PNG_Normal-DX.png" id="13_innrh"]
+[ext_resource type="Texture2D" uid="uid://byxi35s8xcf8l" path="res://Sprites/Environment/Road/Road007_256-PNG_Specular-Roughness.png" id="14_76lky"]
+[ext_resource type="Texture2D" uid="uid://dq6koupunqtky" path="res://Sprites/Environment/Road/Gravel039_256_Diffuse.png" id="15_hv0gh"]
+[ext_resource type="Texture2D" uid="uid://bfkehd00r68se" path="res://Sprites/Environment/Road/Gravel039_256_NormalDX.png" id="16_80fk5"]
+[ext_resource type="Texture2D" uid="uid://dwe12ljcmuli2" path="res://Sprites/Environment/Road/Gravel039_256_Specular.png" id="17_ugs2e"]
+[ext_resource type="PackedScene" uid="uid://corfont0ulc54" path="res://Scenes/Actors/Entity_Watcher_Tutorial.tscn" id="18_80r8y"]
 
 [sub_resource type="Gradient" id="Gradient_7ho15"]
 interpolation_mode = 2
@@ -35,7 +35,7 @@ fill_to = Vector2(0, 0.5)
 light_mode = 1
 
 [sub_resource type="Resource" id="Resource_so0o3"]
-script = ExtResource("5_kjx3t")
+script = ExtResource("5_7xia7")
 duration = 0.0
 transition = 0
 ease = 2
@@ -45,7 +45,7 @@ tile_data = PackedInt32Array(0, 786432, 2, 65536, 786432, 2, 1, 786432, 2, 65537
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qp77"]
 resource_name = "RacingPackTerrain"
-texture = ExtResource("3_kl8d3")
+texture = ExtResource("7_ikvk6")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 1:0/0 = 0
@@ -364,8 +364,8 @@ texture_region_size = Vector2i(128, 128)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_yug4o"]
 resource_name = "Trees"
-scenes/1/scene = ExtResource("6_uyd0x")
-scenes/2/scene = ExtResource("7_dab3f")
+scenes/1/scene = ExtResource("8_v18jb")
+scenes/2/scene = ExtResource("9_so4ef")
 
 [sub_resource type="TileSet" id="TileSet_qn7kg"]
 tile_size = Vector2i(128, 128)
@@ -378,17 +378,17 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
 point_count = 1
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_k6yoi"]
-diffuse_texture = ExtResource("8_akv8n")
-normal_texture = ExtResource("9_fvu10")
-specular_texture = ExtResource("10_vwhho")
+diffuse_texture = ExtResource("12_f5jmw")
+normal_texture = ExtResource("13_innrh")
+specular_texture = ExtResource("14_76lky")
 specular_shininess = 0.1
 texture_filter = 1
 texture_repeat = 2
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rb88t"]
-diffuse_texture = ExtResource("13_t0qgo")
-normal_texture = ExtResource("14_pd3p3")
-specular_texture = ExtResource("15_2aegl")
+diffuse_texture = ExtResource("15_hv0gh")
+normal_texture = ExtResource("16_80fk5")
+specular_texture = ExtResource("17_ugs2e")
 specular_shininess = 0.1
 texture_filter = 1
 texture_repeat = 2
@@ -397,20 +397,21 @@ texture_repeat = 2
 tile_size = Vector2i(32, 32)
 
 [node name="Tut_Road_01" type="Node2D"]
-script = ExtResource("1_x3qua")
+script = ExtResource("1_orpux")
 
 [node name="Timers" type="Node" parent="."]
 
 [node name="Timer_ToFirstDialogue" type="Timer" parent="Timers"]
-wait_time = 1.25
+wait_time = 1.5
 one_shot = true
 autostart = true
 
 [node name="Lighting" type="Node" parent="."]
 
-[node name="CanvasModulate" parent="Lighting" instance=ExtResource("1_jy686")]
+[node name="CanvasModulate" parent="Lighting" instance=ExtResource("2_7ui5h")]
+visible = false
 
-[node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("2_duq33")]
+[node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("3_eo2bm")]
 position = Vector2(-85, 1957)
 rotation = -1.5708
 metadata/entity_name = "PlayerCar"
@@ -435,7 +436,7 @@ metadata/_edit_lock_ = true
 z_index = 1000
 material = SubResource("CanvasItemMaterial_y7kk1")
 position = Vector2(-78.4369, 1692)
-script = ExtResource("3_rf1i4")
+script = ExtResource("4_m4ktk")
 priority_override = false
 priority = 1
 zoom = Vector2(0.8, 0.8)
@@ -457,7 +458,7 @@ tween_on_load = true
 inactive_update_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="Trigger" parent="." instance=ExtResource("4_gl2ke")]
+[node name="Trigger" parent="." instance=ExtResource("6_gvavh")]
 z_index = 1220
 position = Vector2(-10269, -8130)
 rotation = 1.5708
@@ -471,9 +472,9 @@ layer_0/tile_data = PackedInt32Array(-5701658, 786432, 2, -5636122, 786432, 2, -
 metadata/_edit_lock_ = true
 
 [node name="Road" type="Path2D" parent="."]
-curve = ExtResource("9_qndbk")
-script = ExtResource("6_83k3g")
-_curve = ExtResource("9_qndbk")
+curve = ExtResource("10_jb23d")
+script = ExtResource("11_c60be")
+_curve = ExtResource("10_jb23d")
 width = 365.0
 width_profile = SubResource("Curve_li8xw")
 fill_texture = SubResource("CanvasTexture_k6yoi")
@@ -484,9 +485,9 @@ metadata/_edit_lock_ = true
 
 [node name="RoadLiner" type="Path2D" parent="Road"]
 show_behind_parent = true
-curve = ExtResource("9_qndbk")
-script = ExtResource("6_83k3g")
-_curve = ExtResource("9_qndbk")
+curve = ExtResource("10_jb23d")
+script = ExtResource("11_c60be")
+_curve = ExtResource("10_jb23d")
 width = 470.0
 width_profile = SubResource("Curve_li8xw")
 fill_texture = SubResource("CanvasTexture_rb88t")
@@ -501,7 +502,7 @@ tile_set = SubResource("TileSet_g8cd0")
 format = 2
 metadata/_edit_lock_ = true
 
-[node name="Entity_Watcher" parent="." instance=ExtResource("13_p7l28")]
+[node name="Entity_Watcher" parent="." instance=ExtResource("18_80r8y")]
 position = Vector2(-167, -8427)
 rotation = -1.65827
 

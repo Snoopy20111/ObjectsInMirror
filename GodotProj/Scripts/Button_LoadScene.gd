@@ -35,6 +35,7 @@ func _ready():
 func _pressed():
 	super._pressed()
 	SceneManager.change_scene(sceneToLoad)
+	_canPlaySounds = false
 
 
 func _checkTransitionShared():

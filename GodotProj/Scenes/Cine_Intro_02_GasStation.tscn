@@ -1,7 +1,7 @@
 [gd_scene load_steps=55 format=3 uid="uid://chijlaqxstsr3"]
 
 [ext_resource type="Texture2D" uid="uid://ba7oa1h07tpxj" path="res://Sprites/Environment/spritesheet_tiles.png" id="1_e4dcy"]
-[ext_resource type="Script" path="res://Scripts/Cine_Intro_02_GasStation.gd" id="1_o43tp"]
+[ext_resource type="Script" path="res://Scripts/SceneScripts/Cine_Intro_02_GasStation.gd" id="1_o43tp"]
 [ext_resource type="PackedScene" uid="uid://dqx6vc23q8te7" path="res://Scenes/Prefabs/GasPump.tscn" id="2_0tn75"]
 [ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="2_puwxe"]
 [ext_resource type="Texture2D" uid="uid://bw7i03m4bb7ha" path="res://Sprites/1x1white.png" id="3_w2g3f"]

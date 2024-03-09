@@ -8,6 +8,8 @@ class_name LH_ButtonBase
 
 @export var wwiseObjectName: String = "Button"
 
+var _canPlaySounds: bool = true
+
 # When brought to life
 func _ready():
 	connect("mouse_entered", _mouse_entered)
@@ -21,15 +23,15 @@ func _exit_tree():
 
 # Pressed
 func _pressed():
-	if (pressedAudioEvent != null) and (disabled == false):
+	if (pressedAudioEvent != null) and (disabled == false) and (_canPlaySounds):
 		Wwise.post_event(pressedAudioEvent, self)
 
 # Hover
 func _mouse_entered():
-	if (hoveredAudioEvent != null) and (disabled == false):
+	if (hoveredAudioEvent != null) and (disabled == false) and (_canPlaySounds):
 		Wwise.post_event(hoveredAudioEvent, self)
 
 # Unhover
 func _mouse_exited():
-	if (unhoveredAudioEvent != null) and (disabled == false):
+	if (unhoveredAudioEvent != null) and (disabled == false) and (_canPlaySounds):
 		Wwise.post_event(unhoveredAudioEvent, self)

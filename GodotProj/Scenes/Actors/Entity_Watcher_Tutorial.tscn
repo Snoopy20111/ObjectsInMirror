@@ -7,7 +7,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vtacd"]
 shader = ExtResource("3_ibcqt")
-shader_parameter/chaos = 6.805
+shader_parameter/chaos = 9.0
 shader_parameter/radius = 0.325
 shader_parameter/attenuation = 1.0
 

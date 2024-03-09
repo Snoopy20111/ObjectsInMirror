@@ -95,7 +95,7 @@ func SetInputVector() -> void:
 			steeringInput = lerp(steeringInput, Input.get_axis("drive_right","drive_left"), .08)
 			accelerationInput = Input.get_axis("drive_back","drive_forward")
 		Enums.CONTROL_TYPE.NONE:
-			steeringInput = lerp(steeringInput, 0, .1)
+			steeringInput = lerp(steeringInput, 0.0, .1)
 			accelerationInput = 0.0
 		Enums.CONTROL_TYPE.SCRIPT:
 			# Do nothing here, deliberately
@@ -127,6 +127,5 @@ func GetTireScreeching():
 
 func ScriptControl_GoForward():
 	controlMode = Enums.CONTROL_TYPE.SCRIPT
-	print("Arrived")
 	accelerationInput = 1
 #@export var traction_curve:Curve = preload("res://Customs/Curves/Car_XSpeedYTraction_Default.tres")

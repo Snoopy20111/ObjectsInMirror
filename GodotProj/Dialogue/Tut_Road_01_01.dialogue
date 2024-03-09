@@ -1,0 +1,19 @@
+~ start
+
+I can't see all that far through the rain and dark. Gotta be careful.[next=auto]
+
+=> END
+
+#~ this_is_a_node_title
+#
+#Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+#Nathan: Here are some choices.
+#- First one
+#	Nathan: You picked the first one.
+#- Second one
+#	Nathan: You picked the second one.
+#- Start again => this_is_a_node_title
+#- End the conversation => END
+#Nathan: For more information see the online documentation.
+#
+#=> END

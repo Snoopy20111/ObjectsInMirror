@@ -1,10 +1,10 @@
 extends Node2D
 
-const watcherLightFadeCurve = preload("res://Customs/Curves/Watcher_LightFade_Curve.tres")
-const watcherSpriteFadeCurve = preload("res://Customs/Curves/Watcher_SpriteFade_Curve.tres")
-const watcherChaosFadeCurve = preload("res://Customs/Curves/Watcher_ChaosFade_Curve.tres")
-const watcherChaosWithDistanceCurve = preload("res://Customs/Curves/Watcher_ChaosWithDistance_Curve.tres")
-const watcherChaosRadiusWithDistanceCurve = preload("res://Customs/Curves/Watcher_ChaosRadiusWithDistance_Curve.tres")
+const watcherLightFadeCurve = preload("res://Customs/Curves/Watcher/Watcher_LightFade_Curve.tres")
+const watcherSpriteFadeCurve = preload("res://Customs/Curves/Watcher/Watcher_SpriteFade_Curve.tres")
+const watcherChaosFadeCurve = preload("res://Customs/Curves/Watcher/Watcher_ChaosFade_Curve.tres")
+const watcherChaosWithDistanceCurve = preload("res://Customs/Curves/Watcher/Watcher_ChaosWithDistance_Curve.tres")
+const watcherChaosRadiusWithDistanceCurve = preload("res://Customs/Curves/Watcher/Watcher_ChaosRadiusWithDistance_Curve.tres")
 
 @export var turningSpeed: float = 12.0
 @export var maxChaosDistance: float = 600
@@ -38,7 +38,6 @@ func _process(delta):
 	# Fade Chaos, if able, but if the counter is past 0, delete watcher
 	if(isFadingChaos):
 		if (chaosFadeCounterDown <= 0):
-			print("Bye bitches")
 			queue_free()
 		else:
 			chaosFadeCounterDown -= delta
@@ -70,9 +69,6 @@ func _process(delta):
 	# Set chaos shader based roughly on the inverse distance to the player
 	chaosNode.material.set_shader_parameter("chaos", (chaosParam + chaosAdd) * chaosFadeMult)
 	chaosNode.material.set_shader_parameter("radius", radiusAdd * chaosFadeMult)
-	print("Chaos value: " + str((chaosParam+chaosAdd) * chaosFadeMult)
-	+ " || Radius value: " + str(radiusAdd * chaosFadeMult))
-	print(radiusAdd)
 
 func _on_visible_on_screen_entered():
 	#spring to life

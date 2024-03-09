@@ -20,6 +20,7 @@ func _pressed():
 	SceneManager.fade_out(QuitOptions)
 	print("fadeout called")
 	isListeningToQuit = true
+	_canPlaySounds = false
 	
 func quit_fade_completed():
 	print("fade completed signal received")
