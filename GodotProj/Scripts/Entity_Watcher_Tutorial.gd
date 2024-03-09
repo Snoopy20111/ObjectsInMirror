@@ -10,24 +10,21 @@ const watcherChaosRadiusWithDistanceCurve = preload("res://Customs/Curves/Watche
 @export var maxChaosDistance: float = 600
 @export var chaosFadeCounterDown: float = 2
 
-
 @onready var watcherLight: PointLight2D = $PointLight2D
 @onready var lightEnergyFactor:float = watcherLight.energy
 @onready var animBeginTimer: Timer = $AnimBeginTimer
 @onready var watcherSprite: Sprite2D = $Sprite
 @onready var chaosNode: ColorRect = $Chaos
-@onready var chaosFadeStartValue: float = chaosFadeCounterDown
+@onready var player: CarController = $"../PlayerCar"
 
-#Shader params
+#Shader related params
 @onready var chaosParam: float = chaosNode.material.get_shader_parameter("chaos")
-#@onready var radiusParam: float = chaosNode.material.get_shader_parameter("radius")
+@onready var chaosFadeStartValue: float = chaosFadeCounterDown
 
 var paused: bool = true
 var isFadingSelf: bool = false
 var isFadingChaos: bool = false
 var fadeCounter: float = 0
-
-var playerLocation: Vector2
 
 
 func _process(delta):
@@ -53,15 +50,12 @@ func _process(delta):
 		watcherLight.energy = watcherLightFadeCurve.sample(fadeCounter)
 		watcherSprite.self_modulate.a = watcherSpriteFadeCurve.sample(fadeCounter)
 	
-	# If the player's location is a valid position, look_at with smoothing
-	if (typeof(GameManager.playerLocation) == TYPE_VECTOR2):
-		playerLocation = GameManager.playerLocation
-		#working approach
-		var new_transform = transform.looking_at(playerLocation)
-		rotation = transform.interpolate_with(new_transform,
-			turningSpeed * delta).get_rotation()
+	# Look_at with smoothing
+	var new_transform = transform.looking_at(player.global_position)
+	rotation = transform.interpolate_with(new_transform,
+		turningSpeed * delta).get_rotation()
 	
-	var distanceToPlayer: float = Vector2(global_position - playerLocation).length()
+	var distanceToPlayer: float = Vector2(player.global_position - global_position).length()
 
 	var chaosAdd = watcherChaosWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1)) 
 	var radiusAdd = watcherChaosRadiusWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1)) 

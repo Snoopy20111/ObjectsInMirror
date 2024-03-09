@@ -38,11 +38,6 @@ func _process(_delta):
 	else:
 		skidParticles_L.emitting = false
 		skidParticles_R.emitting = false
-	#Tell the GameManager where we are
-	GameManager.playerLocation = global_position
-
-#func _exit_tree():
-	#GameManager.setPlayerCarLocation_null()
 
 
 # Called when calculating physics (part of _physics_process() )

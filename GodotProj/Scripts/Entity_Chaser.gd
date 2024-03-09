@@ -9,37 +9,45 @@ const vaguePlayerLocSpreadCurve = preload("res://Customs/Curves/Chaser/Chaser_Va
 @export var movingSpeed: float = 400.0
 @export var chargeDistanceThreshold: float = 1000.0
 @export var maxChaosDistance: float = 600.0
+@export var stalkCloseEnoughDist: float = 100.0
 
 @onready var animBeginTimer: Timer = $Timer_AnimBegin
 @onready var lostEmTimer: Timer = $Timer_LostEm
 @onready var watcherSprite: Sprite2D = $Sprite
 @onready var chaosNode: ColorRect = $Chaos
+@onready var player: CarController = $"../PlayerCar"
 
-#Shader params
+#Shader related params
 @onready var chaosParam: float = chaosNode.material.get_shader_parameter("chaos")
 
-var paused: bool = false
 var isVisible: bool = false
 
-var playerLocation: Vector2
 var playerVector: Vector2
 var vaguePlayerLocation: Vector2
+var vaguePlayerVector: Vector2
 var maxStalkDistance: float = 2000
 var canCharge: bool = false
 var state: Enums.CHASER_STATE = Enums.CHASER_STATE.STALK
 
+#Temporary
+var newNode: Sprite2D
 
-func _process(delta):
-	#early return if the chaser is paused
-	if (paused):
-		return
+
+func _ready():
+	playerVector = player.position - position
+	_setVaguePlayerLocation()
 	
-	# If the player's location is a valid position, get the newest value
-	if (typeof(GameManager.playerLocation) == TYPE_VECTOR2):
-		playerLocation = GameManager.playerLocation
-	# Also get the distance to said location
-	if (typeof(playerLocation) != null):
-		playerVector = playerLocation - global_position
+	newNode = Sprite2D.new()
+	newNode.set_name("vague_loc")
+	newNode.texture = load("res://Sprites/1x1white.png")
+	newNode.scale = Vector2(30, 30)
+	newNode.z_index = 900
+	add_sibling.call_deferred(newNode)
+
+func _physics_process(delta):
+	# Get the distance to player position
+	playerVector = player.position - position
+	#print(state)
 	match(state):
 		Enums.CHASER_STATE.STOPPED:
 			# Just lost the player
@@ -52,39 +60,49 @@ func _process(delta):
 			if (_isPlayerInRange()):
 				animBeginTimer.start()
 				state = Enums.CHASER_STATE.CHARGE
-			# Patrolling with _some_ knowledge of the player's location
-			if ((global_position - vaguePlayerLocation).length() < 100):
-				print("Stalk: set new target")
-				_setVaguePlayerLocation()
 			else:
-				set_velocity((global_position - vaguePlayerLocation).normalized()
-				* movingSpeed / 2)
-				move_and_slide()
+				# Patrolling with _some_ knowledge of the player's location
+				if ((vaguePlayerLocation - position).length() < stalkCloseEnoughDist):
+					_setVaguePlayerLocation()
+				else:
+					goTo(vaguePlayerLocation, delta, 0.5, 1.0)
+			
 		Enums.CHASER_STATE.CHARGE:
 			# Player is within distance, charge towards/after them
 			if (_isPlayerInRange()) and (isVisible) and (canCharge):
-				set_velocity(playerVector.normalized() * movingSpeed)
-				move_and_slide()
+				goTo(player.position, delta, 1.0, 1.0)
 			elif (_isPlayerInRange()) and (canCharge):
-				set_velocity(playerVector.normalized() * movingSpeed * 0.75)
-				move_and_slide()
+				goTo(player.position, delta, 0.75, 1.0)
 			elif (_isPlayerInRange()) and (not canCharge):
 				pass
 			else:
 				state = Enums.CHASER_STATE.STOPPED
+				canCharge = false
+				_setVaguePlayerLocation()
 				lostEmTimer.start()
 	
 	# Look_at with some smoothing
-	var new_transform = transform.looking_at(playerLocation)
-	rotation = transform.interpolate_with(new_transform,
-		turningSpeed * delta).get_rotation()
+	var new_transform = transform.looking_at(player.position)
+	rotation = transform.interpolate_with(new_transform, turningSpeed * delta).get_rotation()
 	
-	
+	newNode.position = vaguePlayerLocation
 
+func _process(_delta):
+	#update the shader values
 	var chaosAdd = chaosWithDistanceCurve.sample(clamp(playerVector.length() / maxChaosDistance, 0, 1)) 
 	var radiusAdd = chaosRadiusWithDistanceCurve.sample(clamp(playerVector.length() / maxChaosDistance, 0, 1)) 
 	chaosNode.material.set_shader_parameter("chaos", (chaosParam + chaosAdd))
 	chaosNode.material.set_shader_parameter("radius", radiusAdd)
+
+
+
+func goTo(target_pos: Vector2, delta: float, speedMult: float = 1.0, turnMult: float = 1.0):
+	#move
+	set_velocity((target_pos - position).normalized() * movingSpeed * speedMult)
+	#and turn
+	var new_transform = transform.looking_at(target_pos)
+	rotation = transform.interpolate_with(new_transform, turningSpeed * turnMult * delta).get_rotation()
+	move_and_slide()
 
 func _isPlayerInRange() -> bool:
 	return playerVector.length() < chargeDistanceThreshold
@@ -93,22 +111,21 @@ func _setVaguePlayerLocation():
 	var rot: float= randf_range(0, 360)
 	var dist: float = vaguePlayerLocSpreadCurve.sample(clamp(playerVector.length()
 	/maxStalkDistance, 0, maxStalkDistance))
-	var rand_vec: Vector2 = Vector2(dist, 0)
-	rand_vec.rotated(rot)
-	print("Rand_vec: " + str(rand_vec))
-	vaguePlayerLocation = GameManager.playerLocation + rand_vec
+	var rand_vec: Vector2 = Vector2(0, dist)
+	rand_vec.rotated(PI)
+	print("Rot: " + str(rot) + " || Rand_vec: " + str(rand_vec))
+	vaguePlayerLocation = player.position + rand_vec
+	vaguePlayerVector = vaguePlayerLocation - position
 
 func _on_visible_on_screen_entered() -> void:
 	#animBeginTimer.start()
 	isVisible = true
-	
 
 func _on_visible_on_screen_exited() -> void:
 	isVisible = false
 
 func _on_timer_lost_em_timeout():
 	state = Enums.CHASER_STATE.STALK
-
 
 func _on_timer_anim_begin_timeout():
 	canCharge = true

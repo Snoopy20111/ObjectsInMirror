@@ -21,9 +21,6 @@ var _screenShakeFactorA: Vector2
 var _screenShakeFactorB: Vector2
 var _screenShakeMagnitude: Vector2
 
-#should be Vector2, but we can't enforce that or else we can never set it to null
-var playerLocation
-
 func _ready():
 	# Replaces the NodePaths with actual referenced nodes
 	# Feels like a dangerous move, but saves some memory and
