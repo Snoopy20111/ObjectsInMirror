@@ -21,8 +21,6 @@ radius = 23.0868
 [node name="Entity_Chaser" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_wa5uk")
-turningSpeed = 8.0
-maxChaosDistance = 800.0
 
 [node name="VisibleOn" type="VisibleOnScreenNotifier2D" parent="."]
 process_mode = 1

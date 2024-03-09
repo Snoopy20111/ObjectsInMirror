@@ -7,9 +7,9 @@ const vaguePlayerLocSpreadCurve = preload("res://Customs/Curves/Chaser/Chaser_Va
 
 @export var turningSpeed: float = 12.0
 @export var movingSpeed: float = 400.0
-@export var chargeDistanceThreshold: float = 1000.0
+@export var chargeDistanceThreshold: float = 600.0
 @export var maxChaosDistance: float = 600.0
-@export var stalkCloseEnoughDist: float = 100.0
+@export var stalkCloseEnoughDist: float = 150.0
 
 @onready var animBeginTimer: Timer = $Timer_AnimBegin
 @onready var lostEmTimer: Timer = $Timer_LostEm
@@ -28,21 +28,18 @@ var vaguePlayerVector: Vector2
 var maxStalkDistance: float = 2000
 var canCharge: bool = false
 var state: Enums.CHASER_STATE = Enums.CHASER_STATE.STALK
-
-#Temporary
-var newNode: Sprite2D
-
+#var newNode: Sprite2D		#Temporary
 
 func _ready():
 	playerVector = player.position - position
 	_setVaguePlayerLocation()
 	
-	newNode = Sprite2D.new()
-	newNode.set_name("vague_loc")
-	newNode.texture = load("res://Sprites/1x1white.png")
-	newNode.scale = Vector2(30, 30)
-	newNode.z_index = 900
-	add_sibling.call_deferred(newNode)
+	#newNode = Sprite2D.new()
+	#newNode.set_name("vague_loc")
+	#newNode.texture = load("res://Sprites/1x1white.png")
+	#newNode.scale = Vector2(30, 30)
+	#newNode.z_index = 900
+	#add_sibling.call_deferred(newNode)
 
 func _physics_process(delta):
 	# Get the distance to player position
@@ -85,7 +82,7 @@ func _physics_process(delta):
 	var new_transform = transform.looking_at(player.position)
 	rotation = transform.interpolate_with(new_transform, turningSpeed * delta).get_rotation()
 	
-	newNode.position = vaguePlayerLocation
+	#newNode.position = vaguePlayerLocation
 
 func _process(_delta):
 	#update the shader values
@@ -112,8 +109,9 @@ func _setVaguePlayerLocation():
 	var dist: float = vaguePlayerLocSpreadCurve.sample(clamp(playerVector.length()
 	/maxStalkDistance, 0, maxStalkDistance))
 	var rand_vec: Vector2 = Vector2(0, dist)
-	rand_vec.rotated(PI)
-	print("Rot: " + str(rot) + " || Rand_vec: " + str(rand_vec))
+	#because .rotated() wasn't working, rotate the vector manually
+	rand_vec.x = (cos(rot) * rand_vec.x) - (sin(rot) * rand_vec.y)
+	rand_vec.y = (sin(rot) * rand_vec.x) - (cos(rot) * rand_vec.y)
 	vaguePlayerLocation = player.position + rand_vec
 	vaguePlayerVector = vaguePlayerLocation - position
 
