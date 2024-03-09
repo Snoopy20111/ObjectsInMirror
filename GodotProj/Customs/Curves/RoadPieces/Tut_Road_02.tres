@@ -2,6 +2,6 @@
 
 [resource]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2000, 0, 0, 0, 0, -370, -2000, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 2000, 0, 1000, 0, -1000, 0, -2500, 0, 0, 1000, 0, 0, -4000, -1500, 0, 0, 0, 0, -4000, -7000)
 }
-point_count = 2
+point_count = 4
