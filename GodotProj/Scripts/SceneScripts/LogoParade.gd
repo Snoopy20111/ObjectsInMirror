@@ -8,7 +8,7 @@ const LogoFade_Curve = preload("res://Customs/Curves/LogoFade_Curve.tres")
 @onready var FreezeTimer: Timer = $FreezeTimer as Timer
 @onready var LogoAnim: AnimatedSprite2D = $CenterContainer/LogoAnim as AnimatedSprite2D
 
-var FadeCounter = 0
+var fadeCounter:float = 0
 @export var fade_value = Enums.FADE_STATE.PAUSE
 
 @export var FadeIn_Length = .5
@@ -28,20 +28,20 @@ func _process(delta):
 	match (fade_value):
 		Enums.FADE_STATE.IN:
 			# add to alpha value, and run fade counter value through the fade curve
-			FadeCounter += delta
-			LogoAnim.modulate.a = LogoFade_Curve.sample(FadeCounter / FadeIn_Length)
+			fadeCounter += delta
+			LogoAnim.modulate.a = LogoFade_Curve.sample(fadeCounter / FadeIn_Length)
 			# once we pass 1, pause the animation and reset the counter
-			if (FadeCounter >= 1):
+			if (fadeCounter >= 1):
 				fade_value = Enums.FADE_STATE.PAUSE
-				FadeCounter = 0
+				fadeCounter = 0
 		Enums.FADE_STATE.OUT:
 			# add to alpha value, and go in reverse down through the fade curve values
-			FadeCounter += delta
-			LogoAnim.modulate.a = LogoFade_Curve.sample(1 - (FadeCounter / FadeOut_Length))
+			fadeCounter += delta
+			LogoAnim.modulate.a = LogoFade_Curve.sample(1 - (fadeCounter / FadeOut_Length))
 			# once we pass 1 again, pause the animation (should be invisible) and wait the length of the timer before dying
-			if (FadeCounter >= 1):
+			if (fadeCounter >= 1):
 				fade_value = Enums.FADE_STATE.PAUSE
-			if (!transitioning && FadeCounter >= .18):
+			if (!transitioning) and (fadeCounter >= .18):
 				SceneManager.change_scene("res://Scenes/MainMenu.tscn")
 				transitioning = true
 

@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://ct3uwhvu5egqq"]
+
+[ext_resource type="Script" path="res://Scripts/Entity_Chaser.gd" id="1_wa5uk"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/ChromaticChaosDistortion.gdshader" id="3_or8rn"]
+[ext_resource type="Texture2D" uid="uid://2kuqfkc8xmej" path="res://Sprites/Characters/YoungMan/YoungMan_Body.svg" id="4_jgs8r"]
+
+[sub_resource type="Gradient" id="Gradient_q3u2w"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pgdla"]
+gradient = SubResource("Gradient_q3u2w")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vtacd"]
+shader = ExtResource("3_or8rn")
+shader_parameter/chaos = 20.0
+shader_parameter/radius = 0.325
+shader_parameter/attenuation = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvgye"]
+radius = 23.0868
+
+[node name="Entity_Chaser" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_wa5uk")
+turningSpeed = 8.0
+maxChaosDistance = 800.0
+
+[node name="VisibleOn" type="VisibleOnScreenNotifier2D" parent="."]
+process_mode = 1
+
+[node name="Timer_AnimBegin" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Timer_LostEm" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+z_index = 20
+scale = Vector2(7.3125, 7.3125)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
+texture = SubResource("GradientTexture2D_pgdla")
+
+[node name="Chaos" type="ColorRect" parent="."]
+light_mask = 0
+z_index = 10
+material = SubResource("ShaderMaterial_vtacd")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.0
+offset_top = -261.0
+offset_right = 267.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("4_jgs8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kvgye")
+
+[connection signal="screen_entered" from="VisibleOn" to="." method="_on_visible_on_screen_entered"]
+[connection signal="screen_exited" from="VisibleOn" to="." method="_on_visible_on_screen_exited"]
+[connection signal="timeout" from="Timer_AnimBegin" to="." method="_on_timer_anim_begin_timeout"]
+[connection signal="timeout" from="Timer_LostEm" to="." method="_on_timer_lost_em_timeout"]

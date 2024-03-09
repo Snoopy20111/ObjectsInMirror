@@ -40,5 +40,5 @@ void fragment() {
 		texture(screen_texture, SCREEN_UV + chaos_v * amount_r).r,
 		texture(screen_texture, SCREEN_UV + chaos_v * amount_g).g,
 		texture(screen_texture, SCREEN_UV + chaos_v * amount_b).b,
-		1.);
+		1.0);
 }
