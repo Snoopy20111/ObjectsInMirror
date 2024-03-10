@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var dialogue_tut_01: DialogueResource = load("res://Dialogue/Tut_Road_01_01.dialogue")
+@export var dialogue_main_01: DialogueResource = load("res://Dialogue/Main_Road_01_01.dialogue")
 
 @onready var timerToFirstDialogue: Timer = $Timers/Timer_ToFirstDialogue
 

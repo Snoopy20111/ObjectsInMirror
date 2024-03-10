@@ -2,7 +2,7 @@ extends Node2D
 # Logic for controlling cinematic, dialogue, and then transition to
 # the next scene (Tut_Road_01)
 
-@export var dialogue_Intro_03: DialogueResource = load("res://Dialogue/Cine_Intro_03.dialogue")
+@export var dialogue_Outro_03: DialogueResource = load("res://Dialogue/Cine_Outro_03.dialogue")
 @export var sceneToLoad: String = "res://Scenes/Sets/MainMenu.tscn"
 
 @onready var Cam_01: PhantomCamera2D = $PhantomCamera2D_01
@@ -27,7 +27,7 @@ func _ready():
 ## Disgusting custom script, chain reaction of signals pinging back and forth
 #Timer callback that calls the first line of dialogue
 func _on_timer_to_first_dialogue_timeout():
-	DialogueManager.show_example_dialogue_balloon(dialogue_Intro_03, "start")
+	DialogueManager.show_example_dialogue_balloon(dialogue_Outro_03, "start")
 
 #Timer callback that transitions to the next scene
 func _on_timer_to_exit_timeout():

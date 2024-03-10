@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=3 uid="uid://blbo0w4yvc3x4"]
+
+[ext_resource type="Script" path="res://Scripts/SceneScripts/Cine_Outro_01_Road.gd" id="1_587fl"]
+[ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="2_1pl21"]
+[ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Actors/PlayerCar.tscn" id="3_3q51d"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="4_6oaqu"]
+[ext_resource type="PackedScene" uid="uid://bufuw8jtm226x" path="res://Scenes/Prefabs/Cinematic_Props/CineIntro01Road_LoopingEnv.tscn" id="5_4w8o2"]
+[ext_resource type="Curve" uid="uid://bdfny0nh843ha" path="res://Customs/Curves/CineIntro02_StaticTireTrackWidth_Curve.tres" id="6_l0jtr"]
+[ext_resource type="Gradient" uid="uid://di41x4u2d46ju" path="res://Customs/Gradients/TireTrackColor_Gradient.tres" id="7_2clia"]
+
+[sub_resource type="Gradient" id="Gradient_7ho15"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.290323, 1)
+colors = PackedColorArray(0.75, 0.75, 0.75, 1, 0.267421, 0.278472, 0.281787, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_41bhm"]
+gradient = SubResource("Gradient_7ho15")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y7kk1"]
+light_mode = 1
+
+[node name="Cine_Outro_01_Road" type="Node2D"]
+script = ExtResource("1_587fl")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="Timer_ToFirstDialogue" type="Timer" parent="Timers"]
+wait_time = 2.4
+one_shot = true
+autostart = true
+
+[node name="Timer_ToSecondDialogue" type="Timer" parent="Timers"]
+wait_time = 2.25
+one_shot = true
+
+[node name="Timer_ToExit" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="CanvasModulate" parent="Lighting" instance=ExtResource("2_1pl21")]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting"]
+position = Vector2(0, -36)
+rotation = -1.5708
+scale = Vector2(11.1647, 11.1647)
+color = Color(1, 0.839216, 0.666667, 1)
+energy = 0.6
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+texture = SubResource("GradientTexture2D_41bhm")
+height = 100.0
+
+[node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("3_3q51d")]
+rotation = -1.5708
+metadata/entity_name = "PlayerCar"
+metadata/_edit_lock_ = true
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+material = SubResource("CanvasItemMaterial_y7kk1")
+position = Vector2(0, -43)
+script = ExtResource("4_6oaqu")
+priority_override = false
+priority = 1
+zoom = Vector2(0.9, 0.9)
+follow_mode = 1
+follow_target = NodePath("../Camera_Target")
+follow_parameters/damping = false
+frame_preview = true
+pixel_perfect = false
+limit/draw_limits = true
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+limit/limit_node_target = NodePath("")
+limit/smoothed = false
+tween_parameters = null
+tween_on_load = false
+inactive_update_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Camera_Target" type="Node2D" parent="."]
+position = Vector2(0, -43)
+
+[node name="LoopingEnv" parent="." instance=ExtResource("5_4w8o2")]
+metadata/_edit_lock_ = true
+
+[node name="LoopingEnv2" parent="." instance=ExtResource("5_4w8o2")]
+position = Vector2(0, -2048)
+metadata/_edit_lock_ = true
+
+[node name="Skids" type="Node2D" parent="."]
+position = Vector2(0, 57)
+metadata/_edit_lock_ = true
+
+[node name="Skid_L" type="Line2D" parent="Skids"]
+z_index = 5
+position = Vector2(-27, 0)
+points = PackedVector2Array(0, 1000, 0, 0)
+width_curve = ExtResource("6_l0jtr")
+default_color = Color(0, 0, 0, 0.156863)
+gradient = ExtResource("7_2clia")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Skid_R" type="Line2D" parent="Skids"]
+z_index = 5
+position = Vector2(27, 0)
+points = PackedVector2Array(0, 1000, 0, 0)
+width_curve = ExtResource("6_l0jtr")
+default_color = Color(0, 0, 0, 0.156863)
+gradient = ExtResource("7_2clia")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[connection signal="timeout" from="Timers/Timer_ToFirstDialogue" to="." method="_on_timer_to_first_dialogue_timeout"]
+[connection signal="timeout" from="Timers/Timer_ToSecondDialogue" to="." method="_on_timer_to_second_dialogue_timeout"]
+[connection signal="timeout" from="Timers/Timer_ToExit" to="." method="_on_timer_to_exit_timeout"]
