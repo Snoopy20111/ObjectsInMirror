@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cdnmcjribmmdi"]
+[gd_scene load_steps=43 format=3 uid="uid://cdnmcjribmmdi"]
 
 [ext_resource type="Script" path="res://Scripts/Main_Road_01.gd" id="1_kcnd1"]
 [ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="2_bsrmj"]
@@ -17,6 +17,15 @@
 [ext_resource type="Texture2D" uid="uid://ba7oa1h07tpxj" path="res://Sprites/Environment/spritesheet_tiles.png" id="15_yfe0x"]
 [ext_resource type="PackedScene" uid="uid://bhyko8joax145" path="res://Scenes/Prefabs/Trees/Tree.tscn" id="16_sywl8"]
 [ext_resource type="PackedScene" uid="uid://cup1w15t2fbhu" path="res://Scenes/Prefabs/Trees/Tree_BasicShadows.tscn" id="17_s6b5g"]
+[ext_resource type="Curve2D" uid="uid://qf7ausm5a5v6" path="res://Customs/Curves/TrainPath.tres" id="18_1oj4q"]
+[ext_resource type="Curve2D" uid="uid://dcbsc85jmgvwp" path="res://Customs/Curves/RoadPieces/Main_Rails_01.tres" id="18_vof8y"]
+[ext_resource type="Texture2D" uid="uid://jfj20g2y6phs" path="res://Sprites/Environment/Tracks/rails.png" id="19_02ok5"]
+[ext_resource type="Texture2D" uid="uid://ytd8y8ed1hmu" path="res://Sprites/Characters/Car/RedCar_Diffuse.svg" id="20_pwert"]
+[ext_resource type="Curve2D" uid="uid://bs612gushkiow" path="res://Customs/Curves/RoadPieces/Main_Rails_02.tres" id="22_o0pne"]
+[ext_resource type="Texture2D" uid="uid://d067k70tjl2yd" path="res://Sprites/Environment/Tracks/Rails001_256_Diffuse.png" id="23_wnnye"]
+[ext_resource type="Texture2D" uid="uid://b1ujb2ytyb3ex" path="res://Sprites/Environment/Tracks/Rails001_256_NormalDX.png" id="24_ueycy"]
+[ext_resource type="Texture2D" uid="uid://ey1kbn4ewa84" path="res://Sprites/Environment/Tracks/Rails001_256_Specular.png" id="25_0wtko"]
+[ext_resource type="Curve2D" uid="uid://bdkiehljmb6l8" path="res://Customs/Curves/RoadPieces/Main_Rails_03.tres" id="26_gnxxd"]
 
 [sub_resource type="Gradient" id="Gradient_7ho15"]
 interpolation_mode = 2
@@ -395,6 +404,24 @@ sources/0 = SubResource("TileSetAtlasSource_3qp77")
 sources/1 = SubResource("TileSetScenesCollectionSource_yug4o")
 pattern_0 = SubResource("TileMapPattern_n7swy")
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_562qm"]
+diffuse_texture = ExtResource("20_pwert")
+
+[sub_resource type="Curve" id="Curve_smkgm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gv3gu"]
+diffuse_texture = ExtResource("19_02ok5")
+specular_shininess = 0.1
+texture_filter = 1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wrm8p"]
+diffuse_texture = ExtResource("23_wnnye")
+normal_texture = ExtResource("24_ueycy")
+specular_texture = ExtResource("25_0wtko")
+specular_shininess = 0.1
+
 [node name="Main_Road_01" type="Node2D"]
 script = ExtResource("1_kcnd1")
 
@@ -460,7 +487,7 @@ metadata/_edit_lock_ = true
 
 [node name="Trigger_Next" parent="Triggers" instance=ExtResource("6_gypmv")]
 z_index = 1220
-position = Vector2(4739, -4092)
+position = Vector2(-19991, -23363)
 sceneToLoad = "res://Scenes/Test_2D.tscn"
 
 [node name="Environment" type="Node" parent="."]
@@ -501,5 +528,58 @@ position = Vector2(-30, 0)
 tile_set = SubResource("TileSet_mjv86")
 format = 2
 metadata/_edit_lock_ = true
+
+[node name="TrainPath" type="Path2D" parent="Environment"]
+position = Vector2(-20000, -20000)
+curve = ExtResource("18_1oj4q")
+
+[node name="Train" type="PathFollow2D" parent="Environment/TrainPath"]
+position = Vector2(8000, 0)
+rotation = 3.14159
+loop = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/TrainPath/Train"]
+z_index = 10
+scale = Vector2(0.28967, 0.614721)
+texture = SubResource("CanvasTexture_562qm")
+
+[node name="TrainTracks" type="Path2D" parent="Environment/TrainPath"]
+texture_filter = 1
+texture_repeat = 2
+curve = ExtResource("18_vof8y")
+script = ExtResource("8_jtxs8")
+_curve = ExtResource("18_vof8y")
+width = 275.0
+width_profile = SubResource("Curve_smkgm")
+fill_texture = SubResource("CanvasTexture_gv3gu")
+fill_texture_mode = 1
+cap_joint_mode = 2
+border_antialiased = true
+
+[node name="TrainTracks2" type="Path2D" parent="Environment/TrainPath"]
+texture_filter = 1
+texture_repeat = 2
+curve = ExtResource("22_o0pne")
+script = ExtResource("8_jtxs8")
+_curve = ExtResource("22_o0pne")
+width = 275.0
+width_profile = SubResource("Curve_smkgm")
+fill_texture = SubResource("CanvasTexture_wrm8p")
+fill_texture_mode = 1
+cap_joint_mode = 2
+border_antialiased = true
+
+[node name="TrainTracks3" type="Path2D" parent="Environment/TrainPath"]
+texture_filter = 1
+texture_repeat = 2
+curve = ExtResource("26_gnxxd")
+script = ExtResource("8_jtxs8")
+_curve = ExtResource("26_gnxxd")
+width = 275.0
+width_profile = SubResource("Curve_smkgm")
+fill_texture = SubResource("CanvasTexture_gv3gu")
+fill_texture_mode = 1
+cap_joint_mode = 2
+border_antialiased = true
 
 [connection signal="timeout" from="Timers/Timer_ToFirstDialogue" to="." method="_on_timer_to_first_dialogue_timeout"]
