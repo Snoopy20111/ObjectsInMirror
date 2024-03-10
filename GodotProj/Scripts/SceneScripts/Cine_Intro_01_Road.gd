@@ -2,12 +2,12 @@ extends Node2D
 # Logic for controlling cinematic, dialogue, and then transition to
 # the next scene (Cine_Intro_02_GasStation)
 
+const dialogue_Intro_01: DialogueResource = preload("res://Dialogue/Cine_Intro_01.dialogue")
+const dialogue_Intro_02: DialogueResource = preload("res://Dialogue/Cine_Intro_02.dialogue")
+
 @export var loopingEnv_loopDistance: float = 4096
 @export var loopingEnv_thresholdY: float = 2048
 @export var loopingEnv_speed: float = 300
-
-@export var dialogue_Intro_01: DialogueResource = load("res://Dialogue/Cine_Intro_01.dialogue")
-@export var dialogue_Intro_02: DialogueResource = load("res://Dialogue/Cine_Intro_02.dialogue")
 
 @export var sceneToLoad: String = "res://Scenes/Cine_Intro_02_GasStation.tscn"
 
@@ -41,7 +41,7 @@ func loop_environment(delta: float) -> void:
 
 #Disgusting custom scripts, chain reaction of signals pinging back and forth
 func _on_timer_to_first_dialogue_timeout():
-	DialogueManager.show_example_dialogue_balloon(dialogue_Intro_01, "start")
+	DialogueManager.show_dialogue_balloon(dialogue_Intro_01, "start")
 	currentDialogue += 1
 
 func _on_timer_to_second_dialogue_timeout():
