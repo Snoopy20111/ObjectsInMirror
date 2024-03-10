@@ -29,6 +29,7 @@ ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 general/wrap_lines=true
 general/include_character_in_translation_exports=true
 general/include_notes_in_translation_exports=true
+general/balloon_path="res://Dialogue/balloon.tscn"
 
 [editor_plugins]
 
