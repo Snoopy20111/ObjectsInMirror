@@ -32,12 +32,6 @@ metadata/entity_name = "PlayerCar"
 
 [node name="Lights" type="Node2D" parent="."]
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lights"]
-position = Vector2(-1002, -470)
-color = Color(0.0980392, 0.0980392, 0.0980392, 1)
-blend_mode = 2
-shadow_enabled = true
-
 [node name="PointLight2D" type="PointLight2D" parent="Lights"]
 position = Vector2(-9.53674e-07, 0)
 scale = Vector2(15.3594, 13.3125)
