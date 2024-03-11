@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://b7xo24gxfijc5"]
+
+[ext_resource type="FontFile" uid="uid://jukk1rrfpdtp" path="res://UI/Fonts/Bin/Arvo/Arvo-Regular.ttf" id="1_fkupa"]
+
+[resource]
+base_font = ExtResource("1_fkupa")
+spacing_glyph = 1

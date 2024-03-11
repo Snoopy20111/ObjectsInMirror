@@ -27,7 +27,7 @@ func _ready():
 ## Disgusting custom script, chain reaction of signals pinging back and forth
 #Timer callback that calls the first line of dialogue
 func _on_timer_to_first_dialogue_timeout():
-	DialogueManager.show_example_dialogue_balloon(dialogue_Outro_03, "start")
+	DialogueManager.show_dialogue_balloon(dialogue_Outro_03, "start")
 
 #Timer callback that transitions to the next scene
 func _on_timer_to_exit_timeout():

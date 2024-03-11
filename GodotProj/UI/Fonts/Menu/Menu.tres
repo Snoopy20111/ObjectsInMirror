@@ -1,10 +1,10 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bmcupqqh0hnkt"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bmcupqqh0hnkt"]
 
-[ext_resource type="FontFile" path="res://UI/Fonts/Menu/Menu_Regular.tres" id="1"]
 [ext_resource type="FontFile" uid="uid://d28f4xfgfasnd" path="res://UI/Fonts/Bin/LicensePl8.ttf" id="1_0secw"]
 
 [resource]
-default_font = ExtResource("1")
+default_font = ExtResource("1_0secw")
+default_font_size = 26
 Button/font_sizes/font_size = 42
 Button/fonts/font = ExtResource("1_0secw")
 CheckBox/font_sizes/font_size = 42

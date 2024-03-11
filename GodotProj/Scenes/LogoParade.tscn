@@ -5,7 +5,7 @@
 [ext_resource type="SpriteFrames" uid="uid://bmsjguqbqk6jy" path="res://Sprites/Logos/LH_LogoSequence/LH_LogoSequence.tres" id="3"]
 [ext_resource type="Script" path="res://Scripts/LogoParade_PathFollow2D.gd" id="3_5rfj5"]
 [ext_resource type="FontFile" uid="uid://cscovwes3mpuf" path="res://UI/Fonts/Quando_Regular.tres" id="4"]
-[ext_resource type="FontFile" path="res://UI/Fonts/Menu/Menu_Regular.tres" id="5_7r4q3"]
+[ext_resource type="FontFile" uid="uid://jukk1rrfpdtp" path="res://UI/Fonts/Bin/Arvo/Arvo-Regular.ttf" id="6_vxuyc"]
 
 [sub_resource type="Curve2D" id="Curve2D_pvioc"]
 _data = {
@@ -25,7 +25,7 @@ font = ExtResource("4")
 font_size = 80
 
 [sub_resource type="LabelSettings" id="LabelSettings_byern"]
-font = ExtResource("5_7r4q3")
+font = ExtResource("6_vxuyc")
 font_size = 54
 
 [node name="CanvasLayer" type="CanvasLayer"]

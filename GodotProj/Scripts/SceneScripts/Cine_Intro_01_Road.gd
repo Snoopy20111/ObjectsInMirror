@@ -28,7 +28,7 @@ func _ready():
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.VIGNETTE, true)
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.RAIN, true)
 
-func _process(delta):
+func _physics_process(delta):
 	loop_environment(delta)
 
 func loop_environment(delta: float) -> void:

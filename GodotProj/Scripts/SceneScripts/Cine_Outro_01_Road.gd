@@ -41,7 +41,7 @@ func loop_environment(delta: float) -> void:
 
 #Disgusting custom scripts, chain reaction of signals pinging back and forth
 func _on_timer_to_first_dialogue_timeout():
-	DialogueManager.show_example_dialogue_balloon(dialogue_Outro_01, "start")
+	DialogueManager.show_dialogue_balloon(dialogue_Outro_01, "start")
 	currentDialogue += 1
 
 func _on_timer_to_second_dialogue_timeout():

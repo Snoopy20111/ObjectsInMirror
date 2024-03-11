@@ -1,13 +1,14 @@
 ~ start
 
 Hello sir, do you know how I can get to the highway from here?
-Old Timer: What the hell are you doing out this way at this hour?! It's not safe!
+Old Timer: [shake rate=20 level=7]What the hell are you doing out this way at this hour?![/shake] It's not safe!
 I got lost looking for Miller's Barbecue. I've heard their pork shoulders are unlike anywhere else.
 Old Timer: Who told you that? Ol' Miller doesn't serve...hmm. Nevermind that.
 ...so, anyway, I'm just trying to get to the Interstate now.
 Old Timer: Just keep going north on this road. You'll know you're almost there when you cross the train tracks.
-Old Timer: Whatever you do, DON'T turn off the road. And don't get out of the car, neither. There are older and fouler things in these woods than the pine trees. Things that look where you can't see and follow where you can't mean to hide. Just make sure you keep going north and you'll be alright.
-< What's that supposed to mean? >
+Old Timer: Try not to stop. Don't get outta the car, neither. There are older things in these pines than just the trees...
+Old Timer: Just make sure you keep going north and you'll be alright.
+[What's that supposed to mean?]
 Um, great, thank you! Have a good night, stay dry.
 Old Timer: Watch the road. Good luck.
 

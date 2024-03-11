@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://n3fc8y5es5th"]
+
+[ext_resource type="FontFile" uid="uid://c5jbq5e57b33l" path="res://UI/Fonts/Bin/InterTight/InterTight-VariableFont_wght.ttf" id="1_8fhqh"]
+
+[resource]
+base_font = ExtResource("1_8fhqh")
+variation_embolden = 0.79
+spacing_glyph = 1

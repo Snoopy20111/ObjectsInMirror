@@ -20,4 +20,4 @@ func _exit_tree():
 
 func _on_timer_to_first_dialogue_timeout():
 	#Play intro dialogue
-	DialogueManager.show_example_dialogue_balloon(dialogue_tut_01, "start")
+	DialogueManager.show_dialogue_balloon(dialogue_tut_01, "start")

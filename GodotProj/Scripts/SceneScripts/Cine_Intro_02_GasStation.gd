@@ -2,16 +2,14 @@ extends Node2D
 # Logic for controlling cinematic, dialogue, and then transition to
 # the next scene (Tut_Road_01)
 
-@export var dialogue_Intro_03: DialogueResource = load("res://Dialogue/Cine_Intro_03.dialogue")
-@export var sceneToLoad: String = "res://Scenes/Sets/MainMenu.tscn"
+const dialogue_Intro_03: DialogueResource = preload("res://Dialogue/Cine_Intro_03.dialogue")
+const sceneToLoad: String = "res://Scenes/Tut_Road_01.tscn"
 
 @onready var Cam_01: PhantomCamera2D = $PhantomCamera2D_01
 @onready var Cam_02: PhantomCamera2D = $PhantomCamera2D_02
 @onready var Cam_03: PhantomCamera2D = $PhantomCamera2D_03
-
 @onready var timerToFirstDialogue: Timer = $Timers/Timer_ToFirstDialogue
 @onready var timerToExit: Timer = $Timers/Timer_ToExit
-
 @onready var playerCar: CarController = $PlayerCar
 
 
