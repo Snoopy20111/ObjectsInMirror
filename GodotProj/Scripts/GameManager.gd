@@ -2,8 +2,30 @@ extends Node
 
 @export var fullscreen_effects: Array
 
-#var didCompleteTutorialArea: bool = false
+@onready var timerToRespawn: Timer = $Timers/Timer_ToRespawn
 
+#@export var SharedEasing: bool = true
+#@export var SharedAnimName: bool = true
+#@export var SceneLoadOptions: Dictionary = {
+	#"speed": 2,
+	#"color": Color("#000000"),
+	#"pattern": "fade",
+	#"wait_time": 0.5,
+	#"invert": false,
+	#"invert_on_leave": true,
+	#"ease": 1.0,
+	#"ease_leave": 1.0,
+	#"ease_enter": 1.0,
+	#"skip_scene_change": false,
+	#"skip_fade_out": false,
+	#"skip_fade_in": false,
+	#"animation_name": null,
+	#"animation_name_enter": null,
+	#"animation_name_leave": null
+#}
+
+
+#var didCompleteTutorialArea: bool = false
 
 var _vignetteAlpha: float
 var _vignetteInnerRadius: float
@@ -33,6 +55,12 @@ func _ready():
 	_grabFullscreenShaderDefaults()
 
 ### Game Handling functions ###
+func playerDied():
+	print("GameManager: player has died. Reloading shortly...")
+	timerToRespawn.start()
+
+func _on_timer_to_respawn_timeout():
+	SceneManager.reload_scene()
 
 
 ### Specific Utilities ###
@@ -67,9 +95,6 @@ func getFullscreenShaderParam(effect: int, param_name: String):
 	# So we just have to hope Godot will throw meaningful errors
 	return fullscreen_effects[effect].get_material().get_shader_parameter(param_name)
 
-#func retarget_camera2D(_new_target: Node2D):
-	##Set camera to target given object
-	#pass
 
 func resetFullScreenShaders() -> void:
 	for i in fullscreen_effects.size():

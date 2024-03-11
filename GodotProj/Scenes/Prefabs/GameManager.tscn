@@ -40,6 +40,12 @@ script = ExtResource("1_elqpy")
 fullscreen_effects = [NodePath("Camera2D/FullscreenCanvas/Vignette"), NodePath("Camera2D/FullscreenCanvas/ChromaticAbberation"), NodePath("Camera2D/FullscreenCanvas/Rain"), NodePath("Camera2D/FullscreenCanvas/ScreenShake")]
 metadata/entity_name = "GameManager"
 
+[node name="Timers" type="Node" parent="."]
+
+[node name="Timer_ToRespawn" type="Timer" parent="Timers"]
+wait_time = 2.5
+one_shot = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
@@ -108,3 +114,5 @@ limit/smoothed = false
 tween_parameters = null
 tween_on_load = true
 inactive_update_mode = 0
+
+[connection signal="timeout" from="Timers/Timer_ToRespawn" to="." method="_on_timer_to_respawn_timeout"]

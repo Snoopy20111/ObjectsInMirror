@@ -6,7 +6,7 @@
 [node name="Boot" type="CanvasLayer"]
 script = ExtResource("1_qfepg")
 LogoParade = false
-DebugLevelPath = "res://Scenes/Sets/Main_Road_01.tscn"
+LoadDebugLevel = true
 
 [node name="Startup_Color" type="ColorRect" parent="."]
 show_behind_parent = true

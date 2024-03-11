@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="2_1pl21"]
 [ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Actors/PlayerCar.tscn" id="3_3q51d"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="4_6oaqu"]
-[ext_resource type="PackedScene" uid="uid://bufuw8jtm226x" path="res://Scenes/Prefabs/Cinematic_Props/CineIntro01Road_LoopingEnv.tscn" id="5_4w8o2"]
+[ext_resource type="PackedScene" uid="uid://bufuw8jtm226x" path="res://Scenes/Prefabs/CineIntro01Road_LoopingEnv.tscn" id="5_4w8o2"]
 [ext_resource type="Curve" uid="uid://bdfny0nh843ha" path="res://Customs/Curves/CineIntro02_StaticTireTrackWidth_Curve.tres" id="6_l0jtr"]
 [ext_resource type="Gradient" uid="uid://di41x4u2d46ju" path="res://Customs/Gradients/TireTrackColor_Gradient.tres" id="7_2clia"]
 

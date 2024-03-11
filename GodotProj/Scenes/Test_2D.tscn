@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjyu8ql4g3gto"]
+[gd_scene load_steps=12 format=3 uid="uid://bjyu8ql4g3gto"]
 
+[ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="1_xnu17"]
 [ext_resource type="Texture2D" uid="uid://dduc4rdakx6yt" path="res://icon.svg" id="3_lbkah"]
 [ext_resource type="Texture2D" uid="uid://fo4xmxkkapws" path="res://Sprites/Characters/Car/car_red_4_normalmap.png" id="4_4kun2"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="4_jqi28"]
 [ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Actors/PlayerCar.tscn" id="4_vm3fk"]
+[ext_resource type="PackedScene" uid="uid://dqx6vc23q8te7" path="res://Scenes/Prefabs/GasPump.tscn" id="5_n61ap"]
 
 [sub_resource type="Gradient" id="Gradient_ac555"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -26,11 +28,9 @@ light_mode = 1
 
 [node name="TestMap" type="Node2D"]
 
-[node name="Car_Rigid" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("4_vm3fk")]
-position = Vector2(235.654, -452.728)
-metadata/entity_name = "PlayerCar"
+[node name="Lights" type="Node" parent="."]
 
-[node name="Lights" type="Node2D" parent="."]
+[node name="CanvasModulate" parent="Lights" instance=ExtResource("1_xnu17")]
 
 [node name="PointLight2D" type="PointLight2D" parent="Lights"]
 position = Vector2(-9.53674e-07, 0)
@@ -39,6 +39,7 @@ color = Color(0.945098, 0.917647, 0.929412, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_ktswb")
 height = 100.0
+metadata/_edit_lock_ = true
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(0, -275)
@@ -48,20 +49,22 @@ angular_damp = 6.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_jgh7m")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture = SubResource("CanvasTexture_46g58")
+metadata/_edit_lock_ = true
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 material = SubResource("CanvasItemMaterial_y7kk1")
-position = Vector2(285.654, -452.728)
+position = Vector2(-1.54143e-44, 1.54143e-44)
 script = ExtResource("4_jqi28")
 priority_override = false
 priority = 0
 zoom = Vector2(0.9, 0.9)
 follow_mode = 2
-follow_target = NodePath("../Car_Rigid")
-follow_parameters/target_offset = Vector2(50, 0)
+follow_target = NodePath("../PlayerCar/CameraTarget")
+follow_parameters/target_offset = Vector2(0, 0)
 follow_parameters/damping = true
 follow_parameters/damping_value = 2.692
 frame_preview = true
@@ -76,3 +79,13 @@ limit/smoothed = false
 tween_parameters = null
 tween_on_load = false
 inactive_update_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="PlayerCar" parent="." instance=ExtResource("4_vm3fk")]
+rotation = -1.5708
+
+[node name="CameraTarget" type="Node2D" parent="PlayerCar"]
+metadata/_edit_lock_ = true
+
+[node name="Pump" parent="." instance=ExtResource("5_n61ap")]
+position = Vector2(265, -163)
