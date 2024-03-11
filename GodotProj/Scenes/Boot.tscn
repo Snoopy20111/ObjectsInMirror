@@ -5,8 +5,6 @@
 
 [node name="Boot" type="CanvasLayer"]
 script = ExtResource("1_qfepg")
-LogoParade = false
-LoadDebugLevel = true
 
 [node name="Startup_Color" type="ColorRect" parent="."]
 show_behind_parent = true

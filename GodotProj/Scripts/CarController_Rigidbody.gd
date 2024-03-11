@@ -171,6 +171,7 @@ func Death():
 
 func _on_timer_invulnurable_timeout():
 	_canBeDamaged = true
+	print("ready to be hurt again")
 
 
 

@@ -4,26 +4,26 @@ extends Node
 
 @onready var timerToRespawn: Timer = $Timers/Timer_ToRespawn
 
-#@export var SharedEasing: bool = true
-#@export var SharedAnimName: bool = true
-#@export var SceneLoadOptions: Dictionary = {
-	#"speed": 2,
-	#"color": Color("#000000"),
-	#"pattern": "fade",
-	#"wait_time": 0.5,
-	#"invert": false,
-	#"invert_on_leave": true,
-	#"ease": 1.0,
-	#"ease_leave": 1.0,
-	#"ease_enter": 1.0,
-	#"skip_scene_change": false,
-	#"skip_fade_out": false,
-	#"skip_fade_in": false,
-	#"animation_name": null,
-	#"animation_name_enter": null,
-	#"animation_name_leave": null
-#}
-
+@export var SharedEasing: bool = true
+@export var SharedAnimName: bool = true
+@export var SceneLoadOptions: Dictionary = {
+	"speed": 2,
+	"color": Color("#000000"),
+	"pattern": "fade",
+	"wait_time": 0.5,
+	"invert": false,
+	"invert_on_leave": true,
+	"ease": 1.0,
+	"ease_leave": 1.0,
+	"ease_enter": 1.0,
+	"skip_scene_change": false,
+	"skip_fade_out": false,
+	"skip_fade_in": false,
+	"animation_name": null,
+	"animation_name_enter": null,
+	"animation_name_leave": null
+}
+@onready var TrimmedLoadOptions: Dictionary = SceneLoadOptions
 
 #var didCompleteTutorialArea: bool = false
 
@@ -53,6 +53,20 @@ func _ready():
 	for i in fullscreen_effects.size():
 		fullscreen_effects[i] = get_node(fullscreen_effects[i]) as ColorRect
 	_grabFullscreenShaderDefaults()
+	checkTransitionShared()
+	
+func checkTransitionShared():
+	if (SharedEasing == true):
+		TrimmedLoadOptions.erase("ease_leave")
+		TrimmedLoadOptions.erase("ease_enter")
+	else:
+		TrimmedLoadOptions.erase("ease")
+	
+	if (SharedAnimName == true):
+		TrimmedLoadOptions.erase("animation_name_enter")
+		TrimmedLoadOptions.erase("animation_name_leave")
+	else:
+		TrimmedLoadOptions.erase("animation_name")
 
 ### Game Handling functions ###
 func playerDied():
