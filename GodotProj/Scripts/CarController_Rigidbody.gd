@@ -1,17 +1,22 @@
 extends RigidBody2D
 class_name CarController
+
+const screenShakeFalloff: Curve = preload("res://Customs/Curves/Car_Damage_ScreenShakeFalloff.tres")
+
 #public variables
 @export_group("Controller Properties")
 @export var controlMode:Enums.CONTROL_TYPE = Enums.CONTROL_TYPE.PLAYER
 @export var driftFactor:float = 0.95
-@export var accelerationFactor:float = 1000
+@export var accelerationFactor:float = 1200
 @export var turnFactor:float = 3.5
-@export var maxSpeed:float = 800
+@export var maxSpeed:float = 900
 @export var maxSpeedReverseFactor:float = 0.4
 @export var tireScreechFactor:float = 150.0
 
 @export var maxHealth: int = 5
 @export var collisionThreshold: float = 150.0
+@export var screenShakeStrength: float = 10.0
+@export var screenShakeLength: float = 1.5
 
 #@export_group("No Control Properties")
 
@@ -22,11 +27,12 @@ var _velocityVsUp = 0
 #var _engineAudioOutput:float = 0
 var _lateralVelocity:float = 0
 var _isBraking:bool = false
-var _canBeDamaged:bool = true
+var canBeDamaged:bool = true
 var _lastLinearVelocity:Vector2 = Vector2(0, 0)
 var _lastAngularVelocity:float = 0
+var _screenShakeCounter: float = 0.0
 
-@onready var _health: int = maxHealth
+@onready var _health: int = GameManager.playerHealthAtLevelStart
 
 @onready var rotationAngle:float = rotation_degrees
 @onready var skidMaker_L:Line2D = $SkidMaker_L/Skid
@@ -40,7 +46,7 @@ func _ready():
 	connect("body_entered", Collided)
 
 # Called every frame
-func _process(_delta):
+func _process(delta):
 	SetInputVector()
 	if (GetTireScreeching()):
 		skidParticles_L.emitting = true
@@ -48,6 +54,19 @@ func _process(_delta):
 	else:
 		skidParticles_L.emitting = false
 		skidParticles_R.emitting = false
+	
+	var shakeAmount = screenShakeStrength * screenShakeFalloff.sample(
+			lerp(1.0, 0.0, _screenShakeCounter / screenShakeLength))
+	if (_screenShakeCounter == 0):
+		pass
+	elif (_screenShakeCounter > 0):
+		GameManager.setFullscreenShaderParam(Enums.CANVAS_EFFECT.SCREEN_SHAKE,
+			"shake_strength", shakeAmount)
+		_screenShakeCounter -= delta
+	elif (_screenShakeCounter <= 0):
+			_screenShakeCounter = 0
+			GameManager.setFullscreenShaderParam(Enums.CANVAS_EFFECT.SCREEN_SHAKE,
+				"shake_strength", 0.0)
 
 func _physics_process(_delta):
 	_lastLinearVelocity = linear_velocity
@@ -149,10 +168,12 @@ func DamageInflicted():
 	pass
 
 func ApplyDamage():
-	#Start invulnurability timer
+	#Start invulnurability timer, reduce health, and shake the screen
 	timerInvulnurable.start()
-	_canBeDamaged = false
+	canBeDamaged = false
 	_health -= 1
+	_screenShakeCounter = screenShakeLength
+	
 	if (_health <= 0):
 		Death()
 	else:
@@ -170,11 +191,13 @@ func Death():
 	# with an animated texture?	
 
 func _on_timer_invulnurable_timeout():
-	_canBeDamaged = true
+	canBeDamaged = true
 	print("ready to be hurt again")
 
 
-
+func ExitLevel():
+	GameManager.playerHealthAtLevelStart = _health
+	controlMode = Enums.CONTROL_TYPE.NONE
 
 func ScriptControl_GoForward():
 	controlMode = Enums.CONTROL_TYPE.SCRIPT

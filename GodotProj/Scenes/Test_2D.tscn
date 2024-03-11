@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjyu8ql4g3gto"]
+[gd_scene load_steps=13 format=3 uid="uid://bjyu8ql4g3gto"]
 
+[ext_resource type="Script" path="res://Scripts/SceneScripts/Test_2D.gd" id="1_nmt8e"]
 [ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="1_xnu17"]
 [ext_resource type="Texture2D" uid="uid://dduc4rdakx6yt" path="res://icon.svg" id="3_lbkah"]
 [ext_resource type="Texture2D" uid="uid://fo4xmxkkapws" path="res://Sprites/Characters/Car/car_red_4_normalmap.png" id="4_4kun2"]
@@ -27,6 +28,7 @@ normal_texture = ExtResource("4_4kun2")
 light_mode = 1
 
 [node name="TestMap" type="Node2D"]
+script = ExtResource("1_nmt8e")
 
 [node name="Lights" type="Node" parent="."]
 

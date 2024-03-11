@@ -8,10 +8,10 @@ const watcherChaosRadiusWithDistanceCurve = preload("res://Customs/Curves/Watche
 
 @export var turningSpeed: float = 12.0
 @export var maxChaosDistance: float = 600
-@export var chaosFadeCounterDown: float = 2
+@export var chaosFadeCounterDown: float = 3
 
-@onready var watcherLight: PointLight2D = $PointLight2D
-@onready var lightEnergyFactor:float = watcherLight.energy
+@onready var watcherLight: PointLight2D = $Flashlight
+@onready var watcherIllum: PointLight2D = $PointLight2D
 @onready var animBeginTimer: Timer = $AnimBeginTimer
 @onready var watcherSprite: Sprite2D = $Sprite
 @onready var chaosNode: ColorRect = $Chaos
@@ -48,6 +48,8 @@ func _process(delta):
 	if (isFadingSelf):
 		fadeCounter += delta
 		watcherLight.energy = watcherLightFadeCurve.sample(fadeCounter)
+		watcherIllum.energy = watcherLightFadeCurve.sample(fadeCounter)
+		
 		watcherSprite.self_modulate.a = watcherSpriteFadeCurve.sample(fadeCounter)
 	
 	# Look_at with smoothing
@@ -62,7 +64,7 @@ func _process(delta):
 	var chaosFadeMult = watcherChaosFadeCurve.sample(chaosFadeCounterDown/chaosFadeStartValue)
 	# Set chaos shader based roughly on the inverse distance to the player
 	chaosNode.material.set_shader_parameter("chaos", (chaosParam + chaosAdd) * chaosFadeMult)
-	chaosNode.material.set_shader_parameter("radius", radiusAdd * chaosFadeMult)
+	chaosNode.material.set_shader_parameter("radius", radiusAdd * clamp(chaosFadeMult, 0.0, 1.0))
 
 func _on_visible_on_screen_entered():
 	#spring to life

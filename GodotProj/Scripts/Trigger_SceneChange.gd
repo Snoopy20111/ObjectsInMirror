@@ -50,4 +50,4 @@ func onAreaEntered(area: Area2D):
 	and (area.get_parent().name == "PlayerCar")):
 		SceneManager.change_scene(sceneToLoad)
 		var playerCar := area.get_parent() as CarController
-		playerCar.controlMode = Enums.CONTROL_TYPE.NONE
+		playerCar.ExitLevel()

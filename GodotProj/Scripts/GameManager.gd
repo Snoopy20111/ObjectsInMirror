@@ -46,6 +46,9 @@ var _screenShakeFactorA: Vector2
 var _screenShakeFactorB: Vector2
 var _screenShakeMagnitude: Vector2
 
+var playerHealthAtLevelStart: int = 5
+var playerMaxHealth: int = 5
+
 func _ready():
 	# Replaces the NodePaths with actual referenced nodes
 	# Feels like a dangerous move, but saves some memory and
@@ -69,9 +72,15 @@ func checkTransitionShared():
 		TrimmedLoadOptions.erase("animation_name")
 
 ### Game Handling functions ###
+func levelStart():
+	pass
+
+
 func playerDied():
 	print("GameManager: player has died. Reloading shortly...")
 	timerToRespawn.start()
+	#Also set player health back to max when they respawn, to reduce frustration
+	playerHealthAtLevelStart = playerMaxHealth
 
 func _on_timer_to_respawn_timeout():
 	SceneManager.reload_scene()

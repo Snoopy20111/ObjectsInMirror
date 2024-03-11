@@ -1,9 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://corfont0ulc54"]
+[gd_scene load_steps=8 format=3 uid="uid://corfont0ulc54"]
 
 [ext_resource type="Texture2D" uid="uid://2kuqfkc8xmej" path="res://Sprites/Characters/YoungMan/YoungMan_Body.svg" id="1_418g6"]
 [ext_resource type="Script" path="res://Scripts/Entity_Watcher_Tutorial.gd" id="1_xyp0t"]
 [ext_resource type="Texture2D" uid="uid://dr8ekeeufldx6" path="res://Sprites/Lights/Headlight_Texture_Evil.png" id="2_r4du7"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/ChromaticChaosDistortion.gdshader" id="3_ibcqt"]
+
+[sub_resource type="Gradient" id="Gradient_7ho15"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.393805, 1)
+colors = PackedColorArray(0.75, 0.75, 0.75, 1, 0.267421, 0.278472, 0.281787, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_84wnp"]
+gradient = SubResource("Gradient_7ho15")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vtacd"]
 shader = ExtResource("3_ibcqt")
@@ -15,16 +27,14 @@ shader_parameter/attenuation = 1.0
 script = ExtResource("1_xyp0t")
 turningSpeed = 8.0
 maxChaosDistance = 800.0
-chaosFadeCounterDown = 3.0
 
 [node name="VisibleOn" type="VisibleOnScreenNotifier2D" parent="."]
 process_mode = 1
 
 [node name="AnimBeginTimer" type="Timer" parent="."]
-wait_time = 1.5
 one_shot = true
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="Flashlight" type="PointLight2D" parent="."]
 z_index = 20
 position = Vector2(-9, 1.445)
 scale = Vector2(0.37037, 0.37037)
@@ -32,6 +42,16 @@ shadow_enabled = true
 shadow_filter = 2
 shadow_filter_smooth = 1.0
 texture = ExtResource("2_r4du7")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(36, 0.00013032)
+scale = Vector2(15.3818, 15.3818)
+color = Color(1, 0.839216, 0.666667, 0.670588)
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+texture = SubResource("GradientTexture2D_84wnp")
+height = 100.0
 
 [node name="Chaos" type="ColorRect" parent="."]
 light_mask = 0

@@ -12,6 +12,10 @@ func _ready():
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.RAIN, true)
 	#GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.CHROMATIC_ABB, true)
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.SCREEN_SHAKE, true)
+	
+	#also make sure the player's health is set to full,
+	#since this is the start of the game
+	GameManager.playerHealthAtLevelStart = 5
 
 
 func _exit_tree():

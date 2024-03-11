@@ -33,7 +33,7 @@ shader = ExtResource("6_xsneo")
 shader_parameter/shake_strength = 0.0
 shader_parameter/factor_a = Vector2(100, 100)
 shader_parameter/factor_b = Vector2(1, 1)
-shader_parameter/magnitude = Vector2(0.01, 0.01)
+shader_parameter/magnitude = Vector2(0.001, 0.001)
 
 [node name="GameManager" type="Node" groups=["scene_manager_entity_nodes"]]
 script = ExtResource("1_elqpy")

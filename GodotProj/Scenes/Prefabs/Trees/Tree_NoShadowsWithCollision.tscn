@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://dluy1f85x0v66"]
+
+[ext_resource type="Texture2D" uid="uid://k165hp2dnrbr" path="res://Sprites/Environment/Trees/Tree01/Layer02_Diffuse_half.png" id="1_3a128"]
+[ext_resource type="Texture2D" uid="uid://dxekakeifaylr" path="res://Sprites/Environment/Trees/Tree01/Layer02_Normal_half.png" id="2_krj4w"]
+[ext_resource type="Texture2D" uid="uid://be1c3je4y8h1g" path="res://Sprites/Environment/Trees/Tree01/Layer01_Diffuse_half.png" id="3_7xfpo"]
+[ext_resource type="Texture2D" uid="uid://bqcr4e1ybjxlc" path="res://Sprites/Environment/Trees/Tree01/Layer01_Normal_half.png" id="4_qyv3v"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_t028b"]
+diffuse_texture = ExtResource("1_3a128")
+normal_texture = ExtResource("2_krj4w")
+specular_color = Color(0.498039, 0.498039, 0.498039, 1)
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_15i8e"]
+diffuse_texture = ExtResource("3_7xfpo")
+normal_texture = ExtResource("4_qyv3v")
+specular_color = Color(0.498039, 0.498039, 0.498039, 1)
+specular_shininess = 0.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lx8pt"]
+radius = 99.39
+
+[node name="Tree_BasicShadows" type="Node2D"]
+
+[node name="Sprite_Layer02" type="Sprite2D" parent="."]
+light_mask = 2
+z_index = 20
+z_as_relative = false
+scale = Vector2(0.305, 0.305)
+texture = SubResource("CanvasTexture_t028b")
+
+[node name="Sprite_Layer01" type="Sprite2D" parent="."]
+rotation = 0.966912
+scale = Vector2(0.335, 0.335)
+texture = SubResource("CanvasTexture_15i8e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(0.26, 0.26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_lx8pt")
