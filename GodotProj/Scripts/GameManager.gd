@@ -4,6 +4,7 @@ extends Node
 
 @onready var timerToRespawn: Timer = $Timers/Timer_ToRespawn
 
+@export_category("Transitions")
 @export var SharedEasing: bool = true
 @export var SharedAnimName: bool = true
 @export var SceneLoadOptions: Dictionary = {
@@ -24,8 +25,6 @@ extends Node
 	"animation_name_leave": null
 }
 @onready var TrimmedLoadOptions: Dictionary = SceneLoadOptions
-
-#var didCompleteTutorialArea: bool = false
 
 var _vignetteAlpha: float
 var _vignetteInnerRadius: float
@@ -48,6 +47,7 @@ var _screenShakeMagnitude: Vector2
 
 var playerHealthAtLevelStart: int = 5
 var playerMaxHealth: int = 5
+var playerCurrentLevel: int = 0
 
 func _ready():
 	# Replaces the NodePaths with actual referenced nodes
@@ -72,19 +72,25 @@ func checkTransitionShared():
 		TrimmedLoadOptions.erase("animation_name")
 
 ### Game Handling functions ###
-func levelStart():
-	pass
-
+func levelStart(levelID: int):
+	playerCurrentLevel = levelID
 
 func playerDied():
-	print("GameManager: player has died. Reloading shortly...")
 	timerToRespawn.start()
 	#Also set player health back to max when they respawn, to reduce frustration
 	playerHealthAtLevelStart = playerMaxHealth
 
 func _on_timer_to_respawn_timeout():
-	SceneManager.reload_scene()
-
+	# Disgusting workaround to Scene Manager bug with reloading scenes
+	# Game just doesn't know what scene we've currently loaded, so we
+	# Just gotta reload the old fashioned way.
+	match (playerCurrentLevel):
+		0:
+			SceneManager.change_scene("res://Scenes/Tut_Road_01.tscn", TrimmedLoadOptions)
+		1:
+			SceneManager.change_scene("res://Scenes/Tut_Road_02.tscn", TrimmedLoadOptions)
+		2:
+			SceneManager.change_scene("res://Scenes/Main_Road_01.tscn", TrimmedLoadOptions)
 
 ### Specific Utilities ###
 ## Fullscreen Shader effects ##
@@ -169,11 +175,11 @@ func _setFullscreenShadersToDefaults():
 
 
 ### Utilities ###
-func reparent_other(child:Node, new_parent:Node) -> void:
-	child.reparent(new_parent)
-
-func findByClass(node: Node, className : String, result : Array) -> void:
-	if node.is_class(className):
-		result.push_back(node)
-	for child in node.get_children():
-		findByClass(child, className, result)
+#func reparent_other(child:Node, new_parent:Node) -> void:
+	#child.reparent(new_parent)
+#
+#func findByClass(node: Node, className : String, result : Array) -> void:
+	#if node.is_class(className):
+		#result.push_back(node)
+	#for child in node.get_children():
+		#findByClass(child, className, result)

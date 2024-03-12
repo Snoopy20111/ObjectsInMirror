@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ct3uwhvu5egqq"]
 
-[ext_resource type="Script" path="res://Scripts/Entity_Chaser.gd" id="1_wa5uk"]
+[ext_resource type="Script" path="res://Scripts/Actor_Scripts/Entity_Chaser.gd" id="1_wa5uk"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/ChromaticChaosDistortion.gdshader" id="3_or8rn"]
 [ext_resource type="Texture2D" uid="uid://2kuqfkc8xmej" path="res://Sprites/Characters/YoungMan/YoungMan_Body.svg" id="4_jgs8r"]
 

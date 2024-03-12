@@ -40,6 +40,8 @@ var _screenShakeCounter: float = 0.0
 @onready var skidParticles_L:CPUParticles2D = $SkidMaker_L/Particles
 @onready var skidParticles_R:CPUParticles2D = $SkidMaker_R/Particles
 @onready var timerInvulnurable:Timer = $Timer_Invulnurable
+@onready var damageAnimSprite:AnimatedSprite2D = $OnDeath/AnimatedSprite2D
+@onready var damageAnimSmoke:GPUParticles2D = $OnDeath/GPUParticles2D
 
 
 func _ready():
@@ -152,13 +154,13 @@ func GetTireScreeching():
 	return false
 
 
-func Collided(body: Node):
+func Collided(_body: Node):
 	var rotCollForce: float = angular_velocity - _lastAngularVelocity
 	var linCollForce: float = (linear_velocity - _lastLinearVelocity).length()
 	var collisionForce: float = linCollForce + rotCollForce
-	print("Collided with " + str(body.name) + " for impact of " + str(collisionForce))
+	#print("Collided with " + str(body.name) + " for impact of " + str(collisionForce))
 	
-	if (collisionForce > collisionThreshold):
+	if (collisionForce > collisionThreshold) and (canBeDamaged):
 		ApplyDamage()	#apply damage
 	#Do sound stuff with different thresholds
 
@@ -177,12 +179,14 @@ func ApplyDamage():
 	if (_health <= 0):
 		Death()
 	else:
-		print("Ouch!")
+		damageAnimSmoke.emitting = true
 
 func Death():
-	print("Dead")
 	# Stop player control
 	controlMode = Enums.CONTROL_TYPE.NONE
+	#Turn on the fun FX
+	damageAnimSmoke.emitting = true
+	damageAnimSprite.play()
 	# Tell the Game Manager we died
 	GameManager.playerDied()
 	# Explode?
@@ -192,7 +196,8 @@ func Death():
 
 func _on_timer_invulnurable_timeout():
 	canBeDamaged = true
-	print("ready to be hurt again")
+	damageAnimSmoke.emitting = false
+	
 
 
 func ExitLevel():

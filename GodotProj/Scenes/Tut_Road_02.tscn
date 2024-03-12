@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://b2b87i25aqeqp"]
 
-[ext_resource type="Script" path="res://Scripts/SceneScripts/Tut_Road_02.gd" id="1_hirlb"]
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/Tut_Road_02.gd" id="1_hirlb"]
 [ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="2_7ui5h"]
 [ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Actors/PlayerCar.tscn" id="3_eo2bm"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="4_m4ktk"]
@@ -418,7 +418,6 @@ autostart = true
 [node name="Lighting" type="Node" parent="."]
 
 [node name="CanvasModulate" parent="Lighting" instance=ExtResource("2_7ui5h")]
-visible = false
 
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("3_eo2bm")]
 rotation = 3.14159

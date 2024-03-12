@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://corfont0ulc54"]
 
 [ext_resource type="Texture2D" uid="uid://2kuqfkc8xmej" path="res://Sprites/Characters/YoungMan/YoungMan_Body.svg" id="1_418g6"]
-[ext_resource type="Script" path="res://Scripts/Entity_Watcher_Tutorial.gd" id="1_xyp0t"]
+[ext_resource type="Script" path="res://Scripts/Actor_Scripts/Entity_Watcher.gd" id="1_xyp0t"]
 [ext_resource type="Texture2D" uid="uid://dr8ekeeufldx6" path="res://Sprites/Lights/Headlight_Texture_Evil.png" id="2_r4du7"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/ChromaticChaosDistortion.gdshader" id="3_ibcqt"]
 

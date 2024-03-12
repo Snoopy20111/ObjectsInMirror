@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cmsivj6b55g3k"]
 
-[ext_resource type="Script" path="res://Scripts/Train.gd" id="1_xehgc"]
+[ext_resource type="Script" path="res://Scripts/Actor_Scripts/Train.gd" id="1_xehgc"]
 [ext_resource type="Texture2D" uid="uid://ccukpxau6ven5" path="res://Sprites/Characters/Train/Train_Front_256_Diffuse.png" id="1_yweit"]
 [ext_resource type="Texture2D" uid="uid://dswgb8rtpyliq" path="res://Sprites/Characters/Train/Train_Front_256_Normal.png" id="2_2qvc5"]
 [ext_resource type="Texture2D" uid="uid://cyxe8k5wewq84" path="res://Sprites/Characters/Train/Train_Front_256_Specular.png" id="3_urmja"]

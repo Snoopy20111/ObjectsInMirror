@@ -1,7 +1,7 @@
 [gd_scene load_steps=42 format=3 uid="uid://p3ph2008osek"]
 
 [ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="1_jy686"]
-[ext_resource type="Script" path="res://Scripts/SceneScripts/Tut_Road_01.gd" id="1_x3qua"]
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/Tut_Road_01.gd" id="1_x3qua"]
 [ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Actors/PlayerCar.tscn" id="2_duq33"]
 [ext_resource type="Texture2D" uid="uid://ba7oa1h07tpxj" path="res://Sprites/Environment/spritesheet_tiles.png" id="3_kl8d3"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="3_rf1i4"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dii42whr8jsn6" path="res://Sprites/Environment/Road/Road007_256-PNG_Normal-DX.png" id="9_fvu10"]
 [ext_resource type="Curve2D" uid="uid://bohtmdvm6l1xw" path="res://Customs/Curves/RoadPieces/Tut_Road_01.tres" id="9_qndbk"]
 [ext_resource type="Texture2D" uid="uid://byxi35s8xcf8l" path="res://Sprites/Environment/Road/Road007_256-PNG_Specular-Roughness.png" id="10_vwhho"]
-[ext_resource type="PackedScene" uid="uid://corfont0ulc54" path="res://Scenes/Actors/Entity_Watcher_Tutorial.tscn" id="13_p7l28"]
+[ext_resource type="PackedScene" uid="uid://corfont0ulc54" path="res://Scenes/Actors/Entity_Watcher.tscn" id="13_p7l28"]
 [ext_resource type="Texture2D" uid="uid://dq6koupunqtky" path="res://Sprites/Environment/Road/Gravel039_256_Diffuse.png" id="13_t0qgo"]
 [ext_resource type="Texture2D" uid="uid://bfkehd00r68se" path="res://Sprites/Environment/Road/Gravel039_256_NormalDX.png" id="14_pd3p3"]
 [ext_resource type="Texture2D" uid="uid://dwe12ljcmuli2" path="res://Sprites/Environment/Road/Gravel039_256_Specular.png" id="15_2aegl"]
@@ -453,7 +453,6 @@ autostart = true
 [node name="Lighting" type="Node" parent="."]
 
 [node name="CanvasModulate" parent="Lighting" instance=ExtResource("1_jy686")]
-visible = false
 
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("2_duq33")]
 position = Vector2(-85, 1957)

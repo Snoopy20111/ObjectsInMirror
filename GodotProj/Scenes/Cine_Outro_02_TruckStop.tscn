@@ -1,6 +1,6 @@
 [gd_scene load_steps=55 format=3 uid="uid://k51bbmqpra1d"]
 
-[ext_resource type="Script" path="res://Scripts/SceneScripts/Cine_Outro_02_TruckStop.gd" id="1_7wmxh"]
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/Cine_Outro_02_TruckStop.gd" id="1_7wmxh"]
 [ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="2_ciraw"]
 [ext_resource type="Texture2D" uid="uid://ba7oa1h07tpxj" path="res://Sprites/Environment/spritesheet_tiles.png" id="3_dhong"]
 [ext_resource type="Texture2D" uid="uid://daoj1y77qpauh" path="res://Sprites/SetDressing/Barrels/BarrelUpright_04.svg" id="4_blhfg"]

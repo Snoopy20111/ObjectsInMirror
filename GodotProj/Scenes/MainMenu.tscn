@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://dpi6jw3u8u8tp"]
 
-[ext_resource type="Script" path="res://Scripts/AutoResize_ColorRect.gd" id="1_2i5ej"]
-[ext_resource type="Script" path="res://Scripts/SceneScripts/MainMenu.gd" id="1_c4rhd"]
+[ext_resource type="Script" path="res://Scripts/UI_Scripts/AutoResize_ColorRect.gd" id="1_2i5ej"]
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/MainMenu.gd" id="1_c4rhd"]
 [ext_resource type="LabelSettings" uid="uid://dn6qusqs2irw3" path="res://Customs/LabelSettings/TitleLabelSettings.tres" id="2_lfh0d"]
 [ext_resource type="Theme" uid="uid://bmcupqqh0hnkt" path="res://UI/Fonts/Menu/Menu.tres" id="3_lhjo4"]
-[ext_resource type="Script" path="res://Scripts/Button_LoadScene.gd" id="3_wwc5o"]
-[ext_resource type="Script" path="res://Scripts/Button_QuitGame.gd" id="4_ihyh8"]
+[ext_resource type="Script" path="res://Scripts/UI_Scripts/Button_LoadScene.gd" id="3_wwc5o"]
+[ext_resource type="Script" path="res://Scripts/UI_Scripts/Button_QuitGame.gd" id="4_ihyh8"]
 
 [sub_resource type="Gradient" id="Gradient_xbv1x"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)

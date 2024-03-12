@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dv5suuvd8jle5"]
 
-[ext_resource type="Script" path="res://Scripts/SceneScripts/Boot.gd" id="1_qfepg"]
-[ext_resource type="Script" path="res://Scripts/AutoResize_ColorRect.gd" id="2_hk1jj"]
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/Boot.gd" id="1_qfepg"]
+[ext_resource type="Script" path="res://Scripts/UI_Scripts/AutoResize_ColorRect.gd" id="2_hk1jj"]
 
 [node name="Boot" type="CanvasLayer"]
 script = ExtResource("1_qfepg")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://seuyyo3omuoe"]
 
-[ext_resource type="Script" path="res://Scripts/CarController_Rigidbody.gd" id="1_qdag7"]
+[ext_resource type="Script" path="res://Scripts/Actor_Scripts/CarController.gd" id="1_qdag7"]
 [ext_resource type="Texture2D" uid="uid://ihu5sr2wwr7w" path="res://Sprites/Characters/Car/car_red_4.png" id="2_26rgh"]
 [ext_resource type="Texture2D" uid="uid://fctuy8jyv5tg" path="res://Sprites/Particles_FX/Explosion_03.png" id="3_71ea0"]
 [ext_resource type="PackedScene" uid="uid://b53rom87xh58x" path="res://Scenes/Prefabs/Car_SkidMarker.tscn" id="4_nrhht"]
@@ -15,7 +15,7 @@ point_count = 2
 curve = SubResource("Curve_iu3gs")
 
 [sub_resource type="Curve" id="Curve_vnfrp"]
-_data = [Vector2(0, 0.362637), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.010989), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_g1bq3"]
@@ -33,6 +33,9 @@ curve = SubResource("Curve_sceew")
 lifetime_randomness = 0.17
 particle_flag_disable_z = true
 particle_flag_damping_as_friction = true
+emission_shape_scale = Vector3(1, 5, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 6.59, 1)
 angle_min = -180.0
 angle_max = 180.0
 inherit_velocity_ratio = 0.184
@@ -40,10 +43,13 @@ direction = Vector3(0, 0, 0)
 angular_velocity_min = -10.0
 angular_velocity_max = 10.0
 gravity = Vector3(0, 0, 0)
+linear_accel_min = 100.0
+linear_accel_max = 100.0
+radial_accel_max = 100.0
 damping_min = 1.835
 damping_max = 4.78
-scale_min = 0.5
-scale_max = 0.65
+scale_min = 0.26
+scale_max = 0.3
 scale_curve = SubResource("CurveTexture_g1bq3")
 scale_over_velocity_max = 136.0
 scale_over_velocity_curve = SubResource("CurveTexture_80gb8")
@@ -119,6 +125,9 @@ region = Rect2(1200, 1200, 400, 400)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_a8mmy")
 }, {
 "duration": 1.0,
@@ -163,8 +172,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b15ql")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_vfxhy")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": false,
 "name": &"default",
@@ -194,19 +206,25 @@ contact_monitor = true
 script = ExtResource("1_qdag7")
 
 [node name="OnDeath" type="Node2D" parent="."]
-visible = false
 position = Vector2(8, 0)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="OnDeath"]
+z_index = 100
+texture_filter = 1
+position = Vector2(57, 0)
+scale = Vector2(0.47, 0.47)
 emitting = false
-amount = 5
+amount = 50
 process_material = SubResource("ParticleProcessMaterial_8eqmh")
 texture = ExtResource("7_0tq7a")
-lifetime = 1.8
-speed_scale = 1.5
+lifetime = 1.6
+randomness = 0.23
 fixed_fps = 60
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="OnDeath"]
+z_index = 400
+position = Vector2(42, 0)
+scale = Vector2(0.515, 0.515)
 sprite_frames = SubResource("SpriteFrames_mubpn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -261,6 +279,7 @@ shape = SubResource("RectangleShape2D_jkn56")
 metadata/_edit_lock_ = true
 
 [node name="Timer_Invulnurable" type="Timer" parent="."]
+wait_time = 2.5
 one_shot = true
 
 [connection signal="timeout" from="Timer_Invulnurable" to="." method="_on_timer_invulnurable_timeout"]

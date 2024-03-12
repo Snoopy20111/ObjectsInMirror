@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://dvtjanedfxbtt"]
 
-[ext_resource type="Script" path="res://Scripts/SceneScripts/LogoParade.gd" id="1"]
-[ext_resource type="Script" path="res://Scripts/AutoResize_ColorRect.gd" id="2"]
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/LogoParade.gd" id="1"]
+[ext_resource type="Script" path="res://Scripts/UI_Scripts/AutoResize_ColorRect.gd" id="2"]
 [ext_resource type="SpriteFrames" uid="uid://bmsjguqbqk6jy" path="res://Sprites/Logos/LH_LogoSequence/LH_LogoSequence.tres" id="3"]
-[ext_resource type="Script" path="res://Scripts/LogoParade_PathFollow2D.gd" id="3_5rfj5"]
+[ext_resource type="Script" path="res://Scripts/UI_Scripts/LogoParade_PathFollow2D.gd" id="3_5rfj5"]
 [ext_resource type="FontFile" uid="uid://cscovwes3mpuf" path="res://UI/Fonts/Quando_Regular.tres" id="4"]
 [ext_resource type="FontFile" uid="uid://jukk1rrfpdtp" path="res://UI/Fonts/Bin/Arvo/Arvo-Regular.ttf" id="6_vxuyc"]
 

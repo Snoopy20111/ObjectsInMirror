@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://blbo0w4yvc3x4"]
 
-[ext_resource type="Script" path="res://Scripts/SceneScripts/Cine_Outro_01_Road.gd" id="1_587fl"]
+[ext_resource type="Script" path="res://Scripts/Scene_Scripts/Cine_Outro_01_Road.gd" id="1_587fl"]
 [ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="2_1pl21"]
 [ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Actors/PlayerCar.tscn" id="3_3q51d"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="4_6oaqu"]
