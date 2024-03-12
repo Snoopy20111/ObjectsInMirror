@@ -40,6 +40,27 @@ rotation = 1.56731
 scale = Vector2(1.07421, 1.07421)
 texture = SubResource("CanvasTexture_epkcw")
 
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(-1846, 0.0595087)
+rotation = 1.56731
+scale = Vector2(1.07421, 1.07421)
+texture = SubResource("CanvasTexture_epkcw")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(-2706, 0.0573286)
+rotation = 1.56731
+scale = Vector2(1.07421, 1.07421)
+texture = SubResource("CanvasTexture_epkcw")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(-3557, 0.0551713)
+rotation = 1.56731
+scale = Vector2(1.07421, 1.07421)
+texture = SubResource("CanvasTexture_epkcw")
+
 [node name="_Timer_46788" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
