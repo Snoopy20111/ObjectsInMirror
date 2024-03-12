@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cdnmcjribmmdi"]
+[gd_scene load_steps=46 format=3 uid="uid://cdnmcjribmmdi"]
 
 [ext_resource type="Script" path="res://Scripts/Main_Road_01.gd" id="1_kcnd1"]
 [ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="2_bsrmj"]
@@ -21,12 +21,14 @@
 [ext_resource type="PackedScene" uid="uid://cup1w15t2fbhu" path="res://Scenes/Prefabs/Trees/Tree_BasicShadows.tscn" id="17_s6b5g"]
 [ext_resource type="Curve2D" uid="uid://qf7ausm5a5v6" path="res://Customs/Curves/TrainPath.tres" id="18_1oj4q"]
 [ext_resource type="Curve2D" uid="uid://dcbsc85jmgvwp" path="res://Customs/Curves/RoadPieces/Main_Rails_01.tres" id="18_vof8y"]
-[ext_resource type="Texture2D" uid="uid://jfj20g2y6phs" path="res://Sprites/Environment/Tracks/rails.png" id="19_02ok5"]
 [ext_resource type="PackedScene" uid="uid://cmsivj6b55g3k" path="res://Scenes/Actors/Train.tscn" id="19_vc4xi"]
 [ext_resource type="Curve2D" uid="uid://bs612gushkiow" path="res://Customs/Curves/RoadPieces/Main_Rails_02.tres" id="22_o0pne"]
+[ext_resource type="Texture2D" uid="uid://cqmq4kwd2dnn7" path="res://Sprites/Environment/Tracks/Rails_Diffuse.png" id="23_od7hf"]
 [ext_resource type="Texture2D" uid="uid://d067k70tjl2yd" path="res://Sprites/Environment/Tracks/Rails001_256_Diffuse.png" id="23_wnnye"]
 [ext_resource type="Texture2D" uid="uid://b1ujb2ytyb3ex" path="res://Sprites/Environment/Tracks/Rails001_256_NormalDX.png" id="24_ueycy"]
+[ext_resource type="Texture2D" uid="uid://c8f6vjytafpn6" path="res://Sprites/Environment/Tracks/rails_Normal.png" id="24_w3xrb"]
 [ext_resource type="Texture2D" uid="uid://ey1kbn4ewa84" path="res://Sprites/Environment/Tracks/Rails001_256_Specular.png" id="25_0wtko"]
+[ext_resource type="Texture2D" uid="uid://c4as1ugqsds5o" path="res://Sprites/Environment/Tracks/rails_Specular.png" id="25_m5c12"]
 [ext_resource type="Curve2D" uid="uid://bdkiehljmb6l8" path="res://Customs/Curves/RoadPieces/Main_Rails_03.tres" id="26_gnxxd"]
 
 [sub_resource type="Gradient" id="Gradient_7ho15"]
@@ -411,7 +413,9 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
 point_count = 1
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_gv3gu"]
-diffuse_texture = ExtResource("19_02ok5")
+diffuse_texture = ExtResource("23_od7hf")
+normal_texture = ExtResource("24_w3xrb")
+specular_texture = ExtResource("25_m5c12")
 specular_shininess = 0.1
 texture_filter = 1
 
@@ -461,13 +465,13 @@ metadata/_edit_lock_ = true
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 z_index = 1000
 material = SubResource("CanvasItemMaterial_y7kk1")
-position = Vector2(-19822, -11935)
+position = Vector2(-19907, -12139)
 script = ExtResource("4_gytpx")
 priority_override = false
 priority = 1
 zoom = Vector2(0.8, 0.8)
 follow_mode = 4
-follow_target = NodePath("../PlayerCar")
+follow_target = NodePath("../PlayerCar/Camera_Target_01")
 follow_path = NodePath("../Environment/Road")
 follow_parameters/damping = true
 follow_parameters/damping_value = 3.745
@@ -500,7 +504,7 @@ playerCar = NodePath("../../PlayerCar")
 metadata/_edit_lock_ = true
 
 [node name="Trigger_Train_Start" parent="Triggers/Trigger_Train_Boss" instance=ExtResource("7_hl1tv")]
-position = Vector2(-500, 7000)
+position = Vector2(-500, 7150)
 metadata/_edit_lock_ = true
 
 [node name="Trigger_Train_End" parent="Triggers/Trigger_Train_Boss" instance=ExtResource("7_hl1tv")]
