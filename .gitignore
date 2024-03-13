@@ -1,3 +1,5 @@
 #To ignore the Temp Files folder
 TempFiles/
+#Also ignore the folder of builds, these will be manually uploaded to GitHub Releases and other places
+Builds/
 GodotProj/addons/Wwise/native/lib/win64/debug/~libwwise.windows.template_debug.dll
