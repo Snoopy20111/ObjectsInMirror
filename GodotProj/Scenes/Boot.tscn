@@ -7,7 +7,7 @@
 script = ExtResource("1_qfepg")
 LogoParade = false
 LoadDebugLevel = true
-DebugLevelPath = "res://Scenes/Tut_Road_02.tscn"
+DebugLevelPath = "res://Scenes/Cine_Outro_02_TruckStop.tscn"
 
 [node name="Startup_Color" type="ColorRect" parent="."]
 show_behind_parent = true

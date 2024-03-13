@@ -1,18 +1,12 @@
 extends Node2D
 # Logic for controlling cinematic, dialogue, and then transition to
-# the next scene (Tut_Road_01)
+# the next scene (Main Menu, because that's the game's end)
 
 @export var dialogue_Outro_03: DialogueResource = load("res://Dialogue/Cine_Outro_03.dialogue")
 @export var sceneToLoad: String = "res://Scenes/Sets/MainMenu.tscn"
 
-@onready var Cam_01: PhantomCamera2D = $PhantomCamera2D_01
-@onready var Cam_02: PhantomCamera2D = $PhantomCamera2D_02
-@onready var Cam_03: PhantomCamera2D = $PhantomCamera2D_03
-
 @onready var timerToFirstDialogue: Timer = $Timers/Timer_ToFirstDialogue
 @onready var timerToExit: Timer = $Timers/Timer_ToExit
-
-@onready var playerCar: CarController = $PlayerCar
 
 
 func _ready():
@@ -34,7 +28,6 @@ func _on_timer_to_exit_timeout():
 	SceneManager.change_scene(sceneToLoad)
 
 func dia_end(_resource: DialogueResource):
-	playerCar.ScriptControl_GoForward()
 	timerToExit.start()
 
 func _exit_tree():

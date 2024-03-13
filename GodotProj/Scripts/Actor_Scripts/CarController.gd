@@ -17,6 +17,7 @@ const screenShakeFalloff: Curve = preload("res://Customs/Curves/Car_Damage_Scree
 @export var collisionThreshold: float = 150.0
 @export var screenShakeStrength: float = 10.0
 @export var screenShakeLength: float = 1.5
+@export var lightsOn: bool = true
 
 #@export_group("No Control Properties")
 
@@ -46,6 +47,8 @@ var _screenShakeCounter: float = 0.0
 
 func _ready():
 	connect("body_entered", Collided)
+	if (lightsOn == false):
+		$Headlights_Full.set_visible(false)
 
 # Called every frame
 func _process(delta):
