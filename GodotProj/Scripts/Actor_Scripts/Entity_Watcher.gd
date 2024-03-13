@@ -15,7 +15,7 @@ const watcherChaosRadiusWithDistanceCurve = preload("res://Customs/Curves/Watche
 @onready var animBeginTimer: Timer = $AnimBeginTimer
 @onready var watcherSprite: Sprite2D = $Sprite
 @onready var chaosNode: ColorRect = $Chaos
-@onready var player: CarController = $"../PlayerCar"
+@onready var player: CarController = %PlayerCar
 
 #Shader related params
 @onready var chaosParam: float = chaosNode.material.get_shader_parameter("chaos")

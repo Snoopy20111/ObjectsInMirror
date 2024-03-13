@@ -16,7 +16,7 @@ const vaguePlayerLocSpreadCurve = preload("res://Customs/Curves/Chaser/Chaser_Va
 @onready var lostEmTimer: Timer = $Timer_LostEm
 @onready var watcherSprite: Sprite2D = $Sprite
 @onready var chaosNode: ColorRect = $Chaos
-@onready var player: CarController = $"../PlayerCar"
+@onready var player: CarController = %PlayerCar
 
 #Shader related params
 @onready var chaosParam: float = chaosNode.material.get_shader_parameter("chaos")
@@ -96,7 +96,6 @@ func _process(_delta):
 	var radiusAdd = chaosRadiusWithDistanceCurve.sample(clamp(playerVector.length() / maxChaosDistance, 0, 1)) 
 	chaosNode.material.set_shader_parameter("chaos", (chaosParam + chaosAdd))
 	chaosNode.material.set_shader_parameter("radius", radiusAdd)
-
 
 
 func goTo(target_pos: Vector2, delta: float, speedMult: float = 1.0, turnMult: float = 1.0):

@@ -2,9 +2,6 @@ extends Node2D
 
 #const dialogue_main_01: DialogueResource = load("res://Dialogue/Main_Road_01_01.dialogue")
 
-@onready var timerToFirstDialogue: Timer = $Timers/Timer_ToFirstDialogue
-
-
 func _ready():
 	# Set Fullscreen shaders: vignette, rain, Chromatic Aberration,
 	# and Screen Shake, if not already on
