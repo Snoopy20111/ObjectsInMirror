@@ -1,4 +1,5 @@
-extends Node2D
+extends RigidBody2D
+class_name Entity_Watcher
 
 const watcherLightFadeCurve = preload("res://Customs/Curves/Watcher/Watcher_LightFade_Curve.tres")
 const watcherSpriteFadeCurve = preload("res://Customs/Curves/Watcher/Watcher_SpriteFade_Curve.tres")

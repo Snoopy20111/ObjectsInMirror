@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmsivj6b55g3k"]
+[gd_scene load_steps=14 format=3 uid="uid://cmsivj6b55g3k"]
 
 [ext_resource type="Script" path="res://Scripts/Actor_Scripts/Train.gd" id="1_xehgc"]
 [ext_resource type="Texture2D" uid="uid://ccukpxau6ven5" path="res://Sprites/Characters/Train/Train_Front_256_Diffuse.png" id="1_yweit"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://btd2xrqw8njkp" path="res://Sprites/Characters/Train/Train_Car01_BoxWhite_Diffuse.png" id="4_inwl8"]
 [ext_resource type="Texture2D" uid="uid://xyi25lr13sy3" path="res://Sprites/Characters/Train/Train_Car01_BoxWhite_Normal.png" id="5_jtm1f"]
 [ext_resource type="Texture2D" uid="uid://4lm8lg1jefln" path="res://Sprites/Characters/Train/Train_Car01_BoxWhite_Specular.png" id="6_0loc4"]
+[ext_resource type="Texture2D" uid="uid://bmitfj2ebtvpd" path="res://Sprites/Lights/Headlight_Texture_02.png" id="8_y6sn2"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_562qm"]
 diffuse_texture = ExtResource("1_yweit")
@@ -15,11 +16,23 @@ specular_texture = ExtResource("3_urmja")
 specular_shininess = 0.1
 texture_filter = 1
 
+[sub_resource type="Gradient" id="Gradient_cvvr2"]
+colors = PackedColorArray(0.310617, 0.310617, 0.310617, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nufoj"]
+gradient = SubResource("Gradient_cvvr2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_epkcw"]
 diffuse_texture = ExtResource("4_inwl8")
 normal_texture = ExtResource("5_jtm1f")
 specular_texture = ExtResource("6_0loc4")
 texture_filter = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4orki"]
+size = Vector2(578, 136.001)
 
 [node name="Train" type="PathFollow2D"]
 position = Vector2(8000, 0)
@@ -27,11 +40,34 @@ rotation = 3.14159
 loop = false
 script = ExtResource("1_xehgc")
 
+[node name="Headlights_Full" type="PointLight2D" parent="."]
+z_index = 50
+texture_filter = 2
+position = Vector2(587, 7.00134)
+scale = Vector2(9.42022, 5.656)
+energy = 3.16
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+texture = ExtResource("8_y6sn2")
+height = 250.0
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 10
 rotation = -1.56731
 scale = Vector2(1.292, 1.292)
 texture = SubResource("CanvasTexture_562qm")
+metadata/_edit_lock_ = true
+
+[node name="TrainGlowLight" type="PointLight2D" parent="Sprite2D"]
+position = Vector2(-0.388344, -0.385742)
+rotation = 1.56731
+scale = Vector2(14.3947, 8.32957)
+color = Color(0.988235, 0.917647, 0.772549, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_nufoj")
+height = 100.0
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = 10
@@ -40,12 +76,34 @@ rotation = 1.56731
 scale = Vector2(1.07421, 1.07421)
 texture = SubResource("CanvasTexture_epkcw")
 
+[node name="TrainGlowLight" type="PointLight2D" parent="Sprite2D2"]
+position = Vector2(-0.388344, -0.385742)
+rotation = 1.56731
+scale = Vector2(14.3947, 8.32957)
+color = Color(0.988235, 0.917647, 0.772549, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_nufoj")
+height = 100.0
+metadata/_edit_lock_ = true
+
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 z_index = 10
 position = Vector2(-1846, 0.0595087)
 rotation = 1.56731
 scale = Vector2(1.07421, 1.07421)
 texture = SubResource("CanvasTexture_epkcw")
+
+[node name="TrainGlowLight" type="PointLight2D" parent="Sprite2D3"]
+position = Vector2(-0.388344, -0.385742)
+rotation = 1.56731
+scale = Vector2(14.3947, 8.32957)
+color = Color(0.988235, 0.917647, 0.772549, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_nufoj")
+height = 100.0
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
 z_index = 10
@@ -54,6 +112,17 @@ rotation = 1.56731
 scale = Vector2(1.07421, 1.07421)
 texture = SubResource("CanvasTexture_epkcw")
 
+[node name="TrainGlowLight" type="PointLight2D" parent="Sprite2D4"]
+position = Vector2(-0.388344, -0.385742)
+rotation = 1.56731
+scale = Vector2(14.3947, 8.32957)
+color = Color(0.988235, 0.917647, 0.772549, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_nufoj")
+height = 100.0
+metadata/_edit_lock_ = true
+
 [node name="Sprite2D5" type="Sprite2D" parent="."]
 z_index = 10
 position = Vector2(-3557, 0.0551713)
@@ -61,6 +130,76 @@ rotation = 1.56731
 scale = Vector2(1.07421, 1.07421)
 texture = SubResource("CanvasTexture_epkcw")
 
-[node name="_Timer_46788" type="Timer" parent="."]
-wait_time = 0.2
-one_shot = true
+[node name="TrainGlowLight" type="PointLight2D" parent="Sprite2D5"]
+position = Vector2(-0.388344, -0.385742)
+rotation = 1.56731
+scale = Vector2(14.3947, 8.32957)
+color = Color(0.988235, 0.917647, 0.772549, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_nufoj")
+height = 100.0
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(-4400, 0.0530342)
+rotation = 1.56731
+scale = Vector2(1.07421, 1.07421)
+texture = SubResource("CanvasTexture_epkcw")
+
+[node name="TrainGlowLight" type="PointLight2D" parent="Sprite2D6"]
+position = Vector2(-0.388344, -0.385742)
+rotation = 1.56731
+scale = Vector2(14.3947, 8.32957)
+color = Color(0.988235, 0.917647, 0.772549, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_nufoj")
+height = 100.0
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(-5258, 0.0508592)
+rotation = 1.56731
+scale = Vector2(1.07421, 1.07421)
+texture = SubResource("CanvasTexture_epkcw")
+
+[node name="TrainGlowLight" type="PointLight2D" parent="Sprite2D7"]
+position = Vector2(-0.388344, -0.385742)
+rotation = 1.56731
+scale = Vector2(14.3947, 8.32957)
+color = Color(0.988235, 0.917647, 0.772549, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_nufoj")
+height = 100.0
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(-6114, 0.0486892)
+rotation = 1.56731
+scale = Vector2(1.07421, 1.07421)
+texture = SubResource("CanvasTexture_epkcw")
+
+[node name="TrainGlowLight" type="PointLight2D" parent="Sprite2D8"]
+position = Vector2(-0.388344, -0.385742)
+rotation = 1.56731
+scale = Vector2(14.3947, 8.32957)
+color = Color(0.988235, 0.917647, 0.772549, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_nufoj")
+height = 100.0
+metadata/_edit_lock_ = true
+
+[node name="Collision" type="Area2D" parent="."]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+position = Vector2(279, 58.0007)
+shape = SubResource("RectangleShape2D_4orki")
+
+[connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]

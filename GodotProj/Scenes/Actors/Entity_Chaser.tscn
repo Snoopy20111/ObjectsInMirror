@@ -25,11 +25,9 @@ shader_parameter/attenuation = 1.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvgye"]
 radius = 23.0868
 
-[node name="Entity_Chaser" type="CharacterBody2D"]
+[node name="Entity_Chaser" type="RigidBody2D"]
 collision_layer = 4
-motion_mode = 1
 script = ExtResource("1_wa5uk")
-movingSpeed = 600.0
 
 [node name="VisibleOn" type="VisibleOnScreenNotifier2D" parent="."]
 process_mode = 1
@@ -61,10 +59,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -268.0
-offset_top = -261.0
-offset_right = 267.0
-offset_bottom = 261.0
+offset_left = -1002.0
+offset_top = -977.0
+offset_right = 1001.0
+offset_bottom = 977.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)

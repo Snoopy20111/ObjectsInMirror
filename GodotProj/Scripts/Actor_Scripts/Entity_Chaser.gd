@@ -1,4 +1,5 @@
-extends CharacterBody2D
+extends RigidBody2D
+class_name Entity_Chaser
 
 const chaosFadeCurve = preload("res://Customs/Curves/Chaser/Chaser_ChaosFade_Curve.tres")
 const chaosWithDistanceCurve = preload("res://Customs/Curves/Chaser/Chaser_ChaosWithDistance_Curve.tres")
@@ -7,7 +8,7 @@ const vaguePlayerLocSpreadCurve = preload("res://Customs/Curves/Chaser/Chaser_Va
 
 @export var startPaused: bool = false
 @export var turningSpeed: float = 12.0
-@export var movingSpeed: float = 400.0
+@export var movingSpeed: float = 1000
 @export var chargeDistanceThreshold: float = 600.0
 @export var maxChaosDistance: float = 600.0
 @export var stalkCloseEnoughDist: float = 150.0
@@ -100,11 +101,11 @@ func _process(_delta):
 
 func goTo(target_pos: Vector2, delta: float, speedMult: float = 1.0, turnMult: float = 1.0):
 	#move
-	set_velocity((target_pos - position).normalized() * movingSpeed * speedMult)
+	var new_vel = (target_pos - position).normalized() * movingSpeed * speedMult
+	linear_velocity = lerp(linear_velocity, new_vel, 0.02)
 	#and turn
 	var new_transform = transform.looking_at(target_pos)
 	rotation = transform.interpolate_with(new_transform, turningSpeed * turnMult * delta).get_rotation()
-	move_and_slide()
 
 func _isPlayerInRange() -> bool:
 	return playerVector.length() < chargeDistanceThreshold

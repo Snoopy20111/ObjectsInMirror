@@ -458,7 +458,7 @@ rotation = -1.5708
 metadata/entity_name = "PlayerCar"
 
 [node name="Camera_Target_01" type="Node2D" parent="PlayerCar"]
-position = Vector2(265, 0)
+position = Vector2(190, 0)
 rotation = 1.5708
 metadata/_edit_lock_ = true
 
@@ -477,7 +477,7 @@ metadata/_edit_lock_ = true
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 z_index = 1000
 material = SubResource("CanvasItemMaterial_y7kk1")
-position = Vector2(0, -265)
+position = Vector2(0, -189)
 script = ExtResource("4_gytpx")
 priority_override = false
 priority = 1

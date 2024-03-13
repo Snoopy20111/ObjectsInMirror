@@ -186,11 +186,11 @@ animations = [{
 [sub_resource type="CanvasTexture" id="CanvasTexture_m5lv2"]
 diffuse_texture = ExtResource("2_26rgh")
 
-[sub_resource type="Gradient" id="Gradient_cvvr2"]
+[sub_resource type="Gradient" id="Gradient_0vfg6"]
 colors = PackedColorArray(0.310617, 0.310617, 0.310617, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xiydi"]
-gradient = SubResource("Gradient_cvvr2")
+gradient = SubResource("Gradient_0vfg6")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)

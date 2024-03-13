@@ -427,7 +427,7 @@ rotation = 3.14159
 metadata/entity_name = "PlayerCar"
 
 [node name="Camera_Target_01" type="Node2D" parent="PlayerCar"]
-position = Vector2(190, 0)
+position = Vector2(265, 0)
 rotation = 1.5708
 
 [node name="PointLight2D" type="PointLight2D" parent="PlayerCar"]
@@ -445,7 +445,7 @@ metadata/_edit_lock_ = true
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 z_index = 1000
 material = SubResource("CanvasItemMaterial_y7kk1")
-position = Vector2(-190, 0)
+position = Vector2(-249.999, 0)
 script = ExtResource("4_m4ktk")
 priority_override = false
 priority = 1
@@ -528,6 +528,10 @@ metadata/_edit_lock_ = true
 [node name="Entity_Chaser" parent="Entities" instance=ExtResource("19_twf7c")]
 position = Vector2(-3356, 97)
 startPaused = true
+turningSpeed = null
+chargeDistanceThreshold = null
+maxChaosDistance = null
+stalkCloseEnoughDist = null
 
 [node name="Entity_Watcher" parent="Entities" instance=ExtResource("20_htsm5")]
 position = Vector2(-3166, -386)
