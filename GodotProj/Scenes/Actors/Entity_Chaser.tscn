@@ -4,10 +4,17 @@
 [ext_resource type="Shader" path="res://Scripts/Shaders/ChromaticChaosDistortion.gdshader" id="3_or8rn"]
 [ext_resource type="Texture2D" uid="uid://2kuqfkc8xmej" path="res://Sprites/Characters/YoungMan/YoungMan_Body.svg" id="4_jgs8r"]
 
-[sub_resource type="Gradient" id="Gradient_q3u2w"]
+[sub_resource type="Gradient" id="Gradient_7ho15"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.393805, 1)
+colors = PackedColorArray(0.75, 0.75, 0.75, 1, 0.267421, 0.278472, 0.281787, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_pgdla"]
-gradient = SubResource("Gradient_q3u2w")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sq5wr"]
+gradient = SubResource("Gradient_7ho15")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vtacd"]
 shader = ExtResource("3_or8rn")
@@ -35,14 +42,15 @@ one_shot = true
 wait_time = 0.75
 one_shot = true
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
-z_index = 20
-scale = Vector2(7.3125, 7.3125)
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(36, 0.00013032)
+scale = Vector2(15.3818, 15.3818)
+color = Color(1, 0.839216, 0.666667, 0.670588)
 shadow_enabled = true
-shadow_filter = 2
+shadow_filter = 1
 shadow_filter_smooth = 1.0
-texture = SubResource("GradientTexture2D_pgdla")
+texture = SubResource("GradientTexture2D_sq5wr")
+height = 100.0
 
 [node name="Chaos" type="ColorRect" parent="."]
 light_mask = 0
