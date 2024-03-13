@@ -40,7 +40,7 @@ one_shot = true
 wait_time = 0.75
 one_shot = true
 
-[node name="PointLight2D2" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(36, 0.00013032)
 scale = Vector2(15.3818, 15.3818)
 color = Color(1, 0.839216, 0.666667, 0.670588)

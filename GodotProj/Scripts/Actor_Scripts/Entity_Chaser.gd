@@ -2,6 +2,7 @@ extends RigidBody2D
 class_name Entity_Chaser
 
 const chaosFadeCurve = preload("res://Customs/Curves/Chaser/Chaser_ChaosFade_Curve.tres")
+const chaserLightFadeCurve = preload("res://Customs/Curves/Chaser/Chaser_LightFade_Curve.tres")
 const chaosWithDistanceCurve = preload("res://Customs/Curves/Chaser/Chaser_ChaosWithDistance_Curve.tres")
 const chaosRadiusWithDistanceCurve = preload("res://Customs/Curves/Chaser/Chaser_ChaosRadiusWithDistance_Curve.tres")
 const vaguePlayerLocSpreadCurve = preload("res://Customs/Curves/Chaser/Chaser_VaguePlayerLocationSpread.tres")
@@ -13,14 +14,19 @@ const vaguePlayerLocSpreadCurve = preload("res://Customs/Curves/Chaser/Chaser_Va
 @export var maxChaosDistance: float = 600.0
 @export var stalkCloseEnoughDist: float = 150.0
 
+@export var chaosFadeCounterDown: float = 3
+
 @onready var animBeginTimer: Timer = $Timer_AnimBegin
 @onready var lostEmTimer: Timer = $Timer_LostEm
 @onready var watcherSprite: Sprite2D = $Sprite
 @onready var chaosNode: ColorRect = $Chaos
+@onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var light: PointLight2D = $PointLight2D
 @onready var player: CarController = %PlayerCar
 
 #Shader related params
 @onready var chaosParam: float = chaosNode.material.get_shader_parameter("chaos")
+@onready var chaosFadeStartValue: float = chaosFadeCounterDown
 
 var isVisible: bool = false
 @onready var paused: bool = startPaused
@@ -34,6 +40,9 @@ var state: Enums.CHASER_STATE = Enums.CHASER_STATE.STALK
 
 var _lastLinearVelocity:Vector2 = Vector2(0, 0)
 var _lastAngularVelocity:float = 0
+var isFadingSelf: bool = false
+var isFadingChaos: bool = false
+var fadeCounter: float = 0
 
 func _ready():
 	playerVector = player.position - position
@@ -43,6 +52,19 @@ func _physics_process(delta):
 	#early return if the entity is paused
 	if (paused):
 		return
+	
+	# Fade Chaos, if able, but if the counter is past 0, delete watcher
+	if(isFadingChaos):
+		fadeCounter += delta
+		if (chaosFadeCounterDown <= 0):
+			queue_free()
+			return
+		else:
+			chaosFadeCounterDown -= delta
+		if (light != null):
+			light.energy = chaserLightFadeCurve.sample(fadeCounter)
+			if (light.energy <= 0):
+				light.queue_free()
 	
 	# Get the distance to player position
 	playerVector = player.position - position
@@ -133,3 +155,9 @@ func _on_timer_lost_em_timeout():
 
 func _on_timer_anim_begin_timeout():
 	canCharge = true
+
+func remove_entity():
+	watcherSprite.queue_free()
+	collision.queue_free()
+	state = Enums.CHASER_STATE.STOPPED
+	isFadingChaos = true

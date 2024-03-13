@@ -13,4 +13,5 @@ func _physics_process(delta):
 
 
 func _on_collision_body_entered(body):
-	pass # Replace with function body.
+	if (body is Entity_Chaser):
+		body.remove_entity()

@@ -170,7 +170,7 @@ func Collided(_body: Node):
 		var relativePosition = _body.position - position
 		apply_force(-relativePosition * 1000, relativePosition)
 		print("relativePosition: " + str(relativePosition))
-		_body.queue_free()
+		_body.remove_entity()
 		if (canBeDamaged):
 			ApplyDamage()
 	
