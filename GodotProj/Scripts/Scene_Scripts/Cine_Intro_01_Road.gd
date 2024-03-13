@@ -7,7 +7,7 @@ const dialogue_Intro_02: DialogueResource = preload("res://Dialogue/Cine_Intro_0
 
 @export var loopingEnv_loopDistance: float = 4096
 @export var loopingEnv_thresholdY: float = 2048
-@export var loopingEnv_speed: float = 300
+@export var loopingEnv_speed: float = 450
 
 @export var sceneToLoad: String = "res://Scenes/Cine_Intro_02_GasStation.tscn"
 

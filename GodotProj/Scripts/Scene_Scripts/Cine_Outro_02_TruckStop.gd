@@ -24,7 +24,6 @@ extends Node2D
 	"animation_name_leave": null
 }
 
-
 @onready var timerToFirstDialogue: Timer = $Timers/Timer_ToFirstDialogue
 @onready var timerToExit: Timer = $Timers/Timer_ToExit
 @onready var TrimmedLoadOptions: Dictionary = SceneLoadOptions
