@@ -19,8 +19,10 @@ shader_parameter/attenuation = 1.0
 radius = 23.0868
 
 [node name="Entity_Chaser" type="CharacterBody2D"]
+collision_layer = 4
 motion_mode = 1
 script = ExtResource("1_wa5uk")
+movingSpeed = 600.0
 
 [node name="VisibleOn" type="VisibleOnScreenNotifier2D" parent="."]
 process_mode = 1
