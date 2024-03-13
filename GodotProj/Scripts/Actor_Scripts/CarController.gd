@@ -7,7 +7,7 @@ const screenShakeFalloff: Curve = preload("res://Customs/Curves/Car_Damage_Scree
 @export_group("Controller Properties")
 @export var controlMode:Enums.CONTROL_TYPE = Enums.CONTROL_TYPE.PLAYER
 @export var driftFactor:float = 0.95
-@export var accelerationFactor:float = 1100
+@export var accelerationFactor:float = 1000
 @export var turnFactor:float = 3.5
 @export var maxSpeed:float = 900
 @export var maxSpeedReverseFactor:float = 0.4

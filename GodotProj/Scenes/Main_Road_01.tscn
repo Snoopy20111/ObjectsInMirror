@@ -506,7 +506,7 @@ metadata/_edit_lock_ = true
 [node name="Trigger_Next" parent="Triggers" instance=ExtResource("6_gypmv")]
 z_index = 1220
 position = Vector2(-19991, -23363)
-sceneToLoad = "res://Scenes/Test_2D.tscn"
+sceneToLoad = "res://Scenes/Cine_Outro_01_Road.tscn"
 
 [node name="Trigger_Train_Boss" type="Node2D" parent="Triggers" node_paths=PackedStringArray("trainNode", "playerCar")]
 position = Vector2(-19500, -20500)
@@ -516,8 +516,7 @@ playerCar = NodePath("../../PlayerCar")
 metadata/_edit_lock_ = true
 
 [node name="Trigger_Train_Start" parent="Triggers/Trigger_Train_Boss" instance=ExtResource("7_hl1tv")]
-position = Vector2(-500, 7150)
-metadata/_edit_lock_ = true
+position = Vector2(-500, 7180)
 
 [node name="Trigger_Train_End" parent="Triggers/Trigger_Train_Boss" instance=ExtResource("7_hl1tv")]
 position = Vector2(-500, 694)

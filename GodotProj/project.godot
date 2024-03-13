@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="ObjectsInMirror"
+config/name="Objects In Mirror"
 run/main_scene="res://Scenes/Boot.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/Characters/Car/car_red_4.png"
 
 [autoload]
 
