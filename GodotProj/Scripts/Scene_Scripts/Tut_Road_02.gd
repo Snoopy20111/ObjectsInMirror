@@ -18,3 +18,6 @@ func _ready():
 
 func _exit_tree():
 	GameManager.resetFullScreenShaders()
+
+func _on_timer_to_first_dialogue_timeout():
+	pass

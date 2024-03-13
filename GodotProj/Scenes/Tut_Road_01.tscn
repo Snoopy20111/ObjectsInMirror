@@ -508,7 +508,6 @@ metadata/_edit_lock_ = true
 [node name="Entity_Watcher" parent="Entities" instance=ExtResource("13_p7l28")]
 position = Vector2(-131, -8420)
 rotation = 1.22697
-scale = Vector2(1, 1)
 
 [node name="Environment" type="Node" parent="."]
 

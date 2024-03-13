@@ -43,12 +43,13 @@ var _screenShakeCounter: float = 0.0
 @onready var timerInvulnurable:Timer = $Timer_Invulnurable
 @onready var damageAnimSprite:AnimatedSprite2D = $OnDeath/AnimatedSprite2D
 @onready var damageAnimSmoke:GPUParticles2D = $OnDeath/GPUParticles2D
+@onready var headlights:PointLight2D = $Headlights_Full
 
 
 func _ready():
 	connect("body_entered", Collided)
 	if (lightsOn == false):
-		$Headlights_Full.set_visible(false)
+		headlights.enabled = false
 
 # Called every frame
 func _process(delta):

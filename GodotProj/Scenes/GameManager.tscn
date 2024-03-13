@@ -25,8 +25,8 @@ shader_parameter/size = Vector2(0.005, 0.2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ptbrq"]
 shader = ExtResource("5_eancn")
-shader_parameter/wiggle = 1.0
-shader_parameter/offset = 0.5
+shader_parameter/wiggle = 0.0
+shader_parameter/offset = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5h2e0"]
 shader = ExtResource("6_xsneo")
@@ -77,7 +77,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="ChromaticAbberation" type="ColorRect" parent="Camera2D/FullscreenCanvas"]
-visible = false
 material = SubResource("ShaderMaterial_ptbrq")
 anchors_preset = 15
 anchor_right = 1.0

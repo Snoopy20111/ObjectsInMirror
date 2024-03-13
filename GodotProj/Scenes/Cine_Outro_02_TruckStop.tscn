@@ -410,6 +410,23 @@ texture_repeat = 2
 [node name="Cine_Intro_02_GasStation" type="Node2D"]
 position = Vector2(-806, -142)
 script = ExtResource("1_7wmxh")
+SceneLoadOptions = {
+"animation_name": null,
+"animation_name_enter": null,
+"animation_name_leave": null,
+"color": Color(0, 0, 0, 1),
+"ease": 1.0,
+"ease_enter": 1.0,
+"ease_leave": 1.0,
+"invert": false,
+"invert_on_leave": true,
+"pattern": "fade",
+"skip_fade_in": false,
+"skip_fade_out": false,
+"skip_scene_change": false,
+"speed": 1,
+"wait_time": 2.0
+}
 
 [node name="Timers" type="Node" parent="."]
 
@@ -419,7 +436,7 @@ one_shot = true
 autostart = true
 
 [node name="Timer_ToExit" type="Timer" parent="Timers"]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [node name="Lighting" type="Node" parent="."]
@@ -427,8 +444,7 @@ one_shot = true
 [node name="CanvasModulate" parent="Lighting" instance=ExtResource("2_ciraw")]
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lighting"]
-visible = false
-position = Vector2(200, -200)
+position = Vector2(-335, -500)
 rotation = 3.14159
 scale = Vector2(20, 20)
 color = Color(1, 0.839216, 0.666667, 1)
@@ -463,6 +479,7 @@ height = 100.0
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("16_v42xa")]
 rotation = 3.14159
 controlMode = 2
+lightsOn = false
 metadata/entity_name = "PlayerCar"
 metadata/_edit_lock_ = true
 
@@ -472,7 +489,7 @@ rotation = 3.14159
 
 [node name="PhantomCamera2D_01" type="Node2D" parent="."]
 material = SubResource("CanvasItemMaterial_jat4e")
-position = Vector2(55.65, 50)
+position = Vector2(55.6501, 49.9999)
 script = ExtResource("17_vyx60")
 priority_override = false
 priority = 1
