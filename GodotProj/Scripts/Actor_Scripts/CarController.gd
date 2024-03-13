@@ -164,6 +164,16 @@ func Collided(_body: Node):
 	var collisionForce: float = linCollForce + rotCollForce
 	#print("Collided with " + str(body.name) + " for impact of " + str(collisionForce))
 	
+	if (_body is Entity_Chaser):
+		#var entityRotCollForce: float = angular_velocity - _lastAngularVelocity
+		#var entityLinColl: Vector2 = (linear_velocity - _lastLinearVelocity)
+		var relativePosition = _body.position - position
+		apply_force(-relativePosition * 1000, relativePosition)
+		print("relativePosition: " + str(relativePosition))
+		_body.queue_free()
+		if (canBeDamaged):
+			ApplyDamage()
+	
 	if (collisionForce > collisionThreshold) and (canBeDamaged):
 		ApplyDamage()	#apply damage
 	#Do sound stuff with different thresholds
@@ -201,12 +211,12 @@ func Death():
 func _on_timer_invulnurable_timeout():
 	canBeDamaged = true
 	damageAnimSmoke.emitting = false
-	
-
 
 func ExitLevel():
 	GameManager.playerHealthAtLevelStart = _health
 	controlMode = Enums.CONTROL_TYPE.NONE
+
+
 
 func ScriptControl_GoForward():
 	controlMode = Enums.CONTROL_TYPE.SCRIPT
@@ -219,4 +229,3 @@ func ScriptControl_GoReverse():
 func ScriptControl_GoStop():
 	controlMode = Enums.CONTROL_TYPE.SCRIPT
 	_accelerationInput = 0
-#@export var traction_curve:Curve = preload("res://Customs/Curves/Car_XSpeedYTraction_Default.tres")

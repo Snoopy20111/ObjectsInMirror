@@ -31,18 +31,13 @@ var vaguePlayerVector: Vector2
 var maxStalkDistance: float = 2000
 var canCharge: bool = false
 var state: Enums.CHASER_STATE = Enums.CHASER_STATE.STALK
-#var newNode: Sprite2D		#Temporary
+
+var _lastLinearVelocity:Vector2 = Vector2(0, 0)
+var _lastAngularVelocity:float = 0
 
 func _ready():
 	playerVector = player.position - position
 	_setVaguePlayerLocation()
-	
-	#newNode = Sprite2D.new()
-	#newNode.set_name("vague_loc")
-	#newNode.texture = load("res://Sprites/1x1white.png")
-	#newNode.scale = Vector2(30, 30)
-	#newNode.z_index = 900
-	#add_sibling.call_deferred(newNode)
 
 func _physics_process(delta):
 	#early return if the entity is paused
@@ -51,7 +46,11 @@ func _physics_process(delta):
 	
 	# Get the distance to player position
 	playerVector = player.position - position
-	#print(state)
+	
+	#update the linear and angular velocity, for impact with player
+	_lastLinearVelocity = linear_velocity
+	_lastAngularVelocity = angular_velocity
+	
 	match(state):
 		Enums.CHASER_STATE.STOPPED:
 			# Just lost the player

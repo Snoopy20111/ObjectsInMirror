@@ -199,7 +199,6 @@ fill_to = Vector2(0.5, 0)
 size = Vector2(132, 70)
 
 [node name="PlayerCar" type="RigidBody2D"]
-collision_layer = 5
 gravity_scale = 0.0
 center_of_mass_mode = 1
 max_contacts_reported = 4
