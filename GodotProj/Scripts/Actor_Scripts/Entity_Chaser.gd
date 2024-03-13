@@ -5,6 +5,7 @@ const chaosWithDistanceCurve = preload("res://Customs/Curves/Chaser/Chaser_Chaos
 const chaosRadiusWithDistanceCurve = preload("res://Customs/Curves/Chaser/Chaser_ChaosRadiusWithDistance_Curve.tres")
 const vaguePlayerLocSpreadCurve = preload("res://Customs/Curves/Chaser/Chaser_VaguePlayerLocationSpread.tres")
 
+@export var startPaused: bool = false
 @export var turningSpeed: float = 12.0
 @export var movingSpeed: float = 400.0
 @export var chargeDistanceThreshold: float = 600.0
@@ -21,6 +22,7 @@ const vaguePlayerLocSpreadCurve = preload("res://Customs/Curves/Chaser/Chaser_Va
 @onready var chaosParam: float = chaosNode.material.get_shader_parameter("chaos")
 
 var isVisible: bool = false
+@onready var paused: bool = startPaused
 
 var playerVector: Vector2
 var vaguePlayerLocation: Vector2
@@ -42,6 +44,10 @@ func _ready():
 	#add_sibling.call_deferred(newNode)
 
 func _physics_process(delta):
+	#early return if the entity is paused
+	if (paused):
+		return
+	
 	# Get the distance to player position
 	playerVector = player.position - position
 	#print(state)
@@ -116,8 +122,9 @@ func _setVaguePlayerLocation():
 	vaguePlayerVector = vaguePlayerLocation - position
 
 func _on_visible_on_screen_entered() -> void:
-	#animBeginTimer.start()
 	isVisible = true
+	if (startPaused):
+		paused = false
 
 func _on_visible_on_screen_exited() -> void:
 	isVisible = false
