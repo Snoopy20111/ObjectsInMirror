@@ -135,9 +135,6 @@ grow_vertical = 2
 text = "loganhardin.xyz"
 label_settings = SubResource("LabelSettings_byern")
 
-[node name="AkListener2D" type="AkListener2D" parent="."]
-visible = false
-
 [connection signal="timeout" from="LogoParade/StartTimer" to="LogoParade" method="_on_StartTimer_timeout"]
 [connection signal="timeout" from="LogoParade/WordsTimer" to="LogoParade/CenterContainer/Path2D/PathFollow2D" method="_on_wordstimer_timeout"]
 [connection signal="timeout" from="LogoParade/FreezeTimer" to="LogoParade" method="_on_FreezeTimer_timeout"]

@@ -58,6 +58,9 @@ height = 100.0
 
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("1_0wopp")]
 rotation = -1.5708
+controlMode = 1
+scriptSpeed = 0.7
+useScriptValues = true
 metadata/entity_name = "PlayerCar"
 metadata/_edit_lock_ = true
 

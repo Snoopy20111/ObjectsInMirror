@@ -89,6 +89,7 @@ theme = ExtResource("3_lhjo4")
 text = "Start"
 script = ExtResource("3_wwc5o")
 sceneToLoad = "res://Scenes/Cine_Intro_01_Road.tscn"
+pressedAudioEvent = "UI_StartGame"
 wwiseObjectName = "Start_Button"
 
 [node name="HSeparator" type="HSeparator" parent="MainMenu/MarginContainer/AspectRatioContainer/VBoxContainer"]

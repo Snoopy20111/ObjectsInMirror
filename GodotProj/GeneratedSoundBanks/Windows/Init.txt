@@ -1,3 +1,13 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	3036050140	IsAlive			\Default Work Unit\IsAlive	
+
+State	ID	Name	State Group			Notes
+	655265632	Alive	IsAlive			
+	748895195	None	IsAlive			
+	2044049779	Dead	IsAlive			
+	2890830352	Almost_Dead	IsAlive			
+	3686962126	Hurting	IsAlive			
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Acoustic Textures\Textures\Brick	
 	513139656	Mountain			\Factory Acoustic Textures\Textures\Mountain	

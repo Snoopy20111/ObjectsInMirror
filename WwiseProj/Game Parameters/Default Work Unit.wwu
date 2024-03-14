@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{33FFF99D-7C5E-4947-9C15-5ED268E1107A}" SchemaVersion="119">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{33FFF99D-7C5E-4947-9C15-5ED268E1107A}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{33FFF99D-7C5E-4947-9C15-5ED268E1107A}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Panic" ID="{0361B67D-E6DC-4CF1-B236-21BB4BA14CC2}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="TireScreech" ID="{430C8D38-36F1-42B5-9595-F915479F53AD}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RPM" ID="{506A38B4-7136-4B8E-8047-4D5B132A2045}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="2"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="4"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Throttle" ID="{94FCDAC2-E5C3-462D-92FF-97738C806B8D}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Speed" ID="{206F3888-D6FB-4238-B989-B71B43D825CF}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>

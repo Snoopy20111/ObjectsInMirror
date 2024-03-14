@@ -14,63 +14,188 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_UI_LogoParade" ID="{9270240D-2F04-4623-82E4-318C98C3C1CC}">
+				<Folder Name="AMB" ID="{C42C648D-A818-4373-9CB8-3008BE2F98E8}" ShortID="207595212">
 					<ChildrenList>
-						<Action Name="" ID="{D4CD2D0C-C29D-4A57-90E3-57295D649AD2}" ShortID="703174972">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="LogoParade- LH" ID="{C67C13C9-8B0F-4B60-91B3-17AF52DE0DDD}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="AMB_Menu" ID="{8F5193F0-D8CD-491C-BB90-9585531F28C2}">
+							<ChildrenList>
+								<Action Name="" ID="{428A92F7-7DB1-4725-98C4-B2DF6BEBFFF1}" ShortID="43236769">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="4.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Rain" ID="{FF9401E1-5112-4A4B-BBF6-DB78B335B60A}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="AMB_Cine_Intro_01" ID="{5D7F0116-5F7D-45BA-ABFB-7AA5151F1825}"/>
+						<Event Name="AMB_Cine_Intro_02" ID="{895268B5-B63B-4095-BD79-D14E1BC1B81B}"/>
 					</ChildrenList>
-				</Event>
-				<Event Name="Play_UI_StartGame" ID="{37568B77-8D8F-45C7-85E1-7E2D0E773A17}">
+				</Folder>
+				<Folder Name="MUS" ID="{FB0624CA-E787-4AC2-A947-63323646D034}" ShortID="649422396">
 					<ChildrenList>
-						<Action Name="" ID="{5A1B76CC-E4E0-4C0B-BE5B-EF092BE844A4}" ShortID="318594272">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Nav_Select" ID="{A42A85E1-AF96-491C-A18C-DC3CEF02831B}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="MUS_Menu" ID="{C0E8A400-AE58-4AA3-8E42-174657AFCAE2}"/>
+						<Event Name="MUS_Cine_Intro_01" ID="{25995FA8-D65A-45AB-8C8D-6F39BC2A0503}"/>
+						<Event Name="MUS_Cine_Intro_02" ID="{007F5D2A-7040-4680-B3CD-F8320CBBA77E}"/>
+						<Event Name="MUS_Cine_Intro_03" ID="{76553BB8-DF3E-4DAF-9ABF-800C1F98E431}"/>
+						<Event Name="MUS_Cine_Intro_04" ID="{0846ABC9-F91C-4468-A5E2-7811B814F4B4}"/>
 					</ChildrenList>
-				</Event>
-				<Event Name="Play_UI_Nav_Hover" ID="{5146E2AF-A6AF-4972-A5C1-66DAE8790FF9}">
+				</Folder>
+				<Folder Name="UI" ID="{36292421-C79B-4EE2-A134-62FEB4134678}" ShortID="699562651">
 					<ChildrenList>
-						<Action Name="" ID="{931FD8CE-EBC0-4003-AEC6-207B4DBF910A}" ShortID="667894823">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Nav_Select" ID="{A42A85E1-AF96-491C-A18C-DC3CEF02831B}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="UI_Nav_Hover" ID="{5146E2AF-A6AF-4972-A5C1-66DAE8790FF9}">
+							<ChildrenList>
+								<Action Name="" ID="{931FD8CE-EBC0-4003-AEC6-207B4DBF910A}" ShortID="667894823">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Nav_Hover" ID="{DC4EF3E8-500A-468C-A6E3-DAF90DD0D773}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="UI_Nav_Accept" ID="{48B50F6C-80F6-4A4C-AF7A-94488AE32ABE}">
+							<ChildrenList>
+								<Action Name="" ID="{B0F108C7-6DC2-4690-B864-7AB80269E80E}" ShortID="702153235">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Nav_Select" ID="{A42A85E1-AF96-491C-A18C-DC3CEF02831B}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="UI_StartGame" ID="{37568B77-8D8F-45C7-85E1-7E2D0E773A17}">
+							<ChildrenList>
+								<Action Name="" ID="{5A1B76CC-E4E0-4C0B-BE5B-EF092BE844A4}" ShortID="318594272">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Nav_Select" ID="{A42A85E1-AF96-491C-A18C-DC3CEF02831B}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{C473F475-997C-4EBC-98D6-36C8C64610B5}" ShortID="936229072">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.5"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ambience_Forest_01" ID="{0187F6BE-17D1-4273-A3CF-79841D5E4E46}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="UI_LogoParade" ID="{9270240D-2F04-4623-82E4-318C98C3C1CC}">
+							<ChildrenList>
+								<Action Name="" ID="{D4CD2D0C-C29D-4A57-90E3-57295D649AD2}" ShortID="703174972">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LogoParade- LH" ID="{C67C13C9-8B0F-4B60-91B3-17AF52DE0DDD}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="UI_Nav_Unhover" ID="{9D0778E8-96EB-4CE4-B99F-D626EF2ED347}"/>
 					</ChildrenList>
-				</Event>
-				<Event Name="Play_UI_Nav_Unhover" ID="{9D0778E8-96EB-4CE4-B99F-D626EF2ED347}">
+				</Folder>
+				<Folder Name="SFX" ID="{D2384D76-122A-48B9-9714-68B7DC15F20F}" ShortID="738044296">
 					<ChildrenList>
-						<Action Name="" ID="{082CD404-5786-4745-8E12-C78E73473EB9}" ShortID="444571829">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Nav_Select" ID="{A42A85E1-AF96-491C-A18C-DC3CEF02831B}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Folder Name="Car" ID="{644BB8ED-9D6F-4350-B146-ECCD1A708283}" ShortID="446403751">
+							<ChildrenList>
+								<Event Name="ACTR_Car_Engine_Play" ID="{C9E04D18-E9E7-4FA7-85E5-DE3C9803CDDF}">
+									<ChildrenList>
+										<Action Name="" ID="{69B622F9-F90C-4587-969B-59ED47384CC2}" ShortID="172359477">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Car_Engine" ID="{EF71DEC9-B2DB-4753-84D8-16B42D481BBE}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="ACTR_Car_Engine_Stop" ID="{8EF9AD7B-4764-4D06-BAEB-C96633A939A6}">
+									<ChildrenList>
+										<Action Name="" ID="{AA1D1396-5625-4F03-AE9A-C42C3620456B}" ShortID="172093970">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Car_Engine" ID="{EF71DEC9-B2DB-4753-84D8-16B42D481BBE}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="ACTR_Car_Tires_Play" ID="{7601A8D4-ACD7-4C0D-A6C2-7008B04C97BE}">
+									<ChildrenList>
+										<Action Name="" ID="{B91D5100-96DA-4E9F-90D2-E06F691C4B82}" ShortID="497781808">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Car_Tires" ID="{5BA3C4D2-C47A-4D76-8E39-F67050319A1A}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="ACTR_Car_Tires_Stop" ID="{F0C2AEFA-D709-4911-AB16-2D3F8DADC738}">
+									<ChildrenList>
+										<Action Name="" ID="{0D30978B-DC05-433E-8B46-BE3F2C09BFBF}" ShortID="859282714">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Car_Tires" ID="{5BA3C4D2-C47A-4D76-8E39-F67050319A1A}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="CINE_Car_FakeLoop" ID="{79C915ED-51E4-464A-9BEC-67B37FCC630E}"/>
+								<Event Name="CINE_Car_PullAway" ID="{20B6927D-E707-4021-9C1A-259D3DA6A677}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Entity" ID="{63883334-3881-4BEE-89D2-39BA2662F4A3}" ShortID="107331307">
+							<ChildrenList>
+								<Event Name="Panic_Play" ID="{C1292F47-FFE6-42EF-83DF-D4446EF99917}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Train" ID="{2635C737-F57C-429D-A3C2-710D47970B74}" ShortID="1045490140">
+							<ChildrenList>
+								<Event Name="Train_Play" ID="{1ACDE4CF-1200-4484-9E66-A699C7B6B8B6}">
+									<ChildrenList>
+										<Action Name="" ID="{139253ED-85D1-4AD6-A31E-84101B55063E}" ShortID="734067904">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Train_Passby" ID="{94BC9924-ADFF-4AA4-B8D6-9C7B16D3832A}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Train_Stop" ID="{A7749941-4DB5-4778-ADA0-86C4EB5B2A4C}"/>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
-				</Event>
-				<Event Name="Play_UI_Nav_Accept" ID="{48B50F6C-80F6-4A4C-AF7A-94488AE32ABE}">
-					<ChildrenList>
-						<Action Name="" ID="{B0F108C7-6DC2-4690-B864-7AB80269E80E}" ShortID="702153235">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Nav_Select" ID="{A42A85E1-AF96-491C-A18C-DC3CEF02831B}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_MUS_Menu" ID="{C0E8A400-AE58-4AA3-8E42-174657AFCAE2}"/>
-				<Event Name="Play_AMB_Menu" ID="{8F5193F0-D8CD-491C-BB90-9585531F28C2}"/>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

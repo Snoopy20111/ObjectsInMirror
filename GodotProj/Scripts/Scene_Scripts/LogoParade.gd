@@ -20,8 +20,8 @@ var transitioning : bool = false
 func _ready():
 	StartTimer.start()
 	Wwise.register_game_obj(self, "LogoParade")		#Uses its own GameObj
-	Wwise.post_event("Play_MUS_Menu", AmbientAudio)
-	Wwise.post_event("Play_AMB_Menu", AmbientAudio)
+	#Wwise.post_event("MUS_Menu", AmbientAudio)
+	Wwise.post_event("AMB_Menu", AmbientAudio)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -55,7 +55,7 @@ func _on_LogoAnim_finished():
 func _on_StartTimer_timeout():
 	fade_value = Enums.FADE_STATE.IN
 	LogoAnim.play()
-	Wwise.post_event("Play_UI_LogoParade", self)
+	Wwise.post_event("UI_LogoParade", self)
 	Wwise.unregister_game_obj(self) #can do because it's a oneshot
 
 func _on_FreezeTimer_timeout():

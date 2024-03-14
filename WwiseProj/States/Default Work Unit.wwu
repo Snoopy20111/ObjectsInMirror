@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{8196CC71-2093-436E-BE87-487A3AA4CDB8}" SchemaVersion="119">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{8196CC71-2093-436E-BE87-487A3AA4CDB8}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{8196CC71-2093-436E-BE87-487A3AA4CDB8}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="IsAlive" ID="{68F6FDD7-C6C0-475B-ADE4-862EEE9FFB45}">
+					<ChildrenList>
+						<State Name="None" ID="{ED110E82-9AA7-4FE6-9399-3ABC7B739FF0}"/>
+						<State Name="Alive" ID="{5404EF3B-D725-4478-959B-974F41D6C0A6}"/>
+						<State Name="Dead" ID="{9DA058AF-DC22-425A-9524-CDA05435A218}"/>
+						<State Name="Hurting" ID="{22D9F648-3341-4B63-93DA-8F2669927ADD}"/>
+						<State Name="Almost_Dead" ID="{73205E76-EF97-4C8C-AF6A-0FF94CA3F403}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{80AA3125-B4C7-2DBE-1BF1-31EE7B72A930}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{6B3A57E7-7295-2FBD-C74F-41DD34F404DA}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -21,6 +21,24 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<GameParameters>
+				<GameParameter Id="640949982" Name="Speed"/>
+				<GameParameter Id="796049864" Name="RPM"/>
+				<GameParameter Id="2995819693" Name="Throttle"/>
+				<GameParameter Id="3130232582" Name="Panic"/>
+				<GameParameter Id="3266676374" Name="TireScreech"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="3036050140" Name="IsAlive">
+					<States>
+						<State Id="655265632" Name="Alive"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="2044049779" Name="Dead"/>
+						<State Id="2890830352" Name="Almost_Dead"/>
+						<State Id="3686962126" Name="Hurting"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 			<AcousticTextures>
 				<AcousticTexture Id="504532776" Name="Brick">
 					<Properties>
@@ -150,54 +168,212 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{B7756C9B-F485-1C5A-FA8C-10321CE8AA70}">
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{A81A95C6-9902-8AF6-4457-103213DAB522}">
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<Media>
+				<File Id="16363200" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Passby_Rumble_02.wav</ShortName>
+					<CachePath>SFX/Train_Passby_Rumble_02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="30184832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Forest_01.wav</ShortName>
+					<CachePath>SFX/Ambience_Forest_01_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="56100187" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Roll_Slush_01.wav</ShortName>
+					<CachePath>SFX/Tire_Roll_Slush_01_818F3B66.wem</CachePath>
+				</File>
+				<File Id="77334151" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Rain_Street_01.wav</ShortName>
+					<CachePath>SFX/Ambience_Rain_Street_01_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="156265161" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Roll_Gravel_03.wav</ShortName>
+					<CachePath>SFX/Tire_Roll_Gravel_03_818F3B66.wem</CachePath>
+				</File>
+				<File Id="201237961" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Passby_Main_03.wav</ShortName>
+					<CachePath>SFX/Train_Passby_Main_03_818F3B66.wem</CachePath>
+				</File>
+				<File Id="229646852" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Roll_Gravel_01.wav</ShortName>
+					<CachePath>SFX/Tire_Roll_Gravel_01_818F3B66.wem</CachePath>
+				</File>
+				<File Id="258523320" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_Med_Engine.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_Med_Engine_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="275073641" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Skid_Asphalt.wav</ShortName>
+					<CachePath>SFX/Tire_Skid_Asphalt_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="295983022" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Passby_Main_01.wav</ShortName>
+					<CachePath>SFX/Train_Passby_Main_01_818F3B66.wem</CachePath>
+				</File>
 				<File Id="364672542" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PLP-SF2_Click_26.wav</ShortName>
 					<CachePath>SFX/PLP-SF2_Click_26_818F3B66.wem</CachePath>
+				</File>
+				<File Id="368149037" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_Med_Exhaust.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_Med_Exhaust_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="476613896" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_High_Exhaust_Short.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_High_Exhaust_Short_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="501711981" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Passby_Rumble_01.wav</ShortName>
+					<CachePath>SFX/Train_Passby_Rumble_01_818F3B66.wem</CachePath>
+				</File>
+				<File Id="524341691" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_Idle_Exhaust.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_Idle_Exhaust_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="531850769" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Passby_Rumble_03.wav</ShortName>
+					<CachePath>SFX/Train_Passby_Rumble_03_818F3B66.wem</CachePath>
+				</File>
+				<File Id="574787590" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_Idle_Engine.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_Idle_Engine_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="574962292" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Rain_Noise_01.wav</ShortName>
+					<CachePath>SFX/Ambience_Rain_Noise_01_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="588425260" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_High_Engine_Short.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_High_Engine_Short_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="660413476" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Passby_Main_02.wav</ShortName>
+					<CachePath>SFX/Train_Passby_Main_02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="665279638" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Roll_Slush_03.wav</ShortName>
+					<CachePath>SFX/Tire_Roll_Slush_03_818F3B66.wem</CachePath>
+				</File>
+				<File Id="818895528" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Rain_Steady_01.wav</ShortName>
+					<CachePath>SFX/Ambience_Rain_Steady_01_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="909693388" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Portfolio_LogoBumper01_2023-10-23_001.wav</ShortName>
 					<CachePath>SFX/Portfolio_LogoBumper01_2023-10-23_001_818F3B66.wem</CachePath>
 				</File>
+				<File Id="935890461" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Rain_Splatter_01.wav</ShortName>
+					<CachePath>SFX/Ambience_Rain_Splatter_01_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="959846768" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Roll_Slush_02.wav</ShortName>
+					<CachePath>SFX/Tire_Roll_Slush_02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="985561978" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_Low_Exhaust.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_Low_Exhaust_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="1004547954" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Roll_Gravel_02.wav</ShortName>
+					<CachePath>SFX/Tire_Roll_Gravel_02_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1045336617" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_Low_Engine.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_Low_Engine_FBC78EF0.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
-				<Event Id="1989837964" Name="Play_AMB_Menu"/>
-				<Event Id="4249884003" Name="Play_MUS_Menu"/>
+				<Event Id="495721106" Name="ACTR_Car_Engine_Play">
+					<MediaRefs>
+						<MediaRef Id="258523320"/>
+						<MediaRef Id="368149037"/>
+						<MediaRef Id="476613896"/>
+						<MediaRef Id="524341691"/>
+						<MediaRef Id="574787590"/>
+						<MediaRef Id="588425260"/>
+						<MediaRef Id="985561978"/>
+						<MediaRef Id="1045336617"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2207278604" Name="ACTR_Car_Engine_Stop"/>
+				<Event Id="579292521" Name="ACTR_Car_Tires_Play">
+					<MediaRefs>
+						<MediaRef Id="56100187"/>
+						<MediaRef Id="156265161"/>
+						<MediaRef Id="229646852"/>
+						<MediaRef Id="275073641"/>
+						<MediaRef Id="665279638"/>
+						<MediaRef Id="959846768"/>
+						<MediaRef Id="1004547954"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2101812367" Name="ACTR_Car_Tires_Stop"/>
+				<Event Id="1751074328" Name="AMB_Cine_Intro_01"/>
+				<Event Id="1751074331" Name="AMB_Cine_Intro_02"/>
+				<Event Id="2552542987" Name="AMB_Menu">
+					<MediaRefs>
+						<MediaRef Id="77334151"/>
+						<MediaRef Id="574962292"/>
+						<MediaRef Id="818895528"/>
+						<MediaRef Id="935890461"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1318609365" Name="CINE_Car_FakeLoop"/>
+				<Event Id="601388883" Name="CINE_Car_PullAway"/>
+				<Event Id="2294462433" Name="MUS_Cine_Intro_01"/>
+				<Event Id="2294462434" Name="MUS_Cine_Intro_02"/>
+				<Event Id="2294462435" Name="MUS_Cine_Intro_03"/>
+				<Event Id="2294462436" Name="MUS_Cine_Intro_04"/>
+				<Event Id="3149643052" Name="MUS_Menu"/>
+				<Event Id="182988935" Name="Panic_Play"/>
 				<Event Id="3187507146" Name="Play_Test">
 					<MediaRefs>
 						<MediaRef Id="364672542"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1333548413" Name="Play_UI_LogoParade">
+				<Event Id="113163278" Name="Train_Play">
+					<MediaRefs>
+						<MediaRef Id="16363200"/>
+						<MediaRef Id="201237961"/>
+						<MediaRef Id="295983022"/>
+						<MediaRef Id="501711981"/>
+						<MediaRef Id="531850769"/>
+						<MediaRef Id="660413476"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1114702576" Name="Train_Stop"/>
+				<Event Id="1599283196" Name="UI_LogoParade">
 					<MediaRefs>
 						<MediaRef Id="909693388"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3476659009" Name="Play_UI_Nav_Accept">
+				<Event Id="1225797752" Name="UI_Nav_Accept">
 					<MediaRefs>
 						<MediaRef Id="364672542"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3362419093" Name="Play_UI_Nav_Hover">
+				<Event Id="503177270" Name="UI_Nav_Hover">
 					<MediaRefs>
 						<MediaRef Id="364672542"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1526199398" Name="Play_UI_Nav_Unhover">
+				<Event Id="2336382113" Name="UI_Nav_Unhover"/>
+				<Event Id="2467171692" Name="UI_StartGame">
 					<MediaRefs>
-						<MediaRef Id="364672542"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1473547871" Name="Play_UI_StartGame">
-					<MediaRefs>
+						<MediaRef Id="30184832"/>
 						<MediaRef Id="364672542"/>
 					</MediaRefs>
 				</Event>
 			</Events>
+			<GameParameters>
+				<GameParameter Id="640949982" Name="Speed"/>
+				<GameParameter Id="796049864" Name="RPM"/>
+				<GameParameter Id="3266676374" Name="TireScreech"/>
+			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6B69EDBB-E525-F5D6-A828-A6CECA422D03}</FileHash>
+	<FileHash>{9D796D1D-F6F2-7C82-7609-8F04EE1523B2}</FileHash>
 </SoundBanksInfo>

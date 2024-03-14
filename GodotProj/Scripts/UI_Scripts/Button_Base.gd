@@ -2,9 +2,9 @@ extends Button
 class_name LH_ButtonBase
 
 @export_group("Sound Event Paths")
-@export var hoveredAudioEvent: String = "Play_UI_Nav_Hover"
-@export var unhoveredAudioEvent: String = "Play_UI_Nav_Unhover"
-@export var pressedAudioEvent: String = "Play_UI_Nav_Accept"
+@export var hoveredAudioEvent: String = "UI_Nav_Hover"
+@export var unhoveredAudioEvent: String = "UI_Nav_Unhover"
+@export var pressedAudioEvent: String = "UI_Nav_Accept"
 
 @export var wwiseObjectName: String = "Button"
 

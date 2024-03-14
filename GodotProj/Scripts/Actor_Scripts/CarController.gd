@@ -19,13 +19,15 @@ const screenShakeFalloff: Curve = preload("res://Customs/Curves/Car_Damage_Scree
 @export var screenShakeLength: float = 1.5
 @export var lightsOn: bool = true
 
-#@export_group("No Control Properties")
+@export_group("Script Control Properties")
+@export var scriptSpeed: float = 1
+@export var scriptRPM: float = 0.6
+@export var useScriptValues: bool = false
 
 
 var _accelerationInput:float = 0
 var _steeringInput:float = 0
 var _velocityVsUp = 0
-#var _engineAudioOutput:float = 0
 var _lateralVelocity:float = 0
 var _isBraking:bool = false
 var canBeDamaged:bool = true
@@ -50,6 +52,12 @@ func _ready():
 	connect("body_entered", Collided)
 	if (lightsOn == false):
 		headlights.enabled = false
+	if (controlMode != Enums.CONTROL_TYPE.JUST_PROP):
+		Wwise.register_game_obj(self, "Player Car")
+		Wwise.post_event("ACTR_Car_Engine_Play", self)
+		Wwise.post_event("ACTR_Car_Tires_Play", self)
+	if (useScriptValues):
+		Wwise.set_rtpc_value("RPM", scriptRPM, self)
 
 # Called every frame
 func _process(delta):
@@ -57,9 +65,11 @@ func _process(delta):
 	if (GetTireScreeching()):
 		skidParticles_L.emitting = true
 		skidParticles_R.emitting = true
+		_setTireScreechAudio()
 	else:
 		skidParticles_L.emitting = false
 		skidParticles_R.emitting = false
+		Wwise.set_rtpc_value("TireScreech", 0.0, self)
 	
 	var shakeAmount = screenShakeStrength * screenShakeFalloff.sample(
 			lerp(1.0, 0.0, _screenShakeCounter / screenShakeLength))
@@ -77,6 +87,12 @@ func _process(delta):
 func _physics_process(_delta):
 	_lastLinearVelocity = linear_velocity
 	_lastAngularVelocity = angular_velocity
+	var speed: float
+	if (useScriptValues):
+		speed = scriptSpeed
+	else:
+		speed = linear_velocity.length() / maxSpeed
+	Wwise.set_rtpc_value("Speed", speed, self)
 
 # Called when calculating physics (part of _physics_process() )
 func _integrate_forces(state):
@@ -109,7 +125,14 @@ func ApplyEngineForce(state:PhysicsDirectBodyState2D) -> void:
 	var engineForceVector:Vector2 = transform.x * _accelerationInput * accelerationFactor
 	#apply to car and push forward
 	apply_central_force(engineForceVector)
-
+	
+	var temp = absf(_accelerationInput) * clampf((linear_velocity.length() / maxSpeed) + 0.1, 0, 1)
+	if (useScriptValues):
+		Wwise.set_rtpc_value("RPM", scriptRPM, self)
+	elif (_accelerationInput >= 0):
+		Wwise.set_rtpc_value("RPM", temp, self)
+	else:
+		Wwise.set_rtpc_value("RPM", temp * 0.5, self)
 
 func ApplySteering(_state:PhysicsDirectBodyState2D) -> void:
 	#limit car's ability to turn when moving slowly
@@ -120,26 +143,23 @@ func ApplySteering(_state:PhysicsDirectBodyState2D) -> void:
 	#Update rotation via torque inputs, kinda slower and clunkier-feeling
 	#apply_torque(steeringInput * turnFactor)
 
-
 func SetInputVector() -> void:
 	match controlMode:
 		Enums.CONTROL_TYPE.PLAYER:
 			_steeringInput = lerp(_steeringInput, Input.get_axis("drive_right","drive_left"), .08)
 			_accelerationInput = Input.get_axis("drive_back","drive_forward")
-		Enums.CONTROL_TYPE.NONE:
+		Enums.CONTROL_TYPE.NONE, Enums.CONTROL_TYPE.JUST_PROP:
 			_steeringInput = lerp(_steeringInput, 0.0, .1)
 			_accelerationInput = 0.0
 		Enums.CONTROL_TYPE.SCRIPT:
 			# Do nothing here, deliberately
 			pass
 
-
 func KillOrthoganalVelocity() -> void:
 	var forwardVelocity:Vector2 = transform.x * transform.x.dot(linear_velocity)
 	var rightVelocity:Vector2 = transform.y * transform.y.dot(linear_velocity)
 	
 	linear_velocity = forwardVelocity + rightVelocity * driftFactor
-
 
 func GetLateralVelocity() -> float:
 	#Returns how fast the car is moving sideways
@@ -157,6 +177,15 @@ func GetTireScreeching():
 		return true
 	return false
 
+func _setTireScreechAudio() -> void:
+	var temp: float
+	if (_isBraking):
+		temp = clamp((linear_velocity.length() - tireScreechFactor)
+		/ (maxSpeed - tireScreechFactor), 0, 1)
+	else:
+		temp = clamp((absf(GetLateralVelocity()) - tireScreechFactor)
+		/ (maxSpeed - tireScreechFactor), 0, 1)
+	Wwise.set_rtpc_value("TireScreech", temp, self)
 
 func Collided(_body: Node):
 	var rotCollForce: float = angular_velocity - _lastAngularVelocity
@@ -178,11 +207,6 @@ func Collided(_body: Node):
 		ApplyDamage()	#apply damage
 	#Do sound stuff with different thresholds
 
-func DamageInflicted():
-	#Outside force like an Enemy hit us
-	#Covers for if the player isn't hit hard enough to be hurt
-	pass
-
 func ApplyDamage():
 	#Start invulnurability timer, reduce health, and shake the screen
 	timerInvulnurable.start()
@@ -203,10 +227,9 @@ func Death():
 	damageAnimSprite.play()
 	# Tell the Game Manager we died
 	GameManager.playerDied()
-	# Explode?
-	# Turn on OnDeath node, set the sprite to play, and the particles to emit
-	# Perhaps turn some lights on and off in order? Or perhaps one light
-	# with an animated texture?	
+	
+	#and stop the engine audio
+	Wwise.post_event("ACTR_Car_Engine_Stop", self)
 
 func _on_timer_invulnurable_timeout():
 	canBeDamaged = true
@@ -216,7 +239,10 @@ func ExitLevel():
 	GameManager.playerHealthAtLevelStart = _health
 	controlMode = Enums.CONTROL_TYPE.NONE
 
-
+func _exit_tree():
+	Wwise.post_event("ACTR_Car_Engine_Stop", self)
+	Wwise.post_event("ACTR_Car_Tires_Stop", self)
+	Wwise.unregister_game_obj(self)
 
 func ScriptControl_GoForward():
 	controlMode = Enums.CONTROL_TYPE.SCRIPT

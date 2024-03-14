@@ -666,8 +666,10 @@ occluder = SubResource("OccluderPolygon2D_qsfrs")
 
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("13_onc42")]
 rotation = -1.5708
-controlMode = 2
+controlMode = 1
 accelerationFactor = 200.0
+scriptSpeed = 0.0
+scriptRPM = 0.0
 metadata/entity_name = "PlayerCar"
 metadata/_edit_lock_ = true
 
