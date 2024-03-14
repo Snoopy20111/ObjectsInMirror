@@ -168,121 +168,121 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{A81A95C6-9902-8AF6-4457-103213DAB522}">
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{42A569D9-680C-E645-7D1B-00E45D0F4D18}">
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<Media>
 				<File Id="16363200" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Train_Passby_Rumble_02.wav</ShortName>
-					<CachePath>SFX/Train_Passby_Rumble_02_818F3B66.wem</CachePath>
+					<CachePath>SFX/Train_Passby_Rumble_02_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="30184832" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ambience_Forest_01.wav</ShortName>
-					<CachePath>SFX/Ambience_Forest_01_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Ambience_Forest_01_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="56100187" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tire_Roll_Slush_01.wav</ShortName>
-					<CachePath>SFX/Tire_Roll_Slush_01_818F3B66.wem</CachePath>
+					<CachePath>SFX/Tire_Roll_Slush_01_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="77334151" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ambience_Rain_Street_01.wav</ShortName>
-					<CachePath>SFX/Ambience_Rain_Street_01_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Ambience_Rain_Street_01_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="156265161" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tire_Roll_Gravel_03.wav</ShortName>
-					<CachePath>SFX/Tire_Roll_Gravel_03_818F3B66.wem</CachePath>
+					<CachePath>SFX/Tire_Roll_Gravel_03_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="201237961" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Train_Passby_Main_03.wav</ShortName>
-					<CachePath>SFX/Train_Passby_Main_03_818F3B66.wem</CachePath>
+					<CachePath>SFX/Train_Passby_Main_03_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="229646852" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tire_Roll_Gravel_01.wav</ShortName>
-					<CachePath>SFX/Tire_Roll_Gravel_01_818F3B66.wem</CachePath>
+					<CachePath>SFX/Tire_Roll_Gravel_01_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="258523320" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_Med_Engine.wav</ShortName>
-					<CachePath>SFX/Cooper06_I4_Med_Engine_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Cooper06_I4_Med_Engine_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="275073641" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tire_Skid_Asphalt.wav</ShortName>
-					<CachePath>SFX/Tire_Skid_Asphalt_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Tire_Skid_Asphalt_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="295983022" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Train_Passby_Main_01.wav</ShortName>
-					<CachePath>SFX/Train_Passby_Main_01_818F3B66.wem</CachePath>
+					<CachePath>SFX/Train_Passby_Main_01_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="364672542" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PLP-SF2_Click_26.wav</ShortName>
-					<CachePath>SFX/PLP-SF2_Click_26_818F3B66.wem</CachePath>
+					<CachePath>SFX/PLP-SF2_Click_26_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="368149037" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_Med_Exhaust.wav</ShortName>
-					<CachePath>SFX/Cooper06_I4_Med_Exhaust_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Cooper06_I4_Med_Exhaust_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="476613896" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_High_Exhaust_Short.wav</ShortName>
-					<CachePath>SFX/Cooper06_I4_High_Exhaust_Short_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Cooper06_I4_High_Exhaust_Short_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="501711981" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Train_Passby_Rumble_01.wav</ShortName>
-					<CachePath>SFX/Train_Passby_Rumble_01_818F3B66.wem</CachePath>
+					<CachePath>SFX/Train_Passby_Rumble_01_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="524341691" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_Idle_Exhaust.wav</ShortName>
-					<CachePath>SFX/Cooper06_I4_Idle_Exhaust_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Cooper06_I4_Idle_Exhaust_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="531850769" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Train_Passby_Rumble_03.wav</ShortName>
-					<CachePath>SFX/Train_Passby_Rumble_03_818F3B66.wem</CachePath>
+					<CachePath>SFX/Train_Passby_Rumble_03_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="574787590" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_Idle_Engine.wav</ShortName>
-					<CachePath>SFX/Cooper06_I4_Idle_Engine_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Cooper06_I4_Idle_Engine_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="574962292" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ambience_Rain_Noise_01.wav</ShortName>
-					<CachePath>SFX/Ambience_Rain_Noise_01_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Ambience_Rain_Noise_01_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="588425260" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_High_Engine_Short.wav</ShortName>
-					<CachePath>SFX/Cooper06_I4_High_Engine_Short_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Cooper06_I4_High_Engine_Short_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="660413476" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Train_Passby_Main_02.wav</ShortName>
-					<CachePath>SFX/Train_Passby_Main_02_818F3B66.wem</CachePath>
+					<CachePath>SFX/Train_Passby_Main_02_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="665279638" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tire_Roll_Slush_03.wav</ShortName>
-					<CachePath>SFX/Tire_Roll_Slush_03_818F3B66.wem</CachePath>
+					<CachePath>SFX/Tire_Roll_Slush_03_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="818895528" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ambience_Rain_Steady_01.wav</ShortName>
-					<CachePath>SFX/Ambience_Rain_Steady_01_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Ambience_Rain_Steady_01_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="909693388" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Portfolio_LogoBumper01_2023-10-23_001.wav</ShortName>
-					<CachePath>SFX/Portfolio_LogoBumper01_2023-10-23_001_818F3B66.wem</CachePath>
+					<CachePath>SFX/Portfolio_LogoBumper01_2023-10-23_001_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="935890461" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ambience_Rain_Splatter_01.wav</ShortName>
-					<CachePath>SFX/Ambience_Rain_Splatter_01_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Ambience_Rain_Splatter_01_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="959846768" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tire_Roll_Slush_02.wav</ShortName>
-					<CachePath>SFX/Tire_Roll_Slush_02_818F3B66.wem</CachePath>
+					<CachePath>SFX/Tire_Roll_Slush_02_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="985561978" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_Low_Exhaust.wav</ShortName>
-					<CachePath>SFX/Cooper06_I4_Low_Exhaust_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Cooper06_I4_Low_Exhaust_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="1004547954" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tire_Roll_Gravel_02.wav</ShortName>
-					<CachePath>SFX/Tire_Roll_Gravel_02_818F3B66.wem</CachePath>
+					<CachePath>SFX/Tire_Roll_Gravel_02_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="1045336617" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_Low_Engine.wav</ShortName>
-					<CachePath>SFX/Cooper06_I4_Low_Engine_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Cooper06_I4_Low_Engine_51EBCE32.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -375,5 +375,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9D796D1D-F6F2-7C82-7609-8F04EE1523B2}</FileHash>
+	<FileHash>{28A3DF8C-27EA-71F4-A683-6352F8F6B83C}</FileHash>
 </SoundBanksInfo>
