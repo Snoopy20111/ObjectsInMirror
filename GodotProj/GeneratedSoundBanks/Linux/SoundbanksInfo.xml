@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Linux" BasePlatform="Linux" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../../../WwiseProj</ProjectRoot>
+		<SourceFilesRoot>../../../WwiseProj/.cache/Linux</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>../../../WwiseProj/GeneratedSoundBanks/Linux</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{80B3B23B-A777-E3CD-ADF8-8EEA2C5F6D27}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="640949982" Name="Speed"/>
+				<GameParameter Id="796049864" Name="RPM"/>
+				<GameParameter Id="2995819693" Name="Throttle"/>
+				<GameParameter Id="3130232582" Name="Panic"/>
+				<GameParameter Id="3266676374" Name="TireScreech"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="3036050140" Name="IsAlive">
+					<States>
+						<State Id="655265632" Name="Alive"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="2044049779" Name="Dead"/>
+						<State Id="2890830352" Name="Almost_Dead"/>
+						<State Id="3686962126" Name="Hurting"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+			<AcousticTextures>
+				<AcousticTexture Id="504532776" Name="Brick">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="18"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="23"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="513139656" Name="Mountain">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="841620460" Name="Concrete">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="14"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1755085759" Name="Wood_Deep">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="1"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="8"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1873957695" Name="Anechoic">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1970351858" Name="Fabric">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="3"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="13"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="48"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="72"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2058049674" Name="Wood">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2412606308" Name="Carpet">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="46"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="45"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="76"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2637588553" Name="Tile">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="67"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="41"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2928161104" Name="Curtains">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="7"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="60"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="84"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3195498748" Name="Cork_Tiles">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="14"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="30"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="73"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3670307564" Name="Drywall">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="2"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4168643977" Name="Acoustic_Banner">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="37"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4262522749" Name="Wood_Bright">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="10"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="9"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+			</AcousticTextures>
+		</SoundBank>
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{42A569D9-680C-E645-7D1B-00E45D0F4D18}">
+			<ShortName>Master</ShortName>
+			<Path>Master.bnk</Path>
+			<Media>
+				<File Id="16363200" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Passby_Rumble_02.wav</ShortName>
+					<CachePath>SFX/Train_Passby_Rumble_02_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="30184832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Forest_01.wav</ShortName>
+					<CachePath>SFX/Ambience_Forest_01_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="56100187" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Roll_Slush_01.wav</ShortName>
+					<CachePath>SFX/Tire_Roll_Slush_01_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="77334151" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Rain_Street_01.wav</ShortName>
+					<CachePath>SFX/Ambience_Rain_Street_01_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="156265161" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Roll_Gravel_03.wav</ShortName>
+					<CachePath>SFX/Tire_Roll_Gravel_03_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="201237961" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Passby_Main_03.wav</ShortName>
+					<CachePath>SFX/Train_Passby_Main_03_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="229646852" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Roll_Gravel_01.wav</ShortName>
+					<CachePath>SFX/Tire_Roll_Gravel_01_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="258523320" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_Med_Engine.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_Med_Engine_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="275073641" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Skid_Asphalt.wav</ShortName>
+					<CachePath>SFX/Tire_Skid_Asphalt_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="295983022" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Passby_Main_01.wav</ShortName>
+					<CachePath>SFX/Train_Passby_Main_01_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="364672542" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PLP-SF2_Click_26.wav</ShortName>
+					<CachePath>SFX/PLP-SF2_Click_26_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="368149037" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_Med_Exhaust.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_Med_Exhaust_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="476613896" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_High_Exhaust_Short.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_High_Exhaust_Short_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="501711981" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Passby_Rumble_01.wav</ShortName>
+					<CachePath>SFX/Train_Passby_Rumble_01_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="524341691" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_Idle_Exhaust.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_Idle_Exhaust_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="531850769" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Passby_Rumble_03.wav</ShortName>
+					<CachePath>SFX/Train_Passby_Rumble_03_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="574787590" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_Idle_Engine.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_Idle_Engine_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="574962292" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Rain_Noise_01.wav</ShortName>
+					<CachePath>SFX/Ambience_Rain_Noise_01_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="588425260" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_High_Engine_Short.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_High_Engine_Short_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="660413476" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Passby_Main_02.wav</ShortName>
+					<CachePath>SFX/Train_Passby_Main_02_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="665279638" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Roll_Slush_03.wav</ShortName>
+					<CachePath>SFX/Tire_Roll_Slush_03_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="818895528" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Rain_Steady_01.wav</ShortName>
+					<CachePath>SFX/Ambience_Rain_Steady_01_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="909693388" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Portfolio_LogoBumper01_2023-10-23_001.wav</ShortName>
+					<CachePath>SFX/Portfolio_LogoBumper01_2023-10-23_001_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="935890461" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Rain_Splatter_01.wav</ShortName>
+					<CachePath>SFX/Ambience_Rain_Splatter_01_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="959846768" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Roll_Slush_02.wav</ShortName>
+					<CachePath>SFX/Tire_Roll_Slush_02_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="985561978" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_Low_Exhaust.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_Low_Exhaust_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="1004547954" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tire_Roll_Gravel_02.wav</ShortName>
+					<CachePath>SFX/Tire_Roll_Gravel_02_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="1045336617" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cooper06_I4_Low_Engine.wav</ShortName>
+					<CachePath>SFX/Cooper06_I4_Low_Engine_51EBCE32.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="495721106" Name="ACTR_Car_Engine_Play">
+					<MediaRefs>
+						<MediaRef Id="258523320"/>
+						<MediaRef Id="368149037"/>
+						<MediaRef Id="476613896"/>
+						<MediaRef Id="524341691"/>
+						<MediaRef Id="574787590"/>
+						<MediaRef Id="588425260"/>
+						<MediaRef Id="985561978"/>
+						<MediaRef Id="1045336617"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2207278604" Name="ACTR_Car_Engine_Stop"/>
+				<Event Id="579292521" Name="ACTR_Car_Tires_Play">
+					<MediaRefs>
+						<MediaRef Id="56100187"/>
+						<MediaRef Id="156265161"/>
+						<MediaRef Id="229646852"/>
+						<MediaRef Id="275073641"/>
+						<MediaRef Id="665279638"/>
+						<MediaRef Id="959846768"/>
+						<MediaRef Id="1004547954"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2101812367" Name="ACTR_Car_Tires_Stop"/>
+				<Event Id="1751074328" Name="AMB_Cine_Intro_01"/>
+				<Event Id="1751074331" Name="AMB_Cine_Intro_02"/>
+				<Event Id="2552542987" Name="AMB_Menu">
+					<MediaRefs>
+						<MediaRef Id="77334151"/>
+						<MediaRef Id="574962292"/>
+						<MediaRef Id="818895528"/>
+						<MediaRef Id="935890461"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1318609365" Name="CINE_Car_FakeLoop"/>
+				<Event Id="601388883" Name="CINE_Car_PullAway"/>
+				<Event Id="2294462433" Name="MUS_Cine_Intro_01"/>
+				<Event Id="2294462434" Name="MUS_Cine_Intro_02"/>
+				<Event Id="2294462435" Name="MUS_Cine_Intro_03"/>
+				<Event Id="2294462436" Name="MUS_Cine_Intro_04"/>
+				<Event Id="3149643052" Name="MUS_Menu"/>
+				<Event Id="182988935" Name="Panic_Play"/>
+				<Event Id="3187507146" Name="Play_Test">
+					<MediaRefs>
+						<MediaRef Id="364672542"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="113163278" Name="Train_Play">
+					<MediaRefs>
+						<MediaRef Id="16363200"/>
+						<MediaRef Id="201237961"/>
+						<MediaRef Id="295983022"/>
+						<MediaRef Id="501711981"/>
+						<MediaRef Id="531850769"/>
+						<MediaRef Id="660413476"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1114702576" Name="Train_Stop"/>
+				<Event Id="1599283196" Name="UI_LogoParade">
+					<MediaRefs>
+						<MediaRef Id="909693388"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1225797752" Name="UI_Nav_Accept">
+					<MediaRefs>
+						<MediaRef Id="364672542"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="503177270" Name="UI_Nav_Hover">
+					<MediaRefs>
+						<MediaRef Id="364672542"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2336382113" Name="UI_Nav_Unhover"/>
+				<Event Id="2467171692" Name="UI_StartGame">
+					<MediaRefs>
+						<MediaRef Id="30184832"/>
+						<MediaRef Id="364672542"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="640949982" Name="Speed"/>
+				<GameParameter Id="796049864" Name="RPM"/>
+				<GameParameter Id="3266676374" Name="TireScreech"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{5E63CE72-46BE-2A9A-FADC-9DBC6F6EDBEB}</FileHash>
+</SoundBanksInfo>

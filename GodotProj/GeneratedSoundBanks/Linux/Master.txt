@@ -1,0 +1,60 @@
+Event	ID	Name			Wwise Object Path	Notes
+	113163278	Train_Play			\Default Work Unit\SFX\Train\Train_Play	
+	182988935	Panic_Play			\Default Work Unit\SFX\Entity\Panic_Play	
+	495721106	ACTR_Car_Engine_Play			\Default Work Unit\SFX\Car\ACTR_Car_Engine_Play	
+	503177270	UI_Nav_Hover			\Default Work Unit\UI\UI_Nav_Hover	
+	579292521	ACTR_Car_Tires_Play			\Default Work Unit\SFX\Car\ACTR_Car_Tires_Play	
+	601388883	CINE_Car_PullAway			\Default Work Unit\SFX\Car\CINE_Car_PullAway	
+	1114702576	Train_Stop			\Default Work Unit\SFX\Train\Train_Stop	
+	1225797752	UI_Nav_Accept			\Default Work Unit\UI\UI_Nav_Accept	
+	1318609365	CINE_Car_FakeLoop			\Default Work Unit\SFX\Car\CINE_Car_FakeLoop	
+	1599283196	UI_LogoParade			\Default Work Unit\UI\UI_LogoParade	
+	1751074328	AMB_Cine_Intro_01			\Default Work Unit\AMB\AMB_Cine_Intro_01	
+	1751074331	AMB_Cine_Intro_02			\Default Work Unit\AMB\AMB_Cine_Intro_02	
+	2101812367	ACTR_Car_Tires_Stop			\Default Work Unit\SFX\Car\ACTR_Car_Tires_Stop	
+	2207278604	ACTR_Car_Engine_Stop			\Default Work Unit\SFX\Car\ACTR_Car_Engine_Stop	
+	2294462433	MUS_Cine_Intro_01			\Default Work Unit\MUS\MUS_Cine_Intro_01	
+	2294462434	MUS_Cine_Intro_02			\Default Work Unit\MUS\MUS_Cine_Intro_02	
+	2294462435	MUS_Cine_Intro_03			\Default Work Unit\MUS\MUS_Cine_Intro_03	
+	2294462436	MUS_Cine_Intro_04			\Default Work Unit\MUS\MUS_Cine_Intro_04	
+	2336382113	UI_Nav_Unhover			\Default Work Unit\UI\UI_Nav_Unhover	
+	2467171692	UI_StartGame			\Default Work Unit\UI\UI_StartGame	
+	2552542987	AMB_Menu			\Default Work Unit\AMB\AMB_Menu	
+	3149643052	MUS_Menu			\Default Work Unit\MUS\MUS_Menu	
+	3187507146	Play_Test			\Default Work Unit\Play_Test	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	640949982	Speed			\Default Work Unit\Speed	
+	796049864	RPM			\Default Work Unit\RPM	
+	3266676374	TireScreech			\Default Work Unit\TireScreech	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	16363200	Train_Passby_Rumble_02	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Train_Passby_Rumble_02_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Passby\Train_Passby_Rumble\Train_Passby_Rumble_02		130883
+	30184832	Ambience_Forest_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Ambience_Forest_01_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\Ambience_Forest_01		1110018
+	56100187	Tire_Roll_Slush_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Tire_Roll_Slush_01_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Tires\Tire_Roll_Slush\Tire_Roll_Slush_01		83986
+	77334151	Ambience_Rain_Street_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Ambience_Rain_Street_01_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\Rain\Ambience_Rain_Street_01		410099
+	156265161	Tire_Roll_Gravel_03	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Tire_Roll_Gravel_03_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Tires\Tire_Roll_Gravel\Tire_Roll_Gravel_03		101981
+	201237961	Train_Passby_Main_03	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Train_Passby_Main_03_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Passby\Train_Passby_Rattle\Train_Passby_Main_03		227597
+	229646852	Tire_Roll_Gravel_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Tire_Roll_Gravel_01_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Tires\Tire_Roll_Gravel\Tire_Roll_Gravel_01		99424
+	258523320	Cooper06_I4_Med_Engine	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Cooper06_I4_Med_Engine_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Engine\Car_Med\Cooper06_I4_Med_Engine		51410
+	275073641	Tire_Skid	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Tire_Skid_Asphalt_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Tires\Tire_Skid		14844
+	295983022	Train_Passby_Main_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Train_Passby_Main_01_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Passby\Train_Passby_Rattle\Train_Passby_Main_01		235919
+	364672542	Nav_Select	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\PLP-SF2_Click_26_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Nav_Select		5692
+	368149037	Cooper06_I4_Med_Exhaust	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Cooper06_I4_Med_Exhaust_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Engine\Car_Med\Cooper06_I4_Med_Exhaust		45109
+	476613896	Cooper06_I4_High_Exhaust_Short	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Cooper06_I4_High_Exhaust_Short_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Engine\Car_High\Cooper06_I4_High_Exhaust_Short		43841
+	501711981	Train_Passby_Rumble_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Train_Passby_Rumble_01_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Passby\Train_Passby_Rumble\Train_Passby_Rumble_01		134405
+	524341691	Cooper06_I4_Idle_Exhaust	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Cooper06_I4_Idle_Exhaust_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Engine\Car_Idle\Cooper06_I4_Idle_Exhaust		90109
+	531850769	Train_Passby_Rumble_03	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Train_Passby_Rumble_03_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Passby\Train_Passby_Rumble\Train_Passby_Rumble_03		131678
+	574787590	Cooper06_I4_Idle_Engine	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Cooper06_I4_Idle_Engine_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Engine\Car_Idle\Cooper06_I4_Idle_Engine		165986
+	574962292	Ambience_Rain_Noise_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Ambience_Rain_Noise_01_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\Rain\Ambience_Rain_Noise_01		589361
+	588425260	Cooper06_I4_High_Engine_Short	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Cooper06_I4_High_Engine_Short_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Engine\Car_High\Cooper06_I4_High_Engine_Short		49066
+	660413476	Train_Passby_Main_02	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Train_Passby_Main_02_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Passby\Train_Passby_Rattle\Train_Passby_Main_02		241821
+	665279638	Tire_Roll_Slush_03	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Tire_Roll_Slush_03_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Tires\Tire_Roll_Slush\Tire_Roll_Slush_03		86078
+	818895528	Ambience_Rain_Steady_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Ambience_Rain_Steady_01_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\Rain\Ambience_Rain_Steady_01		678472
+	909693388	LogoParade- LH	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Portfolio_LogoBumper01_2023-10-23_001_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\LogoParade- LH		153462
+	935890461	Ambience_Rain_Splatter_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Ambience_Rain_Splatter_01_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\Rain\Ambience_Rain_Splatter_01		1082721
+	959846768	Tire_Roll_Slush_02	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Tire_Roll_Slush_02_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Tires\Tire_Roll_Slush\Tire_Roll_Slush_02		88272
+	985561978	Cooper06_I4_Low_Exhaust	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Cooper06_I4_Low_Exhaust_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Engine\Car_Low\Cooper06_I4_Low_Exhaust		33383
+	1004547954	Tire_Roll_Gravel_02	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Tire_Roll_Gravel_02_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Tires\Tire_Roll_Gravel\Tire_Roll_Gravel_02		98976
+	1045336617	Cooper06_I4_Low_Engine	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Cooper06_I4_Low_Engine_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Engine\Car_Low\Cooper06_I4_Low_Engine		39367
+
