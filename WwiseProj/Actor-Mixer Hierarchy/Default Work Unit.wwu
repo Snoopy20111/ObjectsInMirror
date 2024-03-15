@@ -86,12 +86,12 @@
 							<PropertyList>
 								<Property Name="Lowpass" Type="int16">
 									<ValueList>
-										<Value>23</Value>
+										<Value>33</Value>
 									</ValueList>
 								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
-										<Value>800</Value>
+										<Value>2400</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -107,7 +107,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-22</Value>
+										<Value>-10</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -523,7 +523,7 @@
 											<CrossfadingInfo>
 												<LeftEdgePos>0</LeftEdgePos>
 												<LeftFadingMode>Automatic</LeftFadingMode>
-												<RightEdgePos>0.241004862236629</RightEdgePos>
+												<RightEdgePos>0.297639166443749</RightEdgePos>
 												<RightFadingMode>Automatic</RightFadingMode>
 												<RightFadingSegmentShape>Exp2</RightFadingSegmentShape>
 											</CrossfadingInfo>
@@ -944,19 +944,9 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="Ambience_Forest_01" ID="{0187F6BE-17D1-4273-A3CF-79841D5E4E46}" ShortID="1045648931">
+						<ActorMixer Name="AMB_2D" ID="{E1EAF2A9-3272-4CC9-9228-8908D035B2B0}" ShortID="311759585">
 							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Lowpass" Type="int16">
-									<ValueList>
-										<Value>30</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-20</Value>
-									</ValueList>
-								</Property>
+								<Property Name="ListenerRelativeRouting" Type="bool" Value="False"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -967,40 +957,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Ambience_Forest_01" ID="{C15CAA0D-E9F8-419A-9942-E0767FA09D97}">
-									<Language>SFX</Language>
-									<AudioFile>Ambience_Forest_01.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="30184832"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Ambience_Forest_01" ID="{C15CAA0D-E9F8-419A-9942-E0767FA09D97}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<BlendContainer Name="Rain" ID="{FF9401E1-5112-4A4B-BBF6-DB78B335B60A}" ShortID="574319200">
-							<PropertyList>
-								<Property Name="BlendBehavior" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-12</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="Ambience_Rain_Noise_01" ID="{DA19AC8D-D832-4928-AC4D-7C77B3E3BF1A}" ShortID="581418125">
-									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-									</PropertyList>
+								<RandomSequenceContainer Name="Thunder_Close" ID="{56AD312F-7808-4D4E-990A-FC0A767109DC}" ShortID="385059768">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
@@ -1010,22 +967,97 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Ambience_Rain_Noise_01" ID="{38C8D1A6-E551-42E3-A76E-FF746E3DCD5A}">
-											<Language>SFX</Language>
-											<AudioFile>Ambience_Rain_Noise_01.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="574962292"/>
-											</MediaIDList>
-										</AudioFileSource>
+										<Sound Name="Ambience_Thunder_Close_01" ID="{37EDB04A-5DF9-457D-A68C-99DA7BF831FA}" ShortID="1061377566">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience_Thunder_Close_01" ID="{34DBB72E-6E53-47A4-992B-8508AC3BB8DE}">
+													<Language>SFX</Language>
+													<AudioFile>Ambience_Thunder_Close_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="521767536"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience_Thunder_Close_01" ID="{34DBB72E-6E53-47A4-992B-8508AC3BB8DE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Ambience_Thunder_Close_02" ID="{ADB61D6B-DB05-4AE7-B9DE-8B3F6BCB1C94}" ShortID="548402913">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience_Thunder_Close_02" ID="{4DEFFC3D-FF62-4D10-A8D1-BC38157B664E}">
+													<Language>SFX</Language>
+													<AudioFile>Ambience_Thunder_Close_02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1066868576"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience_Thunder_Close_02" ID="{4DEFFC3D-FF62-4D10-A8D1-BC38157B664E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Ambience_Thunder_Close_03" ID="{EAB1D5F8-F032-4721-962B-71B1F83A6F94}" ShortID="580822160">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience_Thunder_Close_03" ID="{EF968C01-B142-4915-B169-FBBF2CD27966}">
+													<Language>SFX</Language>
+													<AudioFile>Ambience_Thunder_Close_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="476002620"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience_Thunder_Close_03" ID="{EF968C01-B142-4915-B169-FBBF2CD27966}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Ambience_Thunder_Close_04" ID="{FFD595F5-24B2-4C55-B329-997B86A0ECDB}" ShortID="796410646">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience_Thunder_Close_04" ID="{85F08718-2122-43AB-AF16-E1D7C9A224AE}">
+													<Language>SFX</Language>
+													<AudioFile>Ambience_Thunder_Close_04.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="246420510"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience_Thunder_Close_04" ID="{85F08718-2122-43AB-AF16-E1D7C9A224AE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Ambience_Rain_Noise_01" ID="{38C8D1A6-E551-42E3-A76E-FF746E3DCD5A}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Ambience_Rain_Splatter_01" ID="{D5789052-A163-4C9F-891D-C7E4BC73D5AC}" ShortID="1055226939">
-									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-									</PropertyList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Thunder_Distant" ID="{B2318EB3-0AB3-4177-80B0-C1BF9C016D4F}" ShortID="252902561">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
@@ -1035,21 +1067,99 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Ambience_Rain_Splatter_01" ID="{06557E36-C774-4EE5-BAD2-B947263EF192}">
-											<Language>SFX</Language>
-											<AudioFile>Ambience_Rain_Splatter_01.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="935890461"/>
-											</MediaIDList>
-										</AudioFileSource>
+										<Sound Name="Ambience_Thunder_Distant_01" ID="{0723FBBF-6C2A-42D4-B36E-D56852252303}" ShortID="1010390429">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience_Thunder_Distant_01" ID="{F1EEAEAA-0AC6-4258-ABBF-EF88B31DB6A3}">
+													<Language>SFX</Language>
+													<AudioFile>Ambience_Thunder_Distant_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714976940"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience_Thunder_Distant_01" ID="{F1EEAEAA-0AC6-4258-ABBF-EF88B31DB6A3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Ambience_Thunder_Distant_02" ID="{0C751FC2-2B1A-4F7B-92CE-78E726BF073E}" ShortID="835283106">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience_Thunder_Distant_02" ID="{7F7A669B-A54D-4C21-8C1C-7BD60F1A3067}">
+													<Language>SFX</Language>
+													<AudioFile>Ambience_Thunder_Distant_02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1064374955"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience_Thunder_Distant_02" ID="{7F7A669B-A54D-4C21-8C1C-7BD60F1A3067}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Ambience_Thunder_Distant_03" ID="{7D1D2DAB-C45A-40A7-861A-DB592DC778C5}" ShortID="856839345">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience_Thunder_Distant_03" ID="{3D6ABD30-7F78-4154-B532-7059B4203E38}">
+													<Language>SFX</Language>
+													<AudioFile>Ambience_Thunder_Distant_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="33980419"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience_Thunder_Distant_03" ID="{3D6ABD30-7F78-4154-B532-7059B4203E38}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Ambience_Thunder_Distant_04" ID="{E548BD6C-C763-4ED8-B1E3-51EFC89172E6}" ShortID="703520908">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience_Thunder_Distant_04" ID="{78330727-38DF-41B1-B254-A5C1201A16B3}">
+													<Language>SFX</Language>
+													<AudioFile>Ambience_Thunder_Distant_04.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="66072308"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience_Thunder_Distant_04" ID="{78330727-38DF-41B1-B254-A5C1201A16B3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Ambience_Rain_Splatter_01" ID="{06557E36-C774-4EE5-BAD2-B947263EF192}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Ambience_Rain_Steady_01" ID="{B8A6EFE3-5DC6-4A30-859B-32C1DAE6C678}" ShortID="533490893">
+								</RandomSequenceContainer>
+								<BlendContainer Name="Rain" ID="{FF9401E1-5112-4A4B-BBF6-DB78B335B60A}" ShortID="574319200">
 									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="BlendBehavior" Type="int16" Value="1"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-12</Value>
@@ -1065,24 +1175,132 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Ambience_Rain_Steady_01" ID="{DFDCBD3C-DD3F-4018-B72E-AC7B2A4A38D8}">
-											<Language>SFX</Language>
-											<AudioFile>Ambience_Rain_Steady_01.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="818895528"/>
-											</MediaIDList>
-										</AudioFileSource>
+										<Sound Name="Ambience_Rain_Noise_01" ID="{DA19AC8D-D832-4928-AC4D-7C77B3E3BF1A}" ShortID="581418125">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience_Rain_Noise_01" ID="{38C8D1A6-E551-42E3-A76E-FF746E3DCD5A}">
+													<Language>SFX</Language>
+													<AudioFile>Ambience_Rain_Noise_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="574962292"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience_Rain_Noise_01" ID="{38C8D1A6-E551-42E3-A76E-FF746E3DCD5A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Ambience_Rain_Splatter_01" ID="{D5789052-A163-4C9F-891D-C7E4BC73D5AC}" ShortID="1055226939">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience_Rain_Splatter_01" ID="{06557E36-C774-4EE5-BAD2-B947263EF192}">
+													<Language>SFX</Language>
+													<AudioFile>Ambience_Rain_Splatter_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="935890461"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience_Rain_Splatter_01" ID="{06557E36-C774-4EE5-BAD2-B947263EF192}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Ambience_Rain_Steady_01" ID="{B8A6EFE3-5DC6-4A30-859B-32C1DAE6C678}" ShortID="533490893">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-12</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience_Rain_Steady_01" ID="{DFDCBD3C-DD3F-4018-B72E-AC7B2A4A38D8}">
+													<Language>SFX</Language>
+													<AudioFile>Ambience_Rain_Steady_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="818895528"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience_Rain_Steady_01" ID="{DFDCBD3C-DD3F-4018-B72E-AC7B2A4A38D8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Ambience_Rain_Street_01" ID="{FFD56716-E0D8-468D-9781-277B97AEAEAC}" ShortID="765508934">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience_Rain_Street_01" ID="{6BB168C4-BD7D-44CF-91A1-5A81D12635EF}">
+													<Language>SFX</Language>
+													<AudioFile>Ambience_Rain_Street_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="77334151"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience_Rain_Street_01" ID="{6BB168C4-BD7D-44CF-91A1-5A81D12635EF}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Ambience_Rain_Steady_01" ID="{DFDCBD3C-DD3F-4018-B72E-AC7B2A4A38D8}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Ambience_Rain_Street_01" ID="{FFD56716-E0D8-468D-9781-277B97AEAEAC}" ShortID="765508934">
+									<BlendTrackList>
+										<BlendTrack Name="New Blend Track" ID="{719C92F5-62ED-4836-A30C-DAF5934DF0DC}" ShortID="115810734"/>
+									</BlendTrackList>
+								</BlendContainer>
+								<Sound Name="Ambience_Forest_01" ID="{0187F6BE-17D1-4273-A3CF-79841D5E4E46}" ShortID="1045648931">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>30</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-6</Value>
+												<Value>-20</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -1095,28 +1313,29 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Ambience_Rain_Street_01" ID="{6BB168C4-BD7D-44CF-91A1-5A81D12635EF}">
+										<AudioFileSource Name="Ambience_Forest_01" ID="{C15CAA0D-E9F8-419A-9942-E0767FA09D97}">
 											<Language>SFX</Language>
-											<AudioFile>Ambience_Rain_Street_01.wav</AudioFile>
+											<AudioFile>Ambience_Forest_01.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="77334151"/>
+												<MediaID ID="30184832"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="Ambience_Rain_Street_01" ID="{6BB168C4-BD7D-44CF-91A1-5A81D12635EF}" Platform="Linked"/>
+										<ActiveSource Name="Ambience_Forest_01" ID="{C15CAA0D-E9F8-419A-9942-E0767FA09D97}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
-							<BlendTrackList>
-								<BlendTrack Name="New Blend Track" ID="{719C92F5-62ED-4836-A30C-DAF5934DF0DC}" ShortID="115810734"/>
-							</BlendTrackList>
-						</BlendContainer>
-						<Sound Name="Train_CrossingAlarm" ID="{2BFFD596-C22E-45C6-B12E-C41D3829170E}" ShortID="489923354">
+						</ActorMixer>
+						<ActorMixer Name="AMB_3D" ID="{EF963DAD-B644-43EB-BC53-8B5983762DD7}" ShortID="333791173">
 							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="AMB_3D" ID="{89E6924C-5A93-4829-BC8F-805D9CFAE984}" WorkUnitID="{9167108B-C09A-4EC6-BA44-89921DB8AA24}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
 								</Reference>
@@ -1125,29 +1344,10 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Train_CrossingAlarm" ID="{940FB1D7-6C11-484E-B9E9-77586DACF86A}">
-									<Language>SFX</Language>
-									<AudioFile>Train_CrossingAlarm.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="789529480"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Train_CrossingAlarm" ID="{940FB1D7-6C11-484E-B9E9-77586DACF86A}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<RandomSequenceContainer Name="Thunder_Close" ID="{56AD312F-7808-4D4E-990A-FC0A767109DC}" ShortID="385059768">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="Ambience_Thunder_Close_01" ID="{37EDB04A-5DF9-457D-A68C-99DA7BF831FA}" ShortID="1061377566">
+								<Sound Name="Train_CrossingAlarm" ID="{2BFFD596-C22E-45C6-B12E-C41D3829170E}" ShortID="489923354">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
@@ -1157,186 +1357,20 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Ambience_Thunder_Close_01" ID="{34DBB72E-6E53-47A4-992B-8508AC3BB8DE}">
+										<AudioFileSource Name="Train_CrossingAlarm" ID="{940FB1D7-6C11-484E-B9E9-77586DACF86A}">
 											<Language>SFX</Language>
-											<AudioFile>Ambience_Thunder_Close_01.wav</AudioFile>
+											<AudioFile>Train_CrossingAlarm.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="521767536"/>
+												<MediaID ID="789529480"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="Ambience_Thunder_Close_01" ID="{34DBB72E-6E53-47A4-992B-8508AC3BB8DE}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Ambience_Thunder_Close_02" ID="{ADB61D6B-DB05-4AE7-B9DE-8B3F6BCB1C94}" ShortID="548402913">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Ambience_Thunder_Close_02" ID="{4DEFFC3D-FF62-4D10-A8D1-BC38157B664E}">
-											<Language>SFX</Language>
-											<AudioFile>Ambience_Thunder_Close_02.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="1066868576"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Ambience_Thunder_Close_02" ID="{4DEFFC3D-FF62-4D10-A8D1-BC38157B664E}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Ambience_Thunder_Close_03" ID="{EAB1D5F8-F032-4721-962B-71B1F83A6F94}" ShortID="580822160">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Ambience_Thunder_Close_03" ID="{EF968C01-B142-4915-B169-FBBF2CD27966}">
-											<Language>SFX</Language>
-											<AudioFile>Ambience_Thunder_Close_03.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="476002620"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Ambience_Thunder_Close_03" ID="{EF968C01-B142-4915-B169-FBBF2CD27966}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Ambience_Thunder_Close_04" ID="{FFD595F5-24B2-4C55-B329-997B86A0ECDB}" ShortID="796410646">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Ambience_Thunder_Close_04" ID="{85F08718-2122-43AB-AF16-E1D7C9A224AE}">
-											<Language>SFX</Language>
-											<AudioFile>Ambience_Thunder_Close_04.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="246420510"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Ambience_Thunder_Close_04" ID="{85F08718-2122-43AB-AF16-E1D7C9A224AE}" Platform="Linked"/>
+										<ActiveSource Name="Train_CrossingAlarm" ID="{940FB1D7-6C11-484E-B9E9-77586DACF86A}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
-						</RandomSequenceContainer>
-						<RandomSequenceContainer Name="Thunder_Distant" ID="{B2318EB3-0AB3-4177-80B0-C1BF9C016D4F}" ShortID="252902561">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="Ambience_Thunder_Distant_01" ID="{0723FBBF-6C2A-42D4-B36E-D56852252303}" ShortID="1010390429">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Ambience_Thunder_Distant_01" ID="{F1EEAEAA-0AC6-4258-ABBF-EF88B31DB6A3}">
-											<Language>SFX</Language>
-											<AudioFile>Ambience_Thunder_Distant_01.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="714976940"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Ambience_Thunder_Distant_01" ID="{F1EEAEAA-0AC6-4258-ABBF-EF88B31DB6A3}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Ambience_Thunder_Distant_02" ID="{0C751FC2-2B1A-4F7B-92CE-78E726BF073E}" ShortID="835283106">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Ambience_Thunder_Distant_02" ID="{7F7A669B-A54D-4C21-8C1C-7BD60F1A3067}">
-											<Language>SFX</Language>
-											<AudioFile>Ambience_Thunder_Distant_02.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="1064374955"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Ambience_Thunder_Distant_02" ID="{7F7A669B-A54D-4C21-8C1C-7BD60F1A3067}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Ambience_Thunder_Distant_03" ID="{7D1D2DAB-C45A-40A7-861A-DB592DC778C5}" ShortID="856839345">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Ambience_Thunder_Distant_03" ID="{3D6ABD30-7F78-4154-B532-7059B4203E38}">
-											<Language>SFX</Language>
-											<AudioFile>Ambience_Thunder_Distant_03.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="33980419"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Ambience_Thunder_Distant_03" ID="{3D6ABD30-7F78-4154-B532-7059B4203E38}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Ambience_Thunder_Distant_04" ID="{E548BD6C-C763-4ED8-B1E3-51EFC89172E6}" ShortID="703520908">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Ambience_Thunder_Distant_04" ID="{78330727-38DF-41B1-B254-A5C1201A16B3}">
-											<Language>SFX</Language>
-											<AudioFile>Ambience_Thunder_Distant_04.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="66072308"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Ambience_Thunder_Distant_04" ID="{78330727-38DF-41B1-B254-A5C1201A16B3}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-						</RandomSequenceContainer>
+						</ActorMixer>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Train" ID="{DB33E70C-2FB0-4911-BC17-CA13FC7E83F7}" ShortID="474847436">

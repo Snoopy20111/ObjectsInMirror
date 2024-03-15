@@ -168,7 +168,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{42A569D9-680C-E645-7D1B-00E45D0F4D18}">
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{588B7292-2D2A-6DAC-CB76-17BC0F0904BF}">
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<Media>
@@ -375,5 +375,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5E63CE72-46BE-2A9A-FADC-9DBC6F6EDBEB}</FileHash>
+	<FileHash>{85FF3B87-F789-9F04-BF4B-DF3F8969E213}</FileHash>
 </SoundBanksInfo>
