@@ -26,10 +26,10 @@ New-Item -ItemType Directory -Path "$RepoPath\Builds\$OIMVersionNum\Linux_Debug\
 # debug output from the PowerShell window, making errors harder to catch.
 
 #Windows Release build, x86_64
-godot --headless --path "$RepoPath\GodotProj" --export-release "Windows-Build" "..\Builds\$OIMVersionNum\Windows_Release\ObjectsInMirror.exe" | Out-Null
+godot --headless --path "$RepoPath\GodotProj" --export-release "Windows-Build" "..\Builds\$OIMVersionNum\Windows_Release\ObjectsInMirror.exe" | Out-Default
 #Windows Debug build, x86_64
-godot --headless --path "$RepoPath\GodotProj" --export-debug "Windows-Build" "..\Builds\$OIMVersionNum\Windows_Debug\ObjectsInMirror.exe" | Out-Null
+godot --headless --path "$RepoPath\GodotProj" --export-debug "Windows-Build" "..\Builds\$OIMVersionNum\Windows_Debug\ObjectsInMirror.exe" | Out-Default
 #Linux Release build, x86_64
-godot --headless --path "$RepoPath\GodotProj" --export-release "Linux-Build" "..\Builds\$OIMVersionNum\Linux_Release\ObjectsInMirror.x86_64" | Out-Null
+godot --headless --path "$RepoPath\GodotProj" --export-release "Linux-Build" "..\Builds\$OIMVersionNum\Linux_Release\ObjectsInMirror.x86_64" | Out-Default
 #Linux Release build, x86_64
-godot --headless --path "$RepoPath\GodotProj" --export-debug "Linux-Build" "..\Builds\$OIMVersionNum\Linux_Debug\ObjectsInMirror.x86_64" | Out-Null
+godot --headless --path "$RepoPath\GodotProj" --export-debug "Linux-Build" "..\Builds\$OIMVersionNum\Linux_Debug\ObjectsInMirror.x86_64" | Out-Default
