@@ -14,7 +14,7 @@ config/name="Objects In Mirror"
 config/version="0.1"
 run/main_scene="res://Scenes/Boot.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://Sprites/Characters/Car/car_red_4.png"
+config/icon="res://Icon.svg"
 
 [autoload]
 
