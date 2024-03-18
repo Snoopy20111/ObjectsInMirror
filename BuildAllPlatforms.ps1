@@ -21,9 +21,9 @@ New-Item -ItemType Directory -Path "$RepoPath\Builds\$OIMVersionNum\Linux_Debug\
 
 #Actually begin building
 
-# Note each command pipes responses to "Out-Null." This makes each process wait for
-# the previous to finish and close Godot.exe before running, but also removes all
-# debug output from the PowerShell window, making errors harder to catch.
+# Note each command pipes responses to "Out-Default." Piping makes each process wait
+# for the previous to finish and close Godot.exe before running, but Out-Default
+# still gives us that debug spew in the PowerShell window.
 
 #Windows Release build, x86_64
 godot --headless --path "$RepoPath\GodotProj" --export-release "Windows-Build" "..\Builds\$OIMVersionNum\Windows_Release\ObjectsInMirror.exe" | Out-Default
