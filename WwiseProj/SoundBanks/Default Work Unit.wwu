@@ -5,16 +5,15 @@
 			<ChildrenList>
 				<SoundBank Name="Master" ID="{B96D485B-D37B-48E8-9E24-634095C8EE81}">
 					<ObjectInclusionList>
-						<ObjectRef Name="CINE_Car_PullAway" ID="{20B6927D-E707-4021-9C1A-259D3DA6A677}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="AMB_Cine_Intro_02" ID="{895268B5-B63B-4095-BD79-D14E1BC1B81B}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Panic_Play" ID="{C1292F47-FFE6-42EF-83DF-D4446EF99917}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ACTR_Car_Impact_Death" ID="{07E4E06D-0453-4378-82AE-F3C33885AAD5}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MUS_Cine_Intro_04" ID="{0846ABC9-F91C-4468-A5E2-7811B814F4B4}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Train_Play" ID="{1ACDE4CF-1200-4484-9E66-A699C7B6B8B6}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MUS_Cine_Intro_01" ID="{25995FA8-D65A-45AB-8C8D-6F39BC2A0503}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="AMB_Cine_Intro_01" ID="{5D7F0116-5F7D-45BA-ABFB-7AA5151F1825}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI_StartGame" ID="{37568B77-8D8F-45C7-85E1-7E2D0E773A17}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI_LogoParade" ID="{9270240D-2F04-4623-82E4-318C98C3C1CC}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="CINE_Car_FakeLoop" ID="{79C915ED-51E4-464A-9BEC-67B37FCC630E}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MUS_Cine_Intro_02" ID="{007F5D2A-7040-4680-B3CD-F8320CBBA77E}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Test" ID="{6376D036-9CFD-4753-8070-73859A374F6F}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Train_Stop" ID="{A7749941-4DB5-4778-ADA0-86C4EB5B2A4C}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
@@ -27,6 +26,8 @@
 						<ObjectRef Name="UI_Nav_Unhover" ID="{9D0778E8-96EB-4CE4-B99F-D626EF2ED347}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ACTR_Car_Engine_Stop" ID="{8EF9AD7B-4764-4D06-BAEB-C96633A939A6}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MUS_Cine_Intro_03" ID="{76553BB8-DF3E-4DAF-9ABF-800C1F98E431}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ACTR_Car_Impact_Hurt" ID="{3DC92E36-FE17-4F4B-82AE-C73370D14BAE}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ACTR_Car_Impact_Tap" ID="{57D691E6-4D79-4F4D-B1EC-449A1E4A5343}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ACTR_Car_Engine_Play" ID="{C9E04D18-E9E7-4FA7-85E5-DE3C9803CDDF}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

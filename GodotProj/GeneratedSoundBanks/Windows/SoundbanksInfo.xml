@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{6B3A57E7-7295-2FBD-C74F-41DD34F404DA}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{81E7E898-6CCF-0FEC-125A-6087945DB0FE}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -24,6 +24,7 @@
 			<GameParameters>
 				<GameParameter Id="640949982" Name="Speed"/>
 				<GameParameter Id="796049864" Name="RPM"/>
+				<GameParameter Id="1642941132" Name="ImpactForce"/>
 				<GameParameter Id="2995819693" Name="Throttle"/>
 				<GameParameter Id="3130232582" Name="Panic"/>
 				<GameParameter Id="3266676374" Name="TireScreech"/>
@@ -168,7 +169,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{588B7292-2D2A-6DAC-CB76-17BC0F0904BF}">
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{7A53453C-3210-AB15-3596-EE11D98F1CD2}">
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<Media>
@@ -180,13 +181,25 @@
 					<ShortName>Ambience_Forest_01.wav</ShortName>
 					<CachePath>SFX/Ambience_Forest_01_51EBCE32.wem</CachePath>
 				</File>
+				<File Id="33980419" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Thunder_Distant_03.wav</ShortName>
+					<CachePath>SFX/Ambience_Thunder_Distant_03_125ADEA8.wem</CachePath>
+				</File>
 				<File Id="56100187" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tire_Roll_Slush_01.wav</ShortName>
 					<CachePath>SFX/Tire_Roll_Slush_01_125ADEA8.wem</CachePath>
 				</File>
+				<File Id="66072308" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Thunder_Distant_04.wav</ShortName>
+					<CachePath>SFX/Ambience_Thunder_Distant_04_125ADEA8.wem</CachePath>
+				</File>
 				<File Id="77334151" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ambience_Rain_Street_01.wav</ShortName>
 					<CachePath>SFX/Ambience_Rain_Street_01_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="87027843" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Hurt_02.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Hurt_02_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="156265161" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tire_Roll_Gravel_03.wav</ShortName>
@@ -220,6 +233,10 @@
 					<ShortName>Cooper06_I4_Med_Exhaust.wav</ShortName>
 					<CachePath>SFX/Cooper06_I4_Med_Exhaust_51EBCE32.wem</CachePath>
 				</File>
+				<File Id="456020931" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Tap_03.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Tap_03_125ADEA8.wem</CachePath>
+				</File>
 				<File Id="476613896" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_High_Exhaust_Short.wav</ShortName>
 					<CachePath>SFX/Cooper06_I4_High_Exhaust_Short_51EBCE32.wem</CachePath>
@@ -227,6 +244,10 @@
 				<File Id="501711981" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Train_Passby_Rumble_01.wav</ShortName>
 					<CachePath>SFX/Train_Passby_Rumble_01_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="522444586" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Tap_02.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Tap_02_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="524341691" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_Idle_Exhaust.wav</ShortName>
@@ -248,6 +269,10 @@
 					<ShortName>Cooper06_I4_High_Engine_Short.wav</ShortName>
 					<CachePath>SFX/Cooper06_I4_High_Engine_Short_51EBCE32.wem</CachePath>
 				</File>
+				<File Id="594537877" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Death_03.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Death_03_125ADEA8.wem</CachePath>
+				</File>
 				<File Id="660413476" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Train_Passby_Main_02.wav</ShortName>
 					<CachePath>SFX/Train_Passby_Main_02_125ADEA8.wem</CachePath>
@@ -256,9 +281,37 @@
 					<ShortName>Tire_Roll_Slush_03.wav</ShortName>
 					<CachePath>SFX/Tire_Roll_Slush_03_125ADEA8.wem</CachePath>
 				</File>
+				<File Id="672171901" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Hurt_03.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Hurt_03_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="699853547" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Tap_05.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Tap_05_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="714976940" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Thunder_Distant_01.wav</ShortName>
+					<CachePath>SFX/Ambience_Thunder_Distant_01_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="716197573" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Hurt_05.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Hurt_05_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="740005813" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Tap_04.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Tap_04_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="772475462" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Hurt_06.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Hurt_06_125ADEA8.wem</CachePath>
+				</File>
 				<File Id="818895528" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ambience_Rain_Steady_01.wav</ShortName>
 					<CachePath>SFX/Ambience_Rain_Steady_01_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="828033977" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Death_02.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Death_02_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="909693388" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Portfolio_LogoBumper01_2023-10-23_001.wav</ShortName>
@@ -272,19 +325,44 @@
 					<ShortName>Tire_Roll_Slush_02.wav</ShortName>
 					<CachePath>SFX/Tire_Roll_Slush_02_125ADEA8.wem</CachePath>
 				</File>
+				<File Id="961633248" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Hurt_04.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Hurt_04_125ADEA8.wem</CachePath>
+				</File>
 				<File Id="985561978" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_Low_Exhaust.wav</ShortName>
 					<CachePath>SFX/Cooper06_I4_Low_Exhaust_51EBCE32.wem</CachePath>
+				</File>
+				<File Id="1004388818" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Death_01.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Death_01_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="1004547954" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tire_Roll_Gravel_02.wav</ShortName>
 					<CachePath>SFX/Tire_Roll_Gravel_02_125ADEA8.wem</CachePath>
 				</File>
+				<File Id="1014587708" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Hurt_01.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Hurt_01_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="1040854650" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Car_Impact_Tap_01.wav</ShortName>
+					<CachePath>SFX/Car_Impact_Tap_01_125ADEA8.wem</CachePath>
+				</File>
 				<File Id="1045336617" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_Low_Engine.wav</ShortName>
 					<CachePath>SFX/Cooper06_I4_Low_Engine_51EBCE32.wem</CachePath>
 				</File>
+				<File Id="1064374955" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Thunder_Distant_02.wav</ShortName>
+					<CachePath>SFX/Ambience_Thunder_Distant_02_125ADEA8.wem</CachePath>
+				</File>
 			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="50179781" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
+				</Custom>
+			</Plugins>
 			<Events>
 				<Event Id="495721106" Name="ACTR_Car_Engine_Play">
 					<MediaRefs>
@@ -299,6 +377,32 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="2207278604" Name="ACTR_Car_Engine_Stop"/>
+				<Event Id="511688286" Name="ACTR_Car_Impact_Death">
+					<MediaRefs>
+						<MediaRef Id="594537877"/>
+						<MediaRef Id="828033977"/>
+						<MediaRef Id="1004388818"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2286104131" Name="ACTR_Car_Impact_Hurt">
+					<MediaRefs>
+						<MediaRef Id="87027843"/>
+						<MediaRef Id="672171901"/>
+						<MediaRef Id="716197573"/>
+						<MediaRef Id="772475462"/>
+						<MediaRef Id="961633248"/>
+						<MediaRef Id="1014587708"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3647900047" Name="ACTR_Car_Impact_Tap">
+					<MediaRefs>
+						<MediaRef Id="456020931"/>
+						<MediaRef Id="522444586"/>
+						<MediaRef Id="699853547"/>
+						<MediaRef Id="740005813"/>
+						<MediaRef Id="1040854650"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="579292521" Name="ACTR_Car_Tires_Play">
 					<MediaRefs>
 						<MediaRef Id="56100187"/>
@@ -315,14 +419,21 @@
 				<Event Id="1751074331" Name="AMB_Cine_Intro_02"/>
 				<Event Id="2552542987" Name="AMB_Menu">
 					<MediaRefs>
+						<MediaRef Id="33980419"/>
+						<MediaRef Id="66072308"/>
 						<MediaRef Id="77334151"/>
 						<MediaRef Id="574962292"/>
+						<MediaRef Id="714976940"/>
 						<MediaRef Id="818895528"/>
 						<MediaRef Id="935890461"/>
+						<MediaRef Id="1064374955"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="50179781"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
-				<Event Id="1318609365" Name="CINE_Car_FakeLoop"/>
-				<Event Id="601388883" Name="CINE_Car_PullAway"/>
 				<Event Id="2294462433" Name="MUS_Cine_Intro_01"/>
 				<Event Id="2294462434" Name="MUS_Cine_Intro_02"/>
 				<Event Id="2294462435" Name="MUS_Cine_Intro_03"/>
@@ -371,9 +482,10 @@
 			<GameParameters>
 				<GameParameter Id="640949982" Name="Speed"/>
 				<GameParameter Id="796049864" Name="RPM"/>
+				<GameParameter Id="1642941132" Name="ImpactForce"/>
 				<GameParameter Id="3266676374" Name="TireScreech"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8B41C5B0-890F-335F-B587-381B64736C49}</FileHash>
+	<FileHash>{1EC23B3C-79FB-7955-E935-F3BD1B6AC344}</FileHash>
 </SoundBanksInfo>

@@ -30,6 +30,17 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{BC8247C9-79C3-4875-AAF5-4DD1AA73BD66}" ShortID="324163789">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="4"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Thunder_Loop" ID="{679FA9E3-4551-49EA-A705-1D3527FD500A}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="AMB_Cine_Intro_01" ID="{5D7F0116-5F7D-45BA-ABFB-7AA5151F1825}"/>
@@ -169,8 +180,39 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="CINE_Car_FakeLoop" ID="{79C915ED-51E4-464A-9BEC-67B37FCC630E}"/>
-								<Event Name="CINE_Car_PullAway" ID="{20B6927D-E707-4021-9C1A-259D3DA6A677}"/>
+								<Event Name="ACTR_Car_Impact_Death" ID="{07E4E06D-0453-4378-82AE-F3C33885AAD5}">
+									<ChildrenList>
+										<Action Name="" ID="{3EC5377E-B4C3-4BAB-86FC-7607B6F99EC8}" ShortID="1035230517">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Car_Impact_Death" ID="{A5018FC2-BEFB-462B-BA0D-A2D2DD59CB08}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="ACTR_Car_Impact_Hurt" ID="{3DC92E36-FE17-4F4B-82AE-C73370D14BAE}">
+									<ChildrenList>
+										<Action Name="" ID="{0E1BFF4D-3418-4D12-BA21-81396A223CD1}" ShortID="266873031">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Car_Impact_Hurt" ID="{88EDE3CC-B1F0-4AC7-82C1-F4925EB0F011}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="ACTR_Car_Impact_Tap" ID="{57D691E6-4D79-4F4D-B1EC-449A1E4A5343}">
+									<ChildrenList>
+										<Action Name="" ID="{8DD3E414-B380-4495-8F25-A229BB4943A9}" ShortID="828646565">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Car_Impact_Tap" ID="{E0D190E1-7292-4E03-B78D-5E4AF4845898}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Entity" ID="{63883334-3881-4BEE-89D2-39BA2662F4A3}" ShortID="107331307">

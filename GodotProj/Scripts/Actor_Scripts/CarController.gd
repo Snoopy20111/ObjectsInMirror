@@ -205,7 +205,9 @@ func Collided(_body: Node):
 	
 	if (collisionForce > collisionThreshold) and (canBeDamaged):
 		ApplyDamage()	#apply damage
-	#Do sound stuff with different thresholds
+	else:
+		Wwise.set_rtpc_value("ImpactForce", collisionForce, self)
+		Wwise.post_event("ACTR_Car_Impact_Tap", self)
 
 func ApplyDamage():
 	#Start invulnurability timer, reduce health, and shake the screen
@@ -214,10 +216,13 @@ func ApplyDamage():
 	_health -= 1
 	_screenShakeCounter = screenShakeLength
 	
+	
 	if (_health <= 0):
 		Death()
+		Wwise.post_event("ACTR_Car_Impact_Death", self)
 	else:
 		damageAnimSmoke.emitting = true
+		Wwise.post_event("ACTR_Car_Impact_Hurt", self)
 
 func Death():
 	# Stop player control
