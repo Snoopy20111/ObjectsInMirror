@@ -54,6 +54,7 @@ func _ready():
 		headlights.enabled = false
 	if (controlMode != Enums.CONTROL_TYPE.JUST_PROP):
 		Wwise.register_game_obj(self, "Player Car")
+		#Wwise.set_2d_position(self, transform, 0)
 		Wwise.post_event("ACTR_Car_Engine_Play", self)
 		Wwise.post_event("ACTR_Car_Tires_Play", self)
 	if (useScriptValues):
@@ -61,6 +62,7 @@ func _ready():
 
 # Called every frame
 func _process(delta):
+	#Wwise.set_2d_position(self, transform, 0)
 	SetInputVector()
 	if (GetTireScreeching()):
 		skidParticles_L.emitting = true
