@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjyu8ql4g3gto"]
+[gd_scene load_steps=14 format=3 uid="uid://bjyu8ql4g3gto"]
 
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Test_2D.gd" id="1_nmt8e"]
 [ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="1_xnu17"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="4_jqi28"]
 [ext_resource type="PackedScene" uid="uid://seuyyo3omuoe" path="res://Scenes/Actors/PlayerCar.tscn" id="4_vm3fk"]
 [ext_resource type="PackedScene" uid="uid://dqx6vc23q8te7" path="res://Scenes/Prefabs/GasPump.tscn" id="5_n61ap"]
+[ext_resource type="PackedScene" uid="uid://corfont0ulc54" path="res://Scenes/Actors/Entity_Watcher.tscn" id="8_j37vm"]
 
 [sub_resource type="Gradient" id="Gradient_ac555"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -59,10 +60,10 @@ metadata/_edit_lock_ = true
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 material = SubResource("CanvasItemMaterial_y7kk1")
-position = Vector2(-1.54143e-44, 1.54143e-44)
+position = Vector2(1.54143e-44, 1.54143e-44)
 script = ExtResource("4_jqi28")
 priority_override = false
-priority = 0
+priority = 1
 zoom = Vector2(0.9, 0.9)
 follow_mode = 2
 follow_target = NodePath("../PlayerCar/CameraTarget")
@@ -84,6 +85,7 @@ inactive_update_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="PlayerCar" parent="." instance=ExtResource("4_vm3fk")]
+unique_name_in_owner = true
 rotation = -1.5708
 
 [node name="CameraTarget" type="Node2D" parent="PlayerCar"]
@@ -91,3 +93,6 @@ metadata/_edit_lock_ = true
 
 [node name="Pump" parent="." instance=ExtResource("5_n61ap")]
 position = Vector2(265, -163)
+
+[node name="Entity_Watcher" parent="." instance=ExtResource("8_j37vm")]
+position = Vector2(-747, -508)

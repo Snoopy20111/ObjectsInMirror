@@ -9,6 +9,7 @@ const watcherChaosRadiusWithDistanceCurve = preload("res://Customs/Curves/Watche
 
 @export var turningSpeed: float = 12.0
 @export var maxChaosDistance: float = 600
+@export var maxChaosAudioDistance: float = 1500
 @export var chaosFadeCounterDown: float = 3
 
 @onready var watcherLight: PointLight2D = $Flashlight
@@ -28,8 +29,31 @@ var isFadingChaos: bool = false
 var fadeCounter: float = 0
 
 
+func _ready():
+	Wwise.register_game_obj(self, "Entity_Watcher_" + str(self))
+	Wwise.post_event("ACTR_Entity_Panic_Play", self)
+	Wwise.set_2d_position(self, transform, 0)
+
 func _process(delta):
-	#early return if the watcher is paused
+	#Done every frame regardless
+	Wwise.set_2d_position(self, transform, 0)
+	
+	var distanceToPlayer: float = Vector2(player.global_position - global_position).length()
+
+	var chaosAdd = watcherChaosWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1)) 
+	var radiusAdd = watcherChaosRadiusWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1)) 
+	var audioPanic = clamp(distanceToPlayer / maxChaosDistance, 0, 1)
+	var chaosFadeMult = watcherChaosFadeCurve.sample(chaosFadeCounterDown/chaosFadeStartValue)
+	
+	# Set chaos shader based roughly on the inverse distance to the player
+	chaosNode.material.set_shader_parameter("chaos", (chaosParam + chaosAdd) * chaosFadeMult)
+	chaosNode.material.set_shader_parameter("radius", radiusAdd * clamp(chaosFadeMult, 0.0, 1.0))
+	
+	# And then set audio RTPC?
+	Wwise.set_rtpc_value("Panic", audioPanic * chaosFadeMult, self)
+	print(radiusAdd * chaosFadeMult)
+	
+	#early return if the watcher is paused, aka off-screen
 	if (paused):
 		return
 	
@@ -58,20 +82,16 @@ func _process(delta):
 	rotation = transform.interpolate_with(new_transform,
 		turningSpeed * delta).get_rotation()
 	
-	var distanceToPlayer: float = Vector2(player.global_position - global_position).length()
-
-	var chaosAdd = watcherChaosWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1)) 
-	var radiusAdd = watcherChaosRadiusWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1)) 
-	var chaosFadeMult = watcherChaosFadeCurve.sample(chaosFadeCounterDown/chaosFadeStartValue)
-	# Set chaos shader based roughly on the inverse distance to the player
-	chaosNode.material.set_shader_parameter("chaos", (chaosParam + chaosAdd) * chaosFadeMult)
-	chaosNode.material.set_shader_parameter("radius", radiusAdd * clamp(chaosFadeMult, 0.0, 1.0))
+	
 
 func _on_visible_on_screen_entered():
 	#spring to life
 	paused = false
 	animBeginTimer.start()
-	
 
 func _on_anim_begin_timer_timeout():
 	isFadingSelf = true
+
+func _exit_tree():
+	Wwise.post_event("ACTR_Entity_Panic_Stop", self)
+	Wwise.unregister_game_obj(self)

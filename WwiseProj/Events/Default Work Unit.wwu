@@ -217,7 +217,31 @@
 						</Folder>
 						<Folder Name="Entity" ID="{63883334-3881-4BEE-89D2-39BA2662F4A3}" ShortID="107331307">
 							<ChildrenList>
-								<Event Name="Panic_Play" ID="{C1292F47-FFE6-42EF-83DF-D4446EF99917}"/>
+								<Event Name="ACTR_Entity_Panic_Play" ID="{C1292F47-FFE6-42EF-83DF-D4446EF99917}">
+									<ChildrenList>
+										<Action Name="" ID="{B50A324A-ECBA-4B41-8DF3-A819F3D6A475}" ShortID="884353680">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Entities_Panic" ID="{095B0E64-5DCF-4CDE-B9FB-FC7CC47869D9}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="ACTR_Entity_Panic_Stop" ID="{F25F1995-5824-4FC5-B24C-7866BCBC8357}">
+									<ChildrenList>
+										<Action Name="" ID="{D211D4C1-8757-4647-AB68-F461A3B7A1EA}" ShortID="903266190">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Entities_Panic" ID="{095B0E64-5DCF-4CDE-B9FB-FC7CC47869D9}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Train" ID="{2635C737-F57C-429D-A3C2-710D47970B74}" ShortID="1045490140">

@@ -479,7 +479,7 @@ metadata/_edit_lock_ = true
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 z_index = 1000
 material = SubResource("CanvasItemMaterial_y7kk1")
-position = Vector2(-78.6866, 1752)
+position = Vector2(-78.6866, 1752.94)
 script = ExtResource("3_rf1i4")
 priority_override = false
 priority = 1

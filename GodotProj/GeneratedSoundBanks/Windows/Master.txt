@@ -1,6 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	113163278	Train_Play			\Default Work Unit\SFX\Train\Train_Play	
-	182988935	Panic_Play			\Default Work Unit\SFX\Entity\Panic_Play	
+	245490600	ACTR_Entity_Panic_Play			\Default Work Unit\SFX\Entity\ACTR_Entity_Panic_Play	
 	495721106	ACTR_Car_Engine_Play			\Default Work Unit\SFX\Car\ACTR_Car_Engine_Play	
 	503177270	UI_Nav_Hover			\Default Work Unit\UI\UI_Nav_Hover	
 	511688286	ACTR_Car_Impact_Death			\Default Work Unit\SFX\Car\ACTR_Car_Impact_Death	
@@ -20,6 +20,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2336382113	UI_Nav_Unhover			\Default Work Unit\UI\UI_Nav_Unhover	
 	2467171692	UI_StartGame			\Default Work Unit\UI\UI_StartGame	
 	2552542987	AMB_Menu			\Default Work Unit\AMB\AMB_Menu	
+	2623160858	ACTR_Entity_Panic_Stop			\Default Work Unit\SFX\Entity\ACTR_Entity_Panic_Stop	
 	3149643052	MUS_Menu			\Default Work Unit\MUS\MUS_Menu	
 	3187507146	Play_Test			\Default Work Unit\Play_Test	
 	3647900047	ACTR_Car_Impact_Tap			\Default Work Unit\SFX\Car\ACTR_Car_Impact_Tap	
@@ -28,6 +29,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	640949982	Speed			\Default Work Unit\Speed	
 	796049864	RPM			\Default Work Unit\RPM	
 	1642941132	ImpactForce			\Default Work Unit\ImpactForce	
+	3130232582	Panic			\Default Work Unit\Panic	
 	3266676374	TireScreech			\Default Work Unit\TireScreech	
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
@@ -41,6 +43,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	66072308	Ambience_Thunder_Distant_04	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Ambience_Thunder_Distant_04_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_2D\Thunder_Loop\Thunder_Distant\Ambience_Thunder_Distant_04		93175
 	77334151	Ambience_Rain_Street_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Ambience_Rain_Street_01_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_2D\Rain\Ambience_Rain_Street_01		410099
 	87027843	Car_Impact_Hurt_02	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Car_Impact_Hurt_02_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Impact_Hurt\Car_Impact_Hurt_02		60430
+	123104764	Entities_Panic	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Entities_Panic_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\Entities\Entities_Panic		179784
 	156265161	Tire_Roll_Gravel_03	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Tire_Roll_Gravel_03_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Tires\Tire_Roll_Gravel\Tire_Roll_Gravel_03		101981
 	201237961	Train_Passby_Main_03	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Train_Passby_Main_03_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Passby\Train_Passby_Rattle\Train_Passby_Main_03		227597
 	229646852	Tire_Roll_Gravel_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Tire_Roll_Gravel_01_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Tires\Tire_Roll_Gravel\Tire_Roll_Gravel_01		99424

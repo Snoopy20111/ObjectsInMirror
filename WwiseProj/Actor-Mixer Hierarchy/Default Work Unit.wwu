@@ -2271,9 +2271,14 @@
 					<ChildrenList>
 						<Sound Name="Entities_Panic" ID="{095B0E64-5DCF-4CDE-B9FB-FC7CC47869D9}" ShortID="765604162">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Entity_Panic" ID="{46F34C9E-8B5F-4C94-B81F-1BE46756698A}" WorkUnitID="{9167108B-C09A-4EC6-BA44-89921DB8AA24}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
 								</Reference>
@@ -2290,6 +2295,52 @@
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{BBD0DF6F-788C-48BD-8371-566138394A34}" ShortID="329056888">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Volume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="Panic" ID="{0361B67D-E6DC-4CF1-B236-21BB4BA14CC2}" WorkUnitID="{33FFF99D-7C5E-4947-9C15-5ED268E1107A}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{B9BC1D08-D3EC-4B4D-93A7-B82370E73E94}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																		<SegmentShape>SCurve</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>1</XPos>
+																		<YPos>-0</YPos>
+																		<Flags>0</Flags>
+																		<SegmentShape>SCurve</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>3</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
 							<ActiveSourceList>
 								<ActiveSource Name="Entities_Panic" ID="{B2CEE5EF-8717-4D2B-BCE5-693C039E6882}" Platform="Linked"/>
 							</ActiveSourceList>

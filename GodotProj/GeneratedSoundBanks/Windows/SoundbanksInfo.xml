@@ -169,7 +169,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{7A53453C-3210-AB15-3596-EE11D98F1CD2}">
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{F6D7D519-9D09-ACA6-DEAE-05C63054F3ED}">
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<Media>
@@ -200,6 +200,10 @@
 				<File Id="87027843" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Car_Impact_Hurt_02.wav</ShortName>
 					<CachePath>SFX/Car_Impact_Hurt_02_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="123104764" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Entities_Panic.wav</ShortName>
+					<CachePath>SFX/Entities_Panic_51EBCE32.wem</CachePath>
 				</File>
 				<File Id="156265161" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tire_Roll_Gravel_03.wav</ShortName>
@@ -415,6 +419,12 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="2101812367" Name="ACTR_Car_Tires_Stop"/>
+				<Event Id="245490600" Name="ACTR_Entity_Panic_Play">
+					<MediaRefs>
+						<MediaRef Id="123104764"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2623160858" Name="ACTR_Entity_Panic_Stop"/>
 				<Event Id="1751074328" Name="AMB_Cine_Intro_01"/>
 				<Event Id="1751074331" Name="AMB_Cine_Intro_02"/>
 				<Event Id="2552542987" Name="AMB_Menu">
@@ -439,7 +449,6 @@
 				<Event Id="2294462435" Name="MUS_Cine_Intro_03"/>
 				<Event Id="2294462436" Name="MUS_Cine_Intro_04"/>
 				<Event Id="3149643052" Name="MUS_Menu"/>
-				<Event Id="182988935" Name="Panic_Play"/>
 				<Event Id="3187507146" Name="Play_Test">
 					<MediaRefs>
 						<MediaRef Id="364672542"/>
@@ -483,9 +492,10 @@
 				<GameParameter Id="640949982" Name="Speed"/>
 				<GameParameter Id="796049864" Name="RPM"/>
 				<GameParameter Id="1642941132" Name="ImpactForce"/>
+				<GameParameter Id="3130232582" Name="Panic"/>
 				<GameParameter Id="3266676374" Name="TireScreech"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1EC23B3C-79FB-7955-E935-F3BD1B6AC344}</FileHash>
+	<FileHash>{C059D9E6-B4D2-25DF-64A0-FDB99416E564}</FileHash>
 </SoundBanksInfo>

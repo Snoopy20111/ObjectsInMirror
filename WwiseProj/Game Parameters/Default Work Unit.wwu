@@ -6,6 +6,7 @@
 				<GameParameter Name="Panic" ID="{0361B67D-E6DC-4CF1-B236-21BB4BA14CC2}">
 					<PropertyList>
 						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="3"/>
 					</PropertyList>
 				</GameParameter>
 				<GameParameter Name="TireScreech" ID="{430C8D38-36F1-42B5-9595-F915479F53AD}">
