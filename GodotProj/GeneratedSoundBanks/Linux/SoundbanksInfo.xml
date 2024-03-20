@@ -9,19 +9,52 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{8C91B841-021F-EA94-85F4-37954DDF90B6}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{5DBAC051-1D71-9582-9017-3222C73CF513}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
+				<Custom>
+					<Plugin Id="1013479814" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
+				</Custom>
+				<ShareSets>
+					<Plugin Id="3559982155" Name="Hall_Stop_Screaming" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</ShareSets>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
 					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="393239870" Name="SFX"/>
+				<Bus Id="1069431850" Name="Player"/>
+				<Bus Id="1117531639" Name="AMB"/>
+				<Bus Id="1551306167" Name="UI"/>
+				<Bus Id="2083370804" Name="Entities"/>
+				<Bus Id="3412057565" Name="Train"/>
+				<Bus Id="3671883448" Name="Entities_Panic">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="1013479814"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<AuxBusses>
+				<AuxBus Id="2055051794" Name="Panic_Verb">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3559982155"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="2722806429" Name="Master_Verb"/>
+					</AuxBusRefs>
+				</AuxBus>
+				<AuxBus Id="2722806429" Name="Master_Verb"/>
+			</AuxBusses>
 			<GameParameters>
+				<GameParameter Id="394958007" Name="Panic_Verb_Volume"/>
 				<GameParameter Id="640949982" Name="Speed"/>
 				<GameParameter Id="796049864" Name="RPM"/>
 				<GameParameter Id="1642941132" Name="ImpactForce"/>
@@ -169,7 +202,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{F6D7D519-9D09-ACA6-DEAE-05C63054F3ED}">
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{58CAA146-E66A-453E-E6FA-69434676E7D1}">
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<Media>
@@ -365,6 +398,7 @@
 			<Plugins>
 				<Custom>
 					<Plugin Id="50179781" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
+					<Plugin Id="979656045" Name="Guitar Distortion (Custom)" LibName="Wwise Guitar Distortion" LibId="8257539"/>
 				</Custom>
 			</Plugins>
 			<Events>
@@ -423,6 +457,14 @@
 					<MediaRefs>
 						<MediaRef Id="123104764"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="979656045"/>
+						</Custom>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="2055051794" Name="Panic_Verb"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="2623160858" Name="ACTR_Entity_Panic_Stop"/>
 				<Event Id="1751074328" Name="AMB_Cine_Intro_01"/>
@@ -497,5 +539,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7E71BFFD-0EC4-22D9-DD43-FAAA9FFF9F54}</FileHash>
+	<FileHash>{C29D5D7A-2AF7-9CE8-075A-CFA031C7C200}</FileHash>
 </SoundBanksInfo>

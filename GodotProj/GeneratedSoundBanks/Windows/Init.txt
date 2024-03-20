@@ -9,6 +9,7 @@ State	ID	Name	State Group			Notes
 	3686962126	Hurting	IsAlive			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	394958007	Panic_Verb_Volume			\Default Work Unit\Panic_Verb_Volume	
 	504532776	Brick			\Factory Acoustic Textures\Textures\Brick	
 	513139656	Mountain			\Factory Acoustic Textures\Textures\Mountain	
 	841620460	Concrete			\Factory Acoustic Textures\Textures\Concrete	
@@ -25,7 +26,22 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	4262522749	Wood_Bright			\Factory Acoustic Textures\Textures\Wood_Bright	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	1069431850	Player			\Default Work Unit\Master Audio Bus\SFX\Player	
+	1117531639	AMB			\Default Work Unit\Master Audio Bus\SFX\AMB	
+	1551306167	UI			\Default Work Unit\Master Audio Bus\SFX\UI	
+	2083370804	Entities			\Default Work Unit\Master Audio Bus\SFX\Entities	
+	3412057565	Train			\Default Work Unit\Master Audio Bus\SFX\Train	
+	3671883448	Entities_Panic			\Default Work Unit\Master Audio Bus\SFX\Entities\Entities_Panic	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	2055051794	Panic_Verb			\Default Work Unit\Master Audio Bus\Master_Verb\Panic_Verb	
+	2722806429	Master_Verb			\Default Work Unit\Master Audio Bus\Master_Verb	
+
+Effect plug-ins	ID	Name	Type				Notes
+	1013479814	Meter (Custom)	Wwise Meter			
+	3559982155	Hall_Stop_Screaming	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

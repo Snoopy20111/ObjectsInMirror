@@ -9,6 +9,123 @@
 							<ObjectRef Name="System" ID="{2F678B3F-D375-4765-816C-698D267356AA}" WorkUnitID="{37AC7302-A1FC-4D2A-83A5-E4A396E6B1B0}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<AuxBus Name="Master_Verb" ID="{29F6E769-9B36-4C51-B4B2-3555348BF098}">
+							<ChildrenList>
+								<AuxBus Name="Panic_Verb" ID="{F4163BD7-87F6-4186-97F9-C6FCF1DCB635}">
+									<PropertyList>
+										<Property Name="BusVolume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{A8817183-3545-4256-8804-8206BA9C1D14}" ShortID="444818749">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+																<ObjectRef Name="Hall_Stop_Screaming" ID="{8CDB5849-1E3A-4CE7-B5EB-0E90DBDF1D10}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{71BF9472-F9E3-4D7E-8C39-613FB3BBB1A7}" ShortID="768193724">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="OutputBusVolume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="Panic_Verb_Volume" ID="{987BDD4D-D3AD-433A-9083-74A163F66948}" WorkUnitID="{33FFF99D-7C5E-4947-9C15-5ED268E1107A}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{162E0CEB-0BF0-4DB8-B8B5-FF973306DBE6}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>-48</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>-25</XPos>
+																				<YPos>0</YPos>
+																				<Flags>0</Flags>
+																				<SegmentShape>SCurve</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>-3</XPos>
+																				<YPos>-20</YPos>
+																				<Flags>0</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-32.64443</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AuxBus>
+							</ChildrenList>
+						</AuxBus>
+						<Bus Name="SFX" ID="{67A41516-A143-43F1-8E79-126AA1A53754}">
+							<ChildrenList>
+								<Bus Name="Player" ID="{516DF311-BFEC-4AB9-BFB8-70C11A792487}"/>
+								<Bus Name="UI" ID="{4298DD2C-13D2-48B9-9D45-1C558A3652D9}"/>
+								<Bus Name="Entities" ID="{06ECF9E3-6FD0-4CD8-B79E-82A78BB47BE2}">
+									<ChildrenList>
+										<Bus Name="Entities_Panic" ID="{62105DCB-9C23-4107-97F2-F23A2445B3B4}">
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<Reference>
+														<Local>
+															<EffectSlot Name="" ID="{1324F4EA-8408-4C9C-8C77-745ADBB8AB64}" ShortID="1043221923">
+																<ReferenceList>
+																	<Reference Name="Effect">
+																		<Custom>
+																			<Effect Name="Meter (Custom)" ID="{29AA83A8-7713-400C-BA8B-2CEA046FC003}" ShortID="1013479814" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+																				<PropertyList>
+																					<Property Name="MeterMode" Type="int32" Value="1"/>
+																					<Property Name="ReleaseTime" Type="Real32" Value="0"/>
+																				</PropertyList>
+																				<PluginData>
+	<GameParameter Name="Panic_Verb_Volume" ID="{987BDD4D-D3AD-433A-9083-74A163F66948}"/>
+</PluginData>
+																			</Effect>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</Bus>
+									</ChildrenList>
+								</Bus>
+								<Bus Name="AMB" ID="{6E820EB6-0DDA-4A9E-9F95-4B86CF298C15}"/>
+								<Bus Name="Train" ID="{AE13D591-93E7-485A-8F2D-BF834E7093ED}"/>
+							</ChildrenList>
+						</Bus>
+					</ChildrenList>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{785F960A-80E5-4A7D-AD71-4BEDCF9253CA}" SchemaVersion="119">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{785F960A-80E5-4A7D-AD71-4BEDCF9253CA}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{785F960A-80E5-4A7D-AD71-4BEDCF9253CA}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Entities" ID="{DC38349F-8765-4D21-A59B-6EB6BBE13522}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Entities_Panic" ID="{095B0E64-5DCF-4CDE-B9FB-FC7CC47869D9}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="Panic_Verb_Volume" ID="{987BDD4D-D3AD-433A-9083-74A163F66948}"/>
+							<Value>-43.6929212362911</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Panic" ID="{0361B67D-E6DC-4CF1-B236-21BB4BA14CC2}"/>
+							<Value>2.35</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

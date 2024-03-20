@@ -40,9 +40,8 @@ func _process(delta):
 	
 	var distanceToPlayer: float = Vector2(player.global_position - global_position).length()
 
-	var chaosAdd = watcherChaosWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1)) 
-	var radiusAdd = watcherChaosRadiusWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1)) 
-	var audioPanic = clamp(distanceToPlayer / maxChaosDistance, 0, 1)
+	var chaosAdd = watcherChaosWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1))
+	var radiusAdd = watcherChaosRadiusWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1))
 	var chaosFadeMult = watcherChaosFadeCurve.sample(chaosFadeCounterDown/chaosFadeStartValue)
 	
 	# Set chaos shader based roughly on the inverse distance to the player
@@ -50,8 +49,11 @@ func _process(delta):
 	chaosNode.material.set_shader_parameter("radius", radiusAdd * clamp(chaosFadeMult, 0.0, 1.0))
 	
 	# And then set audio RTPC?
-	Wwise.set_rtpc_value("Panic", audioPanic * chaosFadeMult, self)
-	print(radiusAdd * chaosFadeMult)
+	var audioPanic = clamp((maxChaosAudioDistance / distanceToPlayer) - 0.1, 0, 3)
+	var audioFadeMult = clamp(chaosFadeCounterDown / chaosFadeStartValue, 0, 1)
+
+	Wwise.set_rtpc_value("Panic", audioPanic * audioFadeMult, self)
+	print(audioPanic * audioFadeMult)
 	
 	#early return if the watcher is paused, aka off-screen
 	if (paused):

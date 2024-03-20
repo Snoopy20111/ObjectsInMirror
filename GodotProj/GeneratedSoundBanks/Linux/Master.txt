@@ -32,6 +32,9 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	3130232582	Panic			\Default Work Unit\Panic	
 	3266676374	TireScreech			\Default Work Unit\TireScreech	
 
+Effect plug-ins	ID	Name	Type				Notes
+	979656045	Guitar Distortion (Custom)	Wwise Guitar Distortion			
+
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	50179781	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_2D\Thunder_Loop\Silence\Silence	
 

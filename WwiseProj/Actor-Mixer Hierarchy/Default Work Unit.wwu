@@ -9,7 +9,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+							<ObjectRef Name="UI" ID="{4298DD2C-13D2-48B9-9D45-1C558A3652D9}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -140,7 +140,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+							<ObjectRef Name="Player" ID="{516DF311-BFEC-4AB9-BFB8-70C11A792487}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1337,7 +1337,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+							<ObjectRef Name="AMB" ID="{6E820EB6-0DDA-4A9E-9F95-4B86CF298C15}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1943,7 +1943,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+							<ObjectRef Name="Train" ID="{AE13D591-93E7-485A-8F2D-BF834E7093ED}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -2265,7 +2265,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+							<ObjectRef Name="Entities" ID="{06ECF9E3-6FD0-4CD8-B79E-82A78BB47BE2}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -2273,7 +2273,20 @@
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2283,7 +2296,10 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+									<ObjectRef Name="Entities_Panic" ID="{62105DCB-9C23-4107-97F2-F23A2445B3B4}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Panic_Verb" ID="{F4163BD7-87F6-4186-97F9-C6FCF1DCB635}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2296,6 +2312,147 @@
 								</AudioFileSource>
 							</ChildrenList>
 							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{3165813D-45EF-4AA0-82F3-9EC60A641578}" ShortID="890625619">
+												<ReferenceList>
+													<Reference Name="Effect">
+														<Custom>
+															<Effect Name="Guitar Distortion (Custom)" ID="{BFDD69A9-533B-471B-83A4-984780D8F3B9}" ShortID="979656045" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+																<PropertyList>
+																	<Property Name="DistortionDrive" Type="Real32" Value="0"/>
+																	<Property Name="DistortionType" Type="int32" Value="1"/>
+																</PropertyList>
+																<ObjectLists>
+																	<ObjectList Name="RTPC">
+																		<Reference>
+																			<Local>
+																				<RTPC Name="" ID="{015BED08-B0AF-4BF6-8C46-C469B67F38AD}" ShortID="367830490">
+																					<PropertyList>
+																						<Property Name="PropertyName" Type="string" Value="DistortionDrive"/>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="ControlInput">
+																							<ObjectRef Name="Panic" ID="{0361B67D-E6DC-4CF1-B236-21BB4BA14CC2}" WorkUnitID="{33FFF99D-7C5E-4947-9C15-5ED268E1107A}"/>
+																						</Reference>
+																						<Reference Name="Curve">
+																							<Custom>
+																								<Curve Name="" ID="{F55D9B2D-7BEF-4573-A369-0464E0ABE312}">
+																									<PropertyList>
+																										<Property Name="Flags" Type="int32" Value="1"/>
+																									</PropertyList>
+																									<PointList>
+																										<Point>
+																											<XPos>0</XPos>
+																											<YPos>0</YPos>
+																											<Flags>5</Flags>
+																											<SegmentShape>Log1</SegmentShape>
+																										</Point>
+																										<Point>
+																											<XPos>1</XPos>
+																											<YPos>7.5</YPos>
+																											<Flags>0</Flags>
+																											<SegmentShape>Exp1</SegmentShape>
+																										</Point>
+																										<Point>
+																											<XPos>3</XPos>
+																											<YPos>30</YPos>
+																											<Flags>37</Flags>
+																										</Point>
+																									</PointList>
+																								</Curve>
+																							</Custom>
+																						</Reference>
+																					</ReferenceList>
+																				</RTPC>
+																			</Local>
+																		</Reference>
+																		<Reference>
+																			<Local>
+																				<RTPC Name="" ID="{AA0E468B-DFA1-4DD6-B887-7A5A324E5783}" ShortID="22630052">
+																					<PropertyList>
+																						<Property Name="PropertyName" Type="string" Value="Rectification"/>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="ControlInput">
+																							<ObjectRef Name="Panic" ID="{0361B67D-E6DC-4CF1-B236-21BB4BA14CC2}" WorkUnitID="{33FFF99D-7C5E-4947-9C15-5ED268E1107A}"/>
+																						</Reference>
+																						<Reference Name="Curve">
+																							<Custom>
+																								<Curve Name="" ID="{73CE3224-DDA5-41AB-B5AF-9D8FEBDF7B27}">
+																									<PropertyList>
+																										<Property Name="Flags" Type="int32" Value="1"/>
+																									</PropertyList>
+																									<PointList>
+																										<Point>
+																											<XPos>0</XPos>
+																											<YPos>0</YPos>
+																											<Flags>5</Flags>
+																										</Point>
+																										<Point>
+																											<XPos>3</XPos>
+																											<YPos>8.85312</YPos>
+																											<Flags>37</Flags>
+																										</Point>
+																									</PointList>
+																								</Curve>
+																							</Custom>
+																						</Reference>
+																					</ReferenceList>
+																				</RTPC>
+																			</Local>
+																		</Reference>
+																		<Reference>
+																			<Local>
+																				<RTPC Name="" ID="{D58EB710-7929-46CE-A626-68F601464C8D}" ShortID="61643350">
+																					<PropertyList>
+																						<Property Name="PropertyName" Type="string" Value="OutputLevel"/>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="ControlInput">
+																							<ObjectRef Name="Panic" ID="{0361B67D-E6DC-4CF1-B236-21BB4BA14CC2}" WorkUnitID="{33FFF99D-7C5E-4947-9C15-5ED268E1107A}"/>
+																						</Reference>
+																						<Reference Name="Curve">
+																							<Custom>
+																								<Curve Name="" ID="{6D21DDE2-F4DF-4B93-AD0B-B7E6B563153C}">
+																									<PropertyList>
+																										<Property Name="Flags" Type="int32" Value="3"/>
+																									</PropertyList>
+																									<PointList>
+																										<Point>
+																											<XPos>0</XPos>
+																											<YPos>-24</YPos>
+																											<Flags>5</Flags>
+																										</Point>
+																										<Point>
+																											<XPos>1</XPos>
+																											<YPos>-8</YPos>
+																											<Flags>0</Flags>
+																										</Point>
+																										<Point>
+																											<XPos>3</XPos>
+																											<YPos>-2</YPos>
+																											<Flags>37</Flags>
+																										</Point>
+																									</PointList>
+																								</Curve>
+																							</Custom>
+																						</Reference>
+																					</ReferenceList>
+																				</RTPC>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</Effect>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
 								<ObjectList Name="RTPC">
 									<Reference>
 										<Local>
@@ -2318,13 +2475,54 @@
 																		<XPos>0</XPos>
 																		<YPos>-200</YPos>
 																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>0.1</XPos>
+																		<YPos>-40</YPos>
+																		<Flags>0</Flags>
 																		<SegmentShape>SCurve</SegmentShape>
 																	</Point>
 																	<Point>
 																		<XPos>1</XPos>
-																		<YPos>-0</YPos>
+																		<YPos>0</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>SCurve</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>3</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{97F8D98A-FE35-4858-9613-6CC2A32B4DD2}" ShortID="257904663">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="UserAuxSendVolume0"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="Panic" ID="{0361B67D-E6DC-4CF1-B236-21BB4BA14CC2}" WorkUnitID="{33FFF99D-7C5E-4947-9C15-5ED268E1107A}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{370D995F-CB8C-46DE-918B-1492ECA8DBCC}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>25</YPos>
+																		<Flags>5</Flags>
+																		<SegmentShape>Log3</SegmentShape>
 																	</Point>
 																	<Point>
 																		<XPos>3</XPos>

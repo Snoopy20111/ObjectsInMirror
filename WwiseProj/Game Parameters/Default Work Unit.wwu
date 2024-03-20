@@ -42,6 +42,13 @@
 						<Property Name="Max" Type="Real64" Value="5000"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="Panic_Verb_Volume" ID="{987BDD4D-D3AD-433A-9083-74A163F66948}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="-48"/>
+						<Property Name="Max" Type="Real64" Value="0"/>
+						<Property Name="Min" Type="Real64" Value="-48"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>
