@@ -53,7 +53,7 @@ func _process(delta):
 	var audioFadeMult = clamp(chaosFadeCounterDown / chaosFadeStartValue, 0, 1)
 
 	Wwise.set_rtpc_value("Panic", audioPanic * audioFadeMult, self)
-	print(audioPanic * audioFadeMult)
+	#print(audioPanic * audioFadeMult)
 	
 	#early return if the watcher is paused, aka off-screen
 	if (paused):

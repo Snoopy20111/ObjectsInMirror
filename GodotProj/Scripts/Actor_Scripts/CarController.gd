@@ -29,6 +29,7 @@ var _accelerationInput:float = 0
 var _steeringInput:float = 0
 var _velocityVsUp = 0
 var _lateralVelocity:float = 0
+var _slantVelocityX:float = 0
 var _isBraking:bool = false
 var canBeDamaged:bool = true
 var _lastLinearVelocity:Vector2 = Vector2(0, 0)
@@ -81,6 +82,11 @@ func _process(delta):
 		skidParticles_L.emitting = false
 		skidParticles_R.emitting = false
 		Wwise.set_rtpc_value("TireScreech", 0.0, self)
+	
+	# Grab the current lateral Linear Velocity, so we don't have weirdness
+	# in-between drawn and physics frames
+	_slantVelocityX = lerp(_slantVelocityX, clamp(_lastLinearVelocity.x * 0.00005, -0.2, 0.2), 0.015)
+	GameManager.setFullscreenShaderParam(Enums.CANVAS_EFFECT.RAIN, "slant", _slantVelocityX)
 	
 	var shakeAmount = screenShakeStrength * screenShakeFalloff.sample(
 			lerp(1.0, 0.0, _screenShakeCounter / screenShakeLength))
