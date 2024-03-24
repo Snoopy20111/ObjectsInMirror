@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{5DBAC051-1D71-9582-9017-3222C73CF513}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A6D95E0F-47B7-95F3-FA42-25223DF1E6F4}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -60,6 +60,7 @@
 				<GameParameter Id="1642941132" Name="ImpactForce"/>
 				<GameParameter Id="2995819693" Name="Throttle"/>
 				<GameParameter Id="3130232582" Name="Panic"/>
+				<GameParameter Id="3242222673" Name="Train_Distance"/>
 				<GameParameter Id="3266676374" Name="TireScreech"/>
 			</GameParameters>
 			<StateGroups>
@@ -73,6 +74,15 @@
 					</States>
 				</StateGroup>
 			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="3242222673" Name="Train_Distance">
+					<GameParameterRef Id="3242222673"/>
+					<Switches>
+						<Switch Id="1451272583" Name="Close"/>
+						<Switch Id="2142610728" Name="Distant"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 			<AcousticTextures>
 				<AcousticTexture Id="504532776" Name="Brick">
 					<Properties>
@@ -202,10 +212,14 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{58CAA146-E66A-453E-E6FA-69434676E7D1}">
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{94F024BD-CE80-44BA-98C1-BAFDEDE7C87C}">
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<Media>
+				<File Id="11502870" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Horn_Close_01.wav</ShortName>
+					<CachePath>SFX/Train_Horn_Close_01_125ADEA8.wem</CachePath>
+				</File>
 				<File Id="16363200" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Train_Passby_Rumble_02.wav</ShortName>
 					<CachePath>SFX/Train_Passby_Rumble_02_125ADEA8.wem</CachePath>
@@ -246,9 +260,17 @@
 					<ShortName>Train_Passby_Main_03.wav</ShortName>
 					<CachePath>SFX/Train_Passby_Main_03_125ADEA8.wem</CachePath>
 				</File>
+				<File Id="216089548" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Horn_Close_03.wav</ShortName>
+					<CachePath>SFX/Train_Horn_Close_03_125ADEA8.wem</CachePath>
+				</File>
 				<File Id="229646852" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tire_Roll_Gravel_01.wav</ShortName>
 					<CachePath>SFX/Tire_Roll_Gravel_01_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="256611343" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Horn_Distant_01.wav</ShortName>
+					<CachePath>SFX/Train_Horn_Distant_01_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="258523320" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cooper06_I4_Med_Engine.wav</ShortName>
@@ -281,6 +303,10 @@
 				<File Id="501711981" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Train_Passby_Rumble_01.wav</ShortName>
 					<CachePath>SFX/Train_Passby_Rumble_01_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="504033567" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Horn_Close_02.wav</ShortName>
+					<CachePath>SFX/Train_Horn_Close_02_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="522444586" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Car_Impact_Tap_02.wav</ShortName>
@@ -337,6 +363,10 @@
 				<File Id="740005813" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Car_Impact_Tap_04.wav</ShortName>
 					<CachePath>SFX/Car_Impact_Tap_04_125ADEA8.wem</CachePath>
+				</File>
+				<File Id="757217004" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_Horn_Distant_02.wav</ShortName>
+					<CachePath>SFX/Train_Horn_Distant_02_125ADEA8.wem</CachePath>
 				</File>
 				<File Id="772475462" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Car_Impact_Hurt_06.wav</ShortName>
@@ -467,6 +497,36 @@
 					</AuxBusRefs>
 				</Event>
 				<Event Id="2623160858" Name="ACTR_Entity_Panic_Stop"/>
+				<Event Id="1536965356" Name="ACTR_Train_Horn">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3242222673" Id="2142610728" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="256611343"/>
+								<MediaRef Id="757217004"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3242222673" Id="1451272583"/>
+							<MediaRefs>
+								<MediaRef Id="11502870"/>
+								<MediaRef Id="216089548"/>
+								<MediaRef Id="504033567"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="3823428949" Name="ACTR_Train_Play">
+					<MediaRefs>
+						<MediaRef Id="16363200"/>
+						<MediaRef Id="201237961"/>
+						<MediaRef Id="295983022"/>
+						<MediaRef Id="501711981"/>
+						<MediaRef Id="531850769"/>
+						<MediaRef Id="660413476"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1990425139" Name="ACTR_Train_Stop"/>
 				<Event Id="1751074328" Name="AMB_Cine_Intro_01"/>
 				<Event Id="1751074331" Name="AMB_Cine_Intro_02"/>
 				<Event Id="2552542987" Name="AMB_Menu">
@@ -496,17 +556,6 @@
 						<MediaRef Id="364672542"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="113163278" Name="Train_Play">
-					<MediaRefs>
-						<MediaRef Id="16363200"/>
-						<MediaRef Id="201237961"/>
-						<MediaRef Id="295983022"/>
-						<MediaRef Id="501711981"/>
-						<MediaRef Id="531850769"/>
-						<MediaRef Id="660413476"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1114702576" Name="Train_Stop"/>
 				<Event Id="1599283196" Name="UI_LogoParade">
 					<MediaRefs>
 						<MediaRef Id="909693388"/>
@@ -535,9 +584,19 @@
 				<GameParameter Id="796049864" Name="RPM"/>
 				<GameParameter Id="1642941132" Name="ImpactForce"/>
 				<GameParameter Id="3130232582" Name="Panic"/>
+				<GameParameter Id="3242222673" Name="Train_Distance"/>
 				<GameParameter Id="3266676374" Name="TireScreech"/>
 			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="3242222673" Name="Train_Distance">
+					<GameParameterRef Id="3242222673"/>
+					<Switches>
+						<Switch Id="1451272583" Name="Close"/>
+						<Switch Id="2142610728" Name="Distant"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C29D5D7A-2AF7-9CE8-075A-CFA031C7C200}</FileHash>
+	<FileHash>{D9CA1618-5396-847B-7B72-5510532CAD91}</FileHash>
 </SoundBanksInfo>

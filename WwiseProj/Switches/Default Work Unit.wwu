@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{D7664FDC-27F4-4D8B-922F-1FB4C12DC1B1}" SchemaVersion="119">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{D7664FDC-27F4-4D8B-922F-1FB4C12DC1B1}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{D7664FDC-27F4-4D8B-922F-1FB4C12DC1B1}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Train_Distance" ID="{1974CA33-3CE8-42BF-B80A-81C02B0CBCC5}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Distant" ID="{92A08787-DD2A-4AC6-A2A9-36B71DB4761C}"/>
+						<Switch Name="Close" ID="{C14E7BFE-4C6D-4096-8DA0-63FF76726ADC}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="Train_Distance" ID="{CA3814DB-045B-4966-A043-985325BFC2CA}"/>
+						<Curve Name="" ID="{A550AEC9-3792-44F8-8938-E441C75E1117}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>2</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>3500</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>50000</XPos>
+									<YPos>0</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

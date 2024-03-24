@@ -16,12 +16,20 @@
 							<Value>-43.6929212362911</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="Train_Distance" ID="{CA3814DB-045B-4966-A043-985325BFC2CA}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="Panic" ID="{0361B67D-E6DC-4CF1-B236-21BB4BA14CC2}"/>
 							<Value>2.35</Value>
 						</RTPCValue>
 					</RTPCValueList>
-					<CurrentStateList ShowAll="true"/>
-					<CurrentSwitchList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="None" ID="{ED110E82-9AA7-4FE6-9399-3ABC7B739FF0}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Close" ID="{C14E7BFE-4C6D-4096-8DA0-63FF76726ADC}"/>
+					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>

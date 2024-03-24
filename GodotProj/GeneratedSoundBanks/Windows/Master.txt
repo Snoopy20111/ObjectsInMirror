@@ -1,15 +1,15 @@
 Event	ID	Name			Wwise Object Path	Notes
-	113163278	Train_Play			\Default Work Unit\SFX\Train\Train_Play	
 	245490600	ACTR_Entity_Panic_Play			\Default Work Unit\SFX\Entity\ACTR_Entity_Panic_Play	
 	495721106	ACTR_Car_Engine_Play			\Default Work Unit\SFX\Car\ACTR_Car_Engine_Play	
 	503177270	UI_Nav_Hover			\Default Work Unit\UI\UI_Nav_Hover	
 	511688286	ACTR_Car_Impact_Death			\Default Work Unit\SFX\Car\ACTR_Car_Impact_Death	
 	579292521	ACTR_Car_Tires_Play			\Default Work Unit\SFX\Car\ACTR_Car_Tires_Play	
-	1114702576	Train_Stop			\Default Work Unit\SFX\Train\Train_Stop	
 	1225797752	UI_Nav_Accept			\Default Work Unit\UI\UI_Nav_Accept	
+	1536965356	ACTR_Train_Horn			\Default Work Unit\SFX\Train\ACTR_Train_Horn	
 	1599283196	UI_LogoParade			\Default Work Unit\UI\UI_LogoParade	
 	1751074328	AMB_Cine_Intro_01			\Default Work Unit\AMB\AMB_Cine_Intro_01	
 	1751074331	AMB_Cine_Intro_02			\Default Work Unit\AMB\AMB_Cine_Intro_02	
+	1990425139	ACTR_Train_Stop			\Default Work Unit\SFX\Train\ACTR_Train_Stop	
 	2101812367	ACTR_Car_Tires_Stop			\Default Work Unit\SFX\Car\ACTR_Car_Tires_Stop	
 	2207278604	ACTR_Car_Engine_Stop			\Default Work Unit\SFX\Car\ACTR_Car_Engine_Stop	
 	2286104131	ACTR_Car_Impact_Hurt			\Default Work Unit\SFX\Car\ACTR_Car_Impact_Hurt	
@@ -24,12 +24,21 @@ Event	ID	Name			Wwise Object Path	Notes
 	3149643052	MUS_Menu			\Default Work Unit\MUS\MUS_Menu	
 	3187507146	Play_Test			\Default Work Unit\Play_Test	
 	3647900047	ACTR_Car_Impact_Tap			\Default Work Unit\SFX\Car\ACTR_Car_Impact_Tap	
+	3823428949	ACTR_Train_Play			\Default Work Unit\SFX\Train\ACTR_Train_Play	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	3242222673	Train_Distance			\Default Work Unit\Train_Distance	
+
+Switch	ID	Name	Switch Group			Notes
+	1451272583	Close	Train_Distance			
+	2142610728	Distant	Train_Distance			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	640949982	Speed			\Default Work Unit\Speed	
 	796049864	RPM			\Default Work Unit\RPM	
 	1642941132	ImpactForce			\Default Work Unit\ImpactForce	
 	3130232582	Panic			\Default Work Unit\Panic	
+	3242222673	Train_Distance			\Default Work Unit\Train_Distance	
 	3266676374	TireScreech			\Default Work Unit\TireScreech	
 
 Effect plug-ins	ID	Name	Type				Notes
@@ -39,6 +48,7 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	50179781	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_2D\Thunder_Loop\Silence\Silence	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	11502870	Train_Horn_Close_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Train_Horn_Close_01_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Horn\Train_Horn_Close\Train_Horn_Close_01		18079
 	16363200	Train_Passby_Rumble_02	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Train_Passby_Rumble_02_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Passby\Train_Passby_Rumble\Train_Passby_Rumble_02		130883
 	30184832	Ambience_Forest_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Ambience_Forest_01_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_2D\Ambience_Forest_01		1110018
 	33980419	Ambience_Thunder_Distant_03	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Ambience_Thunder_Distant_03_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_2D\Thunder_Loop\Thunder_Distant\Ambience_Thunder_Distant_03		98264
@@ -49,7 +59,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	123104764	Entities_Panic	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Entities_Panic_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\Entities\Entities_Panic		179784
 	156265161	Tire_Roll_Gravel_03	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Tire_Roll_Gravel_03_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Tires\Tire_Roll_Gravel\Tire_Roll_Gravel_03		101981
 	201237961	Train_Passby_Main_03	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Train_Passby_Main_03_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Passby\Train_Passby_Rattle\Train_Passby_Main_03		227597
+	216089548	Train_Horn_Close_03	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Train_Horn_Close_03_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Horn\Train_Horn_Close\Train_Horn_Close_03		21541
 	229646852	Tire_Roll_Gravel_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Tire_Roll_Gravel_01_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Tires\Tire_Roll_Gravel\Tire_Roll_Gravel_01		99424
+	256611343	Train_Horn_Distant_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Train_Horn_Distant_01_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Horn\Train_Horn_Distant\Train_Horn_Distant_01		39578
 	258523320	Cooper06_I4_Med_Engine	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Cooper06_I4_Med_Engine_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Engine\Car_Med\Cooper06_I4_Med_Engine		51410
 	275073641	Tire_Skid	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Tire_Skid_Asphalt_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Tires\Tire_Skid		14844
 	295983022	Train_Passby_Main_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Train_Passby_Main_01_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Passby\Train_Passby_Rattle\Train_Passby_Main_01		235919
@@ -58,6 +70,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	456020931	Car_Impact_Tap_03	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Car_Impact_Tap_03_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Impact_Tap\Car_Impact_Tap_03		6574
 	476613896	Cooper06_I4_High_Exhaust_Short	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Cooper06_I4_High_Exhaust_Short_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Engine\Car_High\Cooper06_I4_High_Exhaust_Short		43841
 	501711981	Train_Passby_Rumble_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Train_Passby_Rumble_01_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Passby\Train_Passby_Rumble\Train_Passby_Rumble_01		134405
+	504033567	Train_Horn_Close_02	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Train_Horn_Close_02_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Horn\Train_Horn_Close\Train_Horn_Close_02		21758
 	522444586	Car_Impact_Tap_02	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Car_Impact_Tap_02_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Impact_Tap\Car_Impact_Tap_02		5086
 	524341691	Cooper06_I4_Idle_Exhaust	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Cooper06_I4_Idle_Exhaust_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Engine\Car_Idle\Cooper06_I4_Idle_Exhaust		90109
 	531850769	Train_Passby_Rumble_03	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Train_Passby_Rumble_03_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Passby\Train_Passby_Rumble\Train_Passby_Rumble_03		131678
@@ -72,6 +85,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	714976940	Ambience_Thunder_Distant_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Ambience_Thunder_Distant_01_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_2D\Thunder_Loop\Thunder_Distant\Ambience_Thunder_Distant_01		147222
 	716197573	Car_Impact_Hurt_05	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Car_Impact_Hurt_05_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Impact_Hurt\Car_Impact_Hurt_05		62951
 	740005813	Car_Impact_Tap_04	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Car_Impact_Tap_04_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Impact_Tap\Car_Impact_Tap_04		7439
+	757217004	Train_Horn_Distant_02	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Train_Horn_Distant_02_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Horn\Train_Horn_Distant\Train_Horn_Distant_02		16954
 	772475462	Car_Impact_Hurt_06	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Car_Impact_Hurt_06_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Impact_Hurt\Car_Impact_Hurt_06		49848
 	818895528	Ambience_Rain_Steady_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Ambience_Rain_Steady_01_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_2D\Rain\Ambience_Rain_Steady_01		678472
 	828033977	Car_Impact_Death_02	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Windows\SFX\Car_Impact_Death_02_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Impact_Death\Car_Impact_Death_02		65014

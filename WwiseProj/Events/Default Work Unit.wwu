@@ -246,9 +246,12 @@
 						</Folder>
 						<Folder Name="Train" ID="{2635C737-F57C-429D-A3C2-710D47970B74}" ShortID="1045490140">
 							<ChildrenList>
-								<Event Name="Train_Play" ID="{1ACDE4CF-1200-4484-9E66-A699C7B6B8B6}">
+								<Event Name="ACTR_Train_Play" ID="{1ACDE4CF-1200-4484-9E66-A699C7B6B8B6}">
 									<ChildrenList>
 										<Action Name="" ID="{139253ED-85D1-4AD6-A31E-84101B55063E}" ShortID="734067904">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Train_Passby" ID="{94BC9924-ADFF-4AA4-B8D6-9C7B16D3832A}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
@@ -257,7 +260,31 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Train_Stop" ID="{A7749941-4DB5-4778-ADA0-86C4EB5B2A4C}"/>
+								<Event Name="ACTR_Train_Stop" ID="{A7749941-4DB5-4778-ADA0-86C4EB5B2A4C}">
+									<ChildrenList>
+										<Action Name="" ID="{5DB754D4-146F-42EA-BD4A-272C00E745BD}" ShortID="564108001">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Train_Passby" ID="{94BC9924-ADFF-4AA4-B8D6-9C7B16D3832A}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="ACTR_Train_Horn" ID="{AA07FD06-188E-4822-ADA5-F7CF5897E621}">
+									<ChildrenList>
+										<Action Name="" ID="{5EABA87B-5F48-4E65-8A0F-8C478233D1C1}" ShortID="415838391">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Train_Horn" ID="{86DA9BBE-4B09-41F9-8821-E11B0DCD42C9}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

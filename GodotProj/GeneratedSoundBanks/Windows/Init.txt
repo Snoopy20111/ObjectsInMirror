@@ -1,3 +1,10 @@
+Switch Group	ID	Name			Wwise Object Path	Notes
+	3242222673	Train_Distance			\Default Work Unit\Train_Distance	
+
+Switch	ID	Name	Switch Group			Notes
+	1451272583	Close	Train_Distance			
+	2142610728	Distant	Train_Distance			
+
 State Group	ID	Name			Wwise Object Path	Notes
 	3036050140	IsAlive			\Default Work Unit\IsAlive	
 

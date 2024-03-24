@@ -49,6 +49,13 @@
 						<Property Name="Min" Type="Real64" Value="-48"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="Train_Distance" ID="{CA3814DB-045B-4966-A043-985325BFC2CA}">
+					<PropertyList>
+						<Property Name="BindToBuiltInParam" Type="int16" Value="1"/>
+						<Property Name="InitialValue" Type="Real64" Value="22000"/>
+						<Property Name="Max" Type="Real64" Value="50000"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>
