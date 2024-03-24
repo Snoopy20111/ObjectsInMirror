@@ -59,7 +59,7 @@ func _ready():
 	_grabFullscreenShaderDefaults()
 	checkTransitionShared()
 	
-func checkTransitionShared():
+func checkTransitionShared() -> void:
 	if (SharedEasing == true):
 		TrimmedLoadOptions.erase("ease_leave")
 		TrimmedLoadOptions.erase("ease_enter")
@@ -73,15 +73,15 @@ func checkTransitionShared():
 		TrimmedLoadOptions.erase("animation_name")
 
 ### Game Handling functions ###
-func levelStart(levelID: int):
+func levelStart(levelID: int) -> void:
 	playerCurrentLevel = levelID
 
-func playerDied():
+func playerDied() -> void:
 	timerToRespawn.start()
 	#Also set player health back to max when they respawn, to reduce frustration
 	playerHealthAtLevelStart = playerMaxHealth
 
-func _on_timer_to_respawn_timeout():
+func _on_timer_to_respawn_timeout() -> void:
 	# Disgusting workaround to Scene Manager bug with reloading scenes
 	# Game just doesn't know what scene we've currently loaded, so we
 	# Just gotta reload the old fashioned way.
@@ -124,7 +124,6 @@ func getFullscreenShaderParam(effect: int, param_name: String):
 	# Don't know of any way to error-check names and types of shader params,
 	# So we just have to hope Godot will throw meaningful errors
 	return fullscreen_effects[effect].get_material().get_shader_parameter(param_name)
-
 
 func resetFullScreenShaders() -> void:
 	for i in fullscreen_effects.size():
