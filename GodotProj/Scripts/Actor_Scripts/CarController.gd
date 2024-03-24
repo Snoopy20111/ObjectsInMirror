@@ -50,6 +50,13 @@ var _screenShakeCounter: float = 0.0
 
 func _ready():
 	connect("body_entered", Collided)
+	
+	# If we're on Windows, set the car to be the distance probe
+	# Only supported on Windows because I built the library myself
+	# and I can't build for Linux et. al.
+	if(OS.has_feature("Windows")):
+		Wwise.set_distance_probe(GameManager.get_Listener(), self)
+	
 	if (lightsOn == false):
 		headlights.enabled = false
 	if (controlMode != Enums.CONTROL_TYPE.JUST_PROP):
@@ -249,6 +256,8 @@ func ExitLevel():
 func _exit_tree():
 	Wwise.post_event("ACTR_Car_Engine_Stop", self)
 	Wwise.post_event("ACTR_Car_Tires_Stop", self)
+	if(OS.has_feature("Windows")):
+		Wwise.reset_distance_probe(GameManager.get_Listener())
 	Wwise.unregister_game_obj(self)
 
 func ScriptControl_GoForward():

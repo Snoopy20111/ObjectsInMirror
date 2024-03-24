@@ -3,6 +3,7 @@ extends Node
 @export var fullscreen_effects: Array
 
 @onready var timerToRespawn: Timer = $Timers/Timer_ToRespawn
+@onready var akListener: AkListener2D = $Camera2D/AkListener2D
 
 @export_category("Transitions")
 @export var SharedEasing: bool = true
@@ -172,6 +173,9 @@ func _setFullscreenShadersToDefaults():
 	setFullscreenShaderParam(Enums.CANVAS_EFFECT.SCREEN_SHAKE, "factor_a", _screenShakeFactorA)
 	setFullscreenShaderParam(Enums.CANVAS_EFFECT.SCREEN_SHAKE, "factor_b", _screenShakeFactorB)
 	setFullscreenShaderParam(Enums.CANVAS_EFFECT.SCREEN_SHAKE, "magnitude", _screenShakeMagnitude)
+
+func get_Listener() -> AkListener2D:
+	return akListener
 
 
 ### Utilities ###

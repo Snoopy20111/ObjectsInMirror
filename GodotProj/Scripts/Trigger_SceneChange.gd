@@ -51,3 +51,4 @@ func onAreaEntered(area: Area2D):
 		SceneManager.change_scene(sceneToLoad, TrimmedLoadOptions)
 		var playerCar := area.get_parent() as CarController
 		playerCar.ExitLevel()
+		playerCar.ScriptControl_GoForward()
