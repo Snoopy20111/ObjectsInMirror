@@ -26,7 +26,7 @@ func _ready():
 	#Seeds RNG, may be useful later
 	randomize()
 	
-	if (LogoParade):
+	if (OS.has_feature("release") or LogoParade):
 		SceneManager.change_scene("res://Scenes/LogoParade.tscn")
 	elif ((LoadDebugLevel) and (DebugLevelPath != null)):
 		SceneManager.change_scene(DebugLevelPath)
