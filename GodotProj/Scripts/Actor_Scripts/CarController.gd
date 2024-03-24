@@ -46,6 +46,8 @@ var _screenShakeCounter: float = 0.0
 @onready var damageAnimSprite:AnimatedSprite2D = $OnDeath/AnimatedSprite2D
 @onready var damageAnimSmoke:GPUParticles2D = $OnDeath/GPUParticles2D
 @onready var headlights:PointLight2D = $Headlights_Full
+@onready var collider:CollisionPolygon2D = $CollisionPolygon2D
+@onready var detectionArea:Area2D = $Area2D
 
 
 func _ready():
@@ -251,7 +253,11 @@ func _on_timer_invulnurable_timeout():
 
 func ExitLevel():
 	GameManager.playerHealthAtLevelStart = _health
-	controlMode = Enums.CONTROL_TYPE.NONE
+	controlMode = Enums.CONTROL_TYPE.SCRIPT
+	collider.set_deferred("disabled", true)
+	detectionArea.set_deferred("monitoring", false)
+	detectionArea.set_deferred("monitorable", false)
+	
 
 func _exit_tree():
 	Wwise.post_event("ACTR_Car_Engine_Stop", self)
