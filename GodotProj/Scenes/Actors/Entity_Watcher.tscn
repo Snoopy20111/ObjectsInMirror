@@ -31,7 +31,7 @@ maxChaosDistance = 800.0
 [node name="VisibleOn" type="VisibleOnScreenNotifier2D" parent="."]
 process_mode = 1
 
-[node name="AnimBeginTimer" type="Timer" parent="."]
+[node name="Timer_AnimBegin" type="Timer" parent="."]
 one_shot = true
 
 [node name="Flashlight" type="PointLight2D" parent="."]
@@ -74,4 +74,4 @@ color = Color(0, 0, 0, 0)
 texture = ExtResource("1_418g6")
 
 [connection signal="screen_entered" from="VisibleOn" to="." method="_on_visible_on_screen_entered"]
-[connection signal="timeout" from="AnimBeginTimer" to="." method="_on_anim_begin_timer_timeout"]
+[connection signal="timeout" from="Timer_AnimBegin" to="." method="_on_anim_begin_timer_timeout"]

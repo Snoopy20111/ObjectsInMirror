@@ -13,8 +13,8 @@ const vaguePlayerLocSpreadCurve = preload("res://Customs/Curves/Chaser/Chaser_Va
 @export var chargeDistanceThreshold: float = 600.0
 @export var maxChaosDistance: float = 600.0
 @export var stalkCloseEnoughDist: float = 150.0
-
 @export var chaosFadeCounterDown: float = 3
+@export var maxChaosAudioDistance: float = 1500
 
 @onready var animBeginTimer: Timer = $Timer_AnimBegin
 @onready var lostEmTimer: Timer = $Timer_LostEm
@@ -47,6 +47,9 @@ var fadeCounter: float = 0
 func _ready():
 	playerVector = player.position - position
 	_setVaguePlayerLocation()
+	Wwise.register_game_obj(self, "Entity_Watcher_" + str(self))
+	Wwise.post_event("ACTR_Entity_Panic_Play", self)
+	Wwise.set_2d_position(self, transform, 0)
 
 func _physics_process(delta):
 	#early return if the entity is paused
@@ -113,11 +116,19 @@ func _physics_process(delta):
 	#newNode.position = vaguePlayerLocation
 
 func _process(_delta):
+	Wwise.set_2d_position(self, transform, 0)
 	#update the shader values
 	var chaosAdd = chaosWithDistanceCurve.sample(clamp(playerVector.length() / maxChaosDistance, 0, 1)) 
 	var radiusAdd = chaosRadiusWithDistanceCurve.sample(clamp(playerVector.length() / maxChaosDistance, 0, 1)) 
 	chaosNode.material.set_shader_parameter("chaos", (chaosParam + chaosAdd))
 	chaosNode.material.set_shader_parameter("radius", radiusAdd)
+	
+	# And then set audio RTPC?
+	var audioPanic = clamp((maxChaosAudioDistance / playerVector.length()) - 0.1, 0, 3)
+	var audioFadeMult = clamp(chaosFadeCounterDown / chaosFadeStartValue, 0, 1)
+
+	Wwise.set_rtpc_value("Panic", audioPanic * audioFadeMult, self)
+	#print(audioPanic * audioFadeMult)
 
 
 func goTo(target_pos: Vector2, delta: float, speedMult: float = 1.0, turnMult: float = 1.0):
@@ -161,3 +172,7 @@ func remove_entity():
 	collision.queue_free()
 	state = Enums.CHASER_STATE.STOPPED
 	isFadingChaos = true
+
+func _exit_tree():
+	Wwise.post_event("ACTR_Entity_Panic_Stop", self)
+	Wwise.unregister_game_obj(self)

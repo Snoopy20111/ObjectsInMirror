@@ -10,11 +10,11 @@ const watcherChaosRadiusWithDistanceCurve = preload("res://Customs/Curves/Watche
 @export var turningSpeed: float = 12.0
 @export var maxChaosDistance: float = 600
 @export var maxChaosAudioDistance: float = 1500
-@export var chaosFadeCounterDown: float = 3
+@export var chaosFadeCounterDown: float = 3.0
 
 @onready var watcherLight: PointLight2D = $Flashlight
 @onready var watcherIllum: PointLight2D = $PointLight2D
-@onready var animBeginTimer: Timer = $AnimBeginTimer
+@onready var timerAnimBegin: Timer = $Timer_AnimBegin
 @onready var watcherSprite: Sprite2D = $Sprite
 @onready var chaosNode: ColorRect = $Chaos
 @onready var player: CarController = %PlayerCar
@@ -83,13 +83,11 @@ func _process(delta):
 	var new_transform = transform.looking_at(player.global_position)
 	rotation = transform.interpolate_with(new_transform,
 		turningSpeed * delta).get_rotation()
-	
-	
 
 func _on_visible_on_screen_entered():
 	#spring to life
 	paused = false
-	animBeginTimer.start()
+	timerAnimBegin.start()
 
 func _on_anim_begin_timer_timeout():
 	isFadingSelf = true
