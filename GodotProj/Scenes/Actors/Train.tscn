@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://ccukpxau6ven5" path="res://Sprites/Characters/Train/Train_Front_256_Diffuse.png" id="1_yweit"]
 [ext_resource type="Texture2D" uid="uid://dswgb8rtpyliq" path="res://Sprites/Characters/Train/Train_Front_256_Normal.png" id="2_2qvc5"]
 [ext_resource type="Curve2D" uid="uid://bo0vbnjhc157" path="res://Customs/Curves/Train_Emitter_Path.tres" id="2_uokj8"]
+[ext_resource type="Texture2D" uid="uid://fqxfw6mvueq3" path="res://Sprites/Lights/Train_Light.png" id="3_q1x2r"]
 [ext_resource type="Texture2D" uid="uid://cyxe8k5wewq84" path="res://Sprites/Characters/Train/Train_Front_256_Specular.png" id="3_urmja"]
 [ext_resource type="Texture2D" uid="uid://btd2xrqw8njkp" path="res://Sprites/Characters/Train/Train_Car01_BoxWhite_Diffuse.png" id="4_inwl8"]
 [ext_resource type="Texture2D" uid="uid://xyi25lr13sy3" path="res://Sprites/Characters/Train/Train_Car01_BoxWhite_Normal.png" id="5_jtm1f"]
 [ext_resource type="Texture2D" uid="uid://4lm8lg1jefln" path="res://Sprites/Characters/Train/Train_Car01_BoxWhite_Specular.png" id="6_0loc4"]
-[ext_resource type="Texture2D" uid="uid://bmitfj2ebtvpd" path="res://Sprites/Lights/Headlight_Texture_02.png" id="8_y6sn2"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_562qm"]
 diffuse_texture = ExtResource("1_yweit")
@@ -33,7 +33,7 @@ specular_texture = ExtResource("6_0loc4")
 texture_filter = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4orki"]
-size = Vector2(7071, 234.018)
+size = Vector2(7071, 241.009)
 
 [node name="Train" type="PathFollow2D"]
 position = Vector2(8000, 0)
@@ -61,15 +61,13 @@ loop = false
 [node name="Headlights_Full" type="PointLight2D" parent="."]
 z_index = 50
 texture_filter = 2
-position = Vector2(587, 7.00134)
+position = Vector2(569, -4.30981e-05)
 scale = Vector2(9.42022, 5.656)
-energy = 3.16
 shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 1.0
-texture = ExtResource("8_y6sn2")
+texture = ExtResource("3_q1x2r")
 height = 250.0
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 10
@@ -227,7 +225,7 @@ collision_layer = 5
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
-position = Vector2(-2967.5, 8.99237)
+position = Vector2(-2967.5, 5.49692)
 shape = SubResource("RectangleShape2D_4orki")
 metadata/_edit_lock_ = true
 
