@@ -456,8 +456,9 @@ metadata/_edit_lock_ = true
 visible = false
 
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("3_ywue1")]
-position = Vector2(-19635, -11714)
-rotation = -1.5708
+unique_name_in_owner = true
+position = Vector2(-16338, -11795)
+rotation = -4.05964
 metadata/entity_name = "PlayerCar"
 
 [node name="Camera_Target_01" type="Node2D" parent="PlayerCar"]
@@ -480,7 +481,7 @@ metadata/_edit_lock_ = true
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 z_index = 1000
 material = SubResource("CanvasItemMaterial_y7kk1")
-position = Vector2(-19651, -11782)
+position = Vector2(-16478.9, -11686.1)
 script = ExtResource("4_gytpx")
 priority_override = false
 priority = 1
@@ -510,6 +511,7 @@ metadata/_edit_lock_ = true
 z_index = 1220
 position = Vector2(-19991, -23363)
 sceneToLoad = "res://Scenes/Cine_Outro_01_Road.tscn"
+metadata/_edit_lock_ = true
 
 [node name="Trigger_Train_Boss" type="Node2D" parent="Triggers" node_paths=PackedStringArray("trainNode", "playerCar")]
 position = Vector2(-19500, -20500)
@@ -518,11 +520,18 @@ trainNode = NodePath("../../Environment/TrainPath/Train")
 playerCar = NodePath("../../PlayerCar")
 metadata/_edit_lock_ = true
 
+[node name="Trigger_Train_AudioStart" parent="Triggers/Trigger_Train_Boss" instance=ExtResource("7_hl1tv")]
+position = Vector2(2786, 9030)
+rotation = 1.05325
+metadata/_edit_lock_ = true
+
 [node name="Trigger_Train_Start" parent="Triggers/Trigger_Train_Boss" instance=ExtResource("7_hl1tv")]
 position = Vector2(-500, 7180)
+metadata/_edit_lock_ = true
 
 [node name="Trigger_Train_End" parent="Triggers/Trigger_Train_Boss" instance=ExtResource("7_hl1tv")]
 position = Vector2(-500, 694)
+metadata/_edit_lock_ = true
 
 [node name="Environment" type="Node" parent="."]
 
@@ -617,5 +626,6 @@ metadata/_edit_lock_ = true
 
 [node name="Entities" type="Node" parent="."]
 
+[connection signal="playerCrossed" from="Triggers/Trigger_Train_Boss/Trigger_Train_AudioStart" to="Triggers/Trigger_Train_Boss" method="_on_trigger_train_audio_start_player_crossed"]
 [connection signal="playerCrossed" from="Triggers/Trigger_Train_Boss/Trigger_Train_Start" to="Triggers/Trigger_Train_Boss" method="_on_trigger_train_start_player_crossed"]
 [connection signal="playerCrossed" from="Triggers/Trigger_Train_Boss/Trigger_Train_End" to="Triggers/Trigger_Train_Boss" method="_on_trigger_train_end_player_crossed"]

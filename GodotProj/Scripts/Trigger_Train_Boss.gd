@@ -15,6 +15,9 @@ func _physics_process(delta):
 		_speedAvg -= _speedAvg / speedAvgSize
 		_speedAvg += (temp / speedAvgSize)
 
+func _on_trigger_train_audio_start_player_crossed():
+	trainNode.activate_train_sound()
+
 func _on_trigger_train_start_player_crossed():
 	isTracking = true
 	trainNode.activate_train()
