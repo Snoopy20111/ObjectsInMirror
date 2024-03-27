@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0pckhkhenxe2"]
+
+[ext_resource type="Texture2D" uid="uid://b1rbtdnafqa5m" path="res://Sprites/Environment/Train_Crossing/Train_Crossing.png" id="1_g8ns8"]
+[ext_resource type="Texture2D" uid="uid://cmg0yck5lb4q8" path="res://Sprites/Environment/Train_Crossing/Train_Crossing_Normal.png" id="2_e5yu3"]
+[ext_resource type="Texture2D" uid="uid://dybmtpgsr1q" path="res://Sprites/Environment/Train_Crossing/Train_Crossing_Specular.png" id="3_u6vgb"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/train_crossing.gd" id="4_2u147"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_04bgk"]
+diffuse_texture = ExtResource("1_g8ns8")
+normal_texture = ExtResource("2_e5yu3")
+specular_texture = ExtResource("3_u6vgb")
+texture_filter = 1
+
+[sub_resource type="Gradient" id="Gradient_m3og6"]
+offsets = PackedFloat32Array(0, 0.151899, 0.316456, 0.563291, 0.734177, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.748518, 0, 0, 1, 0.56641, 0, 0, 1, 0.304183, 0, 0, 1, 0.14107, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eutmb"]
+gradient = SubResource("Gradient_m3og6")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="TrainCrossing" type="Sprite2D"]
+z_index = 9
+texture = SubResource("CanvasTexture_04bgk")
+script = ExtResource("4_2u147")
+
+[node name="Left" type="PointLight2D" parent="."]
+z_index = -5
+position = Vector2(-23, 31)
+rotation = 1.5708
+scale = Vector2(4, 4)
+enabled = false
+energy = 2.5
+shadow_enabled = true
+shadow_filter = 1
+texture = SubResource("GradientTexture2D_eutmb")
+
+[node name="Right" type="PointLight2D" parent="."]
+z_index = -5
+position = Vector2(23, 31)
+rotation = 1.5708
+scale = Vector2(4, 4)
+enabled = false
+energy = 2.5
+shadow_enabled = true
+shadow_filter = 1
+texture = SubResource("GradientTexture2D_eutmb")

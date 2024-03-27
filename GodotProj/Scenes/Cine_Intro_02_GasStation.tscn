@@ -163,7 +163,6 @@ one_shot = true
 [node name="Lighting" type="Node" parent="."]
 
 [node name="CanvasModulate" parent="Lighting" instance=ExtResource("2_puwxe")]
-visible = false
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lighting"]
 position = Vector2(200, -200)

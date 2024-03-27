@@ -2,6 +2,9 @@ extends Node2D
 
 @export var trainNode: Train
 @export var playerCar: CarController
+@export var crossingSign01: TrainCrossing
+@export var crossingSign02: TrainCrossing
+
 @export var speedAvgSize: int = 20
 
 var isTracking: bool = false
@@ -21,6 +24,8 @@ func _on_trigger_train_audio_start_player_crossed():
 func _on_trigger_train_start_player_crossed():
 	isTracking = true
 	trainNode.activate_train()
+	crossingSign01.isActive = true
+	crossingSign02.isActive = true
 
 func _on_trigger_train_end_player_crossed():
 	# Release the train to keep going past at its average speed so far

@@ -110,7 +110,6 @@ autostart = true
 [node name="Lighting" type="Node" parent="."]
 
 [node name="CanvasModulate" parent="Lighting" instance=ExtResource("2_7ui5h")]
-visible = false
 
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("3_eo2bm")]
 unique_name_in_owner = true
