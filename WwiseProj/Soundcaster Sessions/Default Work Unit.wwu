@@ -12,6 +12,10 @@
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
+							<GameParameterRef Name="Speed" ID="{206F3888-D6FB-4238-B989-B71B43D825CF}"/>
+							<Value>1</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="Panic_Verb_Volume" ID="{987BDD4D-D3AD-433A-9083-74A163F66948}"/>
 							<Value>-43.6929212362911</Value>
 						</RTPCValue>

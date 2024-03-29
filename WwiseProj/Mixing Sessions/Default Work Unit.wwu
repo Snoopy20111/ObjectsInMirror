@@ -6,7 +6,7 @@
 				<MixingSession Name="Entities" ID="{FA1E5660-E31A-4586-AA20-E88EF7775A52}">
 					<ObjectList>
 						<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
-						<ObjectRef Name="Master_Verb" ID="{29F6E769-9B36-4C51-B4B2-3555348BF098}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
+						<ObjectRef Name="VerbMaster" ID="{29F6E769-9B36-4C51-B4B2-3555348BF098}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
 						<ObjectRef Name="Panic_Verb" ID="{F4163BD7-87F6-4186-97F9-C6FCF1DCB635}" WorkUnitID="{B45B8A11-0A56-45BA-8AEE-7A5552D904A1}"/>
 					</ObjectList>
 				</MixingSession>

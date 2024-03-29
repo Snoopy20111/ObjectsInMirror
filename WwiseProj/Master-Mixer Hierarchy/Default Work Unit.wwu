@@ -10,7 +10,7 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AuxBus Name="Master_Verb" ID="{29F6E769-9B36-4C51-B4B2-3555348BF098}">
+						<AuxBus Name="VerbMaster" ID="{29F6E769-9B36-4C51-B4B2-3555348BF098}">
 							<ChildrenList>
 								<AuxBus Name="Panic_Verb" ID="{F4163BD7-87F6-4186-97F9-C6FCF1DCB635}">
 									<PropertyList>
@@ -79,6 +79,23 @@
 															</Reference>
 														</ReferenceList>
 													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AuxBus>
+								<AuxBus Name="Main_Verb" ID="{A526CD09-DAD7-4186-9EE2-7909318430E2}">
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{FB708664-1068-456E-8583-E669348E4AC5}" ShortID="918916538">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+																<ObjectRef Name="Have_U_Ever_Been_Outside" ID="{FE29AE8D-FD86-4652-A95D-68D32F5760EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
 												</Local>
 											</Reference>
 										</ObjectList>

@@ -43,10 +43,12 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
-	2055051794	Panic_Verb			\Default Work Unit\Master Audio Bus\Master_Verb\Panic_Verb	
-	2722806429	Master_Verb			\Default Work Unit\Master Audio Bus\Master_Verb	
+	1807895366	Main_Verb			\Default Work Unit\Master Audio Bus\VerbMaster\Main_Verb	
+	2055051794	Panic_Verb			\Default Work Unit\Master Audio Bus\VerbMaster\Panic_Verb	
+	3938836764	VerbMaster			\Default Work Unit\Master Audio Bus\VerbMaster	
 
 Effect plug-ins	ID	Name	Type				Notes
+	48620415	Have_U_Ever_Been_Outside	Wwise RoomVerb			
 	1013479814	Meter (Custom)	Wwise Meter			
 	3559982155	Hall_Stop_Screaming	Wwise RoomVerb			
 

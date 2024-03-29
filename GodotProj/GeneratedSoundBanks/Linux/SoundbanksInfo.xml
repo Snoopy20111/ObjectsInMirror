@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A6D95E0F-47B7-95F3-FA42-25223DF1E6F4}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{BCE3925F-C42B-9C65-6748-EF88BBF6ABAD}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -17,6 +17,7 @@
 					<Plugin Id="1013479814" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
 				</Custom>
 				<ShareSets>
+					<Plugin Id="48620415" Name="Have_U_Ever_Been_Outside" LibName="Wwise RoomVerb" LibId="7733251"/>
 					<Plugin Id="3559982155" Name="Hall_Stop_Screaming" LibName="Wwise RoomVerb" LibId="7733251"/>
 				</ShareSets>
 				<AudioDevices>
@@ -41,6 +42,16 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 			<AuxBusses>
+				<AuxBus Id="1807895366" Name="Main_Verb">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="48620415"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3938836764" Name="VerbMaster"/>
+					</AuxBusRefs>
+				</AuxBus>
 				<AuxBus Id="2055051794" Name="Panic_Verb">
 					<PluginRefs>
 						<ShareSets>
@@ -48,10 +59,10 @@
 						</ShareSets>
 					</PluginRefs>
 					<AuxBusRefs>
-						<AuxBusRef Id="2722806429" Name="Master_Verb"/>
+						<AuxBusRef Id="3938836764" Name="VerbMaster"/>
 					</AuxBusRefs>
 				</AuxBus>
-				<AuxBus Id="2722806429" Name="Master_Verb"/>
+				<AuxBus Id="3938836764" Name="VerbMaster"/>
 			</AuxBusses>
 			<GameParameters>
 				<GameParameter Id="394958007" Name="Panic_Verb_Volume"/>
@@ -212,7 +223,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{61098BCF-AAD3-5EA0-CB54-0323CC55C448}">
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{9BC4F983-6AF9-5AAE-C84C-370DF94C6855}">
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<Media>
@@ -364,10 +375,6 @@
 					<ShortName>Car_Impact_Tap_04.wav</ShortName>
 					<CachePath>SFX/Car_Impact_Tap_04_125ADEA8.wem</CachePath>
 				</File>
-				<File Id="757217004" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Train_Horn_Distant_02.wav</ShortName>
-					<CachePath>SFX/Train_Horn_Distant_02_125ADEA8.wem</CachePath>
-				</File>
 				<File Id="772475462" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Car_Impact_Hurt_06.wav</ShortName>
 					<CachePath>SFX/Car_Impact_Hurt_06_125ADEA8.wem</CachePath>
@@ -447,6 +454,9 @@
 						<MediaRef Id="985561978"/>
 						<MediaRef Id="1045336617"/>
 					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1807895366" Name="Main_Verb"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="2207278604" Name="ACTR_Car_Engine_Stop"/>
 				<Event Id="511688286" Name="ACTR_Car_Impact_Death">
@@ -455,6 +465,9 @@
 						<MediaRef Id="828033977"/>
 						<MediaRef Id="1004388818"/>
 					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1807895366" Name="Main_Verb"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="2286104131" Name="ACTR_Car_Impact_Hurt">
 					<MediaRefs>
@@ -465,6 +478,9 @@
 						<MediaRef Id="961633248"/>
 						<MediaRef Id="1014587708"/>
 					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1807895366" Name="Main_Verb"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="3647900047" Name="ACTR_Car_Impact_Tap">
 					<MediaRefs>
@@ -474,6 +490,9 @@
 						<MediaRef Id="740005813"/>
 						<MediaRef Id="1040854650"/>
 					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1807895366" Name="Main_Verb"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="579292521" Name="ACTR_Car_Tires_Play">
 					<MediaRefs>
@@ -485,6 +504,9 @@
 						<MediaRef Id="959846768"/>
 						<MediaRef Id="1004547954"/>
 					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1807895366" Name="Main_Verb"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="2101812367" Name="ACTR_Car_Tires_Stop"/>
 				<Event Id="245490600" Name="ACTR_Entity_Panic_Play">
@@ -502,12 +524,14 @@
 				</Event>
 				<Event Id="2623160858" Name="ACTR_Entity_Panic_Stop"/>
 				<Event Id="1536965356" Name="ACTR_Train_Horn">
+					<AuxBusRefs>
+						<AuxBusRef Id="1807895366" Name="Main_Verb"/>
+					</AuxBusRefs>
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="3242222673" Id="2142610728" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="256611343"/>
-								<MediaRef Id="757217004"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -529,12 +553,18 @@
 						<MediaRef Id="531850769"/>
 						<MediaRef Id="660413476"/>
 					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1807895366" Name="Main_Verb"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="1990425139" Name="ACTR_Train_Stop"/>
 				<Event Id="3691794637" Name="ACTR_TrainCrossing_Play">
 					<MediaRefs>
 						<MediaRef Id="789529480"/>
 					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1807895366" Name="Main_Verb"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="514021403" Name="ACTR_TrainCrossing_Stop"/>
 				<Event Id="1751074328" Name="AMB_Cine_Intro_01"/>
@@ -555,6 +585,9 @@
 							<PluginRef Id="50179781"/>
 						</Custom>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1807895366" Name="Main_Verb"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="2294462433" Name="MUS_Cine_Intro_01"/>
 				<Event Id="2294462434" Name="MUS_Cine_Intro_02"/>
@@ -587,6 +620,9 @@
 						<MediaRef Id="30184832"/>
 						<MediaRef Id="364672542"/>
 					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1807895366" Name="Main_Verb"/>
+					</AuxBusRefs>
 				</Event>
 			</Events>
 			<GameParameters>
@@ -608,5 +644,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{85CB10BF-CB9D-BB07-BFA7-FEDF84986A38}</FileHash>
+	<FileHash>{C4A48EF9-D7B3-4ECE-CB30-881E7F2B34F8}</FileHash>
 </SoundBanksInfo>
