@@ -27,7 +27,7 @@ const screenShakeFalloff: Curve = preload("res://Customs/Curves/Car_Damage_Scree
 
 var _accelerationInput:float = 0
 var _steeringInput:float = 0
-var _velocityVsUp = 0
+var _velocityVsUp: float = 0
 var _lateralVelocity:float = 0
 var _slantVelocityX:float = 0
 var _isBraking:bool = false
@@ -51,7 +51,7 @@ var _screenShakeCounter: float = 0.0
 @onready var detectionArea:Area2D = $Area2D
 
 
-func _ready():
+func _ready() -> void:
 	connect("body_entered", Collided)
 	
 	# If we're on Windows, set the car to be the distance probe
@@ -71,7 +71,7 @@ func _ready():
 		Wwise.set_rtpc_value("RPM", scriptRPM, self)
 
 # Called every frame
-func _process(delta):
+func _process(delta: float) -> void:
 	#Wwise.set_2d_position(self, transform, 0)
 	SetInputVector()
 	if (GetTireScreeching()):
@@ -88,7 +88,7 @@ func _process(delta):
 	_slantVelocityX = lerp(_slantVelocityX, clamp(_lastLinearVelocity.x * 0.00005, -0.2, 0.2), 0.015)
 	GameManager.setFullscreenShaderParam(Enums.CANVAS_EFFECT.RAIN, "slant", _slantVelocityX)
 	
-	var shakeAmount = screenShakeStrength * screenShakeFalloff.sample(
+	var shakeAmount: float = screenShakeStrength * screenShakeFalloff.sample(
 			lerp(1.0, 0.0, _screenShakeCounter / screenShakeLength))
 	if (_screenShakeCounter == 0):
 		pass
@@ -101,7 +101,7 @@ func _process(delta):
 			GameManager.setFullscreenShaderParam(Enums.CANVAS_EFFECT.SCREEN_SHAKE,
 				"shake_strength", 0.0)
 
-func _physics_process(_delta):
+func _physics_process(_delta: float) -> void:
 	_lastLinearVelocity = linear_velocity
 	_lastAngularVelocity = angular_velocity
 	var speed: float
@@ -112,13 +112,13 @@ func _physics_process(_delta):
 	Wwise.set_rtpc_value("Speed", speed, self)
 
 # Called when calculating physics (part of _physics_process() )
-func _integrate_forces(state):
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	ApplyEngineForce(state)
 	KillOrthoganalVelocity()
 	ApplySteering(state)
 
 
-func ApplyEngineForce(state:PhysicsDirectBodyState2D) -> void:
+func ApplyEngineForce(state: PhysicsDirectBodyState2D) -> void:
 #region Velocity Limits
 	#Calculate how much "forward" we are going in terms of the direction of our velocity
 	_velocityVsUp = linear_velocity.dot(transform.x)
@@ -143,7 +143,7 @@ func ApplyEngineForce(state:PhysicsDirectBodyState2D) -> void:
 	#apply to car and push forward
 	apply_central_force(engineForceVector)
 	
-	var temp = absf(_accelerationInput) * clampf((linear_velocity.length() / maxSpeed) + 0.1, 0, 1)
+	var temp: float = absf(_accelerationInput) * clampf((linear_velocity.length() / maxSpeed) + 0.1, 0, 1)
 	if (useScriptValues):
 		Wwise.set_rtpc_value("RPM", scriptRPM, self)
 	elif (_accelerationInput >= 0):
@@ -151,7 +151,7 @@ func ApplyEngineForce(state:PhysicsDirectBodyState2D) -> void:
 	else:
 		Wwise.set_rtpc_value("RPM", temp * 0.5, self)
 
-func ApplySteering(_state:PhysicsDirectBodyState2D) -> void:
+func ApplySteering(_state: PhysicsDirectBodyState2D) -> void:
 	#limit car's ability to turn when moving slowly
 	var minSpeedForTurningFactor:float = clampf((linear_velocity.length() / 700), 0, 1)
 	#Update rotation angle based on input, faster but more arcade-y
@@ -182,7 +182,7 @@ func GetLateralVelocity() -> float:
 	#Returns how fast the car is moving sideways
 	return linear_velocity.dot(transform.y)
 
-func GetTireScreeching():
+func GetTireScreeching() -> bool:
 	_lateralVelocity = GetLateralVelocity()
 	_isBraking = false
 	# Check if we're moving forward and the player is hitting the brakes
@@ -204,7 +204,7 @@ func _setTireScreechAudio() -> void:
 		/ (maxSpeed - tireScreechFactor), 0, 1)
 	Wwise.set_rtpc_value("TireScreech", temp, self)
 
-func Collided(_body: Node):
+func Collided(_body: Node) -> void:
 	var rotCollForce: float = angular_velocity - _lastAngularVelocity
 	var linCollForce: float = (linear_velocity - _lastLinearVelocity).length()
 	var collisionForce: float = linCollForce + rotCollForce
@@ -213,7 +213,7 @@ func Collided(_body: Node):
 	if (_body is Entity_Chaser):
 		#var entityRotCollForce: float = angular_velocity - _lastAngularVelocity
 		#var entityLinColl: Vector2 = (linear_velocity - _lastLinearVelocity)
-		var relativePosition = _body.position - position
+		var relativePosition: Vector2 = _body.position - position
 		apply_force(-relativePosition * 1000, relativePosition)
 		print("relativePosition: " + str(relativePosition))
 		_body.remove_entity()
@@ -226,7 +226,7 @@ func Collided(_body: Node):
 		Wwise.set_rtpc_value("ImpactForce", collisionForce, self)
 		Wwise.post_event("ACTR_Car_Impact_Tap", self)
 
-func ApplyDamage():
+func ApplyDamage() -> void:
 	#Start invulnurability timer, reduce health, and shake the screen
 	timerInvulnurable.start()
 	canBeDamaged = false
@@ -241,7 +241,7 @@ func ApplyDamage():
 		damageAnimSmoke.emitting = true
 		Wwise.post_event("ACTR_Car_Impact_Hurt", self)
 
-func Death():
+func Death() -> void:
 	# Stop player control
 	controlMode = Enums.CONTROL_TYPE.NONE
 	#Turn on the fun FX
@@ -253,33 +253,32 @@ func Death():
 	#and stop the engine audio
 	Wwise.post_event("ACTR_Car_Engine_Stop", self)
 
-func _on_timer_invulnurable_timeout():
+func _on_timer_invulnurable_timeout() -> void:
 	canBeDamaged = true
 	damageAnimSmoke.emitting = false
 
-func ExitLevel():
+func ExitLevel() -> void:
 	GameManager.playerHealthAtLevelStart = _health
 	controlMode = Enums.CONTROL_TYPE.SCRIPT
 	collider.set_deferred("disabled", true)
 	detectionArea.set_deferred("monitoring", false)
 	detectionArea.set_deferred("monitorable", false)
-	
 
-func _exit_tree():
+func _exit_tree() -> void:
 	Wwise.post_event("ACTR_Car_Engine_Stop", self)
 	Wwise.post_event("ACTR_Car_Tires_Stop", self)
 	if(OS.has_feature("Windows")):
 		Wwise.reset_distance_probe(GameManager.get_Listener())
 	Wwise.unregister_game_obj(self)
 
-func ScriptControl_GoForward():
+func ScriptControl_GoForward() -> void:
 	controlMode = Enums.CONTROL_TYPE.SCRIPT
 	_accelerationInput = 1
 
-func ScriptControl_GoReverse():
+func ScriptControl_GoReverse() -> void:
 	controlMode = Enums.CONTROL_TYPE.SCRIPT
 	_accelerationInput = -1
 
-func ScriptControl_GoStop():
+func ScriptControl_GoStop() -> void:
 	controlMode = Enums.CONTROL_TYPE.SCRIPT
 	_accelerationInput = 0

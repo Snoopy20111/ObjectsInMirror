@@ -27,6 +27,7 @@ extends Node
 }
 @onready var TrimmedLoadOptions: Dictionary = SceneLoadOptions
 
+#region Fullscreen Shader Defaults
 var _vignetteAlpha: float
 var _vignetteInnerRadius: float
 var _vignetteOuterRadius: float
@@ -45,12 +46,13 @@ var _screenShakeStrength: float
 var _screenShakeFactorA: Vector2
 var _screenShakeFactorB: Vector2
 var _screenShakeMagnitude: Vector2
+#endregion
 
 var playerHealthAtLevelStart: int = 5
 var playerMaxHealth: int = 5
 var playerCurrentLevel: int = 0
 
-func _ready():
+func _ready() -> void:
 	# Replaces the NodePaths with actual referenced nodes
 	# Feels like a dangerous move, but saves some memory and
 	# simplifies the code below
@@ -104,6 +106,7 @@ func setFullscreenShaderActive(effect: int, is_active: bool = true) -> void:
 		return
 	fullscreen_effects[effect].visible = is_active
 
+@warning_ignore("untyped_declaration") #Deliberately untyped
 func setFullscreenShaderParam(effect: int, param_name: String, new_value) -> void:
 	if (effect > fullscreen_effects.size()):
 		push_error("effect value outside array range")
@@ -113,17 +116,33 @@ func setFullscreenShaderParam(effect: int, param_name: String, new_value) -> voi
 		return
 	# Don't know of any way to error-check names and types of shader params,
 	# So we just have to hope Godot will throw meaningful errors
-	var my_material = fullscreen_effects[effect].get_material()
+	var my_material: Material = fullscreen_effects[effect].get_material()
 	my_material.set_shader_parameter(param_name, new_value)
 
-func getFullscreenShaderParam(effect: int, param_name: String):
+func getFullscreenShaderParam_i(effect: int, param_name: String) -> int:
 	if (effect > fullscreen_effects.size()):
 		push_error("effect value outside array range")
-		return
-		
-	# Don't know of any way to error-check names and types of shader params,
-	# So we just have to hope Godot will throw meaningful errors
+		return -1
 	return fullscreen_effects[effect].get_material().get_shader_parameter(param_name)
+
+func getFullscreenShaderParam_f(effect: int, param_name: String) -> float:
+	if (effect > fullscreen_effects.size()):
+		push_error("effect value outside array range")
+		return -1.0
+	return fullscreen_effects[effect].get_material().get_shader_parameter(param_name)
+	
+func getFullscreenShaderParam_c(effect: int, param_name: String) -> Color:
+	if (effect > fullscreen_effects.size()):
+		push_error("effect value outside array range")
+		return Color(0, 0, 0)
+	return fullscreen_effects[effect].get_material().get_shader_parameter(param_name)
+
+func getFullscreenShaderParam_v2(effect: int, param_name: String) -> Vector2:
+	if (effect > fullscreen_effects.size()):
+		push_error("effect value outside array range")
+		return Vector2(0, 0)
+	return fullscreen_effects[effect].get_material().get_shader_parameter(param_name)
+
 
 func resetFullScreenShaders() -> void:
 	for i in fullscreen_effects.size():
@@ -133,27 +152,27 @@ func resetFullScreenShaders() -> void:
 # Disgusting blocks of code that could 100% be done more efficiently on the eyes,
 # but I fear would lose readability or flexability.
 # A dictionary could be better, but to hell with it
-func _grabFullscreenShaderDefaults():
-	_vignetteAlpha = getFullscreenShaderParam(Enums.CANVAS_EFFECT.VIGNETTE, "alpha")
-	_vignetteInnerRadius = getFullscreenShaderParam(Enums.CANVAS_EFFECT.VIGNETTE, "inner_radius")
-	_vignetteOuterRadius = getFullscreenShaderParam(Enums.CANVAS_EFFECT.VIGNETTE, "outer_radius")
+func _grabFullscreenShaderDefaults() -> void:
+	_vignetteAlpha = getFullscreenShaderParam_f(Enums.CANVAS_EFFECT.VIGNETTE, "alpha")
+	_vignetteInnerRadius = getFullscreenShaderParam_f(Enums.CANVAS_EFFECT.VIGNETTE, "inner_radius")
+	_vignetteOuterRadius = getFullscreenShaderParam_f(Enums.CANVAS_EFFECT.VIGNETTE, "outer_radius")
 
-	_rainCount = getFullscreenShaderParam(Enums.CANVAS_EFFECT.RAIN, "count")
-	_rainSlant = getFullscreenShaderParam(Enums.CANVAS_EFFECT.RAIN, "slant")
-	_rainSpeed = getFullscreenShaderParam(Enums.CANVAS_EFFECT.RAIN, "speed")
-	_rainBlur = getFullscreenShaderParam(Enums.CANVAS_EFFECT.RAIN, "blur")
-	_rainColor = getFullscreenShaderParam(Enums.CANVAS_EFFECT.RAIN, "color")
-	_rainSize = getFullscreenShaderParam(Enums.CANVAS_EFFECT.RAIN, "size")
+	_rainCount = getFullscreenShaderParam_i(Enums.CANVAS_EFFECT.RAIN, "count")
+	_rainSlant = getFullscreenShaderParam_f(Enums.CANVAS_EFFECT.RAIN, "slant")
+	_rainSpeed = getFullscreenShaderParam_f(Enums.CANVAS_EFFECT.RAIN, "speed")
+	_rainBlur = getFullscreenShaderParam_f(Enums.CANVAS_EFFECT.RAIN, "blur")
+	_rainColor = getFullscreenShaderParam_c(Enums.CANVAS_EFFECT.RAIN, "color")
+	_rainSize = getFullscreenShaderParam_v2(Enums.CANVAS_EFFECT.RAIN, "size")
 
-	_chromAbWiggle = getFullscreenShaderParam(Enums.CANVAS_EFFECT.CHROMATIC_ABB, "wiggle")
-	_chromAbOffset = getFullscreenShaderParam(Enums.CANVAS_EFFECT.CHROMATIC_ABB, "offset")
+	_chromAbWiggle = getFullscreenShaderParam_f(Enums.CANVAS_EFFECT.CHROMATIC_ABB, "wiggle")
+	_chromAbOffset = getFullscreenShaderParam_f(Enums.CANVAS_EFFECT.CHROMATIC_ABB, "offset")
 
-	_screenShakeStrength = getFullscreenShaderParam(Enums.CANVAS_EFFECT.SCREEN_SHAKE, "shake_strength")
-	_screenShakeFactorA = getFullscreenShaderParam(Enums.CANVAS_EFFECT.SCREEN_SHAKE, "factor_a")
-	_screenShakeFactorB = getFullscreenShaderParam(Enums.CANVAS_EFFECT.SCREEN_SHAKE, "factor_b")
-	_screenShakeMagnitude = getFullscreenShaderParam(Enums.CANVAS_EFFECT.SCREEN_SHAKE, "magnitude")
+	_screenShakeStrength = getFullscreenShaderParam_f(Enums.CANVAS_EFFECT.SCREEN_SHAKE, "shake_strength")
+	_screenShakeFactorA = getFullscreenShaderParam_v2(Enums.CANVAS_EFFECT.SCREEN_SHAKE, "factor_a")
+	_screenShakeFactorB = getFullscreenShaderParam_v2(Enums.CANVAS_EFFECT.SCREEN_SHAKE, "factor_b")
+	_screenShakeMagnitude = getFullscreenShaderParam_v2(Enums.CANVAS_EFFECT.SCREEN_SHAKE, "magnitude")
 
-func _setFullscreenShadersToDefaults():
+func _setFullscreenShadersToDefaults() -> void:
 	setFullscreenShaderParam(Enums.CANVAS_EFFECT.VIGNETTE, "alpha", _vignetteAlpha)
 	setFullscreenShaderParam(Enums.CANVAS_EFFECT.VIGNETTE, "inner_radius", _vignetteInnerRadius)
 	setFullscreenShaderParam(Enums.CANVAS_EFFECT.VIGNETTE, "outer_radius", _vignetteOuterRadius)
@@ -175,7 +194,6 @@ func _setFullscreenShadersToDefaults():
 
 func get_Listener() -> AkListener2D:
 	return akListener
-
 
 ### Utilities ###
 #func reparent_other(child:Node, new_parent:Node) -> void:

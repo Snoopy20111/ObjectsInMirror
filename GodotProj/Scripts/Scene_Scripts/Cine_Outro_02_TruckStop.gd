@@ -35,7 +35,7 @@ var chromWiggleMult: float = 500
 var chromOffsetMult: float = 500
 var shakeStrengthMult: float = 0.75
 
-func _ready():
+func _ready() -> void:
 	# Connect dialogue manager signals
 	DialogueManager.dialogue_ended.connect(dia_end)
 	
@@ -47,7 +47,7 @@ func _ready():
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.CHROMATIC_ABB, true)
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.SCREEN_SHAKE, true)
 
-func _process(delta):
+func _process(delta: float) -> void:
 	# If the effect is running, update the shader params accordingly
 	if (_isCounting):
 		#Chromatic Aberration isn't working here, not sure why
@@ -61,21 +61,21 @@ func _process(delta):
 
 ## Disgusting custom script, chain reaction of signals pinging back and forth
 #Timer callback that calls the first line of dialogue
-func _on_timer_to_first_dialogue_timeout():
+func _on_timer_to_first_dialogue_timeout() -> void:
 	DialogueManager.show_dialogue_balloon(dialogue_Outro_03, "start")
 
 #Timer callback that transitions to the next scene
-func _on_timer_to_exit_timeout():
+func _on_timer_to_exit_timeout() -> void:
 	SceneManager.change_scene(sceneToLoad, TrimmedLoadOptions)
 
-func dia_end(_resource: DialogueResource):
+func dia_end(_resource: DialogueResource) -> void:
 	_isCounting = true
 	timerToExit.start()
 
-func _exit_tree():
+func _exit_tree() -> void:
 	GameManager.resetFullScreenShaders()
 
-func checkTransitionShared():
+func checkTransitionShared() -> void:
 	if (SharedEasing == true):
 		TrimmedLoadOptions.erase("ease_leave")
 		TrimmedLoadOptions.erase("ease_enter")

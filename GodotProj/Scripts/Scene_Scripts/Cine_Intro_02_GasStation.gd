@@ -13,7 +13,7 @@ const sceneToLoad: String = "res://Scenes/Tut_Road_01.tscn"
 @onready var playerCar: CarController = $PlayerCar
 
 
-func _ready():
+func _ready() -> void:
 	# Connect dialogue manager signals
 	DialogueManager.dialogue_ended.connect(dia_end)
 	
@@ -21,19 +21,18 @@ func _ready():
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.VIGNETTE, true)
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.RAIN, true)
 
-
 ## Disgusting custom script, chain reaction of signals pinging back and forth
 #Timer callback that calls the first line of dialogue
-func _on_timer_to_first_dialogue_timeout():
+func _on_timer_to_first_dialogue_timeout() -> void:
 	DialogueManager.show_dialogue_balloon(dialogue_Intro_03, "start")
 
 #Timer callback that transitions to the next scene
-func _on_timer_to_exit_timeout():
+func _on_timer_to_exit_timeout() -> void:
 	SceneManager.change_scene(sceneToLoad)
 
-func dia_end(_resource: DialogueResource):
+func dia_end(_resource: DialogueResource) -> void:
 	playerCar.ScriptControl_GoForward()
 	timerToExit.start()
 
-func _exit_tree():
+func _exit_tree() -> void:
 	GameManager.resetFullScreenShaders()

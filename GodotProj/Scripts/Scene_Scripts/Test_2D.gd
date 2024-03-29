@@ -1,7 +1,7 @@
 extends Node2D
 
 
-func _ready():
+func _ready() -> void:
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.VIGNETTE, true)
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.RAIN, true)
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.CHROMATIC_ABB, true)

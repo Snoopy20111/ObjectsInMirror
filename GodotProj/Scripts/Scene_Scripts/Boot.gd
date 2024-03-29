@@ -10,7 +10,7 @@ class_name Boot
 @export var DebugWindowDimentions: Vector2i = Vector2i(1280, 720)
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	print("\nWelcome to Objects in Mirror. Watch the road.")
 	
 	if (DebugWindowSize) && (DebugWindowDimentions.x > 0) && (DebugWindowDimentions.y > 0):

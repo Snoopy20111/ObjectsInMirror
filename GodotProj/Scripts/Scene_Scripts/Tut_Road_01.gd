@@ -5,7 +5,7 @@ extends Node2D
 @onready var timerToFirstDialogue: Timer = $Timers/Timer_ToFirstDialogue
 
 
-func _ready():
+func _ready() -> void:
 	# Set Fullscreen shaders: vignette, rain, Chromatic Aberration,
 	# and Screen Shake, if not already on
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.VIGNETTE, true)
@@ -18,11 +18,9 @@ func _ready():
 	GameManager.playerHealthAtLevelStart = 5
 	GameManager.levelStart(0)
 
-
-func _exit_tree():
-	GameManager.resetFullScreenShaders()
-
-
-func _on_timer_to_first_dialogue_timeout():
+func _on_timer_to_first_dialogue_timeout() -> void:
 	#Play intro dialogue
 	DialogueManager.show_dialogue_balloon(dialogue_tut_01, "start")
+
+func _exit_tree() -> void:
+	GameManager.resetFullScreenShaders()

@@ -9,22 +9,22 @@ const LogoFade_Curve = preload("res://Customs/Curves/LogoFade_Curve.tres")
 @onready var LogoAnim: AnimatedSprite2D = $CenterContainer/LogoAnim as AnimatedSprite2D
 
 var fadeCounter:float = 0
-@export var fade_value = Enums.FADE_STATE.PAUSE
+@export var fade_value: Enums.FADE_STATE = Enums.FADE_STATE.PAUSE
 
-@export var FadeIn_Length = .5
-@export var FadeOut_Length = .5
+@export var FadeIn_Length: float = .5
+@export var FadeOut_Length: float = .5
 
 var transitioning : bool = false
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	StartTimer.start()
 	Wwise.register_game_obj(self, "LogoParade")		#Uses its own GameObj
 	#Wwise.post_event("MUS_Menu", AmbientAudio)
 	Wwise.post_event("AMB_Menu", AmbientAudio)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta: float) -> void:
 	match (fade_value):
 		Enums.FADE_STATE.IN:
 			# add to alpha value, and run fade counter value through the fade curve
@@ -46,17 +46,17 @@ func _process(delta):
 				transitioning = true
 
 
-func _on_LogoAnim_finished():
+func _on_LogoAnim_finished() -> void:
 	# pause anim and start Freeze Timer
 	FreezeTimer.start()
 	fade_value = Enums.FADE_STATE.PAUSE
 
 
-func _on_StartTimer_timeout():
+func _on_StartTimer_timeout() -> void:
 	fade_value = Enums.FADE_STATE.IN
 	LogoAnim.play()
 	Wwise.post_event("UI_LogoParade", self)
 	Wwise.unregister_game_obj(self) #can do because it's a oneshot
 
-func _on_FreezeTimer_timeout():
+func _on_FreezeTimer_timeout() -> void:
 	fade_value = Enums.FADE_STATE.OUT

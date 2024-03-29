@@ -2,7 +2,7 @@ extends Node2D
 
 #const dialogue_main_01: DialogueResource = load("res://Dialogue/Main_Road_01_01.dialogue")
 
-func _ready():
+func _ready() -> void:
 	# Set Fullscreen shaders: vignette, rain, Chromatic Aberration,
 	# and Screen Shake, if not already on
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.VIGNETTE, true)
@@ -12,5 +12,5 @@ func _ready():
 	
 	GameManager.levelStart(2)
 
-func _exit_tree():
+func _exit_tree() -> void:
 	GameManager.resetFullScreenShaders()

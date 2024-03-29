@@ -14,7 +14,7 @@ var isListeningToQuit: bool = false
 #@export var showPopup:bool = false
 #@export var scenePopup:String
 
-func _pressed():
+func _pressed() -> void:
 	super._pressed()
 	SceneManager.connect("fade_complete", quit_fade_completed)
 	SceneManager.fade_out(QuitOptions)
@@ -22,7 +22,7 @@ func _pressed():
 	isListeningToQuit = true
 	_canPlaySounds = false
 	
-func quit_fade_completed():
+func quit_fade_completed() -> void:
 	print("fade completed signal received")
 	if (isListeningToQuit):
 		await get_tree().create_timer(timeAfterFade, true, false, true).timeout

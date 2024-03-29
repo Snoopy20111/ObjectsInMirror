@@ -24,12 +24,11 @@ extends Area2D
 @onready var TrimmedLoadOptions: Dictionary = SceneLoadOptions
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	checkTransitionShared()
 	area_entered.connect(Callable(onAreaEntered))
 
-
-func checkTransitionShared():
+func checkTransitionShared() -> void:
 	if (SharedEasing == true):
 		TrimmedLoadOptions.erase("ease_leave")
 		TrimmedLoadOptions.erase("ease_enter")
@@ -42,8 +41,7 @@ func checkTransitionShared():
 	else:
 		TrimmedLoadOptions.erase("animation_name")
 
-
-func onAreaEntered(area: Area2D):
+func onAreaEntered(area: Area2D) -> void:
 	# If it's the player, change the scene
 	# Brittle as hell methods to see if this is the Player Car
 	if ((area.collision_layer == 2)

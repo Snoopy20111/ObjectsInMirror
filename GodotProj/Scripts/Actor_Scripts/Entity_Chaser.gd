@@ -44,14 +44,14 @@ var isFadingSelf: bool = false
 var isFadingChaos: bool = false
 var fadeCounter: float = 0
 
-func _ready():
+func _ready() -> void:
 	playerVector = player.position - position
 	_setVaguePlayerLocation()
 	Wwise.register_game_obj(self, "Entity_Watcher_" + str(self))
 	Wwise.post_event("ACTR_Entity_Panic_Play", self)
 	Wwise.set_2d_position(self, transform, 0)
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	#early return if the entity is paused
 	if (paused):
 		return
@@ -110,39 +110,38 @@ func _physics_process(delta):
 				lostEmTimer.start()
 	
 	# Look_at with some smoothing
-	var new_transform = transform.looking_at(player.position)
+	var new_transform: Transform2D = transform.looking_at(player.position)
 	rotation = transform.interpolate_with(new_transform, turningSpeed * delta).get_rotation()
 	
 	#newNode.position = vaguePlayerLocation
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	Wwise.set_2d_position(self, transform, 0)
 	#update the shader values
-	var chaosAdd = chaosWithDistanceCurve.sample(clamp(playerVector.length() / maxChaosDistance, 0, 1)) 
-	var radiusAdd = chaosRadiusWithDistanceCurve.sample(clamp(playerVector.length() / maxChaosDistance, 0, 1)) 
+	var chaosAdd: float = chaosWithDistanceCurve.sample(clamp(playerVector.length() / maxChaosDistance, 0, 1)) 
+	var radiusAdd: float = chaosRadiusWithDistanceCurve.sample(clamp(playerVector.length() / maxChaosDistance, 0, 1)) 
 	chaosNode.material.set_shader_parameter("chaos", (chaosParam + chaosAdd))
 	chaosNode.material.set_shader_parameter("radius", radiusAdd)
 	
 	# And then set audio RTPC?
-	var audioPanic = clamp((maxChaosAudioDistance / playerVector.length()) - 0.1, 0, 3)
-	var audioFadeMult = clamp(chaosFadeCounterDown / chaosFadeStartValue, 0, 1)
+	var audioPanic: float = clamp((maxChaosAudioDistance / playerVector.length()) - 0.1, 0, 3)
+	var audioFadeMult: float = clamp(chaosFadeCounterDown / chaosFadeStartValue, 0, 1)
 
 	Wwise.set_rtpc_value("Panic", audioPanic * audioFadeMult, self)
 	#print(audioPanic * audioFadeMult)
 
-
-func goTo(target_pos: Vector2, delta: float, speedMult: float = 1.0, turnMult: float = 1.0):
+func goTo(target_pos: Vector2, delta: float, speedMult: float = 1.0, turnMult: float = 1.0) -> void:
 	#move
-	var new_vel = (target_pos - position).normalized() * movingSpeed * speedMult
+	var new_vel: Vector2 = (target_pos - position).normalized() * movingSpeed * speedMult
 	linear_velocity = lerp(linear_velocity, new_vel, 0.02)
 	#and turn
-	var new_transform = transform.looking_at(target_pos)
+	var new_transform: Transform2D = transform.looking_at(target_pos)
 	rotation = transform.interpolate_with(new_transform, turningSpeed * turnMult * delta).get_rotation()
 
 func _isPlayerInRange() -> bool:
 	return playerVector.length() < chargeDistanceThreshold
 
-func _setVaguePlayerLocation():
+func _setVaguePlayerLocation() -> void:
 	var rot: float= randf_range(0, 360)
 	var dist: float = vaguePlayerLocSpreadCurve.sample(clamp(playerVector.length()
 	/maxStalkDistance, 0, maxStalkDistance))
@@ -161,18 +160,18 @@ func _on_visible_on_screen_entered() -> void:
 func _on_visible_on_screen_exited() -> void:
 	isVisible = false
 
-func _on_timer_lost_em_timeout():
+func _on_timer_lost_em_timeout() -> void:
 	state = Enums.CHASER_STATE.STALK
 
-func _on_timer_anim_begin_timeout():
+func _on_timer_anim_begin_timeout() -> void:
 	canCharge = true
 
-func remove_entity():
+func remove_entity() -> void:
 	watcherSprite.queue_free()
 	collision.queue_free()
 	state = Enums.CHASER_STATE.STOPPED
 	isFadingChaos = true
 
-func _exit_tree():
+func _exit_tree() -> void:
 	Wwise.post_event("ACTR_Entity_Panic_Stop", self)
 	Wwise.unregister_game_obj(self)

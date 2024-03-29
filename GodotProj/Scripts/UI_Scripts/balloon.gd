@@ -65,7 +65,7 @@ var dialogue_line: DialogueLine:
 			balloon.focus_mode = Control.FOCUS_NONE
 			responses_menu.show()
 		elif dialogue_line.time != "":
-			var time = dialogue_line.text.length() * 0.02 if dialogue_line.time == "auto" else dialogue_line.time.to_float()
+			var time: float = dialogue_line.text.length() * 0.02 if dialogue_line.time == "auto" else dialogue_line.time.to_float()
 			await get_tree().create_timer(time).timeout
 			next(dialogue_line.next_id)
 		else:
@@ -105,7 +105,7 @@ func next(next_id: String) -> void:
 func _on_mutated(_mutation: Dictionary) -> void:
 	is_waiting_for_input = false
 	will_hide_balloon = true
-	get_tree().create_timer(0.1).timeout.connect(func():
+	get_tree().create_timer(0.1).timeout.connect(func() -> void:
 		if will_hide_balloon:
 			will_hide_balloon = false
 			balloon.hide()

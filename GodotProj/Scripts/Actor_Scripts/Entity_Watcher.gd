@@ -29,28 +29,28 @@ var isFadingChaos: bool = false
 var fadeCounter: float = 0
 
 
-func _ready():
+func _ready() -> void:
 	Wwise.register_game_obj(self, "Entity_Watcher_" + str(self))
 	Wwise.post_event("ACTR_Entity_Panic_Play", self)
 	Wwise.set_2d_position(self, transform, 0)
 
-func _process(delta):
+func _process(delta: float) -> void:
 	#Done every frame regardless
 	Wwise.set_2d_position(self, transform, 0)
 	
 	var distanceToPlayer: float = Vector2(player.global_position - global_position).length()
 
-	var chaosAdd = watcherChaosWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1))
-	var radiusAdd = watcherChaosRadiusWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1))
-	var chaosFadeMult = watcherChaosFadeCurve.sample(chaosFadeCounterDown/chaosFadeStartValue)
+	var chaosAdd: float = watcherChaosWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1))
+	var radiusAdd: float = watcherChaosRadiusWithDistanceCurve.sample(clamp(distanceToPlayer / maxChaosDistance, 0, 1))
+	var chaosFadeMult: float = watcherChaosFadeCurve.sample(chaosFadeCounterDown/chaosFadeStartValue)
 	
 	# Set chaos shader based roughly on the inverse distance to the player
 	chaosNode.material.set_shader_parameter("chaos", (chaosParam + chaosAdd) * chaosFadeMult)
 	chaosNode.material.set_shader_parameter("radius", radiusAdd * clamp(chaosFadeMult, 0.0, 1.0))
 	
 	# And then set audio RTPC?
-	var audioPanic = clamp((maxChaosAudioDistance / distanceToPlayer) - 0.1, 0, 3)
-	var audioFadeMult = clamp(chaosFadeCounterDown / chaosFadeStartValue, 0, 1)
+	var audioPanic: float = clamp((maxChaosAudioDistance / distanceToPlayer) - 0.1, 0, 3)
+	var audioFadeMult: float = clamp(chaosFadeCounterDown / chaosFadeStartValue, 0, 1)
 
 	Wwise.set_rtpc_value("Panic", audioPanic * audioFadeMult, self)
 	#print(audioPanic * audioFadeMult)
@@ -80,18 +80,18 @@ func _process(delta):
 		watcherSprite.self_modulate.a = watcherSpriteFadeCurve.sample(fadeCounter)
 	
 	# Look_at with smoothing
-	var new_transform = transform.looking_at(player.global_position)
+	var new_transform: Transform2D = transform.looking_at(player.global_position)
 	rotation = transform.interpolate_with(new_transform,
 		turningSpeed * delta).get_rotation()
 
-func _on_visible_on_screen_entered():
+func _on_visible_on_screen_entered() -> void:
 	#spring to life
 	paused = false
 	timerAnimBegin.start()
 
-func _on_anim_begin_timer_timeout():
+func _on_anim_begin_timer_timeout() -> void:
 	isFadingSelf = true
 
-func _exit_tree():
+func _exit_tree() -> void:
 	Wwise.post_event("ACTR_Entity_Panic_Stop", self)
 	Wwise.unregister_game_obj(self)

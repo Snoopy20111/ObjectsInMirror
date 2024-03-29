@@ -7,7 +7,7 @@ var is_running:bool = false
 var counter_value:float = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta: float) -> void:
 	if (is_running):
 		counter_value += (delta * speed_mult)
 		progress_ratio += progress_curve.sample(counter_value)
@@ -15,6 +15,6 @@ func _process(delta):
 			is_running = false
 
 #fired from signal to start motion
-func _on_wordstimer_timeout():
+func _on_wordstimer_timeout() -> void:
 	is_running = true
 	counter_value = 0

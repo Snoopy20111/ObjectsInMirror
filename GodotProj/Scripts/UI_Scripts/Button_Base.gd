@@ -11,27 +11,27 @@ class_name LH_ButtonBase
 var _canPlaySounds: bool = true
 
 # When brought to life
-func _ready():
+func _ready() -> void:
 	connect("mouse_entered", _mouse_entered)
 	connect("mouse_exited", _mouse_exited)
 	Wwise.register_game_obj(self, wwiseObjectName)
 
 
 # When killed
-func _exit_tree():
+func _exit_tree() -> void:
 	Wwise.unregister_game_obj(self)
 
 # Pressed
-func _pressed():
+func _pressed() -> void:
 	if (pressedAudioEvent != null) and (disabled == false) and (_canPlaySounds):
 		Wwise.post_event(pressedAudioEvent, self)
 
 # Hover
-func _mouse_entered():
+func _mouse_entered() -> void:
 	if (hoveredAudioEvent != null) and (disabled == false) and (_canPlaySounds):
 		Wwise.post_event(hoveredAudioEvent, self)
 
 # Unhover
-func _mouse_exited():
+func _mouse_exited() -> void:
 	if (unhoveredAudioEvent != null) and (disabled == false) and (_canPlaySounds):
 		Wwise.post_event(unhoveredAudioEvent, self)

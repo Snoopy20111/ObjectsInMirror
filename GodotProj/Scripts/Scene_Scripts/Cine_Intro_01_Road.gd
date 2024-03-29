@@ -20,7 +20,7 @@ const dialogue_Intro_02: DialogueResource = preload("res://Dialogue/Cine_Intro_0
 var currentDialogue: int = 0
 
 
-func _ready():
+func _ready() -> void:
 	# Connect dialogue manager signals
 	DialogueManager.dialogue_ended.connect(dia_end)
 	
@@ -28,7 +28,7 @@ func _ready():
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.VIGNETTE, true)
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.RAIN, true)
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	loop_environment(delta)
 
 func loop_environment(delta: float) -> void:
@@ -40,23 +40,23 @@ func loop_environment(delta: float) -> void:
 	loopingEnv2.position.y += delta * loopingEnv_speed
 
 #Disgusting custom scripts, chain reaction of signals pinging back and forth
-func _on_timer_to_first_dialogue_timeout():
+func _on_timer_to_first_dialogue_timeout() -> void:
 	DialogueManager.show_dialogue_balloon(dialogue_Intro_01, "start")
 	currentDialogue += 1
 
-func _on_timer_to_second_dialogue_timeout():
+func _on_timer_to_second_dialogue_timeout() -> void:
 	currentDialogue += 1
 	DialogueManager.show_dialogue_balloon(dialogue_Intro_02, "start")
 
-func _on_timer_to_exit_timeout():
+func _on_timer_to_exit_timeout() -> void:
 	SceneManager.change_scene(sceneToLoad)
 
-func dia_end(_resource: DialogueResource):
+func dia_end(_resource: DialogueResource) -> void:
 	match (currentDialogue):
 		1:
 			timerToSecondDialogue.start()
 		2:
 			timerToExit.start()
 
-func _exit_tree():
+func _exit_tree() -> void:
 	GameManager.resetFullScreenShaders()
