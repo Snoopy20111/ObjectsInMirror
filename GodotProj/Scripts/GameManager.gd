@@ -143,7 +143,6 @@ func getFullscreenShaderParam_v2(effect: int, param_name: String) -> Vector2:
 		return Vector2(0, 0)
 	return fullscreen_effects[effect].get_material().get_shader_parameter(param_name)
 
-
 func resetFullScreenShaders() -> void:
 	for i in fullscreen_effects.size():
 		fullscreen_effects[i].visible = false
