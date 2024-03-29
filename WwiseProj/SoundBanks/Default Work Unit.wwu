@@ -6,8 +6,10 @@
 				<SoundBank Name="Master" ID="{B96D485B-D37B-48E8-9E24-634095C8EE81}">
 					<ObjectInclusionList>
 						<ObjectRef Name="AMB_Cine_Intro_02" ID="{895268B5-B63B-4095-BD79-D14E1BC1B81B}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ACTR_TrainCrossing_Play" ID="{766E5D32-126D-42AA-B677-0F781D5B6B42}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ACTR_Entity_Panic_Play" ID="{C1292F47-FFE6-42EF-83DF-D4446EF99917}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ACTR_Car_Impact_Death" ID="{07E4E06D-0453-4378-82AE-F3C33885AAD5}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ACTR_TrainCrossing_Stop" ID="{295A2200-62C2-43BE-B0AD-F4530A2359D1}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MUS_Cine_Intro_04" ID="{0846ABC9-F91C-4468-A5E2-7811B814F4B4}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ACTR_Train_Play" ID="{1ACDE4CF-1200-4484-9E66-A699C7B6B8B6}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MUS_Cine_Intro_01" ID="{25995FA8-D65A-45AB-8C8D-6F39BC2A0503}" WorkUnitID="{8CAA6671-C320-4C35-8EC1-0D5F770D7306}" Origin="Manual" Filter="7"/>

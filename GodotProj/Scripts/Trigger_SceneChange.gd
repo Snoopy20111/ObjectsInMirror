@@ -47,7 +47,7 @@ func onAreaEntered(area: Area2D):
 	# If it's the player, change the scene
 	# Brittle as hell methods to see if this is the Player Car
 	if ((area.collision_layer == 2)
-	and (area.get_parent().name == "PlayerCar")):
+	and (area.get_parent() is CarController)):
 		SceneManager.change_scene(sceneToLoad, TrimmedLoadOptions)
 		var playerCar := area.get_parent() as CarController
 		playerCar.ExitLevel()

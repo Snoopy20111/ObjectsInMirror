@@ -1,7 +1,7 @@
 extends Sprite2D
 class_name TrainCrossing
 
-@export var threshold: float = 0.5
+@export var time_threshold: float = 0.4
 @export var isActive: bool = true
 var _counter: float = 0
 var _activeLight: int = 1
@@ -10,13 +10,15 @@ var _activeLight: int = 1
 @onready var rightLight: PointLight2D = $Right
 
 
-func _ready():
-	isActive = true
+func _ready() -> void:
+	Wwise.register_game_obj(self, str(self))
+	Wwise.set_2d_position(self, global_transform, 0)
 
-func _process(delta):
+func _process(delta: float) -> void:
 	if (isActive):
+		Wwise.set_2d_position(self, global_transform, 0)
 		_counter += delta
-		if (_counter > threshold):
+		if (_counter > time_threshold):
 			_activeLight *= -1
 			match _activeLight:
 				-1:
@@ -25,9 +27,14 @@ func _process(delta):
 				1:
 					leftLight.enabled = false
 					rightLight.enabled = true
-			_counter -= threshold
+			_counter -= time_threshold
 
-func stop():
+func start() -> void:
+	isActive = true
+	Wwise.post_event("ACTR_TrainCrossing_Play", self)
+
+func stop() -> void:
 	isActive = false
 	leftLight.enabled = false
 	rightLight.enabled = false
+	Wwise.post_event("ACTR_TrainCrossing_Stop", self)

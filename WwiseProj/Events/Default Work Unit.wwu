@@ -287,6 +287,63 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="TrainCrossing" ID="{416ED976-6F96-487B-860E-BB091DCD777F}" ShortID="848007466">
+							<ChildrenList>
+								<Event Name="ACTR_TrainCrossing_Play" ID="{766E5D32-126D-42AA-B677-0F781D5B6B42}">
+									<ChildrenList>
+										<Action Name="" ID="{5AE93F47-12B0-4859-9B4C-44C9B598A89E}" ShortID="548927977">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="0.35"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Train_CrossingAlarm" ID="{2BFFD596-C22E-45C6-B12E-C41D3829170E}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{5FD0E69A-B133-4E24-BB02-F4CD099406E1}" ShortID="707187933">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="36"/>
+												<Property Name="SeekTime" Type="Real64">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{AFF80567-FE56-43AD-9F9C-B6D26012F987}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="0.1"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="SeekType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Train_CrossingAlarm" ID="{2BFFD596-C22E-45C6-B12E-C41D3829170E}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="ACTR_TrainCrossing_Stop" ID="{295A2200-62C2-43BE-B0AD-F4530A2359D1}">
+									<ChildrenList>
+										<Action Name="" ID="{2CAFA734-3E41-4D30-BCD2-4B7111F70E19}" ShortID="345916163">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.075"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Train_CrossingAlarm" ID="{2BFFD596-C22E-45C6-B12E-C41D3829170E}" WorkUnitID="{52254EB2-2111-4E26-A790-769675E9D68B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

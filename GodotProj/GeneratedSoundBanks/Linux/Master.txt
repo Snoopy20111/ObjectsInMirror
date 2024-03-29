@@ -3,6 +3,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	495721106	ACTR_Car_Engine_Play			\Default Work Unit\SFX\Car\ACTR_Car_Engine_Play	
 	503177270	UI_Nav_Hover			\Default Work Unit\UI\UI_Nav_Hover	
 	511688286	ACTR_Car_Impact_Death			\Default Work Unit\SFX\Car\ACTR_Car_Impact_Death	
+	514021403	ACTR_TrainCrossing_Stop			\Default Work Unit\SFX\TrainCrossing\ACTR_TrainCrossing_Stop	
 	579292521	ACTR_Car_Tires_Play			\Default Work Unit\SFX\Car\ACTR_Car_Tires_Play	
 	1225797752	UI_Nav_Accept			\Default Work Unit\UI\UI_Nav_Accept	
 	1536965356	ACTR_Train_Horn			\Default Work Unit\SFX\Train\ACTR_Train_Horn	
@@ -24,6 +25,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3149643052	MUS_Menu			\Default Work Unit\MUS\MUS_Menu	
 	3187507146	Play_Test			\Default Work Unit\Play_Test	
 	3647900047	ACTR_Car_Impact_Tap			\Default Work Unit\SFX\Car\ACTR_Car_Impact_Tap	
+	3691794637	ACTR_TrainCrossing_Play			\Default Work Unit\SFX\TrainCrossing\ACTR_TrainCrossing_Play	
 	3823428949	ACTR_Train_Play			\Default Work Unit\SFX\Train\ACTR_Train_Play	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
@@ -87,6 +89,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	740005813	Car_Impact_Tap_04	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Car_Impact_Tap_04_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Impact_Tap\Car_Impact_Tap_04		7439
 	757217004	Train_Horn_Distant_02	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Train_Horn_Distant_02_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Train\Train_Horn\Train_Horn_Distant\Train_Horn_Distant_02		16954
 	772475462	Car_Impact_Hurt_06	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Car_Impact_Hurt_06_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Impact_Hurt\Car_Impact_Hurt_06		49848
+	789529480	Train_CrossingAlarm	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Train_CrossingAlarm_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_3D\Train_CrossingAlarm		73645
 	818895528	Ambience_Rain_Steady_01	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Ambience_Rain_Steady_01_51EBCE32.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_2D\Rain\Ambience_Rain_Steady_01		678472
 	828033977	Car_Impact_Death_02	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Car_Impact_Death_02_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCar\Car_Impact_Death\Car_Impact_Death_02		65014
 	909693388	LogoParade- LH	C:\Users\snoop\Documents\GitHub\ObjectsInMirror\WwiseProj\.cache\Linux\SFX\Portfolio_LogoBumper01_2023-10-23_001_125ADEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\LogoParade- LH		153462

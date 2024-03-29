@@ -1,6 +1,8 @@
 extends PathFollow2D
 class_name Train
 
+signal stopCrossing
+
 var selfControlling: bool = false
 var speed: float = 10.0
 
@@ -25,7 +27,9 @@ func _process(_delta):
 func _physics_process(delta):
 	if (selfControlling):
 		progress += speed * delta
-		if (progress_ratio > 0.98):
+		if (progress_ratio > 0.8):
+			emit_signal("stopCrossing")
+		elif (progress_ratio > 0.98):
 			Wwise.post_event("ACTR_Train_Stop", trainPassbyEmitter)
 
 func _on_collision_body_entered(body) -> void:

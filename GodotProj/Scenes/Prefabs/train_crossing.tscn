@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b1rbtdnafqa5m" path="res://Sprites/Environment/Train_Crossing/Train_Crossing.png" id="1_g8ns8"]
 [ext_resource type="Texture2D" uid="uid://cmg0yck5lb4q8" path="res://Sprites/Environment/Train_Crossing/Train_Crossing_Normal.png" id="2_e5yu3"]
 [ext_resource type="Texture2D" uid="uid://dybmtpgsr1q" path="res://Sprites/Environment/Train_Crossing/Train_Crossing_Specular.png" id="3_u6vgb"]
-[ext_resource type="Script" path="res://Scenes/Prefabs/train_crossing.gd" id="4_2u147"]
+[ext_resource type="Script" path="res://Scripts/train_crossing.gd" id="4_cr83e"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_04bgk"]
 diffuse_texture = ExtResource("1_g8ns8")
@@ -24,7 +24,7 @@ fill_to = Vector2(1, 0.5)
 [node name="TrainCrossing" type="Sprite2D"]
 z_index = 9
 texture = SubResource("CanvasTexture_04bgk")
-script = ExtResource("4_2u147")
+script = ExtResource("4_cr83e")
 
 [node name="Left" type="PointLight2D" parent="."]
 z_index = -5

@@ -1824,9 +1824,30 @@
 							<ChildrenList>
 								<Sound Name="Train_CrossingAlarm" ID="{2BFFD596-C22E-45C6-B12E-C41D3829170E}" ShortID="489923354">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="InitialDelay" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{2C0111AA-BC64-4626-AECD-F0EBBD3A81D8}">
+														<PropertyList>
+															<Property Name="Max" Type="Real64" Value="60"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Attenuation_TrainCrossing_Alarm" ID="{853BEEDA-FF8F-450C-84B9-04A95B392764}" WorkUnitID="{9167108B-C09A-4EC6-BA44-89921DB8AA24}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8B86CB7F-4C01-4168-8018-5AE7CF891BDC}"/>
 										</Reference>
@@ -1843,6 +1864,14 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<PositioningInfo>
+										<Position Name="" ID="{E129B950-29C8-413E-A31D-60EF7FA2B268}">
+											<PropertyList>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="PlayMechanismTransitionTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+										</Position>
+									</PositioningInfo>
 									<ActiveSourceList>
 										<ActiveSource Name="Train_CrossingAlarm" ID="{940FB1D7-6C11-484E-B9E9-77586DACF86A}" Platform="Linked"/>
 									</ActiveSourceList>
@@ -2328,7 +2357,7 @@
 																		</Point>
 																		<Point>
 																			<XPos>10000</XPos>
-																			<YPos>-0</YPos>
+																			<YPos>0</YPos>
 																			<Flags>37</Flags>
 																		</Point>
 																	</PointList>

@@ -144,8 +144,8 @@ metadata/_edit_lock_ = true
 
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("3_ywue1")]
 unique_name_in_owner = true
-position = Vector2(-19925, -19646)
-rotation = -4.05964
+position = Vector2(-16226, -11935)
+rotation = -4.18355
 metadata/entity_name = "PlayerCar"
 
 [node name="Camera_Target_01" type="Node2D" parent="PlayerCar"]
@@ -168,7 +168,7 @@ metadata/_edit_lock_ = true
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 z_index = 1000
 material = SubResource("CanvasItemMaterial_y7kk1")
-position = Vector2(-19985, -19495)
+position = Vector2(-16345.9, -11809.2)
 script = ExtResource("4_gytpx")
 priority_override = false
 priority = 1
@@ -217,7 +217,6 @@ position = Vector2(-500, 7180)
 metadata/_edit_lock_ = true
 
 [node name="Trigger_Train_End" parent="Triggers/Trigger_Train_Boss" instance=ExtResource("7_hl1tv")]
-visible = false
 position = Vector2(-500, 694)
 scale = Vector2(2.535, 1)
 metadata/_edit_lock_ = true
@@ -322,6 +321,11 @@ metadata/_edit_lock_ = true
 
 [node name="Entities" type="Node" parent="."]
 
+[connection signal="trainEndTrack" from="Triggers/Trigger_Train_Boss" to="Environment/TrainCrossing" method="stop"]
+[connection signal="trainEndTrack" from="Triggers/Trigger_Train_Boss" to="Environment/TrainCrossing2" method="stop"]
+[connection signal="trainStartTrack" from="Triggers/Trigger_Train_Boss" to="Environment/TrainCrossing" method="start"]
+[connection signal="trainStartTrack" from="Triggers/Trigger_Train_Boss" to="Environment/TrainCrossing2" method="start"]
 [connection signal="playerCrossed" from="Triggers/Trigger_Train_Boss/Trigger_Train_AudioStart" to="Triggers/Trigger_Train_Boss" method="_on_trigger_train_audio_start_player_crossed"]
 [connection signal="playerCrossed" from="Triggers/Trigger_Train_Boss/Trigger_Train_Start" to="Triggers/Trigger_Train_Boss" method="_on_trigger_train_start_player_crossed"]
 [connection signal="playerCrossed" from="Triggers/Trigger_Train_Boss/Trigger_Train_End" to="Triggers/Trigger_Train_Boss" method="_on_trigger_train_end_player_crossed"]
+[connection signal="stopCrossing" from="Environment/TrainPath/Train" to="Triggers/Trigger_Train_Boss" method="_on_train_stop_crossing"]

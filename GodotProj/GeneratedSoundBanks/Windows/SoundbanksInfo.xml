@@ -212,7 +212,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{94F024BD-CE80-44BA-98C1-BAFDEDE7C87C}">
+		<SoundBank Id="4056684167" Type="User" Language="SFX" Hash="{61098BCF-AAD3-5EA0-CB54-0323CC55C448}">
 			<ShortName>Master</ShortName>
 			<Path>Master.bnk</Path>
 			<Media>
@@ -372,6 +372,10 @@
 					<ShortName>Car_Impact_Hurt_06.wav</ShortName>
 					<CachePath>SFX/Car_Impact_Hurt_06_125ADEA8.wem</CachePath>
 				</File>
+				<File Id="789529480" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Train_CrossingAlarm.wav</ShortName>
+					<CachePath>SFX/Train_CrossingAlarm_51EBCE32.wem</CachePath>
+				</File>
 				<File Id="818895528" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ambience_Rain_Steady_01.wav</ShortName>
 					<CachePath>SFX/Ambience_Rain_Steady_01_51EBCE32.wem</CachePath>
@@ -527,6 +531,12 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="1990425139" Name="ACTR_Train_Stop"/>
+				<Event Id="3691794637" Name="ACTR_TrainCrossing_Play">
+					<MediaRefs>
+						<MediaRef Id="789529480"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="514021403" Name="ACTR_TrainCrossing_Stop"/>
 				<Event Id="1751074328" Name="AMB_Cine_Intro_01"/>
 				<Event Id="1751074331" Name="AMB_Cine_Intro_02"/>
 				<Event Id="2552542987" Name="AMB_Menu">
@@ -598,5 +608,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3C7A82EC-1FA8-F139-CB8F-F539F766CD1F}</FileHash>
+	<FileHash>{792EDEEA-5CDE-5C1F-3997-0A30F6995E85}</FileHash>
 </SoundBanksInfo>
