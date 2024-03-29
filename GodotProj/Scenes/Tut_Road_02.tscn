@@ -168,12 +168,6 @@ position = Vector2(-4000, -6500)
 sceneToLoad = "res://Scenes/Main_Road_01.tscn"
 metadata/_edit_lock_ = true
 
-[node name="Trigger_Back" parent="Triggers" instance=ExtResource("6_gvavh")]
-z_index = 1220
-position = Vector2(1000, 0)
-rotation = 1.5708
-sceneToLoad = "res://Scenes/Tut_Road_01.tscn"
-
 [node name="Environment" type="Node" parent="."]
 
 [node name="Road" type="Path2D" parent="Environment"]
