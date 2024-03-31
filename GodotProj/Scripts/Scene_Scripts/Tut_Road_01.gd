@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var dialogue_tut_01: DialogueResource = load("res://Dialogue/Tut_Road_01_01.dialogue")
+const dialogue_tut_01: DialogueResource = preload("res://Dialogue/Tut_Road_01_01.dialogue")
+const dialogue_tut_02: DialogueResource = preload("res://Dialogue/Tut_Road_01_02.dialogue")
 
 @onready var timerToFirstDialogue: Timer = $Timers/Timer_ToFirstDialogue
 
@@ -24,3 +25,6 @@ func _on_timer_to_first_dialogue_timeout() -> void:
 
 func _exit_tree() -> void:
 	GameManager.resetFullScreenShaders()
+
+func _on_trigger_dia_02_crossed() -> void:
+	DialogueManager.show_dialogue_balloon(dialogue_tut_02, "start")

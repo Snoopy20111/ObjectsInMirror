@@ -100,15 +100,9 @@ metadata/_edit_lock_ = true
 
 [node name="Timers" type="Node" parent="."]
 
-[node name="Timer_ToFirstDialogue" type="Timer" parent="Timers"]
-wait_time = 1.5
-one_shot = true
-autostart = true
-
 [node name="Lighting" type="Node" parent="."]
 
 [node name="CanvasModulate" parent="Lighting" instance=ExtResource("2_7ui5h")]
-visible = false
 
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("3_eo2bm")]
 unique_name_in_owner = true
@@ -218,5 +212,3 @@ startPaused = true
 position = Vector2(-3166, -386)
 rotation = 2.13977
 metadata/_edit_lock_ = true
-
-[connection signal="timeout" from="Timers/Timer_ToFirstDialogue" to="." method="_on_timer_to_first_dialogue_timeout"]

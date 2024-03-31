@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cs7i20wvmxr4v"
+path="res://.godot/imported/Game_FirstCollision.dialogue-824e0fa32d053b125d6c6225c51ace55.tres"
+
+[deps]
+
+source_file="res://Dialogue/Game_FirstCollision.dialogue"
+dest_files=["res://.godot/imported/Game_FirstCollision.dialogue-824e0fa32d053b125d6c6225c51ace55.tres"]
+
+[params]
+
+defaults=true

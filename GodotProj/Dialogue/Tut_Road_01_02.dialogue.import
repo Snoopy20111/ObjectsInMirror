@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c4tytx2hwmf5y"
+path="res://.godot/imported/Tut_Road_01_02.dialogue-fea21c6088eb71e2e1bc4afa77d588a1.tres"
+
+[deps]
+
+source_file="res://Dialogue/Tut_Road_01_02.dialogue"
+dest_files=["res://.godot/imported/Tut_Road_01_02.dialogue-fea21c6088eb71e2e1bc4afa77d588a1.tres"]
+
+[params]
+
+defaults=true

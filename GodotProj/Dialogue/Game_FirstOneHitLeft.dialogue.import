@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://18n5eexfa0ha"
+path="res://.godot/imported/Game_FirstOneHitLeft.dialogue-ddcff875853324f4df85396df49f63ea.tres"
+
+[deps]
+
+source_file="res://Dialogue/Game_FirstOneHitLeft.dialogue"
+dest_files=["res://.godot/imported/Game_FirstOneHitLeft.dialogue-ddcff875853324f4df85396df49f63ea.tres"]
+
+[params]
+
+defaults=true

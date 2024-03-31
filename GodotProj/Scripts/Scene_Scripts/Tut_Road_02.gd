@@ -1,8 +1,6 @@
 extends Node2D
 
-@export var dialogue_tut_01: DialogueResource = load("res://Dialogue/Tut_Road_01_01.dialogue")
-
-@onready var timerToFirstDialogue: Timer = $Timers/Timer_ToFirstDialogue
+#const dialogue_tut_01: DialogueResource = preload("res://Dialogue/Tut_Road_01_01.dialogue")
 
 
 func _ready() -> void:
@@ -14,9 +12,6 @@ func _ready() -> void:
 	GameManager.setFullscreenShaderActive(Enums.CANVAS_EFFECT.SCREEN_SHAKE, true)
 	
 	GameManager.levelStart(1)
-
-func _on_timer_to_first_dialogue_timeout() -> void:
-	pass
 
 func _exit_tree() -> void:
 	GameManager.resetFullScreenShaders()

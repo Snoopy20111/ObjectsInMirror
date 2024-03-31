@@ -1,9 +1,11 @@
 extends Node
 
-@export var fullscreen_effects: Array
+const dialogue_FirstCollision: DialogueResource = preload("res://Dialogue/Game_FirstCollision.dialogue")
+const dialogue_FirstCollisionWithEntity: DialogueResource = preload("res://Dialogue/Game_FirstCollisionWithEntity.dialogue")
+const dialogue_FirstOneHitLeft: DialogueResource = preload("res://Dialogue/Game_FirstOneHitLeft.dialogue")
 
-@onready var timerToRespawn: Timer = $Timers/Timer_ToRespawn
-@onready var akListener: AkListener2D = $Camera2D/AkListener2D
+
+@export var fullscreen_effects: Array
 
 @export_category("Transitions")
 @export var SharedEasing: bool = true
@@ -25,6 +27,9 @@ extends Node
 	"animation_name_enter": null,
 	"animation_name_leave": null
 }
+
+@onready var timerToRespawn: Timer = $Timers/Timer_ToRespawn
+@onready var akListener: AkListener2D = $Camera2D/AkListener2D
 @onready var TrimmedLoadOptions: Dictionary = SceneLoadOptions
 
 #region Fullscreen Shader Defaults
@@ -50,6 +55,11 @@ var _screenShakeMagnitude: Vector2
 
 var playerHealthAtLevelStart: int = 5
 var playerMaxHealth: int = 5
+var playerHurtEver: bool = false
+var playerHasDiedEver: bool = false
+var playerHurtByEntityEver: bool = false
+var waitBeforeDialogue: float = 0.5
+
 var playerCurrentLevel: int = 0
 
 func _ready() -> void:
@@ -94,6 +104,22 @@ func _on_timer_to_respawn_timeout() -> void:
 			SceneManager.change_scene("res://Scenes/Tut_Road_02.tscn", TrimmedLoadOptions)
 		2:
 			SceneManager.change_scene("res://Scenes/Main_Road_01.tscn", TrimmedLoadOptions)
+
+func game_firstInjury() -> void:
+	playerHurtEver = true
+	await get_tree().create_timer(waitBeforeDialogue, true, false, true).timeout
+	DialogueManager.show_dialogue_balloon(dialogue_FirstCollision, "start")
+
+func game_firstInjuryByEntity() -> void:
+	playerHurtEver = true
+	playerHurtByEntityEver = true
+	await get_tree().create_timer(waitBeforeDialogue * 2, true, false, true).timeout
+	DialogueManager.show_dialogue_balloon(dialogue_FirstCollisionWithEntity, "start")
+
+func game_firstOneHP() -> void:
+	playerHasDiedEver = true
+	await get_tree().create_timer(waitBeforeDialogue, true, false, true).timeout
+	DialogueManager.show_dialogue_balloon(dialogue_FirstOneHitLeft, "start")
 
 ### Specific Utilities ###
 ## Fullscreen Shader effects ##
@@ -203,3 +229,4 @@ func get_Listener() -> AkListener2D:
 		#result.push_back(node)
 	#for child in node.get_children():
 		#findByClass(child, className, result)
+

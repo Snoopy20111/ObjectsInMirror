@@ -13,7 +13,6 @@ const screenShakeFalloff: Curve = preload("res://Customs/Curves/Car_Damage_Scree
 @export var maxSpeedReverseFactor:float = 0.4
 @export var tireScreechFactor:float = 175.0
 
-@export var maxHealth: int = 5
 @export var collisionThreshold: float = 150.0
 @export var screenShakeStrength: float = 10.0
 @export var screenShakeLength: float = 1.5
@@ -204,21 +203,21 @@ func _setTireScreechAudio() -> void:
 		/ (maxSpeed - tireScreechFactor), 0, 1)
 	Wwise.set_rtpc_value("TireScreech", temp, self)
 
-func Collided(_body: Node) -> void:
+func Collided(body: Node) -> void:
 	var rotCollForce: float = angular_velocity - _lastAngularVelocity
 	var linCollForce: float = (linear_velocity - _lastLinearVelocity).length()
 	var collisionForce: float = linCollForce + rotCollForce
 	#print("Collided with " + str(body.name) + " for impact of " + str(collisionForce))
 	
-	if (_body is Entity_Chaser):
+	if (body is Entity_Chaser):
 		#var entityRotCollForce: float = angular_velocity - _lastAngularVelocity
 		#var entityLinColl: Vector2 = (linear_velocity - _lastLinearVelocity)
-		var relativePosition: Vector2 = _body.position - position
-		apply_force(-relativePosition * 1000, relativePosition)
-		print("relativePosition: " + str(relativePosition))
-		_body.remove_entity()
+		var relativePosition: Vector2 = body.position - position
+		apply_force(-relativePosition * 900, relativePosition)
+		#print("relativePosition: " + str(relativePosition))
+		body.remove_entity()
 		if (canBeDamaged):
-			ApplyDamage()
+			ApplyDamage(body)
 	
 	if (collisionForce > collisionThreshold) and (canBeDamaged):
 		ApplyDamage()	#apply damage
@@ -226,20 +225,32 @@ func Collided(_body: Node) -> void:
 		Wwise.set_rtpc_value("ImpactForce", collisionForce, self)
 		Wwise.post_event("ACTR_Car_Impact_Tap", self)
 
-func ApplyDamage() -> void:
+func ApplyDamage(body: Node = null) -> void:
 	#Start invulnurability timer, reduce health, and shake the screen
 	timerInvulnurable.start()
 	canBeDamaged = false
 	_health -= 1
 	_screenShakeCounter = screenShakeLength
 	
-	
-	if (_health <= 0):
-		Death()
-		Wwise.post_event("ACTR_Car_Impact_Death", self)
-	else:
-		damageAnimSmoke.emitting = true
-		Wwise.post_event("ACTR_Car_Impact_Hurt", self)
+	match (_health):
+		_ when (body is Entity_Chaser) and (!GameManager.playerHurtByEntityEver):
+			damageAnimSmoke.emitting = true
+			Wwise.post_event("ACTR_Car_Impact_Hurt", self)
+			GameManager.game_firstInjuryByEntity()
+		_ when (GameManager.playerHurtEver == false):
+			damageAnimSmoke.emitting = true
+			Wwise.post_event("ACTR_Car_Impact_Hurt", self)
+			GameManager.game_firstInjury()
+		1 when (GameManager.playerHasDiedEver == false):
+			damageAnimSmoke.emitting = true
+			Wwise.post_event("ACTR_Car_Impact_Hurt", self)
+			GameManager.game_firstOneHP()
+		0, -1, -2:
+			Death()
+			Wwise.post_event("ACTR_Car_Impact_Death", self)
+		_:
+			damageAnimSmoke.emitting = true
+			Wwise.post_event("ACTR_Car_Impact_Hurt", self)
 
 func Death() -> void:
 	# Stop player control

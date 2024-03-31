@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://p3ph2008osek"]
+[gd_scene load_steps=43 format=3 uid="uid://p3ph2008osek"]
 
 [ext_resource type="PackedScene" uid="uid://1kusc5juq828" path="res://Scenes/Prefabs/Shared_CanvasModulate.tscn" id="1_jy686"]
 [ext_resource type="Script" path="res://Scripts/Scene_Scripts/Tut_Road_01.gd" id="1_x3qua"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bfkehd00r68se" path="res://Sprites/Environment/Road/Gravel039_256_NormalDX.png" id="14_pd3p3"]
 [ext_resource type="Texture2D" uid="uid://dwe12ljcmuli2" path="res://Sprites/Environment/Road/Gravel039_256_Specular.png" id="15_2aegl"]
 [ext_resource type="PackedScene" uid="uid://dluy1f85x0v66" path="res://Scenes/Prefabs/Trees/Tree_NoShadowsWithCollision.tscn" id="18_vcr21"]
+[ext_resource type="PackedScene" uid="uid://de8xq8tykkp5k" path="res://Scenes/Prefabs/Trigger_Dialogue.tscn" id="20_wsc73"]
 
 [sub_resource type="Gradient" id="Gradient_7ho15"]
 interpolation_mode = 2
@@ -128,6 +129,7 @@ texture_repeat = 2
 
 [node name="Tut_Road_01" type="Node2D"]
 script = ExtResource("1_x3qua")
+metadata/_edit_lock_ = true
 
 [node name="Timers" type="Node" parent="."]
 
@@ -238,10 +240,15 @@ metadata/_edit_lock_ = true
 
 [node name="Triggers" type="Node" parent="."]
 
-[node name="Trigger" parent="Triggers" instance=ExtResource("4_gl2ke")]
+[node name="Trigger_NextLevel" parent="Triggers" instance=ExtResource("4_gl2ke")]
 z_index = 1220
 position = Vector2(-10269, -8130)
 rotation = 1.5708
 sceneToLoad = "res://Scenes/Tut_Road_02.tscn"
 
+[node name="Trigger_Dia02" parent="Triggers" instance=ExtResource("20_wsc73")]
+position = Vector2(-3269, -8114)
+rotation = 1.5708
+
 [connection signal="timeout" from="Timers/Timer_ToFirstDialogue" to="." method="_on_timer_to_first_dialogue_timeout"]
+[connection signal="crossed" from="Triggers/Trigger_Dia02" to="." method="_on_trigger_dia_02_crossed"]

@@ -28,7 +28,7 @@ func _ready() -> void:
 	
 	if (OS.has_feature("release") or LogoParade):
 		SceneManager.change_scene("res://Scenes/LogoParade.tscn")
-	elif ((LoadDebugLevel) and (DebugLevelPath != null)):
+	elif ((OS.has_feature("debug")) and (LoadDebugLevel) and (DebugLevelPath != null)):
 		SceneManager.change_scene(DebugLevelPath)
 	else:
 		SceneManager.change_scene("res://Scenes/MainMenu.tscn")
