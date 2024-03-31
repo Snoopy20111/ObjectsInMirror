@@ -141,7 +141,6 @@ metadata/_edit_lock_ = true
 [node name="Lighting" type="Node" parent="."]
 
 [node name="CanvasModulate" parent="Lighting" instance=ExtResource("2_bsrmj")]
-visible = false
 
 [node name="PlayerCar" parent="." groups=["scene_manager_entity_nodes"] instance=ExtResource("3_ywue1")]
 unique_name_in_owner = true

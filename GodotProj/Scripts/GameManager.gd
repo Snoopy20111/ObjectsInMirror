@@ -60,7 +60,7 @@ func _ready() -> void:
 		fullscreen_effects[i] = get_node(fullscreen_effects[i]) as ColorRect
 	_grabFullscreenShaderDefaults()
 	checkTransitionShared()
-	
+
 func checkTransitionShared() -> void:
 	if (SharedEasing == true):
 		TrimmedLoadOptions.erase("ease_leave")
