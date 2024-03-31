@@ -105,7 +105,7 @@ drive_back={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/Cine_Intro_01.dialogue", "res://Dialogue/Cine_Intro_02.dialogue", "res://Dialogue/Cine_Intro_03.dialogue", "res://Dialogue/Tut_Road_01_01.dialogue", "res://Dialogue/Cine_Outro_01.dialogue", "res://Dialogue/Cine_Outro_02.dialogue", "res://Dialogue/Cine_Outro_03.dialogue", "res://Dialogue/Tut_Road_01_02.dialogue", "res://Dialogue/Game_FirstCollision.dialogue", "res://Dialogue/Game_FirstOneHitLeft.dialogue", "res://Dialogue/Game_FirstCollisionWithEntity.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/Cine_Intro_01.dialogue", "res://Dialogue/Cine_Intro_02.dialogue", "res://Dialogue/Cine_Intro_03.dialogue", "res://Dialogue/Tut_Road_01_01.dialogue", "res://Dialogue/Cine_Outro_01.dialogue", "res://Dialogue/Cine_Outro_02.dialogue", "res://Dialogue/Cine_Outro_03.dialogue", "res://Dialogue/Tut_Road_01_02.dialogue", "res://Dialogue/Game_FirstCollision.dialogue", "res://Dialogue/Game_FirstOneHitLeft.dialogue", "res://Dialogue/Game_FirstCollisionWithEntity.dialogue", "res://Dialogue/Main_Road_01_TrainAudible.dialogue")
 
 [layer_names]
 

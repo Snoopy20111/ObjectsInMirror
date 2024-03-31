@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bv4kbnd8l7aol"
+path="res://.godot/imported/Main_Road_01_TrainAudible.dialogue-0e72364f382ace7446c2f492671b6990.tres"
+
+[deps]
+
+source_file="res://Dialogue/Main_Road_01_TrainAudible.dialogue"
+dest_files=["res://.godot/imported/Main_Road_01_TrainAudible.dialogue-0e72364f382ace7446c2f492671b6990.tres"]
+
+[params]
+
+defaults=true

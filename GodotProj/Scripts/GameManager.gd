@@ -53,8 +53,8 @@ var _screenShakeFactorB: Vector2
 var _screenShakeMagnitude: Vector2
 #endregion
 
-var playerHealthAtLevelStart: int = 5
-var playerMaxHealth: int = 5
+var playerMaxHealth: int = 8
+@onready var playerHealthAtLevelStart: int = playerMaxHealth
 var playerHurtEver: bool = false
 var playerHasDiedEver: bool = false
 var playerHurtByEntityEver: bool = false
@@ -113,7 +113,7 @@ func game_firstInjury() -> void:
 func game_firstInjuryByEntity() -> void:
 	playerHurtEver = true
 	playerHurtByEntityEver = true
-	await get_tree().create_timer(waitBeforeDialogue * 2, true, false, true).timeout
+	await get_tree().create_timer(waitBeforeDialogue * 4, true, false, true).timeout
 	DialogueManager.show_dialogue_balloon(dialogue_FirstCollisionWithEntity, "start")
 
 func game_firstOneHP() -> void:

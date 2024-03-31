@@ -52,9 +52,6 @@ func _ready() -> void:
 	Wwise.set_2d_position(self, transform, 0)
 
 func _physics_process(delta: float) -> void:
-	#early return if the entity is paused
-	if (paused):
-		return
 	
 	# Fade Chaos, if able, but if the counter is past 0, delete watcher
 	if(isFadingChaos):
@@ -75,6 +72,10 @@ func _physics_process(delta: float) -> void:
 	#update the linear and angular velocity, for impact with player
 	_lastLinearVelocity = linear_velocity
 	_lastAngularVelocity = angular_velocity
+	
+	#early return if the entity is paused
+	if (paused):
+		return
 	
 	match(state):
 		Enums.CHASER_STATE.STOPPED:

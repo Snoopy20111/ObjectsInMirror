@@ -25,7 +25,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Panic" ID="{0361B67D-E6DC-4CF1-B236-21BB4BA14CC2}"/>
-							<Value>2.35</Value>
+							<Value>2.88679245283019</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
